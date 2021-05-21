@@ -7,7 +7,8 @@ DP Tech je projekat koji će biti aktivan na nekoliko platformi. Cilj je da nau�
 
 ## O meni
 
-Ja sam Dani, to je dovoljno. :smile: 
+Ja sam Dani, to je dovoljno. :grin: 
+Ako te baš zanima nešto više, pogledaj stranicu [O meni](/pages/o-meni/) i možda saznaš nešto pametno. :blush: 
 
 
 *[Dani]: Danijela Popović
