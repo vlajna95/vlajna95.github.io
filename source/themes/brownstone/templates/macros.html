@@ -1,0 +1,10 @@
+{% macro audio(url) %}
+<audio src="{{ url }}" controls></audio>
+{% endmacro %}
+
+{% macro image(url, caption, width="", height="") %}
+<figure>
+<img src="{{ url }}"{% if width != "" %} width=width{% endif %}{% if height != "" %} height=height{% endif %} />
+<figcaption>{{ caption }}</figcaption>
+</figure>
+{% endmacro %}

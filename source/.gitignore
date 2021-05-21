@@ -1,0 +1,7 @@
+source
+*__pycache__*
+*.pyc
+*.pyo
+bin
+dist
+*.egginfo
