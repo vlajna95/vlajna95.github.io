@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content_title %}{% endblock %}
+
+{% block content %} 
+{% if articles %}
+<div id="content">
+{% for article in articles %}
+<article class="post summary">
+<h2 class="title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+{% import "article_info.html" as article_info with context %}
+{{ article_info.info(article) }}
+<div style="clear: both;">&nbsp;</div>
+<div class="entry">
+{{ article.summary }} 
+<a class="readmore" href="{{ SITEURL }}/{{ article.url }}">{{ gettext("Ceo tekst…") }}</a>
+</div>
+</article>
+{% endfor %}
+{% else %}
+<div id="content">
+</div>
+{% endif %}
+<div style="clear: both;">&nbsp;</div>
+</div>
+{% endblock content %}

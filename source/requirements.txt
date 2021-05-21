@@ -1,0 +1,10 @@
+pymdown-extensions
+git+https://github.com/Neepawa/cell_row_span
+pelican-more-categories
+pelican-neighbors
+pelican-series
+pelican-sitemap
+pelican-seo
+babel
+python-gettext
+i18n

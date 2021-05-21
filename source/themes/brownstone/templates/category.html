@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block title %}{{ SITENAME }} :: {{ gettext("Kategorija") }} :: {{ category.shortname }}{% endblock %}
+
+{% block content %}
+<h1>{{ gettext("Kategorija") }}: {{ category.shortname }} ({{ articles|count }})</h1>
+{% if category.description %}
+<p>{{ category.description }}</p>
+{% endif %}
+{{ super() }}
+{% endblock %}
