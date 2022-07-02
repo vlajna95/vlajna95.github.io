@@ -1,0 +1,166 @@
+.toc ul li {
+list-style-type: none;
+}
+#pagination ul li.active {
+color: black;
+}
+dl {
+background: #100040;
+font-size: 18px;
+}
+dt {
+color: darkgoldenrot;
+font-family: "Tangerine", cursive;
+}
+dd {
+background: #181000;
+color: seagreen;
+}
+.movie_stats {
+width: 100%;
+}
+.vertical_header {
+text-align: right;
+}
+.vertical_cell {
+text-align: left;
+}
+.tweetable {
+border-top: 1px solid #CCC;
+border-bottom: 1px solid #CCC;
+border-left: none;
+border-right: none;
+position: relative;
+}
+.tweetable .tweet_text::before {
+content: '„';
+font-size: 4em;
+font-family: "inherit";
+font-weight: bold;
+color: #888;
+}
+.tweetable .tweet_text {
+margin: 0 0 0.5em 1.5em;
+font-style: italic;
+}
+.tweetable .tweet_text::after {
+content: '”';
+font-size: 4em;
+font-family: "inherit";
+font-weight: bold;
+color: #888;
+}
+.tweetable-svg-icon {
+/* fill: #db3535; */
+width: 1em;
+}
+.highlight {
+border: 3px inset green;
+}
+.highlight button {
+color: #adb5bd;
+box-sizing: border-box;
+transition: 0.2s ease-out;
+cursor: pointer;
+user-select: none;
+background: rgba(0, 0, 0, 0.15);
+border: 1px solid rgba(0, 0, 0, 0);
+padding: 5px 10px;
+font-size: 0.8em;
+position: absolute;
+top: 0;
+right: 0;
+border-radius: 0 0.15rem;
+}
+span.filename {
+background: #123;
+color: LightSeaGreen;
+}
+
+/* color classes */
+.bg-red {
+background-color: red;
+}
+.bg-orange {
+background-color: orange;
+}
+.bg-yellow {
+background-color: yellow;
+}
+.bg-green {
+background-color: green;
+}
+.bg-blue {
+background-color: blue;
+}
+.bg-purple {
+background-color: purple;
+}
+.bg-lilac {
+background-color: #c8a2c8; /* #B695C0; rgb(182, 149, 192) */
+}
+.bg-brown {
+background-color: SaddleBrown;
+}
+.bg-pink {
+background-color: pink;
+}
+.bg-gray {
+background-color: gray;
+}
+.bg-white {
+background-color: white;
+}
+.bg-black {
+background-color: black;
+}
+.fg-red {
+color: red;
+}
+.fg-orange {
+color: orange;
+}
+.fg-yellow {
+color: yellow;
+}
+.fg-green {
+color: green;
+}
+.fg-blue {
+color: blue;
+}
+.fg-purple {
+color: purple;
+}
+.fg-lilac {
+color: #c8a2c8;
+}
+.fg-brown {
+color: SaddleBrown;
+}
+.fg-pink {
+color: pink;
+}
+.fg-gray {
+color: gray;
+}
+.fg-white {
+color: white;
+}
+.fg-black {
+color: black;
+}
+
+/* alignment classes */
+.ta_left: {
+text-align: left;
+}
+.ta_center {
+text-align: center;
+}
+.ta_right {
+text-align: right;
+}
+.ta_justify {
+text-align: justify;
+}

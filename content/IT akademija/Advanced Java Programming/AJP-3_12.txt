@@ -1,0 +1,316 @@
+Datumi i vreme 
+
+
+Rukovanje vremenom i datumom predstavlja jedan od osnovnih koncepata bilo kog programskog jezika. Ni Java nije izuzetak, pa je tako sastavni deo Java platforme i skup tipova kojima se u Java programima mogu predstaviti datumi i vreme. U lekciji pred vama, na postupan i sistematizovan način biće ilustrovani pristupi za rad sa datumima i vremenom u programskom jeziku Java.
+
+Date and Time API
+Rukovanje datumima i vremenom u Java programskom jeziku postiže se korišćenjem funkcionalnosti koje se nalaze unutar paketa java.time. Reč je o paketu unutar koga se nalaze tipovi koji se objedinjeno nazivaju Date and Time API, odnosno aplikativni programski interfejs za rukovanje datumom i vremenom.
+Paket java.time poseduje brojne klase koje se mogu iskoristiti za rukovanje datumom i vremenom. Neke od njih koriste se za predstavljanje vremena u formatu razumljivom ljudima, a druge za predstavljanje vremena u formatu prilagođenom mašinama. Neke od najznačajnijih takvih klasa biće ilustrovane u nastavku ove lekcije.
+
+LocalDate
+Klasa LocalDate koristi se za predstavljanje datuma u formatu godina-mesec-dan. Evo na koji način je korišćenjem ove klase moguće predstaviti današnji datum:
+System.out.println(LocalDate.now());
+
+Statička metoda now(), klase LocalDate vraća današnji datum.
+Paket java.time
+S obzirom na to da se klase za rad sa datumima i vremenom nalaze unutar paketa java.time, kako bi prikazani primer funkcionisao, neophodno je obaviti uključivanje klase LocalDate iz paketa java.time:
+    import java.time.LocalDate;
+
+Uključivanje će biti neophodno obaviti za sve klase koje će biti prikazane u nastavku. Stoga je odmah na početku moguće obaviti uključivanje i celog paketa:
+     import java.time.*;
+Upravo prikazani primer je ilustrovao direktan ispis današnjeg datuma, ali je metodu now() i klasu LocalDate moguće upotrebiti i na drugačiji način:
+LocalDate now = LocalDate.now();
+
+U ovakvoj naredbi iskorišćena je statička metoda now() klase LocalDate za kreiranje objekta tipa LocalDate. Objekat klase LocalDate sada se može koristiti za obavljanje brojnih manipulacija nad dobijenim datumom:
+System.out.println(now.getYear());
+
+Korišćenjem metode getYear() nad objektom LocalDate tipa, sada je pročitan samo jedan segment datuma – godina.
+Ukoliko je potrebno samostalno definisati neki datum korišćenjem LocalDate klase, to je moguće uraditi na sledeći način:
+LocalDate date = LocalDate.of(2021, 11, 20);
+
+Statička metoda of() definiše datum na osnovu tri int parametra (godina, mesec i dan u mesecu, respektivno).
+
+LocalTime
+LocalDate je klasa koja omogućava predstavljanje datuma, ali ne i vremena. Ukoliko je u Java programu potrebno prikazati vreme bez datuma, moguće je koristiti klasu LocalTime. Ova klasa omogućava manipulaciju vremenom u formatu sat-minut-sekunda:
+1
+2
+LocalTime time = LocalTime.now();
+System.out.println("Hour: " + time.getHour() + " Minutes: " + time.getMinute() + " Seconds: " + time.getSecond());
+
+Statička metoda now() vraća trenutno vreme upakovano u instancu klase LocalTime. Metode getHour(), getMinute() i getSecond() vraćaju int vrednosti koje predstavljaju sate, minute i sekunde, respektivno. Stoga će prikazani kod na izlazu da proizvede ispis tačnog vremena:
+Hour: 14 Minutes: 16 Seconds: 53
+
+LocalDateTime
+Do sada su prikazane klase za predstavljanje datuma i vremena, ali pojedinačno. Pored dve prikazane klase, unutar paketa java.time nalazi se i klasa koja omogućava objedinjeno predstavljanje datuma i vremena. Reč je o klasi LocalDateTime.
+Kao i u prethodnim primerima, kako bi se dobio današnji datum i trenutno vreme, koristi se metoda now().
+System.out.println(LocalDateTime.now());
+
+Korišćenjem klase LocalDateTime, datum i vreme se prikazuju u formatu godina-mesec-danTsat:minut:sekunda. Stoga jedan primer ispisa koji se može dobiti od upravo prikazane naredbe može da izgleda ovako:
+2022-09-03T10:34:59.507
+
+Takođe, klasa LocalDateTime poseduje pregršt ugrađenih metoda. Primeri koji slede će ilustrovati upotrebu nekih takvih metoda:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+  LocalDateTime dateTime = LocalDateTime.now();
+int year = dateTime.getYear();
+  int monthNo = dateTime.getMonthValue();
+  Month monthName = dateTime.getMonth();
+  int day = dateTime.getDayOfMonth();
+  int hour = dateTime.getHour();
+  int minutes = dateTime.getMinute();
+  int seconds = dateTime.getSecond();
+  System.out.println("Today is " + monthName + " " + day + ", " + year);
+  System.out.println("The ordinal number of the month is " + monthNo);
+  System.out.println("It is " + hour + " hours " + minutes + " minutes and " + seconds + " seconds");
+Prikazani kod ilustruje ispis pojedinačnih segmenata datuma i vremena koji su predstavljeni objektom klase  LocalDateTime. Ispis može da izgleda ovako:
+Today is DECEMBER 4, 2022
+The ordinal number of the month is 12
+It is 15 hours 1 minutes and 28 seconds
+
+Bitno je da primetite da se za čitanje meseca iz LocalDateTime objekta mogu koristiti dve metode, u zavisnosti od toga da li želimo da dobijemo redni broj meseca ili njegov naziv. Metoda getMonthValue() isporučuje redni broj meseca, a metoda getMonth() enumeracionu konstantu čiji je naziv upravo naziv koji predstavlja mesec.
+Klasa LocalDateTime poseduje i skup veoma korisnih metoda pomoću kojih je moguće obavljati dodavanje ili oduzimanje vremena. Na primer, ukoliko je od nekog postojećeg objekta LocalDateTime tipa potrebno oduzeti određeni broj meseci, može se koristiti metoda minusMonths(). Za dodavanje meseci može se koristiti metoda plusMonths(). Evo takvog primera:
+1
+2
+3
+4
+LocalDateTime dateTime = LocalDateTime.now();
+System.out.println("6 months from now: " + dateTime.plusMonths(6));
+System.out.println("6 months ago: " + dateTime.minusMonths(6));
+
+U zavisnosti od trenutnog datuma, ovakav kod može da proizvede sledeći izlaz:
+6 months from now: 2022-06-04T15:11:57.365428300
+6 months ago: 2021-06-04T15:11:57.365428300
+
+Klasa LocalDateTime poseduje i metode identičnog ponašanja koje se mogu koristiti za dodavanje ili oduzimanje ostalih segmenata datuma i vremena. Sve one počinju identičnim prefiksima (plus, minus). Neke od takvih metoda su: plusDays(), minusDays(), plusHours(), minusHours()...
+Korišćenjem klase LocalDateTime moguće je obaviti samostalno definisanje datuma i vremena. To je moguće postići na nekoliko načina. Evo prvog, koji podrazumeva korišćenje objekata klasa LocalDate i LocalTime: 
+
+{java * AJP-3_12/Program1.java  Program1.java  0}
+
+Na ovaj način smo metodi of() prosledili parametre koji predstavljaju objekte klasa sa kojima smo se već upoznali – LocalDate i LocalTime.
+Drugi način za kreiranje LocalDateTime instance podrazumeva samostalno definisanje svakog segmenta vremena pojedinačno:
+LocalDateTime localDateTime = LocalDateTime.of(1999, 12, 13, 17, 50);
+
+Korišćenjem oba pristupa dobija se identičan efekat.
+1999-12-13T17:50
+
+U okviru radnog okruženja možete testirati i sve predhodne primere iz ove lekcije.
+
+Instant
+Klase koje smo do sada videli koriste se za predstavljanje vremena i datuma u formatu koji je razumljiv ljudima. Kompjuteri pojam datuma i vremena razumeju na potpuno drugačiji način od ljudi. Naime, mašine vreme mere od jednog trenutka, odnosno početne tačke i izražavaju ga u određenoj vremenskoj jedinici (najčešće u nanosekundama).
+U paketu java.time postoji klasa Instant, koja služi za predstavljanje vremena proteklog, u nanosekundama, od prve sekunde 1. januara 1970. godine (ovaj datum se još naziva i epoha (EPOCH). Reč je o klasi koja je veoma korisna za reprezentovanje nekog trenutka u vremenu na kompaktan način:
+1
+2
+Instant instant = Instant.now();
+System.out.println(instant.getEpochSecond());
+
+Na ovaj način smo napravili promenljivu tipa Instant i, koristeći metodu now(), došli do trenutnog vremena. Zatim smo korišćenjem metode getEpochSecond() obavili ispisivanje broja sekundi koje su protekle od početka epohe pa sve do sada. Na izlazu se može dobiti ovako nešto:
+1607092491
+
+Već je rečeno da se klasa Instant najčešće koristi za predstavljanje trenutaka u vremenu tokom izvršavanja programa. Stoga se ona često koristi kako bi se, na primer, utvrdio vremenski razmak između dva trenutka u vremenu:
+1
+2
+3
+4
+5
+6
+Instant instant = Instant.now();
+Thread.sleep(1000);
+long period = instant.until(Instant.now(), ChronoUnit.SECONDS);
+System.out.println(period);
+
+U ovom primeru, računa se proteklo vreme između dva trenutka u vremenu. Metoda koja utvrđuje razmak između dva trenutka u vremenu jeste metoda until(), klase Instant. Kako bi primer mogao da se realizuje, u prikazanom kodu se koristi i naredba koja pauzira izvršavanje programa u periodu od jedne sekunde. Takvo pauziranje je neophodno kako bi uopšte i postojala razlika između dva trenutka u vremenu. Rezultat izvršavanja prikazanog koda jeste sledeći ispis:
+1
+
+Broj jedan označava da je između dva trenutka u vremenu protekla tačno jedna sekunda, što je potpuno očekivano s obzirom na to da smo metodi sleep() prosledili vrednost 1000 (1000 milisekundi je jedna sekunda).
+U primeru možete videti da je prilikom pozivanja metode until() njoj moguće proslediti i enumeracionu konstantu, koja određuje format u kome će biti isporučena povratna vrednost. Mi smo definisali ChronoUnit.SECONDS (iz paketa java.time.temporal)i zbog toga je isporučena povratna vrednost u sekundama.
+Ponekad je potrebno izvršiti konverziju objekta tipa Instant u neki objekat sa razumljivim formatom vremena. To se može postići na sledeći način:
+1
+2
+3
+4
+Instant instant = Instant.now();
+LocalDateTime ldt = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
+System.out.printf("%s %d %d at %d:%d%n", ldt.getMonth(), ldt.getDayOfMonth(), ldt.getYear(), ldt.getHour(), ldt.getMinute());
+
+Ovakvim kodom obavlja se konverzija objekta tipa Instant u objekat tipa LocalDateTime. Pretvaranje se postiže upotrebom metode ofInstant(), kojoj se prosleđuje Instant objekat koji je potrebno pretvoriti u vremensku zonu koja će se koristiti prilikom pretvaranja.
+Nakon pretvaranja objekta Instant u objekat tipa LocalDateTime, obavlja se ispis pojedinačnih segmenata na izlazu. Za ispis se koristi metoda printf(), koja nam omogućava da obavimo formatirani ispis. Tako je, na primer, prvom sekvencom %s navedeno da će se na tom mestu naći tekstualna vrednost tipa String, koja će biti određena povratnom vrednošću prve metode (ldt.getMonth()).
+Na izlazu se dobija ispis oblika:
+OCTOBER 1 2021 at 7:53
+
+Formatiranje i parsiranje
+Veoma često se tokom razvoja aplikacija može javiti potreba za parsiranjem i formatiranjem tekstualnih vrednosti koje predstavljaju datume ili vreme. Parsiranje podrazumeva pretvaranje datuma i vremena iz String oblika u neki od specijalizovanih tipova iz paketa java.time. Formatiranje se odnosi na uređivanje načina na koji će datum i vreme biti organizovani, odnosno na format i redosled kojim će se pisati različiti segmenti datuma i vremena.
+Evo kako može izgledati jedan jednostavan primer parsiranja:
+1
+2
+3
+String in = "19880505";
+LocalDate date = LocalDate.parse(in, DateTimeFormatter.BASIC_ISO_DATE);
+System.out.println(date);
+
+U prikazanom primeru, za obavljanje parsiranja koristi se metoda parse() klase LocalDate. Tako će metoda parse() nakon uspešnog parsiranja proizvesti objekat LocalDate tipa. Metoda parse(), pored teksta koji je potrebno parsirati, mora da prihvati i objekat DateTimeFormatter tipa (iz paketa java.time.format). Reč je o objektu kojim se definišu osobine datuma i vremena koje je potrebno parsirati. U primeru je iskorišćena jedna od unapred dostupnih instanci ovoga tipa – BASIC_ISO_DATE. BASIC_ISO_DATE nalaže postojanje datuma u sledećem obliku: yyyymmdd. Ukoliko malo bolje pogledate, to je upravo format u kome je datum definisan i unutar String-a, tako da parsiranje prolazi bez problema i na izlazu se dobija sledeći ispis:
+1988-05-05
+
+U upravo prikazanom primeru, oslonili smo se na osobine parsiranja koje su automatski dostupne unutar Java platforme. Pored korišćenja gotovih rešenja, pravila za parsiranje se mogu i samostalno kreirati:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+String in = "05 05 1988";
+try {
+       DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy");
+       LocalDate date = LocalDate.parse(in, formatter);
+       System.out.println(date);
+} catch (Exception exc) {
+            System.out.println(exc.getMessage());
+}
+
+Ovoga puta je datum u tekstualnom obliku formatiran na nešto drugačiji način. Kako bi mogao da se parsira, u primeru smo pribegli samostalnom kreiranju instance klase DateTimeFormatter. To je obavljeno korišćenjem metode ofPattern(), pomoću koje je definisan obrazac u kome se mogu pojaviti vrednosti koje se parsiraju. Karakteri koji su navedeni unutar šablona imaju značenje ilustrovano tabelom 12.1.
+Simbol
+Značenje
+y
+godina
+D
+dan u godini
+M
+mesec u godini
+d
+dan u mesecu
+h
+sati (1–12)
+H
+sati (1–24)
+m
+minuti
+s
+sekunde
+
+Tabela 12.1. Karakteri za predstavljanje različitih segmenata datuma i vremena
+Upravo prikazani primer na izlazu proizvodi ispis identičan ispisu iz prethodnog primera:
+1988-05-05
+
+Do sada smo se bavili isključivo parsiranjem teksta, ali ne i njegovim formatiranjem. Upravo zbog toga je u prethodna dva primera dobijen identičan ispis. Ukoliko želimo da utičemo na format u kome će datum i vreme da budu prikazani na izlazu, možemo iskoristiti mogućnosti formatiranja:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+String in = "05 05 1988";
+try {
+      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MM yyyy");
+      DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("dd MMM yyyy");
+      LocalDate date = LocalDate.parse(in, formatter);
+      System.out.println(date.format(formatter2));
+}
+catch (Exception exc) {
+      System.out.println(exc.getMessage());
+}
+
+U prikazanom primeru, obavlja se kreiranje dva objekta tipa DateTimeFormatter. Prvi takav objekat se koristi za parsiranje, a drugi za formatiranje datuma prilikom njegovog ispisivanja na izlazu. Formatiranje se obavlja korišćenjem metode format() koja se poziva nad instancom datuma i njoj se prosleđuje objekat tipa DateTimeFormatter. Sve to će na izlazu da proizvede sledeći ispis:
+05 May 1988
+
+Jasno možete videti da se format datuma sada razlikuje u odnosu na prethodne primere. Mesec se prikazuje korišćenjem imena, koje zavisi od podešenog regiona na sistemu na kome se kod izvršava. To je postignuto korišćenjem posebnog šablona koji se sastoji iz tri velika slova M. Takav i slični šabloni za formatiranje ilustrovani su tabelom 12.2.
+Šablon
+Značenje
+MM
+redni broj meseca u godini
+MMM
+naziv meseca u skraćenom obliku koji se sastoji iz tri karaktera
+MMMM
+pun naziv meseca
+yy
+godina izražena korišćenjem dve poslednje cifre
+yyyy
+godina u punom obliku (četiri cifre)
+E
+skraćeni naziv dana u sedmici (tri karaktera)
+EEEE
+pun naziv dana u sedmici
+HH
+sat u 24h formatu
+hh
+sat u 12h formatu
+
+Tabela 12.2. Šabloni za formatiranje segmenata datuma i vremena
+Prilikom formatiranja ili parsiranja vremena, koji je format potrebno uneti ukoliko želimo da naglasimo da se radi o mesecima prikazanim u decimalnom obliku?
+mm
+m
+MM
+mmm
+Odgovori
+  
+Period
+Funkcionalnost koja može biti više nego korisna u toku pisanja programa je računanje perioda vremena. U sledećem primeru primenjene su neke od metoda za računanje perioda iz java.time paketa:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+LocalDate now = LocalDate.now();
+LocalDate birthday = LocalDate.of(1976, Month.MAY, 1);
+Period p = Period.between(birthday, now);
+long p2 = ChronoUnit.DAYS.between(birthday, now);
+long p3 = ChronoUnit.MONTHS.between(birthday, now);
+System.out.println("You are " + p.getYears() + " years, " + p.getMonths() + " months, and " + p.getDays() + " days old. (" + p2 + " days total or " + p3 + " months)");
+
+U prikazanom kodu inicijalizovana su dva objekta klase LocalDate: now i birthday. Za izračunavanje perioda između ova dva datuma koriste se klasa Period i metoda between(). Ova metoda kao parametre prihvata dva objekta između kojih je potrebno utvrditi period proteklog vremena.
+Takođe, u prikazanom kodu upotrebljava se ChronoUnit enumeracija, koja sadrži standardni skup vremenskih jedinica. Njena metoda between() veoma je korisna kada je potrebno izračunati razliku između dve tačke vremena, ali izraženu u jednoj jedinici vremena (na primer, samo u danima ili samo u mesecima).
+Prikazani primer na izlazu može da proizvede sledeći ispis:
+You are 45 years, 7 months, and 3 days old. (16654 days total or 547 months)
+
+Duration
+Upravo prikazana klasa Period funkcioniše samo u kontekstu godina, meseci i dana. Ukoliko želimo da predstavimo određeni period u sekundama,  koristi se klasa Duration.
+
+{java * AJP-3_12/Program2.java  Program2.java  0}
+
+Klasa Duration označava količinu vremena u sekundama. Njena metoda between() računa vreme koje je proteklo između dve vremenske reprezentacije, predstavljene objektima tipova iz java.time paketa.
+Kao i u jednom od prethodnih primera, i sada je iskorišćena metoda Thread.sleep() kojom se obavlja pauziranje izvršavanja programa u periodu od jedne sekunde, kako bi promenljive time1 i time2 pokazivale na različite trenutke u vremenu.
+Rezultat izvršavanja prikazanog koda jeste sledeći ispis:
+1
+U okviru radnog okruženja možete testirati i sve predhodne primere iz ove lekcije.
+Primer – Program za ispis broja dana svih meseci u tekućoj godini
+Potrebno je napraviti program koji na izlazu prikazuje sve mesece i njihove dužine u trenutnoj godini.
+
+{java * AJP-3_12/Program3.java  Program3.java  0}
+
+Do meseci se dolazi korišćenjem enumeracije Month. Njena metoda values() vraća niz konstanti tipa Month. U primeru se prolazi kroz takav niz, a onda se koristi metoda length(), koja vraća broj dana koje neki mesec ima (između 28 i 31). Razlika u broju dana se može pojaviti samo kod meseca februara, ukoliko je reč o prestupnoj godini. Zbog toga metoda length() može da prihvati parametar koji se odnosi na to da li je tekuća godina prestupna. Kako bi se otkrilo da li je tekuća godina prestupna, u primeru je upotrebljena metoda isLeapYear(), klase LocalDate.
+Sve to će na izlazu da proizvede sledeći ispis:
+JANUARY 31
+FEBRUARY 28
+MARCH 31
+APRIL 30
+MAY 31
+JUNE 30
+JULY 31
+AUGUST 31
+SEPTEMBER 30
+OCTOBER 31
+NOVEMBER 30
+DECEMBER 31

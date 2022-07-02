@@ -1,0 +1,7 @@
+java.lang.String
+String
+Is private: false
+Is public: true
+Is final: true
+java.lang
+java.lang.Object

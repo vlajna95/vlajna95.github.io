@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+<link href="{{ SITEURL }}/theme/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+{% if FEED_ATOM %}
+<link href="{{ SITEURL }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
+{% endif %}
+{% if FEED_RSS %}
+<link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+{% endif %}
+</head>
+<body>
+<div id="wrapper">
+<div id="page">
+<div id="page-bgtop">
+<div id="page-bgbtm">
+<div id="sidebar">
+<header id="logo">
+<h1><a href="{{ SITEURL }}">{{ SITENAME }}</a></h1>
+{% if SITESUBTITLE %}<p>{{ SITESUBTITLE }}</p>{% endif %}
+</header>
+<nav id="menu">
+<ul>
+<li {% if page_name == "index" %}class="current_page_item"{% endif %}><a href="{{ SITEURL }}">{{ gettext("Početna") }}</a></li>
+{# <li {% if page_name == "archives" %}class="current_page_item"{% endif %}><a href="{{ SITEURL }}/archives.html">{{ gettext("Arhive") }}</a></li> #}
+{% if DISPLAY_PAGES_ON_MENU %}
+{% for page in pages %}
+<li {% if page_name == page_title %}class="current_page_item"{% endif %}><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+{% endfor %}
+{% endif %}
+</ul>
+</nav>
+<aside>
+<h2>{{ gettext("Kategorije") }}</h2>
+{% for cat, articles in categories %}
+<span><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }} ({{ articles|count }})</a></span><br />
+{#
+{% if not cat.ancestors|count > 1 %}
+{% for subcat in cat.descendents %}
+<p><a href="{{ SITEURL }}/{{ subcat.url }}">{{ subcat }}</a></p>
+{% endfor %}
+Other variant 
+<ul>
+{% for subcat in cat.descendents %}
+<li>{{ subcat.shortname }}</li>
+{% endfor %}
+</ul>
+</p>
+{% endif %}
+#}
+{% endfor %}
+{% if LINKS %}
+<h2>{{ gettext("Blogroll") }}</h2>
+<ul>
+{% for name, link in LINKS %}
+<li><a href="{{ link }}">{{ name }}</a></li>
+{% endfor %}
+</ul>
+{% endif %}
+{% if SOCIAL %}
+<h2>{{ gettext("Mreže") }}</h2>
+<ul>
+{% for name, link in SOCIAL %}
+<li><a href="{{ link }}">{{ name }}</a></li>
+{% endfor %}
+{% if FEED_ALL_RSS %}
+<li><a href="{{ SITEURL }}/{{ FEED_ALL_RSS }}" rel="alternate">RSS</a></li>
+{% endif %}
+{% if FEED_ALL_ATOM %}
+<li><a href="{{ SITEURL }}/{{ FEED_ALL_ATOM }}" rel="alternate">Atom</a></li>
+{% endif %}
+</ul>
+{% endif %}
+<h2>{{ gettext("Oznake") }}</h2>
+<ul>
+{% for tag, articles in tags|sort %}
+<li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</li>
+{% endfor %}
+</ul>
+</aside>
+</div> <!-- end #sidebar -->
+<main>
+{% block content %}
+{% endblock %}
+</main>
+<div style="clear: both;">&nbsp;</div>
+</div>
+</div>
+</div> <!-- end #page -->
+
+<footer id="footer">
+{#
+{% if lang_siteurls %}
+{% for lang, siteurl in lang_siteurls.items() %}
+<a href="{{ siteurl }}"{% if lang == DEFAULT_LANG %} class="active"{% endif %}>{{ lang|lookup_lang_name }}</a>
+{% endfor %}
+{% endif %}
+#}
+<p>{{ COPYRIGHT }}</p>
+<p>Proudly powered by <a href="http://alexis.notmyidea.org/pelican/">pelican</a>, which takes great advantages of <a href="http://python.org">python</a>. Theme: <em>Brownstone</em> by <a href="http://www.freecsstemplates.org/">CSS Templates</a>.</p>
+</footer>
+{% include 'analytics.html' %}
+<!-- end #footer -->
+</body>
+</html>

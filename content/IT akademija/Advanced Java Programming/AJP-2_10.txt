@@ -1,0 +1,373 @@
+Tokovi 
+
+
+U prethodnim lekcijama ovoga modula imali ste prilike da čitate o različitim strukturama podataka koje postoje u jeziku Java. Tako ste mogli da vidite da, pored nizova, Java poseduje i bogat skup kolekcija koje olakšavaju i ubrzavaju rad sa skupovima podataka. Činjenica je da su različiti tipovi kolekcija vrlo efikasni u onome što je njihova osnovna namena – da na unapred definisan način, koji zavisi od tipa kolekcije, omoguće grupisanje podataka u jednu celinu. Pri tome, svaka od kolekcija poseduje i odgovarajući skup funkcionalnosti koje obezbeđuju jednostavan upis i čitanje podataka. Ipak, pored upisa i čitanja, podaci tokom izvršavanja programa prolaze kroz različite vrste obrade, odnosno, nad njima se veoma često sprovode i brojne druge operacije pored upisivanja i čitanja iz kolekcija. Java platforma poseduje kompletan skup gotovih funkcionalnosti koje se mogu koristiti za obavljanje upravo opisanih operacija. Sve one su grupisane unutar jednog posebnog skupa funkcionalnosti koji postoji u Javi. Reč je o skupu funkcionalnosti koji se naziva Streams API. O njemu će biti reči u ovoj lekciji.
+
+Šta su tokovi?
+Odmah na početku je potrebno razumeti da tokovi (streams) nisu strukture podataka, kao što je to bio slučaj sa kolekcijama. Tokovi su zapravo samo sekvence objekata nad kojima je moguće pozivati različite metode za obradu podataka kako bi se proizveo željeni rezultat. Tako su kolekcije i tokovi dva konceptualno potpuno različita pojma, koji se koriste za obavljanje različitih poslova. Ono što spaja kolekcije i tokove jeste predmet njihovog interesovanja – skupovi podataka. Pri tome su kolekcije zadužene za čuvanje podataka, a tokovi za sprovođenje operacija nad njima.
+U dosadašnjem toku ovog kursa smo se, zapravo, već susreli sa konceptom tokova, kada je bilo reči o lambda izrazima. Tada je za potrebe demonstracije osobina lambda izraza bio prikazan jedan ovakav primer:
+1
+2
+3
+int[] numbers = {13, 8, -9, 15, -1, -78, 5, 69};
+numbers = Arrays.stream(numbers).filter(value -> (value > 0)).toArray();
+System.out.println(Arrays.toString(numbers));
+
+Ovakvim primerom postiže se filtriranje jednog niza tako što se iz njega odstranjuju sve vrednosti koje su manje ili jednake od 0. Filtriranje se postiže funkcionalnošću Java tokova.
+
+Kako funkcionišu tokovi?
+Kao što smo rekli, tokovi nisu strukture podataka, pa tako nije moguće dodati ili ukloniti neki element iz toka, kao što je to slučaj sa kolekcijama. Stoga se tokovi uvek zasnivaju na nekom zasebnom izvoru podataka. Takav izvor može biti niz, kolekcija ili neko eksterno skladište iz koga se podaci uvoze u aplikaciju. Takva osobina tokova se može videti i na upravo prikazanom primeru – tok je kreiran na osnovu jednog niza.
+Slika 10.1. Elementi koji učestvuju u funkcionisanju toka
+
+Slika 10.1. ilustruje kompletan životni ciklus jednog toka. Sleva nadesno, prikazane su sve važne etape kroz koje prolazi jedan tok, od svog kreiranja pa do ispunjenja svoje svrhe, odnosno do emitovanja rezultata zbog koga je tok i kreiran.
+Krajnje levo, možete videti trenutak u kome tok nastaje na osnovu nekog izvora podataka. Nad kreiranim tokom zatim je moguće sprovesti seriju međusobno povezanih operacija koje treba da dovedu do željenog rezultata. Takve operacije su na slici 10.1. obeležene oznakama Operation 1, Operation 2... Broj takvih operacija nad podacima može biti proizvoljan. Za sve njih je karakteristično da kao svoju povratnu vrednost opet emituju tok koji je izmenjen u skladu sa osobinama konkretne operacije. To omogućava da se operacije nad podacima toka nadovezuju jedna na drugu. Takve operacije, koje ne proizvode finalni rezultat, već novi tok koji se dalje može obrađivati, nazivaju se posredne operacije (intermediate operations).
+Operacije nad tokom uvek se završavaju finalnom, odnosno terminalnom operacijom (terminal operation), koja isporučuje finalni rezultat svih operacija koje su nad podacima toka sprovedene.
+Sve operacije, bez obzira na to da li su posredne ili terminalne, kao celina se slikovito nazivaju cevovodom toka (stream pipeline).
+Životni ciklus toka se završava isporukom rezultata operacija.
+Agregatne operacije
+Gotovo sve operacije nad podacima toka podrazumevaju prolazak kroz kompletnu kolekciju podataka i sprovođenje određenih manipulacija i transformacija. Takve operacije, koje podrazumevaju rukovanje svim elementima kao celinom, drugačije se nazivaju agregatne operacije. Pojam agregatnih operacija nije striktno vezan za tokove, već se može odnositi na bilo koju strukturu podataka. Neke od najpoznatijih agregatnih operacija su pretraživanje, filtriranje, transformisanje, limitiranje, sabiranje...
+Na kraju, sumiraćemo najznačajnije osobine tokova u Javi:
+• koriste se za sprovođenje operacija nad podacima;
+• gotovo uvek se zasnivaju na nekom spoljašnjem izvoru, koji ni na koji način ne mogu da promene;
+• tokovi poseduju interne mehanizme za prolazak kroz skup podataka, odnosno, nije potrebno koristiti petlje;
+• kroz tok je moguće proći samo jednom; tok kroz koji se prošlo smatra se konzumiranim i ponovni pokušaj njegovog konzumiranja dovodi do pojave greške;
+• operacije nad tokovima mogu biti posredne i terminalne, pri čemu poslednja operacija uvek mora biti terminalna.
+Tokovi su jedan od primera struktura podataka.
+Tačno
+Netačno
+Odgovori
+  
+Kreiranje tokova
+Tokovi se mogu kreirati na nekoliko različitih načina. Stoga će u nastavku ovog dela kursa biti prikazani sledeći pristupi:
+• kreiranje praznog toka;
+• kreiranje toka na osnovu niza;
+• kreiranje toka na osnovu kolekcije;
+• kreiranje toka korišćenjem Stream.builder() metode;
+• kreiranje toka korišćenjem metode generate();
+• kreiranje toka korišćenjem metode iterate().
+
+Kreiranje praznog toka
+Iako se tokovi gotovo uvek kreiraju na osnovu nekog već postojećeg skupa podataka, moguće je kreirati i potpuno prazan tok. Tako nešto se obavlja na sledeći način:
+Stream<String> emptyStream = Stream.empty();
+
+Na ovaj način obavljeno je kreiranje potpuno praznog toka. To je postignuto upotrebom metode empty(). Kreiranje praznog toka može biti korisno kako bi se izbeglo postojanje promenljive sa referencom na null vrednost, ukoliko se prvo obavlja deklarisanje toka, a tek nakon toga i njegovo popunjavanje podacima.
+
+Kreiranje toka na osnovu niza
+Mnogo češći pristup podrazumeva kreiranje toka na osnovu nekog postojećeg skupa podataka. Pristup za kreiranje toka na osnovu niza već je ilustrovan na početku ove lekcije:
+1
+2
+String[] cars = {"Honda", "Toyota", "Subaru"};
+Stream<String> carsStream = Arrays.stream(cars);
+
+Klasa Arrays poseduje metodu stream() koju je moguće koristiti kako bi se na osnovu nekog niza dobio tok.
+
+Kreiranje toka na osnovu kolekcije
+Podjednako čest pristup za kreiranje tokova podrazumeva njihovo kreiranje na osnovu neke kolekcije:
+1
+2
+3
+4
+5
+6
+ArrayList<String> cars = new ArrayList<>();
+cars.add("Honda");
+cars.add("Toyota");
+cars.add("Subaru");
+Stream<String> carsStream = cars.stream();
+
+Tok se na osnovu kolekcije kreira upotrebom metode stream(), koju poseduju sve kolekcije zato što je reč o metodi koja je definisana unutar interfejsa Collection, koji se, kao što znate, nalazi na vrhu hijerarhije tipova Java kolekcija. Mape se ne mogu direktno pretvoriti u tok, ali zato mogu kolekcije njihovih ključeva ili vrednosti:
+1
+2
+3
+4
+5
+6
+7
+8
+HashMap<Integer, String> cars = new HashMap<>();
+cars.put(1, "Honda");
+cars.put(2, "Toyota");
+cars.put(3, "Subaru");
+Stream<String> carBrandsStream = cars.values().stream();
+//and
+Stream<Integer> carKeysStream = cars.keySet().stream();
+
+Kreiranje toka korišćenjem Stream.builder() metode
+Kreiranje tokova nije ograničeno na korišćenje nekog postojećeg skupa podataka, već se podaci unutar toka mogu smestiti i korišćenjem nekih drugih pristupa. Prvi takav pristup podrazumeva korišćenje metode Stream.builder():
+Stream<String> carStream = Stream.<String>builder().add("Honda").add("Toyota").add("Subaru").build();
+
+Na ovaj način biće izgrađen tok identičan onim iz prethodnih primera, koji su bili kreirani na osnovu niza ili kolekcije.
+Kreiranje toka korišćenjem metoda Stream.generate() i Stream.iterate()
+Tokovi se mogu kreirati i generisanjem elemenata toka. Za obavljanje takvog posla koriste se metode generate() i iterate() Stream tipa. Obe metode funkcionišu kao određene petlje, tokom čijih iteracija imamo mogućnost da generišemo naredni član toka. Evo kako to može izgledati upotrebom metode generate():
+Stream<String> streamGenerated =  Stream.generate(() -> "elem").limit(8);
+
+Na ovaj način biće generisan tok koji će imati osam identičnih String elemenata sa vrednošću elem. Obratite pažnju na to da je metoda generate() ograničena korišćenjem metode limit() kojoj je prosleđena vrednost 8. Da tako nešto nije urađeno, metoda generate() bi se izvršavala beskonačan broj puta.
+Još jedan način za samostalno generisanje vrednosti kojima će tok operisati jeste korišćenje metode iterate(). I ona funkcioniše na sličan način, tako što kroz beskonačan broj iteracija omogućava generisanje vrednosti. Jedina razlika u odnosu na metodu generate() se odnosi na mogućnost definisanja početne vrednosti u odnosu na koju će biti generisane sve ostale vrednosti:
+Stream<Integer> streamGenerated = Stream.iterate(0, n -> n + 1).limit(13);
+
+Na ovaj način će biti kreiran tok unutar koga će se naći 13 vrednosti – brojevi od 0 do 12.
+Kreiranje tokova prostih podataka
+Iz do sada prikazanih pristupa za kreiranje tokova, mogli ste da vidite da su oni predstavljani promenljivima tipa Stream<T>. Reč je o generičkom interfejsu koji je moguće parametrizovati tipom podatka koji nam je u datom trenutku potreban. Ipak, u prethodnoj lekciji ste mogli da vidite da se prosti tipovi ne mogu koristiti kao parametri generičkih tipova. Stoga se postavlja pitanje – na koji način stvoriti tok prostih tipova?
+Za obavljanje takvog posla, Java platforma poseduje nekoliko interfejsa – IntStream, LongStream, DoubleStream. Naredni primer će ilustrovati upotrebu interfejsa IntStream:
+1
+2
+int[] numbers = {1, -2, 0, 22, 98, -434, -89, -66, 123};
+IntStream numbersStream = Arrays.stream(numbers);
+
+Primer ilustruje pristup za kreiranje toka na osnovu niza prostih vrednosti, odnosno vrednosti tipa int. Niz se u tok pretvara korišćenjem već prikazanih pristupa, odnosno upotrebom metode stream(), klase Arrays. Bitno je da primetite da je ovoga puta promenljiva koja čuva referencu na tok tipa IntStream. Jednostavno, da je ona ostala tipa Stream<T>, ne bi bilo moguće predstaviti tok prostih celobrojnih vrednosti.
+Tok ne menja izvorni skup podataka
+Bitno je razumeti da kreiranje toka na osnovu nekog postojećeg skupa podataka ni na koji način ne menja izvorni skup podataka.
+ 
+Prolazak kroz tok
+Demonstracija mogućnosti tokova započeće primerom prolaska kroz sve vrednosti nekog skupa podataka korišćenjem metode forEach():
+
+{java * AJP-2_10/Program1.java  Program1.java  0}
+
+Primer podrazumeva jedan niz na osnovu koga je kreiran tok. Zatim je metoda forEach() iskorišćena za prolazak kroz tok, baš kao što bismo to uradili korišćenjem obične for petlje. Metoda forEach() prihvata jedan objekat koji mora biti tipa Consumer. Consumer je jedan od funkcionalnih interfejsa u Java jeziku. Kako bi vam sve ovo postalo jasnije, evo kako izgleda potpis metode forEach():
+void forEach(Consumer<? super T> action);
+
+U potpisu metode forEach() možete videti nekoliko jezičkih elemenata o kojima smo govorili u dosadašnjem toku ovoga kursa. Možete videti da metoda forEach() prihvata generički tip podatka i da je parametrizaciju tog tipa moguće obaviti korišćenjem definisanog tipa, ali i svih njegovih roditeljskih tipova. U našem primeru to znači da će metodi accept() biti moguće proslediti tipove String, ali i sve tipove koji se nalaze iznad.
+Referenca na metodu
+U prikazanom primeru je iskorišćena funkcionalnost jezika koja se naziva referenca na metodu, o čemu je bilo reči u jednoj od prethodnih lekcija ovoga kursa. Tako je primer skraćeni oblik sledeće logike:
+1
+2
+3
+4
+5
+6
+7
+8
+String[] cars = {"Honda", "Toyota", "Subaru"};
+Stream<String> carsStream = Arrays.stream(cars);
+carsStream.forEach(new Consumer<String>() {
+    @Override
+    public void accept(String s) {
+        System.out.println(s);
+     }
+});
+
+Prikazanim primerom na izlazu se ispisuju vrednosti svih elemenata toka:
+Honda
+Toyota
+Subaru
+
+U okviru radnog okruženja možete testirati sve predhodne primere iz ove lekcije.
+Izvršavanjem terminalne operacije dolazi do zatvaranja toka
+Metoda forEach() predstavlja jednu od terminalnih operacija nad tokovima. Stoga je ona idealan kandidat da na praktičnom primeru sagledamo jednu od osnovnih osobina tokova – mogućnost samo jednog prolaska kroz tok:
+1
+2
+3
+4
+String[] cars = {"Honda", "Toyota", "Subaru"};
+Stream<String> carsStream = Arrays.stream(cars);
+carsStream.forEach(System.out::println);
+carsStream.forEach(System.out::println);
+
+U prikazanom primeru pokušavamo da prođemo kroz jedan isti tok dva puta, pozivanjem metode forEach() dva puta. Prvo pozivanje ove metode će proizvesti izlaz kao i do sada. Međutim, prilikom drugog pozivanja forEach() metode doći će do emitovanja izuzetka:
+Exception in thread "main" java.lang.IllegalStateException: stream has already been operated upon or closed
+Razlog ovakvog izuzetka spomenut je u redovima za nama – kroz jedan tok se može proći samo jednom. Stoga izvršavanjem bilo koje terminalne operacije tok biva zatvoren.
+
+Prethodni primer je prikazao kako se metodom forEach() mogu ispisati vrednosti svih članova toka. Ipak, tu metodu je moguće koristiti i za obavljanje proizvoljne logike nad svakim elementom:  
+1
+2
+3
+4
+5
+String[] cars = {"Honda", "Toyota", "Subaru"};
+Stream<String> carsStream = Arrays.stream(cars);
+carsStream.forEach(s -> {
+    System.out.println("Car brand: " + s);
+});
+
+Ovo je sada primer u kome se, pored pukog ispisa, obavlja i delimična transformacija vrednosti. Pre ispisa svake vrednosti, postavlja se odrednica Car brand, pa se tako na izlazu dobija sledeće:
+Car brand: Honda
+Car brand: Toyota
+Car brand: Subaru
+
+U okviru radnog okruženja možete testirati i ovaj primer.
+Filtriranje
+Još jedna veoma korisna operacija koja se može obaviti nad tokovima jeste filtriranje. Filtriranje se postiže upotrebom metode filter().
+
+{java * AJP-2_10/Program2.java  Program2.java  0}
+
+Na izlazu se dobija:
+1
+22
+98
+123
+
+Ovo je primer korišćenja metode filter() za filtriranje jednog toka celobrojnih vrednosti. Celobrojne vrednosti se definišu kao lista Integer objekata. Nad listom se poziva metoda stream(), čime se dobija tok podataka. Tako dobijeni tok filtrira se korišćenjem metode filter(). Filtriraju se sve vrednosti koje su jednake ili manje od 0, tako da na kraju operacije filtriranja unutar toka ostanu samo pozitivni brojevi.
+Veoma je bitno razumeti da metoda filter() nije terminalna operacija, kao što je to bio slučaj sa metodom forEach() koja je ilustrovana u prethodnom poglavlju. Operacije koje nisu terminalne kao svoju povratnu vrednost imaju novi tok, koji nastaje kao posledica obrade originalnog toka od strane metode. To praktično znači da u prikazanom primeru metoda filter() emituje kao svoju povratnu vrednost novi tok tipa Stream<Integer>. Kako bismo dobili rezultat obrade podataka jednog toka, na kraju je neophodno pokrenuti neku od terminalnih operacija nad tokom.
+Metoda collect()
+Metoda collect() je jedna od terminalnih operacija koje je moguće sprovesti nad podacima Java tokova, kako bi se tok pretvorio u neku konkretnu strukturu podataka. Tako metoda collect() omogućava da nakon obrade podataka toka ponovo dobijemo listu koju možemo da koristimo u nastavku aplikativne logike.
+Evo kako može izgledati upotreba metode collect() na upravo prikazanom primeru filtriranja:
+ArrayList<Integer> numbersFiltrated = numbersStream.filter(value -> (value > 0)).collect(Collectors.toCollection(ArrayList::new));
+
+Metoda collect() pozvana je direktno nad povratnom vrednošću metode filter().
+Metoda collect() prihvata objekat tipa Collector. Collector je apstraktni tip koji je definisan istoimenim interfejsom. Unutar Java platforme postoji nekoliko unapred kreiranih implementacija ovoga interfejsa, koje možemo da koristimo u zavisnosti od efekta koji je potrebno dobiti. Sve takve implementacije nalaze se unutar klase java.util.stream.Collectors.
+U prikazanom primeru iskorišćena je metoda toCollection(), koja isporučuje konkretan tip koji implementira interfejs Collector. On nam omogućava da jedan tok pretvorimo u kolekciju podataka. Metodi toCollection() isporučuje se referenca na konstruktor željenog tipa kolekcije. Tako se na kraju na ovaj način unutar promenljive numbersFiltrated dobija ArrayList kolekcija, koja unutar sebe poseduje  samo filtrirane elemente originale kolekcije.
+
+Prikazanim primerom ilustrovan je pristup za filtriranje jedne kolekcije podataka korišćenjem tokova. Na kraju je dobijena potpuno nova kolekcija, koja unutar sebe sadrži samo filtrirane elemente originalne kolekcije:   
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+List<Integer> numbers = Arrays.asList(1, -2, 0, 22, 98, -434, -89, -66, 123);
+Stream<Integer> numbersStream = numbers.stream();
+ArrayList<Integer> numbersFiltrated = numbersStream.filter(value -> (value > 0)).collect(Collectors.toCollection(ArrayList::new));
+    for (Integer num : numbers) {
+            System.out.print(num + " ");
+        }
+        System.out.print("\n");
+        for (Integer num : numbersFiltrated) {
+            System.out.print(num + " ");
+        }
+
+Primeru je sada dodat kod za ispis elemenata originalne i finalne kolekcije. Na izlazu se dobija:
+1 -2 0 22 98 -434 -89 -66 123
+1 22 98 123
+
+Na osnovu ispisa potpuno je jasno da je filtriranje originalne kolekcije podataka uspešno obavljeno korišćenjem Java tokova.
+U okviru radnog okruženja možete testirati i ovaj primer.
+
+Sortiranje
+Korišćenjem tokova, sortiranje je moguće obaviti upotrebom metode sorted(). Evo kako je sortiranje moguće obaviti nad kolekcijom celobrojnih vrednosti iz prethodnog primera:     
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+List<Integer> numbers = Arrays.asList(1, -2, 0, 22, 98, -434, -89, -66, 123);
+Stream<Integer> numbersStream = numbers.stream();
+ArrayList<Integer> numbersFiltrated = numbersStream.sorted().collect(Collectors.toCollection(ArrayList::new));
+for (Integer num : numbers) {
+    System.out.print(num + " ");
+}
+System.out.print("\n");
+for (Integer num : numbersFiltrated) {
+    System.out.print(num + " ");
+}
+
+Rezultat ovakvog koda će biti sledeći:
+1 -2 0 22 98 -434 -89 -66 123
+-434 -89 -66 -2 0 1 22 98 123
+
+Metoda sorted() obavlja sortiranje na osnovu prirodnog redosleda elemenata (natural ordering). Reč je o pojmu koji podrazumeva sortiranje na osnovu osobina samog tipa podataka koji se sortiraju. To praktično znači da će brojevi biti sortirani od nižeg ka višem, a da će tekstualne vrednosti biti sortirane alfabetnim redosledom. Jedini preduslov da se sortiranje obavi jeste da tip podataka koji se sortira implementira interfejs Comparable.
+Metoda sorted() podrazumevano obavlja sortiranje od manjih elemenata ka većim. Sortiranje obrnutim redosledom je moguće obaviti na sledeći način:
+
+{java * AJP-2_10/Program3.java  Program3.java  0}
+
+Rezultat ovakvog koda će biti sledeći:
+1 -2 0 22 98 -434 -89 -66 123
+123 98 22 1 0 -2 -66 -89 -434
+
+U okviru radnog okruženja možete testirati i predhodni primer iz odeljka Sortiranje.
+Izbacivanje duplikata
+Korišćenjem tokova, uklanjanje duplikata se može obaviti upotrebom metode distinct(). Evo kako može izgledati primer korišćenja ove metode:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+List<Integer> numbers = Arrays.asList(1, -2, 0, 22, 98, -434, -89, -66, 123, 22, 98, 0);
+Stream<Integer> numbersStream = numbers.stream();
+ArrayList<Integer> numbersFiltrated = numbersStream.distinct().collect(Collectors.toCollection(ArrayList::new));
+for (Integer num :
+            numbers) {
+        System.out.print(num + " ");
+      }
+        System.out.print("\n");
+       for (Integer num :
+            numbersFiltrated) {
+        System.out.print(num + " ");
+      }
+
+Rezultat je sledeći:
+1 -2 0 22 98 -434 -89 -66 123 22 98 0
+1 -2 0 22 98 -434 -89 -66 123
+
+Nadovezivanje operacija – Stream Pipeline
+U poglavlju o načinu funkcionisanja tokova mogli ste da pročitate da je operacije nad tokovima moguće nadovezivati. Na taj način stvara se pojam koji je slikovito nazvan Stream Pipeline. Nadovezivanje operacija nad tokovima moguće je zbog činjenice da sve međuoperacije kao svoj rezultat emituju novi tok, pa je narednu operaciju moguće pozvati nad povratnom vrednošću prethodne. Sve to omogućava da se na vrlo kompaktan način obavi serija operacija nad originalnim tokom elemenata. Jedan takav primer, u kome će nad jednim skupom podataka biti obavljen veći broj intervencija, može da izgleda ovako:   
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+List<Integer> numbers = Arrays.asList(1, -2, 0, 22, 98, -434, -89, -66, 123, 22, 98, 0);
+Stream<Integer> numbersStream = numbers.stream();
+ArrayList<Integer> numbersFiltrated = numbersStream.filter(num -> num > 0).distinct().sorted().collect(Collectors.toCollection(ArrayList::new));
+for (Integer num : numbers) {
+    System.out.print(num + " ");
+}
+System.out.print("\n");
+for (Integer num : numbersFiltrated) {
+    System.out.print(num + " ");
+}
+
+Primer ilustruje nadovezivanje nekoliko operacija nad tokom – filtriranje, uklanjanje duplikata, sortiranje i konvertovanje u kolekciju. Na kraju se na izlazu dobija ovakav ispis:
+1 -2 0 22 98 -434 -89 -66 123 22 98 0
+1 22 98 123
+
+Na osnovu dobijenog ispisa, možete videti razlike između originalne i finalne kolekcije. Finalna kolekcija je sortirana od nižih vrednosti ka višim i unutar nje nema dupliranih i negativnih vrednosti ni nule.
+Prilikom nadovezivanja operacija nad tokom, na kraju uvek mora biti jedna terminalna operacija.
+
+Redukcija
+Ponekad se prilikom rada sa sekvencom vrednosti može javiti potreba za njihovom redukcijom. Redukcija se odnosi na mogućnost svođenja većeg broja vrednosti na jednu finalnu vrednost. Redukcija se može obaviti korišćenjem metode reduce():
+1
+2
+3
+4
+List<Integer> numbers = Arrays.asList(1, 2, 3);
+Stream<Integer> numbersStream = numbers.stream();
+Integer reduced = numbersStream.reduce(0, (subtotal, element) -> subtotal + element);
+System.out.println(reduced);
+
+Ovakav primer na izlazu proizvodi sledeću vrednost:
+6
+
+Jasno je da je prikazanim kodom obavljeno sabiranje svih vrednosti koje postoje unutar inicijalne kolekcije vrednosti (1 + 2 + 3 = 6).
+Metoda reduce() je jedna od terminalnih operacija, pa se zbog toga u primeru povratna vrednost ove metode uzima kao finalna i direktno smešta unutar jedne promenljive Integer tipa. Metoda reduce() prihvata dva parametra:
+• identity – početna vrednost procesa redukcije, a ujedno i podrazumevana finalna vrednost ukoliko tok nema elemenata;
+• accumulator – funkcija koja obavlja kombinovanje dve vrednosti.
+
+U prikazanom primeru početna vrednost je 0. Funkcija za akumuliranje vrednosti prvo prihvata vrednosti 0 i 1 i proizvodi vrednost 1. Narednim pozivom, funkcija za akumuliranje dobija vrednosti 1 i 2 i proizvodi vrednost 3. Na kraju, u finalnom pozivu, funkcija dobija vrednosti 3 i 3 i proizvodi finalnu vrednost 6, zato što tok više nema elemenata.
+U okviru radnog okruženja možete testirati i sve predhodne primere.

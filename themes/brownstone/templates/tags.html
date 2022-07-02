@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div id="content">
+<div class="post">  
+<h1 class="title">{{ gettext("Oblak oznaka") }}</h1>
+{% for tag, articles in tags %}
+{{ tag }} ({{ articles|count }}){{ " · " if not loop.last }}
+{% endfor %}
+</div>
+</div>
+{% endblock %}

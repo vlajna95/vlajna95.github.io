@@ -1,0 +1,31 @@
+{% macro info(article) %}
+<p class="meta">{{ article.locale_date }}</p>
+{# PREVOD: Tekst ispred imena autora članka #}
+<p class="meta">{{ gettext("Autor(i):") }} 
+{% for author in article.authors %}
+{# PREVOD: Veznik ispred poslednjeg imena autora (kada ih ima više) #}
+{% if loop.length > 1 and loop.last %} {{ gettext("i") }} {% endif %}<a href="#">{{ author }}</a>{{ ", " if not loop.last and loop.index != loop.length-1 }}
+{% endfor %}
+</p>
+{# PREVOD: Tekst ispred procene vremena potrebnog za čitanje teksta #}
+<p class="meta">{{ gettext("Vreme potrebno za čitanje") }}: {{ article.readtime.minutes }} min.</p>
+{# PREVOD: Tekst ispred liste kategorija kojima pripada članak #}
+<p class="meta">{{ gettext("Kategorije") }}: 
+{% for cat in article.category.ancestors or [article.category] %}
+<a href="{{ SITEURL }}/{{ cat.url }}">{{ cat.shortname or cat }}</a>{{ " / " if not loop.last }}
+{% endfor %}
+</p>
+{% if article.level %}
+{# PREVOD: Nivo jezika na kojem se uči tema iz lekcije #}
+<p class="meta">{{ gettext("Nivo") }}: {{ article.level }}</p>
+{% endif %}
+{# PREVOD: Tekst ispred liste oznaka / tagova za članak #}
+<p class="meta">{{ gettext("Oznake") }}: 
+{% for tag in article.tags %}
+<a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{{ ", " if not loop.last }}
+{% endfor %}
+</p>
+{% import 'translations.html' as translations with context %}
+{{ translations.translations_for(article) }}
+<hr />
+{% endmacro %}

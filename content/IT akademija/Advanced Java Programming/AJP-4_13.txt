@@ -1,0 +1,354 @@
+Ulazno/izlazni tokovi 
+
+
+Nešto ranije u ovom kursu, kada je bilo reči o kolekcijama, obrađen je i pojam tokova. Pojam tokova se odnosio na jedan poseban skup funkcionalnosti Java jezika, namenjenih za obradu skupova podataka. Međutim, u Java jeziku, pojam tokova ima još jedno značenje, o kome će biti reči u lekciji koja je pred vama. Naime, pojam tokova se odnosi na bilo koju sekvencu podataka koji se čitaju iz nekog izvora ili upisuju na neko odredište. Upravo zbog takve osobine, reč je o tokovima koji se drugačije veoma često nazivaju ulazno/izlazni tokovi (i/o streams). Njima će biti posvećena lekcija pred vama.
+
+Šta su ulazno/izlazni tokovi?
+Ulazno/izlazni tokovi su osnovni mehanizmi koji omogućavaju da jedan Java program dobije neke podatke iz spoljašnjeg sveta, ali i da podatke koji postoje unutar programa emituje spoljašnjem svetu. Pri tome se ulazni tokovi koriste kako bi Java program pročitao neke podatke, a izlazni kako bi podatke poslao, odnosno upisao.
+Sa ovakvim tokovima smo se veoma često susretali u dosadašnjem toku ovog kursa, iako toga verovatno niste ni bili svesni. Naime, za ispisivanje poruka na izlazu smo često koristili sledeći pristup:
+System.out.println("Hello World");
+
+Ono što do sada nije spomenuto je to da je svojstvo out zapravo tipa PrintStream, što je jedna od klasa za predstavljanje tokova u Java jeziku. Stoga je metoda println() metoda kojom se obavlja upisivanje podataka unutar izlaznog toka.
+Bez obzira na to kojeg su tipa i na koji način funkcionišu, svi tokovi za jedan program predstavljaju isto: sekvencu podataka. Program koristi ulazni tok kako bi pročitao podatke sa nekog izvora (slika 13.1).
+Slika 13.1. Ulazni tok
+
+Izlazni tokovi se koriste kako bi se podaci upisali na odredište (slika 13.2).
+Slika 13.2. Izlazni tok
+
+Sve klase za rad sa tokovima nalaze se u paketu java.io. Dve osnovne klase kojima se predstavljaju tokovi su InputStream i OutputStream, pri čemu je InputStream osnovna klasa svih ulaznih tokova, a OutputStream osnovna klasa svih izlaznih tokova. To praktično znači da sve ostale klase iz java.io paketa sa kojima ćemo se upoznati u ovoj lekciji nasleđuju upravo dve spomenute klase.
+U svom izvornom obliku, tokovi rukuju podacima u binarnom obliku. Ipak, to nije ograničenje, pa tako postoje i tokovi višeg reda, koji rukuju konkretnijim tipovima podataka, odnosno različitim primitivnim i referentnim vrednostima. O takvim različitim vrstama tokova biće reči u nastavku ove lekcije.
+
+Bajt tokovi
+Tokovi koji rukuju podacima u 8-bitnom obliku drugačije se nazivaju bajt tokovi (pošto se jedan bajt sastoji iz osam bitova). Sa bajt tokovima ćemo se upoznati na primeru tokova koji omogućavaju upisivanje bajt podataka u fajlove i njihovo čitanje iz takvih fajlova. Reč je o klasama FileInputStream i FileOutputStream.
+Korišćenje klase FileOutputStream za upisivanje podataka u jedan fajl može da izgleda ovako:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+String myText = "Hello World";
+FileOutputStream fs = new FileOutputStream("my_file.txt");
+try {
+      fs.write(myText.getBytes());
+} catch (IOException exc) {
+      System.out.println(exc.getMessage());
+} finally {
+      fs.close();
+}
+
+U prikazanom primeru prvo je definisan jedan tekstualni zapis u okviru promenljive myText. Reč je o tekstu koji želimo da upišemo u fajl. Nakon toga, kreiran je objekat tipa FileOutputStream. To je objekat koji predstavlja izlazni tok podataka. Konstruktoru ove klase smo prosledili putanju do fajla u koji želimo da upišemo tekstualnu vrednost. Bitno je da razumete da je ovako definisana putanja relativna, odnosno, da se ona odnosi na lokaciju fajla unutar koga se nalazi prikazani kod. To na kraju znači da će na ovaj način biti kreiran novi fajl (ukoliko ne postoji) baš u onom folderu u kome se nalazi .java fajl sa ovakvim kodom.
+Napomena
+Nijedan od primera sa upisivanjem u fajl neće raditi u radnom okruženju, jer postojeće fajlove nije moguće modifikovati programabilno. Naravno, unutar IntelliJ IDEA razvojnog okruženja rade svi primeri.
+
+
+Svaki tok koji se otvori mora se i zatvoriti, jer se tek na taj način upisivanje zaista i završava. Takođe, tok koji se ne zatvori stvara rizik od potencijalnog curenja memorije (memory leak). Upravo je zbog toga u prikazanom primeru unutar finally bloka obavljeno pozivanje metode close() nad objektom koji predstavlja izlazni tok tipa FileOutputStream. Svaki objekat koji se mora zatvoriti nakon završetka njegovog korišćenja drugačije se naziva resurs. Tako je u prikazanom primeru objekat tipa FileOutputStream, kojim se predstavlja izlazni tok, primer jednog resursa.
+try-with-resources
+Prilikom rada sa resursima koje je potrebno osloboditi u kombinaciji sa try-catch blokovima, moguće je koristiti nešto napredniju sintaksu, koja omogućava kompaktnije oslobađanje resursa. Reč je o funkcionalnosti jezika koja se naziva try-with-resources ili ARM (Automatic Resource Management).
+Ova funkcionalnost omogućava da se resursi definišu kao deo try izjave i da tako definisani resursi automatski budu oslobođeni nakon završetka logike try bloka. Stoga se već prikazani primer može modifikovati na sledeći način:
+1
+2
+3
+4
+5
+6
+7
+String myText = "Hello World";
+try (FileOutputStream fs = new FileOutputStream("my_file.txt")) {
+      fs.write(myText.getBytes());
+} catch (IOException exc) {
+      System.out.println(exc.getMessage());
+}
+
+Nakon ključne reči try, sada su definisane obične zagrade i unutar njih kod za instanciranje toka, koji je do sada bio izvan try bloka. Kada se definiše na ovaj način, resurs će automatski biti oslobođen nakon završetka try-catch konstrukcije, bez obzira na to da li dolazi do pojave izuzetka ili ne.
+Kako bi neki resurs mogao da se zatvori na ovaj način, on mora da implementira interfejs AutoCloseable, unutar koga je definisana samo jedna metoda – close().
+Unutar jednog try bloka, moguće je definisati i veći broj resursa, odnosno veći broj naredbi za instanciranje. Takve naredbe se međusobno moraju razdvojiti karakterom tačka i zapeta. Jedan takav primer možete videti na kraju lekcije.
+Kako bi se ono što smo upravo upisali u fajl pročitalo, dovoljno je napisati sledeći kod:
+
+{java * AJP-4_13/my_file.txt  my_file.txt  0}
+
+{java * AJP-4_13/Program1.java  Program1.java  0}
+
+U primeru se koristi klasa FileInputStream. Čitanje podataka u bajt obliku se obavlja pozivanjem metode read() nad objektom FileInputStream tipa. Pročitani bajtovi se smeštaju unutar celobrojne promenljive content.
+Bitno je da razumete da se u prikazanom primeru čitanje toka obavlja bajt po bajt. To praktično znači da se jednim pozivanjem metode read() dobija jedan bajt podataka. Ukoliko unutar toka ne postoji naredni bajt podataka koji bi mogao da se pročita, metoda read() kao svoju povratnu vrednosti emituje -1. Upravo zbog toga je u primeru definisana takva provera kao uslov while petlje.
+Unutar while petlje obavlja se pretvaranje pročitanog bajta u karakter i njegov ispis na izlazu. Zatim se opet poziva metoda read() kako bi se pročitao naredni bajt podataka. Stoga će se logika while petlje izvršavati sve dok se kompletan tok ne pročita, odnosno sve dok metoda read() kao svoju povratnu vrednost ne vrati -1.
+Korišćenjem bajt tokova postiže se rukovanje podacima na najnižem nivou. Stoga, ukoliko nemamo eksplicitnu potrebu za ovakvim upisom/čitanjem, bolje je koristiti neke druge, specijalizovane tipove tokova. Na primer, u prikazanom primeru obavljano je upisivanje/čitanje tekstualnih podataka, što se mnogo jednostavnije može postići korišćenjem tokova koji će biti prikazani u nastavku lekcije.
+Sa pravom se možda pitate – zbog čega smo uopšte i obradili bajt tokove? Jednostavno, svi ostali tipovi tokova koji postoje unutar Java platforme svoje funkcionisanje temelje upravo na bajt tokovima.
+
+Tokovi karaktera
+U prethodnom primeru smo korišćenjem bajt tokova obavili upisivanje jednostavnog teksta u tekstualni fajl i njegovo čitanje nazad u program. Pri tome ste mogli da vidite da smo prilikom čitanja bili u obavezi da bajt podatke konvertujemo u karaktere kako bismo mogli da ih prikažemo na izlazu u razumljivom obliku. Svakako, identično se može postići na mnogo udobniji način korišćenjem tokova višeg reda. Prva takva vrsta tokova sa kojom ćemo se upoznati biće tokovi karaktera.
+Tokovi karaktera, za razliku od bajt tokova, manipulišu direktno karakterima. Svi tokovi karaktera nasleđuju Reader i Writer klase, dok su specijalizovane klase namenjene za direktno korišćenje FileReader i FileWriter.
+Evo kako se korišćenjem toka karaktera može postići isti efekat kao u prethodnom primeru:
+1
+2
+3
+4
+5
+6
+7
+8
+String myText = "Hello World";
+try (FileWriter fw = new FileWriter("my_file.txt")) {
+     fw.write(myText);
+} catch (IOException exc) {
+     System.out.println(exc.getMessage());
+}
+
+Čitanje upisnog sadržaja moguće je obaviti na sledeći način:
+1
+2
+3
+4
+5
+6
+7
+try (FileReader fr = new FileReader("my_file.txt")) {
+      int c;
+      while ((c = fr.read()) != -1)
+             System.out.print((char)c);
+} catch (IOException exc) {
+            System.out.println(exc.getMessage());
+}
+
+Čitanje se obavlja korišćenjem klase FileReader i njene metode read(). Metoda read() obavlja čitanje podataka karakter po karakter. Drugim rečima, svakim pozivanjem metode read() dobija se po jedan karakter. Zbog toga u kodu postoji while petlja, unutar koje se ciklično poziva metoda read() sve dok ne isporuči vrednost -1, što je signal da više nema karaktera koji se mogu pročitati.
+Metoda read() kao svoju povratnu vrednost isporučuje celobrojni kod kojim je karakter predstavljen u Unicode setu karaktera. Zbog toga se u primeru prilikom ispisa karaktera takva celobrojna vrednost pretvara u char podatak, jednostavnim kastovanjem.
+U okviru radnog okruženja možete isprobati i ovaj primer sa čitanjem.
+Koja klasa se može koristiti za direktno čitanje karaktera iz nekog fajla?
+ FileInputStream
+ FileReader
+ PipedInputStream
+ ObjectInputStream
+Odgovori
+
+
+Baferovani tokovi
+Svi primeri do sada podrazumevali su pristupe za čitanje i upisivanje podataka direktnom intervencijom nad samim izvorom podataka. To praktično znači da je svaka do sada prikazana operacija čitanja ili upisivanja rezultovala pristupom disku na kome se podaci nalaze, bilo da je reč o lokalnom ili mrežnom disku. Pored takvog pristupa, koji podrazumeva direktno baratanje fajl sistemom, Java poseduje i nekoliko tokova koji obezbeđuju nešto drugačiji princip čitanja i upisivanja podataka. Reč je o baferovanim tokovima (buffered streams).
+Baferovani tokovi su dobili naziv na osnovu pojma bafer, koji je centralna figura njihovog načina funkcionisanja. Uopšteno govoreći, bafer je posebna vrsta memorijskog prostora, unutar koga se čuvaju podaci kojima se često pristupa, pa se na taj način ubrzava čitanje podataka. U svetu Java tokova, bafer se može doživeti kao posrednik u operacijama upisivanja i čitanja podataka. Jednostavno, kod baferovanih tokova podaci se jednom preuzimaju u poseban odeljak koji se naziva bafer, a zatim se kasnije po potrebi koriste iz bafera. Takođe, podaci se ne upisuju direktno unutar svoje finalne destinacije, već unutar bafera. Iz bafera, uglavnom kada je on pun, podaci se upisuju na svoje odredište. Tako se skladištu pristupa samo kada je bafer prazan – da bi se podaci pročitali, i kada je bafer pun – kako bi se podaci upisali.
+Postoje četiri klase baferovanih tokova koje nam mogu biti interesantne:
+• BufferedInputStream
+• BufferedOutputStream
+• BufferedReader
+• BufferedWriter
+
+Korišćenjem baferovanih tokova znatno se ubrzava proces upisa i čitanja podataka. Umesto čitanja jednog po jednog bajta, baferovani tokovi omogućavaju da se podaci čitaju u većim blokovima. Jedan takav primer biće prikazan u nastavku. Naime, u prethodnom primeru prikazano je kako se može obaviti čitanje nekog teksta iz tekstualnog fajla karakter po karakter. Kada se tekst sastoji iz nekoliko karaktera, takva vrsta čitanja nije problem. Ipak, ukoliko je reč o dugačkom tekstu, sačinjenom iz velikog broja karaktera, znatno prikladniji način čitanja bi predstavljao čitanje liniju po liniju teksta. Tako nešto je moguće obaviti korišćenjem BufferedReader klase:
+1
+2
+3
+4
+5
+6
+7
+try (BufferedReader br = new BufferedReader(new FileReader("my_file.txt"))) {
+      String line;
+      while ((line = br.readLine()) != null)
+            System.out.println(line);
+} catch (IOException exc) {
+      System.out.println(exc.getMessage());
+}
+U okviru radnog okruženja možete isprobati i ovaj primer sa čitanjem.
+
+Na osnovu prikazanog primera može se videti najznačajnija osobina baferovanih tokova. Oni predstavljaju neku vrstu omotača (wrapper) tokova sa kojima smo se već susretali. Jednostavno, u primeru je kreiran objekat tipa BufferedReader, pri čemu je njegovom konstruktoru prilikom instanciranja prosleđen objekat FileReader toka. Kao što znate, reč je o toku koji omogućava čitanje podataka karakter po karakter. Pakovanjem ovakvog toka unutar BufferedReader instance dobija se mogućnost čitanja teksta liniju po liniju.
+Za čitanje naredne linije teksta koristi se metoda readLine(). Ona isporučuje narednu liniju teksta u String obliku. Ukoliko nema naredne linije teksta, ova metoda kao svoju povratnu vrednost vraća null. Zbog toga se sada, za razliku od prethodnih primera, prilikom konstruisanja while petlje proverava da li je povratna vrednost ove metode različita od null.
+
+Tokovi podataka
+Ukoliko tokove posmatramo na osnovu tipa podataka kojima operišu, do sada smo se upoznali samo sa dve vrste tokova: sa bajt tokovima i tokovima karaktera. Još jedna lestvica više donosi tokove koji omogućavaju direktno rukovanje podacima prostih tipova, uključujući i objektni tip String. Takvi tokovi se nazivaju tokovi podataka (data streams).
+Klase koje omogućavaju upravo opisano su DataInputStream i DataOutputStream.
+Evo kako se korišćenjem ove vrste tokova u fajl mogu upisati vrednosti nekoliko različitih tipova podataka.
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+int variableA = 13;
+double variableB = 13.13;
+String variableC = "Hello!";
+ try (DataOutputStream out = new DataOutputStream(new FileOutputStream("my_file.txt"))) {
+out.writeInt(variableA);
+out.writeDouble(variableB);
+out.writeUTF(variableC);
+} catch (IOException exc) {
+      System.out.println(exc.getMessage());
+}
+Iz primera upisivanja možete videti da su tokovi podataka omotači već obrađenih bajt tokova. Drugim rečima, oni se koriste kao i nešto ranije prikazani baferovani tokovi, tako što se konstruktoru prilikom instanciranja prilaže instanca bajt toka.
+Vrednosti upisane u prethodnom primeru sada je moguće pročitati na sledeći način:
+1
+2
+3
+4
+5
+6
+7
+try (DataInputStream in = new DataInputStream(new FileInputStream("my_file.txt"))) {
+     System.out.println(in.readInt());
+     System.out.println(in.readDouble());
+     System.out.println(in.readUTF());
+} catch (IOException exc) {
+     System.out.println(exc.getMessage());
+}
+
+Čitanje vrednosti obavlja se korišćenjem odgovarajućih metoda koje započinju prefiksom read(). Svaki tip podataka poseduje odgovarajuću metodu za čitanje, baš kao što je to bio slučaj i sa metodama za upisivanje. Veoma je bitno razumeti da se čitanje mora obaviti upravo onim redosledom kojim je obavljeno i upisivanje. Ukoliko se tako nešto ne ispoštuje, čitanje neće biti obavljeno na adekvatan način.
+Objektni tokovi
+Tokovi koji omogućavaju rukovanje podacima na najvišem mogućem nivou nazivaju se objektni tokovi. Oni su u stanju da direktno rukuju kompletnim objektima, odnosno svim vrednostima koje su enkapsulirane unutar objekata. Zbog njihovog velikog značaja, toj vrsti tokova biće posvećena kompletna naredna lekcija.
+
+Pisanje i čitanje sa konzole
+Na početku ove lekcije rečeno je da svojevrstan primer rada sa tokovima predstavlja ispisivanje podataka na izlaz:
+System.out.println("This is text.");
+
+Za ispis podataka u izlazni tok koristi se metoda println(). Reč je o metodi klase PrintStream, čiji je objekat dostupan preko statičkog polja out, klase System. Pored ove metode, klasa PrintStream poseduje i metodu print.
+System.out.print("This is text.");
+
+Razlika između dve prikazane metode ogleda se u prelasku u novi red nakon ispisa u slučaju metode println(). U ovo se možemo uveriti korišćenjem sledećeg primera:
+1
+2
+3
+4
+System.out.print("This is text.");
+System.out.print("This is text.");
+System.out.println("This is text.");
+System.out.println("This is text.");
+
+Ovakav kod na izlazu proizvodi:
+This is text.This is text.This is text.
+This is text.
+
+Ovo su bili primeri upisivanja podataka u izlazni tok, koje takođe možete isprobati u okviru radnog okruženja. U nastavku će biti prikazani primeri čitanja podataka koje korisnik može da unese u konzolu/terminal prilikom izvršavanja Java programa. Prvi način za obavljanje takvog posla podrazumevaće korišćenje nekoliko tokova:
+
+{java * AJP-4_13/Program2.java  Program2.java  0}
+
+Prikazani primer podrazumeva čitanje podataka iz ulaznog toka, odnosno čitanje teksta koji korisnik unese u konzolu/terminal prilikom izvršavanja Java programa. Čitanje je realizovano korišćenjem nekoliko tokova. Na najnižem nivou, koristi se tok InputStream, koji okruženje automatski kreira i otvara tako da bude u mogućnosti da prihvata podatke sa tastature. Instanca takvog toka prosleđena je konstruktoru klase InputStreamReader. InputStreamReader je klasa koja omogućava kreiranje toka karaktera na osnovu toka sa bajt podacima. U prikazanom primeru se tu ne zaustavljamo, pa tako dobijeni tok karaktera koristimo za konstruisanje baferovanog toka tipa BufferedReader. Sve ovo znači da se u primeru koriste dva omotača i tri različite vrste tokova, pri čemu se direktno operiše baferovanim tokom tipa BufferedReader.
+Nešto udobniji pristup koji omogućava čitanje podataka sa ulaznog toka podrazumeva korišćenje klase koja je specijalno namenjena obavljanju takvog posla. Reč je o klasi Scanner. Evo kako se korišćenjem klase Scanner može obaviti isti posao kao i u prethodnom primeru:
+1
+2
+3
+4
+System.out.println("Enter something here: ");
+Scanner scan = new Scanner(System.in);
+String s = scan.nextLine();
+System.out.println("You entered: " + s);
+
+U okviru radnog okruženja možete isprobati i ovaj primer.
+
+Najveća prednost klase Scanner ogleda se u mogućnosti čitanja podataka koji mogu biti nekog proizvoljnog tipa. Naime, dva prethodna primera ilustrovala su čitanje tekstualnih podataka sa ulaznog toka – odnosno, u njima sve ono što korisnik unese biva interpretirano kao tekst. Naredni primer će ilustrovati mogućnost klase Scanner da direktno pročita vrednost koja je nekog drugog tipa:   
+
+{java * AJP-4_13/Program3.java  Program3.java  0}
+
+Na ovaj način je napisana logika za čitanje broja sa ulaznog toka. Ukoliko korisnik unese bilo koju vrednost koja nije broj, na izlazu će biti prikazana poruka You must enter a number!. To je postignuto upotrebom metode hasNextInt(). Reč je o metodi koja čeka na korisnički unos i, kada do njega dođe, obavlja proveru da li je korisnik uneo vrednost koja predstavlja broj. Ukoliko je korisnik uneo broj, metoda hasNextInt() emituje vrednost true, a u protivnom vrednost false.
+
+
+## Vežbe 
+
+Vežba 1
+Dat je fajl users.txt, sa sledećim sadržajem:
+id:01|firstName:Tom|lastName:Williams|uid:1234567890123
+id:02|firstName:Ben|lastName:Smith|uid:1234567890124
+id:03|firstName:Sem|lastName:Davies|uid:1234567890125
+
+Potrebno je napraviti program koji će pročitati fajl i emitovati njegov sadržaj u sledećem formatu:
+User Id: 01
+First name: Tom
+Last name: Williams
+Uid: 1234567890123
+------------------------------------
+User Id: 02
+First name: Ben
+Last name: Smith
+Uid: 1234567890124
+.....
+
+Rešenje
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+import java.io.*;
+public class JavaProgram {
+    public static void main(String[] args) {
+        try (BufferedReader br = new BufferedReader(new FileReader("users.txt"))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] user = line.split("\\|");
+                System.out.println("User Id: " + user[0].split("\\:")[1]);
+                System.out.println("First name: " + user[1].split("\\:")[1]);
+                System.out.println("Last name: " + user[2].split("\\:")[1]);
+                System.out.println("Uid: " + user[3].split("\\:")[1]);
+                System.out.println("------------------------------------");
+            }
+        } catch (IOException exc) {
+            System.out.println(exc.getMessage());
+        }
+    }
+}
+
+Vežba 2
+Potrebno je napraviti program koji spaja sadržaje dva fajla u jednu celinu. Nazivi fajlova su first.txt i second.txt. Potrebno je sastaviti sadržaje ova dva fajla i smestiti ih u fajl sa nazivom union.txt.
+Rešenje
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+import java.io.*;
+public class JavaProgram {
+    public static void main(String[] args) {
+        String tmpLine;
+        try (BufferedReader br1 = new BufferedReader(new FileReader("first.txt"));
+             BufferedReader br2 = new BufferedReader(new FileReader("second.txt"));
+             BufferedWriter bw = new BufferedWriter(new FileWriter("union.txt"))) {
+            while ((tmpLine = br1.readLine()) != null)
+                bw.write(tmpLine + "\n");
+            while ((tmpLine = br2.readLine()) != null)
+                bw.write(tmpLine + "\n");
+        } catch (IOException exc) {
+            System.out.println(exc.getMessage());
+        }
+    }
+}
+
+U ovom rešenju možete videti primer try bloka unutar koga su definisana tri resursa, odnosno naredbe za instanciranje tri klase. Takve naredbe se moraju razdvojiti karakterom tačka i zapeta. Nakon završetka try-catch logike, resursi zauzeti od strane sva tri objekta će biti oslobođeni.

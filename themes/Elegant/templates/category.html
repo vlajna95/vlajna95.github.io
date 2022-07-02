@@ -1,0 +1,15 @@
+{% extends "index.html" %}
+{% block title %}[{{ ARTICLE_CATEGORY_LABEL }}] {{ category }} | {{ SITENAME }}{% endblock title %}
+
+{% block content %}
+{{ super() }}
+{#
+<div class="entry meta">
+<p><span class="highlight">Category:</span> <a href="{{ SITEURL }}/{{ category.parent.url }}">{{ category.shortname }}</a></p>
+<p><span class="highlight">Parent:</span> <a href="{{ SITEURL }}/{{ category.parent.url }}">{{ category.parent.shortname }}</a></p>
+<p><span class="highlight">Ancestors:</span> {% for ancestor in category.ancestors %}<a href="{{ SITEURL }}/{{ ancestor.url }}">{{ ancestor.shortname }}</a>{{ ', ' if not loop.last }}{% endfor %}</p>
+<p><span class="highlight">Children:</span> {% for child in category.children %}<a href="{{ SITEURL }}/{{ child.url }}">{{ child.shortname }}</a>{{ ', ' if not loop.last }}{% endfor %}</p>
+<p><span class="highlight">Descendents:</span> {% for descendent in category.descendents %}<a href="{{ SITEURL }}/{{ descendent.url }}">{{ descendent.shortname }}</a>{{ ', ' if not loop.last }}{% endfor %}</p>
+</div>
+#}
+{% endblock content %}

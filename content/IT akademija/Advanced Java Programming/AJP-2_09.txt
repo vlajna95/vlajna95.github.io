@@ -1,0 +1,381 @@
+Generički tipovi podataka
+
+
+U prethodnoj lekciji bilo je reči o kolekcijama, koje omogućava vrlo efikasan rad sa skupovima podataka.
+1
+2
+ArrayList al = new ArrayList();
+al.add("John");
+
+Ovakvim kodom, koji nam je poznat iz prethodne lekcije, obavlja se kreiranje jedne kolekcije tipa ArrayList i unutar nje se upisuje jedan element. Ukoliko pogledate ovaj kod unutar IntelliJ IDEA razvojnog okruženja, moći ćete da vidite da nam okruženje nešto signalizira (slika 9.1).
+Slika 9.1. IntelliJ IDEA signalizira da je ArrayList parametrizovani tip podatka
+
+Na slici 9.1. se može videti da su tipovi ArrayList prilikom instanciranja ove klase markirani, a da je poruka koja se dobija od razvojnog okruženja sledeća:
+Raw use of parameterized class 'ArrayList'
+
+Razvojno okruženje nam signalizira da je klasa ArrayList takozvana parametrizovana klasa, a da mi u našem kodu takvu mogućnost klase nismo iskoristili. Ovo praktično znači da je prilikom kreiranja ArrayList kolekcija moguće navesti tip objekata sa kojim će kolekcija operisati i na taj način obaviti njeno parametrizovanje. Sve to je moguće zahvaljujući pojmu generičkih tipova podataka, kojima će biti posvećena lekcija koja je pred vama.
+
+Šta su generički tipovi podataka?
+Pojam generički odnosi se na nešto što nije specifično određeno, odnosno na nešto što može imati širok spektar različitih značenja. U programiranju, pojam generičkih tipova podataka omogućava kreiranje tipova podataka koji mogu biti parametrizovani. Reč je o vrlo visokom stepenu apstrakcije, koji omogućava kreiranje klasa, interfejsa i metoda koji mogu da rukuju vrednostima čiji tipovi se ne moraju navesti prilikom deklaracije tipova, odnosno metoda.
+Upravo takve su i klase kojima se u Java jeziku predstavljaju kolekcije. Evo, na primer, kako izgleda deklaracija klase ArrayList:
+public class ArrayList<E> extends AbstractList<E> implements List<E>, RandomAccess, Cloneable, java.io.Serializable
+...
+}
+
+U deklaraciji klase ArrayList možete videti nešto sa čim se do sada nismo susretali. To su trouglaste zagrade, odnosno karakteri manje i veće, između kojih se nalazi veliko slovo E. U pitanju je upravo pristup kojim se definiše parametrizovani tip podatka. Parametrizovani tip podatka je ArrayList, dok je veliko slovo E unutar trouglastih zagrada oznaka parametra koji klasa može da prihvati. Ovakvi tipovi, koji se mogu parametrizovati, drugačije se nazivaju generički tipovi podataka.
+U deklaraciji klase ArrayList mogu se videti još neki generički tipovi podataka. Naime, i apstraktna klasa AbstractList i interfejs List su generički tipovi podataka.
+Upotreba generičkih tipova u nekim situacijama može doneti brojne prednosti prilikom pisanja Java programa. Najznačajnije prednosti generičkih u odnosu na regularne tipove su sledeće:
+• mogućnost višestrukog iskorišćenja koda (code reuse), zato što se jedna ista klasa može upotrebiti na više načina;
+• sigurnost prilikom rukovanja tipovima, zato što generički tipovi omogućavaju da se jasno navede tip kojim će neki objekat rukovati;
+• oslobađanje od potrebe za eksplicitnom konverzijom podataka, zato što programer ima mogućnost da samostalno definiše tip koji odgovara datoj situaciji.
+
+Korišćenje generičkih tipova
+Generički tipovi podataka omogućavaju da se određeni tip parametrizuje prilikom instanciranja  klase. Sve to praktično znači da se objekat ArrayList kolekcije može kreirati i na sledeći način:
+1
+2
+ArrayList<String> al = new ArrayList<String>();
+al.add("John");
+
+Na ovaj način smo korišćenjem mogućnosti generičkih tipova obavili parametrizovanje objekta klase ArrayList. Ovakva lista će sada moći da prihvati isključivo objekte tipa String. Svaki pokušaj da se ovakvoj kolekciji doda element koji nije tipa String proizvodi grešku (slika 9.2).
+Slika 9.2. Listi ArrayList<String> tipa nije moguće dodati podatak tipa int
+
+Diamond operator
+Do sada smo videli da se objekat jednog generičkog tipa podatka može kreirati na sledeći način:
+ArrayList<String> al = new ArrayList<String>();
+
+Instanciranje generičkih tipova u Javi je moguće obaviti i na nešto kompaktniji način, koji podrazumeva korišćenje takozvanog Diamond operatora.
+Diamond operator (<>) uklanja potrebu za eksplicitnim navođenjem tipa argumenta u pozivu konstruktora generičkih tipova, a samim tim i smanjuje složenost i povećava preglednost koda. Zbog toga se upravo prikazana naredba može napisati ovako:
+ArrayList<String> al = new ArrayList<>();
+
+Sada je prilikom poziva konstruktora generičkog tipa izostavljen tip kojim se objekat parametrizuje. Jednostavno, tip je dovoljno navesti samo prilikom deklaracije promenljive.
+
+Samostalno kreiranje generičkih tipova
+Generički tipovi omogućavaju parametrizovanje objekata prilikom njihovog kreiranja. Do sada ste imali prilike da vidite kako generički tipovi funkcionišu na primeru ugrađenih klasa kojima se predstavljaju kolekcije. Kako biste što bolje razumeli pojam generičkih tipova, u nastavku će biti ilustrovan pristup za samostalno kreiranje jednog generičkog tipa. Cilj je da napravimo jedan tip unutar koga će se naći jedno polje čiji tip neće biti određen prilikom deklaracije takvog tipa, već kasnije, prilikom njegovog instanciranja.
+Za početak, pogledajte kako može da izgleda pristup za kreiranje takvog tipa kada se ne koriste generički tipovi:
+1
+2
+3
+public class MyClass {
+public Object object;
+}
+
+Kreirani tip se naziva MyClass i unutar njega se nalazi samo jedno polje sa nazivom object, koje ima tip Object. Na ovaj način smo simulirali željeno ponašanje. Naime, polje object može da prihvati vrednost bilo kog tipa, zato što je deklarisano kao tip Object, što je osnovni tip podataka u Javi. Ipak, ovakav pristup poseduje brojne nedostatke. Ne postoji način da u toku izvršavanja programa znamo na koji način se klasa koristi. Drugim rečima, tokom jednog instanciranja, za vrednost svojstva object može se postaviti vrednost tipa Integer. Tokom nekog drugog instanciranja, svojstvo object može dobiti vrednost tipa String. Stoga se ni na koji način ne može pratiti način na koji se klasa MyClass koristi.
+Drugi nedostatak prikazanog primera jeste neophodnost obavlja boxinga i unboxinga, s obzirom na to da se vrednosti konkretnih tipova prvo moraju konvertovati u tip Object, a zatim prilikom čitanja – nazad u konkretni tip.
+Da bi se ovi problemi prevazišli, kreirana klasa se može pretvoriti u generičku. Da bismo kreirali sopstvenu generičku klasu, potrebno je to naglasiti u samoj definiciji klase. Klasa koju smo već definisali, redizajnirana kako bi postala generička, može da izgleda ovako:
+1
+2
+3
+public class MyClass<T> {
+    public T t;
+}
+
+Sada je nakon naziva klase dodat kod za njenu parametrizaciju. To praktično znači da se prilikom instanciranja ove klase može definisati tip objektog polja sa nazivom t:
+MyClass<Integer> myObject = new MyClass<>();
+
+Na ovaj način je stvoren objekat tipa MyClass unutar koga će svojstvo sa nazivom t biti tipa Integer. Da je to stvarno tako, možemo se uveriti korišćenjem razvojnog okruženja IntelliJ IDEA (slika 9.3).
+Slika 9.3. Tip svojstva t je Integer
+
+Korišćenjem funkcionalnosti za prikaz sugestija, nakon unosa karaktera tačka posle naziva promenljive, možemo se uveriti da je svojstvo sa nazivom t uistinu tipa Integer.
+Nazivi generičkih parametara
+Naziv generičkog parametra ne mora biti  veliko slovo T, kao što je to bio slučaj u upravo prikazanom primeru. Jednostavno, generički parametar može imati bilo koji naziv koji zadovoljava pravila imenovanja identifikatora. Ipak, po konvenciji, generički parametri se imenuju korišćenjem velikih slova, kako bi se jasno razlikovali od standardnih parametara konstruktora i metoda. Pored velikog slova T, često se koriste još neka velika slova, koja ilustrativno imaju sledeća značenja:
+• E – element;
+• K – ključ;
+• N – broj;
+• T – tip;
+• V – vrednost;
+• S, U, V – drugi, treći i četvrti tip.
+Kada se u procesu instanciranja definiše tip određenog objektnog svojstva, njemu nije moguće dodeliti vrednost koja nije definisanog tipa (slika 9.4).
+Slika 9.4. Pokušaj da se svojstvu tipa Integer dodeli vrednost String tipa
+
+Kod kao na slici 9.4, kojim se svojstvu t pokušava dodeliti vrednost String tipa, proizvodi grešku.
+Jedna od najznačajnijih pogodnosti generičkih tipova podataka jeste mogućnost lake ponovne upotrebljivosti. To praktično znači da se jedna klasa može koristiti na bezbroj različitih načina:
+        MyClass<Integer> myObject = new MyClass<>();
+        MyClass<String> myObject2 = new MyClass<>();
+        MyClass<Boolean> myObject3 = new MyClass<>();
+
+Naredbe ilustruju korišćenje MyClass klase na tri različita načina. Tako se prikazanim kodom stvaraju tri objekta ove klase, pri čemu svaki objekat poseduje svojstvo t koje je drugačijeg tipa.
+Generički tipovi mogu rukovati samo referentnim tipovima
+Veoma je bitno razumeti da se parametrizovanim, odnosno generičkim tipovima mogu prosleđivati isključivo složeni, odnosno referentni tipovi. To praktično znači da korišćenje prostih tipova nije moguće.
+ MyClass<int> myClass = new MyClass<>();
+
+Ovakva naredba će proizvesti grešku, zato što se generički tip MyClass parametrizuje prostim tipom int (slika 9.5).
+Slika 9.5. Generički tipovi rukuju isključivo referentnim tipovima
+Ukoliko želimo da definišemo klasu sa poljem čiji tip će se birati prilikom instanciranja, koristimo:
+generičke tipove
+ugrađene tipove
+nasleđene tipove
+ništa od navedenog
+Odgovori
+
+Podrazumevani tip generičkih parametara
+Bitno je razumeti da je generičke tipove moguće koristiti kao da je reč o regularnim tipovima. Uostalom, to je ono što smo radili sa kolekcijama u prethodnoj lekciji. Koristili smo ih bez navođenja konkretnog tipa. U takvoj situaciji, generička svojstva imaju podrazumevani tip koji je Object (slika 9.6).
+Slika 9.6. Podrazumevani tip generičkih parametara je Object
+
+Na slici 9.6. možete da vidite da se, kada se generički tipovi koriste bez parametrizacije, za podrazumevani tip parametra uzima Object. Zbog toga na slici 9.6. promenljiva t ima tip Object.
+
+Generički tip sa više parametara
+Jedna klasa može biti parametrizovana većim brojem generičkih tipova:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+public class MyClass<T, S, U> {
+    public T t;
+    public S s;
+    public U u;
+    public MyClass(T t, S s, U u) {
+        this.t = t;
+        this.s = s;
+        this.u = u;
+    }
+}
+
+Klasa je sada parametrizovana korišćenjem tri generička parametra. Oni se unutar tela klase koriste za definisanje tipova tri objektna svojstva. Ovakva klasa se može instancirati na sledeći način:
+1
+2
+MyClass<Integer, String, Boolean> myClass = new MyClass<>(35, "My text", true);
+System.out.println(myClass.t + " " + myClass.s + " " + myClass.u);
+
+Naravno, ovo nije jedini način na koji se može koristiti MyClass klasa. S obzirom na to da imamo mogućnost da samostalno definišemo tipove svojstava, moguće je kreirati ogroman broj različitih obrazaca korišćenje ove klase. Evo još jednog:
+1
+2
+MyClass<Integer, Integer, Integer> myClass = new MyClass<>(35, 15, 22);
+System.out.println(myClass.t + " " + myClass.s + " " + myClass.u);
+
+Dve instance u prethodnim primerima imaju potpuno različitu tipsku arhitekturu. Ali, treba obratiti pažnju na to da su ove instance i dalje instance potpuno iste klase i njihovo poređenje će dovesti do tačnog rezultata i pored razlike u tipovima:
+1
+2
+3
+MyClass<Integer, String, Boolean> myClass1 = new MyClass<>(35, "My text", true);
+MyClass<Integer, Integer, Integer> myClass2 = new MyClass<>(35, 15, 22);
+System.out.println(myClass1.getClass().equals(myClass2.getClass()));
+
+Poređenje koje se obavlja u poslednjoj naredbi primera proizvodi vrednost true.
+Podudarnost, naravno, ne postoji u instancama, tako da će njihovo poređenje dati rezultat false:
+
+{java * AJP-2_09/MyClass.java  MyClass.java  0}
+
+{java * AJP-2_09/Program1.java  Program1.java  0}
+
+U okviru radnog okruženja možete testirati sve predhodne primere iz ove lekcije.
+
+Ograničavanje generičkih tipova
+Do sada ste mogli da vidite da korisnik generičke klase ima potpunu slobodu prilikom njene parametrizacije. U nekim situacijama (npr. kod kolekcija), tako nešto je prednost. Ipak, u nekim drugim situacijama može se javiti potreba da delimično ograničimo tipove koji se mogu koristiti kao parametri. Jedna od takvih situacija može biti ona u kojoj se kreira klasa koja rukuje isključivo brojevima i unutar koje se obavljaju aritmetičke operacije. Jasno je da se aritmetičke operacije ne mogu izvoditi nad tipovima koji nisu numerički. Stoga je u takvim i sličnim situacijama moguće ograničiti generički tip, upotrebom ključne reči extends:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+public class MyClass<T extends Number> {
+    public T t;
+    public void showResult() {
+        if (t.getClass().equals(Integer.class))
+            System.out.println(t.intValue() * t.intValue());
+        if (t.getClass().equals(Double.class))
+            System.out.println(t.doubleValue() * t.doubleValue());
+    }
+}
+
+Upotrebom ključne reči extends definisano je da će tipovi za parametrizaciju klase MyClass morati da budu izvedeni iz tipa Number. Drugim rečima, bazna klasa svih tipova koji će moći da se navedu prilikom instanciranja mora biti klasa Number. Stoga će sledeći primer ilustrovati korektno instanciranje klase MyClass:
+1
+2
+3
+4
+5
+6
+7
+MyClass<Integer> myClass1 = new MyClass<>();
+myClass1.t = 15;
+myClass1.showResult();
+MyClass<Double> myClass2 = new MyClass<>();
+myClass2.t = 15.0;
+myClass2.showResult();
+Na ovaj način se na izlazu dobija sledeći ispis:
+225
+225.0
+U okviru radnog okruženja možete testirati i ovaj primer.
+
+Ipak, s obzirom na to da smo sada ograničili skup tipova koji se mogu iskoristiti za parametrizovanje objekata klase MyClass, sledeći primer neće biti validan:
+MyClass<String> mk2 = new MyClass<String>();
+
+Korišćenje generičkih tipova prilikom kreiranja metoda
+Generički tipovi nisu ograničeni isključivo na klase i interfejse, već ih je moguće koristiti i prilikom formulisanja metoda. Evo kako može izgledati primer jedne generičke metode, odnosno metode koja poseduje generički tip parametra:
+1
+2
+3
+4
+static <T> void showInfo(T value) {
+System.out.println(value.getClass().getSimpleName() +
+ " = " + value);
+}
+
+Ovakvoj metodi sada je moguće prosleđivati parametre proizvoljnog tipa. Unutar nje, za potrebe testiranja postavljen je kod koji ispisuje tip i vrednost prosleđenog parametra. Metoda se može upotrebiti ovako:radno456
+
+{java * AJP-2_09/Program2.java  Program2.java  0}
+
+Na ovaj način se na izlazu dobija sledeći ispis:
+Integer = 13
+String = Hello World
+Object = java.lang.Object@b4c966a
+
+Wildcard
+Priču o generičkim tipovima podataka završićemo još jednim značajnim pojmom koji omogućava da dodatno konfigurišemo proces parametrizacije tipa. Kako biste razumeli upotrebnu vrednost onoga što će biti prikazano, za početak ćemo razmotriti jedan primer, koji podrazumeva nasleđivanje između dve klase – Person i Student:
+1
+2
+3
+4
+5
+6
+7
+public class Person {
+public String name;
+}
+public class Student extends Person {
+public String idNumber;
+}
+
+Klasa Student nasleđuje klasu Person, te stoga obe klase poseduju svojstvo name, dok klasa Student poseduje i dodatno svojstvo idNumber.
+Sada zamislite da je potrebno da u programu postoje dve liste – lista objekata tipa Person i lista objekata tipa Student:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+ArrayList<Student> listStudent = new ArrayList<>();
+ArrayList<Person> listPerson = new ArrayList<>();
+Person o = new Person();
+o.name = "John";
+Student s = new Student();
+s.name = "David";
+s.idNumber = "25/25";
+listPerson.add(o);
+listStudent.add(s);
+
+Evo upravo takvog koda, kojim se obavlja kreiranje dve liste i u svaku od lista se dodaje po jedan objekat. Sada zamislite da je unutar glavne klase potrebno napraviti metodu za prikaz svih objekata koji se nalaze u ovakvim kolekcijama. Takva metoda bi mogla da se definiše na sledeći način:
+1
+2
+3
+4
+5
+static void show(ArrayList<Person> os) {
+    for (Person o : os) {
+        System.out.println(o.name);
+    }
+}
+
+Ipak, ovakav pristup poseduje jasan nedostatak. Metoda show() može da prihvati isključivo objekte kolekcija koje rukuju Person objektima. Drugim rečima, ova metoda se ne može koristiti za obe vrste kolekcija koje imamo u našem programu:
+1
+2
+show(listPerson);
+show(listStudent);
+
+Prva naredba će proći bez problema, ali prilikom izvršavanja druge naredbe, dolazi do problema (slika 9.7).
+Slika 9.7. Nekompatibilnost tipova prilikom korišćenja generičkih lista
+
+Da bi se ovakvi problemi prevazišli, moguće je koristiti takozvanu wildcard oznaku. Wildcard se označava karakterom znak pitanja (?) i reprezentuje nepoznati tip.
+Wildcard oznaka se može koristiti na nekoliko različitih načina. Prvi omogućava navođenje roditeljskog tipa, gde bi svi nasleđeni tipovi mogli doći u obzir kao parametri. Takav scenario savršeno odgovara našem problemu, pa metodu možemo izmeniti na sledeći način:
+
+{java * AJP-2_09/Person.java  Person.java  0}
+
+{java * AJP-2_09/Student.java  Student.java  0}
+
+{java * AJP-2_09/Program3.java  Program3.java  0}
+
+Kada metodu izmenimo na navedeni način, možemo primetiti da editor više ne prijavljuje grešku u liniji poziva metode, zato što sada ona može da prihvati kolekcije koje rukuju objektima tipa Person, ili bilo kojim drugim tipovima koji su izvedeni iz tipa Person.
+Wildcard oznaku je moguće koristiti i bez navođenja tipa, tj. navođenjem samo znaka pitanja:
+1
+2
+3
+4
+static void show(ArrayList<?> os){
+    for(Object o : os)
+        System.out.println(((Person)o).name);
+}
+
+Upotrebna vrednost wildcard oznaka veoma lepo se može videti na upravo prikazanom primeru. Iako možda deluje banalno, on zapravo ilustruje jednu situaciju koja se može rešiti isključivo upotrebom wildcard oznake. Bez nje, najpribližniji pokušaj bi podrazumevao upotrebu baznog tipa Object:
+1
+2
+3
+4
+static void show(ArrayList<Object> os) {
+    for (Object o : os)
+        System.out.println(((Person) o).name);
+}
+
+Ipak, ovakva metoda ne bi zadovoljila nijedan od dva tipa kolekcija koji postoje u našem programu. Razlog je i više nego jasan. Generički tip ArrayList<Object> nije bazni tip tipova ArrayList<Person> i ArrayList<Student>. Ne dajte se zbuniti ovakvom konstatacijom. Iako je tip Object bazni tip klasa Person i Student, isto ne važi i za generičke kolekcije koje nastaju parametrizovanjem korišćenjem takvih tipova.
+Wildcard oznaku je u Javi moguće koristiti na još jedan način, koji omogućava definisanje takozvanog donjeg limita prilikom parametrizacije. Naime, nešto ranije je prikazan primer koji je ilustrovao način za definisanje takozvanog gornjeg limita prilikom parametrizacije generičkih tipova. Gornji limit se odnosi na definisanje baznog tipa koji je najviši u hijerarhiji, pri čemu se svi tipovi koji su iz njega izvedeni smatraju validnim tipovima za parametrizaciju generičkog tipa. Takvo ponašanje je nešto ranije postignuto korišćenjem ključne reči extends nakon oznake generičkog tipa.
+U Javi je moguće definisati i takozvani donji limit, odnosno tip koji je najniži u hijerarhiji nasleđivanja. Tada će generički tip moći da bude parametrizovan takvih tipom, ali i svim tipovima koji se u hijerarhiji nasleđivanja nalaze iznad njega. Takva vrsta ograničavanja parametrizacije postiže se upotrebom ključne reči super:
+1
+2
+3
+4
+static void show(ArrayList<? super Student> os) {
+    for (Object o : os)
+        System.out.println(o);
+}
+
+U ovakvoj situaciji, metodi show() će moći da budu prosleđene liste koje barataju objektima tipa Student, ali i liste koje barataju objektima svih onih klasa koje Student direktno ili indirektno nasleđuje. U našem primeru, to bi bili objekti klasa Student, Person i Object.
+U okviru radnog okruženja možete testirati i ovaj primer.
+
+Vežba
+Napraviti klasu Person, sa atributima name i surname. Nakon ovoga, izvršiti instanciranje nekoliko objekata tipa Person, koje ćete smestiti u okviru generičke kolekcije ArrayList.
+Rešenje
+Klasa Person:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+public class Person {
+    public String name;
+    public String surname;
+    public Person(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+}
+
+main() metoda:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+ArrayList<Person> arrayList = new ArrayList<>();
+Person p1 = new Person("John", "Davidson");
+Person p2 = new Person("Clive", "Robertson");
+arrayList.add(p1);
+arrayList.add(p2);
+for (Person p : arrayList) {
+    System.out.println("Name: " + p.name + " Surname: " + p.surname);
+}

@@ -1,0 +1,716 @@
+Napredni rad sa tekstom
+
+
+U programskom jeziku Java, tekstualni podaci se predstavljaju korišćenjem tipa String. String je jedan od složenih, odnosno referentnih tipova podataka, koji je predstavljen klasom String. O korišćenju tekstualnih vrednosti unutar Java programa već dosta toga znamo. U ovoj lekciji će ono što već znamo biti prošireno ilustrovanjem nekih naprednijih pristupa za rukovanje tekstualnim vrednostima u Javi.
+
+
+Kreiranje stringova
+Stringovi se mogu kreirati kao da su vrednosti prostog tipa:
+String message = "Hi!";
+
+Ovakva naredba ilustruje deklarisanje promenljive tipa String sa nazivom message i vrednošću Hi!. Iako tip String nije prost tip, u jeziku Java je dozvoljeno promenljivoj tipa String vrednost dodeljivati kao da je reč o prostom tipu. Ovakvo kreiranje String vrednosti se naziva implicitno kreiranje, zato što se u pozadini za nas obavlja automatsko kreiranje objekta klase String.
+Preporuka je da se String vrednosti uvek kreiraju na upravo prikazani način, a ne direktnim pozivanjem konstruktora. Jednostavno, implicitno kreirane String vrednosti smeštaju se unutar String Poola, posebnog odeljka u dinamičnom delu memorije. Takav poseban memorijski odeljak omogućava uštedu memorijskog prostora, deljenjem identičnih vrednosti između više promenljivih. U nastavku ove lekcije, tekstualne vrednosti kreiraćemo isključivo implicitno.
+
+Najznačajnije osobine String tipa
+Pored implicitnog kreiranja i String Poola, za uspešno praćenje ove lekcije neophodno je da poznajete još neke značajne osobine String tipova:
+• String-ovi se mogu nadovezivati korišćenjem operatora sabiranja, metode concat() ili StringBuilder klase
+
+Naredni kod ilustrovaće tri različita primera za nadovezivanje vrednosti dve String promenljive:     
+1
+2
+3
+4
+5
+6
+String myString = "My ";
+String myString1 = "string";
+System.out.println(myString + myString1);
+System.out.println(myString.concat(myString1));
+System.out.println(new StringBuilder().append(myString).append(myString1));
+
+Sva tri primera proizvode identičan efekat:
+My string
+My string
+My string
+
+• Stringovi su nepromenljivi
+String vrednosti su u Java jeziku nepromenljive (immutable). To znači da se nakon kreiranja String objekta njegovo stanje više ne može menjati:
+1
+2
+3
+String myString = "My ";
+myString.concat("string");
+System.out.println(myString);
+
+U ovom primeru, prvo je kreirana jedna implicitna String promenljiva. Zatim je na njenu vrednost, korišćenjem metode concat, nadovezana još jedna String vrednost. Na kraju je vrednost promenljive myString ispisana na izlazu
+My
+
+Jasno je da se sa vrednošću promenljive myString nije dogodilo ništa. Jednostavno, metoda concat kao svoj rezultat emituje novi objekat tipa String, dok objekat na koji pokazuje promenljiva myString ostaje nepromenjen.
+Klasa String poseduje veliki broj metoda koje je moguće koristiti za manipulaciju String vrednostima
+S obzirom na to da je String klasa, ona unutar sebe poseduje veliki broj metoda koje je moguće koristiti za manipulaciju tekstualnim vrednostima. Neke od najznačajnijih takvih metoda su sledeće:
+• toCharArray() – pretvara String u niz karaktera;
+• length() – vraća dužinu String-a u karakterima;
+• toUpperCase() – pretvara sva slova String-a u velika;
+• toLowerCase() – pretvara sva slova String-a u mala;
+• trim() – uklanja prazne karaktere sa početka i kraja String vrednosti;
+• indexOf() – pronalazi indeks na kome se nalazi neki karakter ili tekst;
+• charAt() – vraća karakter koji se nalazi na prosleđenoj poziciji;
+• substring() – kreira isečak String-a;
+• equals() – poredi dve String vrednosti;
+• startsWith() – proverava da li String započinje određenim skupom karaktera;
+• endsWith() – proverava da li se String završava određenim skupom karaktera;
+• replace() – vršu zamenu određenih karaktera u String-u;
+• split() – deli String na više delova.
+
+Sa svim navedenim metodama do sada smo se u susretali u različitim situacijama. Stoga će u nastavku biti razmotrene neke metode koje još nisu spomenute.
+
+Metoda isBlank()
+Metoda isBlank() omogućava nam da proverimo da li određena promenljiva poseduje neku konkretnu tekstualnu vrednost koja ne predstavlja prazne karaktere. Praznim karakterima se smatraju razmaci, prelasci u novi red i ostali slični karakteri.
+Metoda isBlank() slična je metodi isEmpty(). Između njih ipak postoji jasna razlika:
+1
+2
+System.out.println(("").isEmpty());
+System.out.println(("").isBlank());
+
+Kada se upotrebe nad praznim String-ovima, obe metode imaju identičnu povratnu vrednost:
+true
+true
+
+Razlika se uočava kada se ove metode upotrebe nad tekstualnim vrednostima koje se sastoje isključivo iz praznih karaktera:
+1
+2
+System.out.println(("   ").isEmpty());
+System.out.println(("   ").isBlank());
+
+Ovoga puta se na izlazu dobija ovakav ispis:
+false
+true
+
+Metoda isBlank() detektuje da je String vrednost prazna, zato što se sastoji isključivo iz praznih karaktera. Ipak, tako nešto metoda isEmpty() ne detektuje, zato što sve karaktere tretira na identičan način.
+
+Metoda lines()
+Ponekad je neku tekstualnu vrednost potrebno podeliti po redovima, odnosno linijama. Tako nešto moguće je obaviti korišćenjem metode lines(). Reč je o metodi klase String koja kao svoju povratnu vrednost emituje Stream objekat koji sadrži onoliko elemenata koliko izvorni String poseduje linija:
+
+{java * AJP-3_11/Program1.java  Program1.java  0}
+
+Primer ilustruje deljenje jednog String-a na četiri dela. Deoba se obavlja na onim mestima na kojima se unutar String-a nalaze karakteri za prelom reda (\n). Metoda lines() obavlja podelu neke String vrednosti na svim onim mestima na kojima se pojave karakteri \n, \r ili \r\n.
+first line
+second line
+third line
+fourth line
+U okviru radnog okruženja možete testirati i sve predhodne primere.
+
+Metoda indent()
+Prilikom rada sa višelinijskim String vrednostima, ponekad se može javiti potreba da se redovi teksta uvuku za određeni broj praznih mesta, odnosno razmaka. To se može postići korišćenjem metode indent():
+1
+2
+3
+String str = "first line \nsecond line \nthird line \nfourth line";
+String indentedString = str.indent(6);
+System.out.println(indentedString);
+
+Metodi indent() se prosleđuje celobrojna pozitivna vrednost, koja definiše broj karaktera uvlačenja. To praktično znači da će u prikazanom primeru svaki novi red unutar našeg višelinijskog String-a, biti uvučen za šest praznih mesta.
+Metoda indent() u pozadini koristi ranije prikazanu metodu lines(), kako bi tekst podelila na pojedinačne redove. Zatim na početak svakog reda dodaje definisan broj praznih mesta i na kraju sastavlja finalni String i njega isporučuje kao povratnu vrednost.
+
+Metoda repeat()
+Ukoliko je jednu String vrednost potrebno ponoviti veći broj puta, odnosno jedan String nadovezati proizvoljan broj puta na samog sebe, moguće je koristiti metodu repeat():
+1
+2
+3
+String str = "Hello World";
+String repeatedStr = str.repeat(3);
+System.out.println(repeatedStr);
+
+U primeru je prvo kreirana jedna String promenljiva sa vrednošću Hello World. Zatim je obavljeno kreiranje nove String promenljive, koja vrednost dobija ponavljanjem Hello World teksta tri puta. Stoga se na izlazu dobija sledeći ispis:
+Hello WorldHello WorldHello World
+
+U okviru radnog okruženja možete testirati i ovaj primer.
+
+Blokovi teksta
+Veoma često, prilikom definisanja tekstualnih vrednosti javlja se potreba da one budu višelinijske. Na primer, evo kako se na tradicionalan način definiše jedan String zapis kojim se predstavlja HTML kod:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+String myString =
+     "<html>\n" +
+     "<head>\n" +
+     "\t<title>My HTML Document</title>\n" +
+     "</head>\n" +
+     "<body>\n" +
+     "\t<p>Hello from my paragraph</p>\n" +
+     "</body>\n" +
+     "</html>";
+
+Ovo je tradicionalni način kako bi se u Javi definisao višelinijski tekst. Tekst je formatiran prelascima u novi red (\n) i uvlačenjima upotrebom tabulatora (\t). Kada se ovakav String ispiše na izlazu, dobija se prikaz kao na slici 11.1.
+Slika 11.1. Izgled višelinijskog teksta nakon ispisa
+
+Ovako nešto može se postići i na mnogo jednostavniji način, upotrebom jedne posebne funkcionalnosti jezika koja se naziva text blocks.
+Text blocks je relativno nova funkcionalnost jezika koja omogućava veoma lako definisanje višelinijskog teksta. Evo kako se korišćenjem takve funkcionalnosti može dobiti identičan efekat kao na slici 11.1:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+String myString = """
+                <html>
+                <head>
+                    <title>My HTML Document</title>
+                </head>
+                <body>
+                    <p>Hello from my paragraph</p>
+                </body>
+                </html>""";
+
+Vrednost String promenljive sada je definisana na poseban način, koji podrazumeva korišćenje tri navodnika umesto dva. Sve što se nađe između takvih navodnika tretira se baš onako kako je i napisano. Drugim rečima, prelasci u novi red se tretiraju kao prelasci u novi red, a uvlačenja i razmaci baš onako kako su napisani. Stoga nema potrebe za definisanjem bilo kakvih specijalnih sekvenci karaktera, zato što se String vrednost tretira baš onako kako je napisana.
+Bitno je zapamtiti da je prilikom formiranja blokova teksta neophodno navesti prelazak u novi red nakon tri uvodna karaktera navodnika, baš kao što je to učinjeno u primeru. Ukoliko se sadržaj navede odmah u nastavku, bez prelaska u novi red, dolazi do pojave greške (slika 11.2).
+Slika 11.2. Nakon tri karaktera navodnika, neophodno je preći u novi red
+
+Velika prednost tekst blokova jeste mogućnost definisanja specijalnih karaktera unutar tekstualne vrednosti, bez potrebe za korišćenjem escape karaktera (\ – backslash). To praktično znači da je bez problema moguće navoditi apostrofe ili navodnike, bez obrnute kose crte ispred njih:
+1
+2
+3
+String myString = """
+            "Hello from Text Block"
+            """;
+
+Prednosti blokova teksta je moguće upotrebiti i prilikom definisanja jednolinijskog teksta. Naime, veoma često, prilikom kreiranja Java programa dolazi do potrebe da se definiše nešto duža tekstualna vrednost koja se zbog bolje preglednosti deli na više redova koji se međusobno spajaju konkatenacijom, odnosno nadovezivanjem. Kako biste razumeli na šta se misli, pogledajte sledeći primer:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+String myString = "Lorem ipsum dolor sit amet, " +
+             "consectetur adipiscing elit. " +
+             "Nam vitae mollis arcu, vel sodales " +
+             "tortor. Nam sit amet diam ex. Integer " +
+             "ullamcorper sem et magna imperdiet " +
+             "accumsan et eu sapien. Cras vel aliquam " +
+             "quam. Cras auctor magna ac tempor pulvinar. " +
+             "Suspendisse accumsan libero varius eros " +
+             "fermentum, in mattis libero ornare. Nam " +
+             "elementum dui nec urna sodales, " +
+             "non tempor quam semper.";
+
+Ovakav primer ilustruje String promenljivu čija vrednost je prilično dugačak jednolinijski tekst. Definisanje ovakvog teksta u jednoj liniji može biti prilično nepregledno u razvojnim okruženjima. Stoga se često pribegava deljenju dugačkog teksta na više linija, baš kao što je to prikazano u primeru. Sve to u razvojnom okruženju izgleda kao na slici 11.3.
+Slika 11.3. Jednolinijski tekst koji je radi preglednosti podeljen na više redova
+
+Bitno je da razumete da je ovakav tekst i dalje jednolinijski. Da je to stvarno tako, lako se možemo uveriti ispisom vrednosti ove promenljive.
+Identično se može postići i upotrebom blokova teksta, i to na sledeći način:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+String myString = """
+        Lorem ipsum dolor sit amet, \
+        consectetur adipiscing elit. \
+        Nam vitae mollis arcu, vel sodales \
+        tortor. Nam sit amet diam ex. Integer \
+        ullamcorper sem et magna imperdiet \
+        accumsan et eu sapien. Cras vel aliquam \
+        quam. Cras auctor magna ac tempor pulvinar. \
+        Suspendisse accumsan libero varius eros \
+        fermentum, in mattis libero ornare. Nam \
+        elementum dui nec urna sodales, \
+        non tempor quam semper.""";
+
+U prikazanom primeru možete da vidite da je tekst podeljen na više redova, baš kao i prilikom korišćenja tradicionalnog pristupa. Ipak, s obzirom na to da želimo da dobijemo jednolinijski tekst, kompajleru je na neki način potrebno reći da su prelasci u novi red definisani isključivo zbog preglednosti. To je u primeru postignuto korišćenjem karaktera obrnute kose crte (backslash), koji je naveden na kraju svakog reda, neposredno pre prelaska u novi red. Na ovaj način, tekst će i dalje biti jednolinijski, ali će unutar editora biti pregledno formatiran.
+
+Regularni izrazi
+Napredni rad sa tekstualnim podacima u Javi ne može se zamisliti bez pojma regularnih izraza. Regularni izrazi omogućavaju kreiranje šablona na osnovu kojih se mogu definisati kriterijumi pretrage prilikom rada sa tekstualnim vrednostima. Šta to zapravo znači – moći ćete da vidite na sledećem primeru:
+
+{java * AJP-3_11/Program2.java  Program2.java  0}
+
+Ovo je primer koji podrazumeva korišćenje metode split() za podelu jedne String vrednosti na više delova. Ono što metoda split() prihvata kao ulazni podatak upravo je jedan regularni izraz.
+Metoda split() nije jedina metoda za rad sa tekstom koja može da koristi regularne izraze. Takvih metoda je u Javi nekoliko:
+• matches(regex) – utvrđuje da li String zadovoljava pretragu koja je definisana regularnim izrazom;
+• split(regex) – deli String na više delova, na osnovu prosleđenog regularnog izraza;
+• replaceFirst(regex, replacement) – menja prvo pojavljivanje potstringa koji zadovoljava definisan regularni izraz tekstom koji je definisan kao drugi parametar;
+• replaceAll(regex, replacement) – menja sva pojavljivanja nekog potstringa koji zadovoljava definisan regularni izraz tekstom koji je definisan kao drugi parametar.
+
+Regularni izrazi se koriste za definisanje šablona pretrage. Šablon pretrage može biti jedan karakter, reč ili složeni izraz koji se sastoji iz različitih karaktera koji za regularne izraze imaju specijalno značenje.
+Regularni izrazi se mogu koristiti u brojnim situacijama koje podrazumevaju rad sa tekstualnim podacima. Tako se oni mogu koristiti za pretragu tekstualnih vrednosti, njihovu izmenu, odnosno manipulaciju tekstualnim vrednostima.
+Kako biste razumeli regularni izraz koji je kreiran u prikazanom primeru, u nastavku ćemo se posvetiti izučavanju sintakse za definisanje regularnih izraza.
+
+Direktno podudaranje
+U svom najosnovnijem obliku, regularne izraze je moguće koristiti za proveru potpunog podudaranja dve String vrednosti:
+1
+2
+3
+4
+String str = "this is some text";
+boolean match = str.matches("this is some text");
+System.out.println(match);
+
+Ovakav primer će da proizvede vrednost true, zato što je šablon u potpunosti identičan tekstu. Bilo koje odstupanje stvoriće vrednost false:
+1
+2
+3
+4
+String str = "this is some text2";
+boolean match = str.matches("this is some text");
+System.out.println(match);
+
+Metakarakteri
+Prethodni primer svakako nije ilustrovao pravu moć regularnih izraza, zato što je potpuno podudaranje dve tekstualne vrednosti lako moguće utvrditi i bez regularnih izraza. Pun potencijal regularni izrazi ispoljavaju prilikom korišćenja nekih od karaktera koji unutar regularnih izraza imaju specijalno značenje. Takvi specijalni karakteri se drugačije nazivaju metakarakteri (tabela 11.1).
+Specijalni karakter
+< 
+> 
+(
+)
+[
+]
+{
+}
+\
+^
+-
+=
+$
+!
+|
+?
+*
++
+.
+
+Tabela 11.1. Specijalni (metakarakteri) regularnih izraza 
+
+Ovo je kompletna lista metakaraktera koji unutar regularnih izraza imaju posebno značenje. To praktično znači sledeće: kada se unutar regularnog izraza unese neki od karaktera iz prikazane liste, taj karakter se ne interpretira u svom osnovnom značenju, već poseduje specijalno značenje. Ukoliko je potrebno neki od prikazanih karaktera upotrebiti u njegovom izvornom obliku, neophodno je ispred karaktera navesti obrnutu kosu crtu (backslash) – \.
+U nastavku ove lekcije ćemo se upoznati sa većinom specijalnih karaktera koji su prikazani tabelom 11.1.
+
+Bilo koji karakter
+Pojam specijalnih, odnosno metakaraktera unutar regularnih izraza postaće vam jasniji već u primeru koji sledi:
+1
+2
+3
+4
+String str = "A";
+boolean match = str.matches(".");
+System.out.println(match);
+
+Regularni izraz je formiran korišćenjem samo jednog karaktera tačka. Karakter tačka označava bilo koji karakter. Tako će prikazani primer da ispiše vrednost true u svim onim situacijama u kojima se String sastoji iz jednog karaktera, bez obzira ne to o kojem je karakteru reč.
+Ipak, kada bi se String koji se testira sastojao iz više od jednog karaktera, izraz bi proizveo vrednost false:
+1
+2
+3
+4
+String str = "AA";
+boolean match = str.matches(".");
+System.out.println(match);
+
+Da bi ovakav primer proizveo vrednost true, neophodno je napisati:
+1
+2
+3
+4
+String str = "AA";
+boolean match = str.matches("..");
+System.out.println(match);
+
+Naravno, karakter tačka je moguće kombinovati i sa fiksnim karakterima:
+1
+2
+String str = "ABC";
+boolean match = str.matches("A.C");
+
+String koji se testira sada se mora sastojati iz tri karaktera, pri čemu prvi i poslednji moraju biti karakteri A i C, respektivno. Drugi karakter može biti bilo koji.
+
+Skupovi
+Prilikom kreiranja regularnih izraza, moguće je definisati skup karaktera od kojih se unutar String-a može pojaviti bilo koji karakter. Skupovi karaktera se definišu korišćenjem uglastih zagrada – []:
+1
+2
+String str = "ABC";
+boolean match = str.matches("A[BD]C");
+
+Unutar uglastih zagrada navedeni su karakteri B i D. To znači da se na drugoj poziciji unutar String-a može naći jedan od ovih karaktera. Stoga će validne String vrednosti koje će učiniti da matches() metoda proizvede true vrednost biti: ABC i ADC.
+
+Opsezi
+Prilikom formulisanja regularnih izraza moguće je definisati i opseg validnih karaktera. To se postiže na sledeći način:
+1
+2
+String str = "A0C";
+boolean match = str.matches("A[0-9]C");
+
+Na ovaj način se proverava da li je drugi karakter u opsegu od 0 do 9. To praktično znači da se na drugoj poziciji može pojaviti bilo koji broj od 0 do 9.
+Na sličan način je moguće definisati i opseg slova:
+1
+2
+String str = "AaC";
+boolean match = str.matches("A[a-z]C");
+
+Ovako je kreiran opseg kome pripadaju sva mala slova alfabeta. Ukoliko je u opseg potrebno uključiti i mala i velika slova, moguće je napisati ovako:
+1
+2
+String str = "AAC";
+boolean match = str.matches("A[a-zA-Z]C");
+
+Prilikom definisanja opsega unutar šablona regularnih izraza, moguće je iskoristiti i negaciju. Jedan takav primer može da izgleda ovako:
+1
+2
+String str = "AaC";
+boolean match = str.matches("A[^0-9]C");
+
+Sada je na početak opsega postavljen karakter ^ i na taj način je stvorena negacija. To praktično znači da se kao drugi karakter String-a može pojaviti bilo koji karakter koji nije u opsegu vrednosti od 0 do 9.
+
+Kvantifikatori
+Kvantifikatori omogućavaju da se navede broj pojavljivanja određenog karaktera ili skupa karaktera. Različiti kvantifikatori su ilustrovani tabelom 11.2.
+Kvantifikator
+Značenje
+X?
+jednom ili nijednom
+X*
+nijednom ili više puta
+X+
+jednom ili više puta
+X{n}
+tačno n puta
+X{n, }
+najmanje n puta
+X{n, m}
+najmanje n puta, ali ne više od m puta
+Tabela 11.2. Kvantifikatori regularnih izraza
+
+Korišćenjem kvantifikatora možemo, na primer, proveriti da li String započinje nekim karakterom, pri čemu nas zanima samo prvi karakter String-a, a ostali ne:
+1
+2
+String str = "my regular expression";
+boolean match = str.matches("m.*");
+
+Na ovaj način se proverava da li je prvi karakter String-a slovo m. Nakon njega se može pojaviti nijedan ili više proizvoljnih karaktera. To smo postigli karakterom tačka nakon koga je definisan karakter *. Iz tabele 11.2. možete videti da karakter zvezdica označava nijedno ili više ponavljanja.
+Ukoliko bismo želeli da definišemo šablon po kome bi nakon karaktera m unutar String-a mogao da se pojavi jedan ili nijedan karakter, upotrebili bismo drugačiji kvantifikator:
+1
+2
+String str = "my";
+boolean match = str.matches("m.?");
+Regularni izraz [ .,?!]+
+U ovom trenutku smo u mogućnosti da u potpunosti razumemo primer koji je prikazan nešto ranije, koji je podrazumevao deljenje String-a korišćenjem metode split(), kojoj je prosleđen sledeći regularni izraz:
+    [ .,?!]+
+
+Unutar regularnog izraza definisan je skup karaktera korišćenjem uglastih zagrada. Nakon skupa karaktera definisan je kvantifikator +, što znači da se svaki od karaktera unutar zagrada može pojaviti jednom ili više puta.
+Ukoliko bismo želeli da definišemo broj pojavljivanja određenog karaktera na tačno tri, to bismo mogli da uradimo na sledeći način:
+a{3}
+a[3]
+aaa
+a-3
+Odgovori
+  
+Cifre, prazna mesta i reči
+Regularni izrazi omogućavaju definisanje određenih predefinisanih specijalnih karaktera koji omogućavaju skraćeno pisanje nekih šablona. Ti karakteri predstavljeni su tabelom 11.3.
+Konstrukcija
+Značenje
+\d
+bilo koja cifra
+\D
+sve osim cifara
+\s
+prazan karakter
+\S
+sve osim praznog karaktera
+\w
+bilo koje slovo ili cifra
+\W
+sve osim slova i cifara
+Tabela 11.3. Predefinisani specijalni karakteri
+
+Na osnovu tabele 11.3. se može zaključiti sledeće:
+• \d označava cifre;
+• \s označava prazna mesta;
+• \w označava slova i cifre.
+
+Veliko slovo karaktera označava suprotno od navedenog:
+• \D označava sve osim cifara;
+• \S označava sve osim praznih mesta;
+• \W označava sve osim slova i cifara.
+
+Prvi primer korišćenja ovakvih specijalnih karaktera može da izgleda ovako:
+1
+2
+String str = "123";
+boolean match = str.matches("\\d\\d\\d");
+
+Na ovaj način je definisan šablon koji će biti validan za String sa bilo koja tri karaktera cifre (123, 333, 989, 473, 000...). Pojavljivanje bilo koje vrednosti koja nije cifra u primeru će da stvori vrednost false.
+Po identičnom principu se mogu upotrebiti i ostali specijalni karakteri iz tabele 11.3.
+
+Pattern i Matcher
+Svi do sada prikazani primeri regularnih izraza prosleđivani su metodi matches(), klase String. Nešto ranije ste videli da klasa String poseduje nekoliko metoda koje mogu da prihvataju šablone regularnih izraza. Pored takvih metoda, regularne izraze je moguće koristiti i u kombinaciji sa dve posebne klase koje se nalaze unutar paketa java.util.regex:
+• Pattern – klasa koja se koristi za predstavljanje šablona regularnih izraza;
+• Matcher – klasa koja se može koristiti za proveru nekog teksta veći broj puta korišćenjem jednog regularnog izraza.
+
+Za početak, korišćenjem klase Pattern moguće je postići identično što i u dosadašnjem toku ove lekcije:
+1
+2
+String str = "my regular expression";
+boolean match = Pattern.matches("m.*", str);
+
+Korišćenjem statičke metode matches(), klase Pattern, postiže se identično što i u dosadašnjim primerima upotrebom metode matches() klase String.
+Klase Pattern i Matcher omogućavaju da se zadovoljenje određenog regularnog izraza proveri veći broj puta unutar nekog String-a. Šta to praktično znači, biće prikazano na sledećem primeru: 
+
+{java * AJP-3_11/Program3.java  Program3.java  0}
+
+U prikazanom primeru, kao i do sada, obavljeno je definisanje jedne tekstualne vrednosti koja će biti pretražena upotrebom regularnog izraza, pomoću klasa Pattern i Matcher. U primeru možete videti da je klasu Pattern moguće koristiti i za takozvano kompajliranje regularnih izraza, koje se obavlja korišćenjem metode compile(). Na taj način se dobija objekat tipa Pattern. Nad instancom klase Pattern poziva se metoda matcher(), kojom se dobija objekat klase Matcher.
+Klasa Matcher omogućava da se jedan regularni izraz iskoristi za pronalaženje većeg broja poklapanja unutar neke tekstualne vrednosti. To praktično znači da ova klasa omogućava da se regularni izraz ne koristi nad nekim String-om kao celinom, već da se pronađu sva podudaranja koja postoje unutar nekog teksta na osnovu definisanog šablona regularnog izraza.
+U prikazanom primeru se obavlja pretraživanje reči some, unutar String-a koji je predstavljen promenljivom str. Nakon poziva metode matcher() za prolazak kroz sva pojavljivanja koja zadovoljavaju pretragu, koristi se metoda find(). Ona emituje vrednost true ukoliko postoji naredno podudaranje. U primeru takvu metodu koristimo unutar while petlje kako bismo prošli kroz sva pojavljivanja i ispisali njihove osnovne informacije.
+found: 1 : 8 - 12
+found: 2 : 66 - 70
+
+U okviru radnog okruženja možete testirati i sve predhodne primere iz ovog odeljka - Regularni izrazi.
+
+Graničnici
+Kada se, baš kao u prethodnom primeru, obavlja pretraživanje koje vraća sva pojavljivanja  koja zadovoljavaju jedan regularni izraz, može biti korisno upotrebiti i jednu posebnu grupu specijalnih karaktera regularnih izraza. Reč je o graničnicima.
+Do sada smo u svakoj proveri utvrđivali da li je podudarnost pronađena, bez obzira na to gde se ona nalazi. Korišćenjem graničnika moguće je na mnogo precizniji način definisati pravilo u šablonu. Tabela 11.4. prikazuje najkorišćenije graničnike.
+Graničnik
+Opis
+^
+početak Stringa
+$
+kraj Stringa
+\b
+granica reči
+\t
+tabulator
+\n
+novi red
+\A
+početak unosa
+\z
+kraj unosa
+Tabela 11.4. Graničnici
+
+Korišćenjem graničnika sada je moguće modifikovati prethodni primer:      
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+String str = "This is some text, that will be searched for occurrences of word: some";
+String regex = "some$";
+Pattern pattern = Pattern.compile(regex);
+Matcher matcher = pattern.matcher(str);
+int count = 0;
+while (matcher.find()) {
+         count++;
+         System.out.println("found: " + count + " : "
+                 + matcher.start() + " - " + matcher.end());
+}
+
+U odnosu na prethodni primer načinjena je samo jedna izmena. Na kraj regularnog izraza je postavljen karakter dolar ($). U tabeli 11.4. možete da vidite da je to graničnik kojim se definiše kraj reda. Tako smo sada rekli da želimo da pronađemo pojavljivanje reči some, ali samo ukoliko je ono na kraju String vrednosti. Naravno, ovoga puta biva pronađeno samo jedno poklapanje, pa se na izlazu dobija:
+found: 1 : 66 – 70
+
+Primer – Regularni izraz za proveru e-mail adrese
+Potrebno je napraviti regularni izraz za proveru validnosti e-mail adrese. Evo kako može izgledati jedna e-mail adresa:
+some.mail@gmail.com
+
+E-mail ima karakterističnu strukturu koja podrazumeva sledeće elemente, definisane upravo ovim redosledom:
+• set karaktera i brojeva, proizvoljne dužine;
+• karakter at, odnosno verbatim (@);
+• još jedan set karaktera, proizvoljne dužine;
+• karakter tačka;
+• još jedan set karaktera, koji se uglavnom sastoji od dva do četiri karaktera.
+
+Započećemo kreiranjem prvog dela regularnog izraza. On može biti sačinjen iz bilo kog skupa karaktera, pa izraz može izgledati ovako:
+[A-Za-z0-9]+
+
+Plus znači da se bilo koji karakter iz sekvence može pojaviti više puta. Takođe, možemo ubaciti i neke druge karaktere u sekvencu, na primer karakter tačku:
+      [A-Za-z0-9+.]+
+ 
+Drugi deo e-mail-a se mora sastojati iz jednog karaktera @, stoga na već kreirani regularni izraz, dodajemo takav karakter:
+      [A-Za-z0-9+.]+@
+
+Nakon karaktera @ opet se može naći proizvoljan broj karaktera, stoga ponavljamo već viđeni segment regularnog izraza:
+       [A-Za-z0-9+.]+@[A-Za-z0-9+.]+
+
+Sledeći segment e-mail adrese jeste obavezna tačka:
+       [A-Za-z0-9+.]+@[A-Za-z0-9+.]+\\.
+
+S obzirom na to da je tačka specijalan karakter u regularnom izrazu, označavamo je escape oznakom (backslash).
+Poslednji deo email adrese, odnosno deo nakon tačke, može se sastojati iz velikih i malih slova, a broj karaktera može biti minimalno dva, a maksimalno četiri:
+        [A-Za-z0-9+.]+@[A-Za-z0-9+.]+\\.[A-Za-z]{2,4}
+
+Ovo je sada finalni izgled regularnog izraza za proveru e-mail adresa. On se može upotrebiti na sledeći način:
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+String email1 = "some.email@gmail.com";
+String email2 = "some.email@gmail";
+String email3 = "some.email.gmail.com";
+String email4 = "some.email.gmail.comcom";
+String regex = "[A-Za-z0-9+.]+@[A-Za-z0-9+.]+\\.[A-Za-z]{2,4}";
+boolean valid1 = Pattern.matches(regex, email1);
+boolean valid2 = Pattern.matches(regex, email2);
+boolean valid3 = Pattern.matches(regex, email3);
+boolean valid4 = Pattern.matches(regex, email4);
+System.out.println(email1 + ": " + valid1);
+System.out.println(email2 + ": " + valid2);
+System.out.println(email3 + ": " + valid3);
+System.out.println(email4 + ": " + valid4);
+
+Ovakav kod proizvodi sledeći rezultat:
+some.email@gmail.com: true
+some.email@gmail: false
+some.email.gmail.com: false
+some.email.gmail.comcom: false
+
+U okviru radnog okruženja možete testirati i sve predhodne primere iz ovog odeljka - Graničnici.
+
+Vežbe
+Vežba 1
+Dat je sledeći HTML kod upakovan u jednu String promenljivu:    
+1
+2
+3
+4
+5
+6
+7
+8
+9
+String str = """
+                <html>
+                <head>
+                    <title>My HTML Document</title>
+                </head>
+                <body>
+                    <p>Hello from my paragraph</p>
+                </body>
+                </html>""";
+
+Potrebno je napisati kod kojim će se unutar prikazanog Stringa detektovati svi otvarajući HTML tagovi.
+Rešenje  
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+String str = """
+                <html>
+                <head>
+                    <title>My HTML Document</title>
+                </head>
+                <body>
+                    <p>Hello from my paragraph</p>
+                </body>
+                </html>""";
+        String regex = "<.+>"
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(str);
+        int count = 0;
+        while (matcher.find()) {
+            count++;
+            System.out.println("found: " + count + " : "
+                    + matcher.start() + " - " + matcher.end());
+        }
+Vežba 2
+Potrebno je napraviti regularni izraz koji proverava validnost unetog broja telefona. Validni format broja telefona treba da bude: 000/123-456.
+Rešenje
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+String phoneNumber1 = "064/123-456";
+String phoneNumber2 = "064/123456";
+String phoneNumber3 = "064123456";
+String regex = "[0-9]{3}/[0-9]{3}-[0-9]{3}";
+ boolean valid1 = Pattern.matches(regex, phoneNumber1);
+ boolean valid2 = Pattern.matches(regex, phoneNumber2);
+ boolean valid3 = Pattern.matches(regex, phoneNumber3);
+System.out.println(phoneNumber1 + " " + valid1);
+System.out.println(phoneNumber2 + " " + valid2);
+System.out.println(phoneNumber3 + " " + valid3);
+Vežba 3
+U aplikaciju dolaze podaci o studentima. Format takvih podataka izgleda ovako:
+John Torrance - 66/35
+Potrebno je napisati regularni izraz i prateću logiku kojom bi se proverilo da li su podaci koji pristižu validni, odnosno u upravo prikazanom obliku.
+Rešenje
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+String userData1 = "John Torrance - 66/35";
+String userData2 = "66/35 - John Torrance";
+String userData3 = "John Torrance-66.35";
+String regex = "[A-Z][a-z]+\\s[A-Z][a-z]+\\s-\\s[0-9]{2}/[0-9]{2}";
+boolean valid1 = Pattern.matches(regex, userData1);
+boolean valid2 = Pattern.matches(regex, userData2);
+boolean valid3 = Pattern.matches(regex, userData3);
+System.out.println(userData1 + " " + valid1);
+System.out.println(userData2 + " " + valid2);
+System.out.println(userData3 + " " + valid3);
