@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/theme/css/custom.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/css/elegant.prod.9e9d5ce754.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/css/custom.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/fontawesome/css/all.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&amp;display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<meta content="Danijela Popović" name="author"/>
+<meta content="Primena dizajn šablona u programskom jeziku Java
+" name="description"/>
+<meta content="@DJ_Dani_Serbia" name="twitter:creator"/>
+<meta content="article" property="og:type"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Java, OOP, programiranje, dizajn šabloni, design patterns, IT akademija/Advanced Java Programming/AJP - Modul 1. Napredno objektno programiranje, " name="keywords"/>
+<meta content="AJP 1.6. Dizajn šabloni" property="og:title"/>
+<meta content="http://localhost:8000/articles/ajp-16-dizajn-sabloni" property="og:url"/>
+<meta content="Primena dizajn šablona u programskom jeziku Java" property="og:description"/>
+<meta content="DP Tech" property="og:site_name"/>
+<meta content="Danijela Popović" property="og:article:author"/>
+<meta content="2022-05-22T08:44:00+02:00" property="og:article:published_time"/>
+<meta content="AJP 1.6. Dizajn šabloni" name="twitter:title"/>
+<meta content="Primena dizajn šablona u programskom jeziku Java" name="twitter:description"/>
+<title>AJP 1.6. Dizajn šabloni · DP Tech
+</title>
+<link href="http://localhost:8000/feeds/atom/all.xml" rel="alternate" title="DP Tech - Full Atom Feed" type="application/atom+xml">
+<link href="http://localhost:8000/feeds/rss/all.xml" rel="alternate" title="DP Tech - Full RSS Feed" type="application/rss+xml"/>
+</link></link><link href="http://localhost:8000\articles/ajp-16-dizajn-sabloni" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DP Tech", "item": "http://localhost:8000"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "http://localhost:8000\\articles"}, {"@type": "ListItem", "position": 3, "name": "Ajp 16 dizajn sabloni", "item": "http://localhost:8000\\articles/ajp-16-dizajn-sabloni"}, {"@type": "ListItem", "position": 4, "name": "Index", "item": "http://localhost:8000\\articles/ajp-16-dizajn-sabloni/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Danijela Popović"}, "publisher": {"@type": "Organization", "name": "DP Tech", "logo": {"@type": "ImageObject", "url": "logo_transparent.png"}}, "headline": "AJP 1.6. Dizajn šabloni", "about": "IT akademija/Advanced Java Programming/AJP - Modul 1. Napredno objektno programiranje", "datePublished": "2022-05-22 08:44"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" title="Prikaži/sakrij meni">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="http://localhost:8000/"><span class="site-name">DP Tech</span> - Tvoj omiljeni blog</a>
+<nav class="nav-collapse collapse">
+<ul class="nav pull-right top-menu disclosure-nav" id="menubar">
+<li>
+<a href="http://localhost:8000">Početna</a>
+</li>
+<li><a href="/categories/katalonski-catala">Katalonski - Català</a></li>
+<li><a href="http://localhost:8000/categories">Kategorije</a></li>
+<li><a href="http://localhost:8000/tags">Oznake</a></li>
+<li><a href="http://localhost:8000/archives">Arhiva članaka</a></li>
+<li><form action="http://localhost:8000/search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"><input class="search-query" id="tipue_search_input" name="q" placeholder="Pretraži" type="text"/></form></li>
+</ul>
+</nav></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1><a href="http://localhost:8000/articles/ajp-16-dizajn-sabloni">
+AJP 1.6. Dizajn šabloni
+</a>
+</h1>
+<p><p>Primena dizajn šablona u programskom jeziku Java</p></p>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Sadržaj</h4>
+<div class="toc">
+<ul>
+<li><a href="#sta-su-softverski-dizajn-sabloni">Šta su softverski dizajn šabloni?</a></li>
+<li><a href="#koji-dizajn-sabloni-postoje">Koji dizajn šabloni postoje?</a></li>
+<li><a href="#singleton">Singleton</a></li>
+<li><a href="#observer">Observer</a></li>
+<li><a href="#factory">Factory</a></li>
+<li><a href="#decorator">Decorator</a></li>
+<li><a href="#javabeans-konvencija">JavaBeans konvencija</a></li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="span8 article-content">
+<hr/>
+<p>Obrisi modernog programiranja datiraju od pre više od 30 godina. Tokom tog vremenskog perioda, programski jezici su korišćeni za rešavanje različitih problema. Ipak, veliki broj problema u programiranju iznova se i iznova ponavlja bez obzira na to o kojoj vrsti softverskog proizvoda je reč. Takvi česti problemi su tokom vremena detektovani i za njih su se ustalila određena rešenja, koja su se u praksi pokazala kao dobra. Reč je o rešenjima koja su artikulisana pojmom softverskih dizajn šablona. Njima će biti posvećena lekcija koja je pred vama. </p>
+<h2 id="sta-su-softverski-dizajn-sabloni">Šta su softverski dizajn šabloni?</h2>
+<p>Softverski dizajn šabloni (<em>software design patterns</em>) opisuju rešenja veoma čestih problema do kojih dolazi prilikom dizajniranja unutrašnje strukture nekog softverskog proizvoda. Reč je, zapravo, o dokazanim pristupima, odnosno praksama koje su se tokom vremena pokazale kao dobre. </p>
+<p>Bitno je razumeti da dizajn šabloni nisu gotova rešenja, već samo generalizovana, koncizna uputstva koja se mogu koristiti za konkretnu implementaciju rešenja. Stoga dizajn šabloni nisu vezani ni za jedan programski jezik, pa se njihova načela mogu primeniti prilikom kreiranja različitih tipova aplikacija, za različite platforme. </p>
+<p>Korišćenjem softverskih dizajn šablona ubrzava se proizvodnja, naročito ukoliko se ona odvija u timskom okruženju. Naime, realizacija softverskih dizajn šablona široko je poznata, pa programeri koji rade na istom projektu mnogo lakše mogu da se snađu u kodu koji je pisao neki drugi programer. </p>
+<h2 id="koji-dizajn-sabloni-postoje">Koji dizajn šabloni postoje?</h2>
+<p>Svi softverski dizajn šabloni se dele na tri grupe: </p>
+<ul>
+<li>šabloni kreiranja (<em>creational patterns</em>) </li>
+<li>strukturni šabloni (<em>structural patterns</em>) </li>
+<li>šabloni ponašanja (<em>behavioral patterns</em>) </li>
+</ul>
+<p>Sve tri upravo navedene grupe poseduju ilustrativne nazive, koji oslikavaju intuitivno upotrebno okruženje šablona koji pripadaju konkretnoj grupi. Svaka od grupa poseduje veliki broj različitih šablona. U ovoj lekciji biće ilustrovana načela nekoliko najpoznatijih dizajn šablona i njihova realizacija u programskom jeziku Java: </p>
+<ul>
+<li><strong>Singleton</strong> </li>
+<li><strong>Observer</strong> </li>
+<li><strong>Factory</strong> </li>
+<li><strong>Decorator</strong> </li>
+</ul>
+<h2 id="singleton"><strong>Singleton</strong></h2>
+<p><strong>Singleton</strong> je dizajn šablon koji propisuje postojanje samo jedne instance nekog tipa. Drugim rečima, <strong>Singleton</strong> nalaže rukovanje nekim tipom koje se uvek obavlja korišćenjem jedne iste instance. Tako uz poštovanje <strong>Singleton</strong> šablona nije moguće kreirati dva objekta jednog istog tipa. </p>
+<p><strong>Singleton</strong> je jedan od najpopularnijih softverskih dizajn šablona, koji se primenjuje prilikom programiranja različitih aspekata aplikacija koje zahtevaju postojanje samo jednog objekta tokom čitavog životnog toka aplikacije. </p>
+<p>U dosadašnjem toku ovog kursa u više navrata ste imali prilike da vidite da se korišćenjem jedne klase može napraviti proizvoljan broj instanci, odnosno objekata: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #c7c7c7">Product product1 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Product();</span>
+<span style="color: #c7c7c7">Product product2 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Product();</span>
+<span style="color: #c7c7c7">System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(product1.</span><span style="color: #06b6ef">equals</span><span style="color: #c7c7c7">(product2));</span>
+</code></pre></div>
+<p>Prikazani kod će proizvesti rezultat <code>false</code>, jer promenljive <code>product1</code> i <code>product2</code> čuvaju reference na dva potpuno nezavisna objekta klase <code>Product</code>. Ovo je ponašanje sa kojim smo se do sada susretali, a kao što je rečeno, podrazumeva da se na osnovu jedne klase može kreirati proizvoljan broj nezavisnih instanci (slika 6.1). </p>
+<figure>
+<img alt="Slika 6.1. Na osnovu regularne klase moguće je kreirati proizvoljan broj objekata" src="/images/AdvancedJavaProgramming/1_06_01.png"/>
+<figcaption>Slika 6.1. Na osnovu regularne klase moguće je kreirati proizvoljan broj objekata</figcaption>
+</figure>
+<p>Ipak, u nekim situacijama može se javiti potreba da se definiše ponašanje po kojem se određena klasa može instancirati samo jednom. Upravo to osigurava <strong>Singleton</strong> dizajn šablon (slika 6.2). </p>
+<figure>
+<img alt="Slika 6.2. Singleton klasa može imati samo jednu instancu" src="/images/AdvancedJavaProgramming/1_06_02.png"/>
+<figcaption>Slika 6.2. Singleton klasa može imati samo jednu instancu</figcaption>
+</figure>
+<p>Sa slike 6.2. se može videti da <strong>Singleton</strong> osigurava da se svakim instanciranjem jedne klase dobija identična instanca. </p>
+<p>U Java programskom jeziku, <strong>Singleton</strong> se realizuje vrlo jednostavno. Potrebno je obaviti nekoliko koraka koji su ilustrovani u nastavku. </p>
+<ol>
+<li>
+<p>Onemogućavanje direktnog instanciranja klase <br/>
+    Pod direktnim instanciranjem klase podrazumeva se instanciranje upotrebom ključne reči <code>new</code> i pozivom konstruktora. Kako bi se tako nešto onemogućilo izvan klase, dovoljno je unutar klase definisati privatni konstruktor: <br/>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Logger</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Logger</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Kreiranje polja koje će čuvati referencu na instancu klase <br/>
+    S obzirom na to da se kod <strong>Singleton</strong> šablona klasa ne može instancirati na tradicionalni način, neophodno je unutar nje definisati mehanizam za predstavljanje instance. Tako se kod <strong>Singleton</strong> šablona instanca čuva unutar privatnog, statičkog polja klase: <br/>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Logger</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> Logger instance;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Logger</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p>Kreiranje mehanizma za pristup instanci <strong>Singletona</strong> <br/>
+    Kada imamo polje za čuvanje instance, preostaje da se definiše i javna metoda za pristup takvom polju: <br/>
+<div class="highlight" style="background: #000000"><span class="filename">Logger.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Logger</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> Logger instance;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Logger</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> Logger </span><span style="color: #06b6ef">getInstance</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">if</span><span style="color: #c7c7c7"> (Logger.</span><span style="color: #06b6ef">instance</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">==</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">null</span><span style="color: #c7c7c7">)</span>
+<span style="color: #c7c7c7">			instance </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Logger();</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> instance;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div></p>
+</li>
+</ol>
+<p>Metoda za dobijanje instance imenovana je nazivom <code>getInstance()</code>. Unutar nje se obavlja vrlo jednostavna logika. Proverava se da li je instanca klase <code>Logger</code> već kreirana i samo ukoliko nije, obavlja se njeno kreiranje. Ukoliko instanca već postoji, kao povratna vrednost se isporučuje njena referenca, čime se osigurava da će svakim pozivanjem metode <code>getInstance()</code> biti isporučena referenca na istovetan objekat klase <code>Logger</code>. </p>
+<p>Ukoliko pokušamo da upravo kreiranu klasu instanciramo na tradicionalni način, doći će do greške, s obzirom na to da je konstruktor privatan. Kako bi se dobio objekat <strong>Singleton</strong> klase, koristi se sledeći pristup: <br/>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #c7c7c7">Logger logger </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> Logger.</span><span style="color: #06b6ef">getInstance</span><span style="color: #c7c7c7">();</span>
+</code></pre></div></p>
+<p>Vrlo je bitno razumeti da će svako pozivanje  <code>getInstance()</code> metode imati za efekat isporučivanje reference na identičan objekat, u šta se lako možemo uveriti: </p>
+<details>
+<summary>Logger.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Logger</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> Logger instance;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Logger</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> Logger </span><span style="color: #06b6ef">getInstance</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">if</span><span style="color: #c7c7c7"> (Logger.</span><span style="color: #06b6ef">instance</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">==</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">null</span><span style="color: #c7c7c7">)</span>
+<span style="color: #c7c7c7">			instance </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Logger();</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> instance;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Program1.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Program1</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		Logger logger </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> Logger.</span><span style="color: #06b6ef">getInstance</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">		Logger logger1 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> Logger.</span><span style="color: #06b6ef">getInstance</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(logger.</span><span style="color: #06b6ef">equals</span><span style="color: #c7c7c7">(logger1));</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Za razliku od primera sa početka ove lekcije, prikazani kod sada proizvodi vrednost <code>true</code>, što jasno govori da je reč o dve promenljive koje čuvaju referencu na identičan objekat. </p>
+<p><strong>Klasa <code>Logger</code></strong> <br/>
+Naziv upravo kreirane <strong>Singleton</strong> klase nije izabran slučajno. Naime, jedna od realnih situacija za upotrebu <strong>Singleton</strong> šablona jesu situacije u kojima je potrebno napraviti klasu za logovanje informacija o unutrašnjem funkcionisanju programa. Veoma česta praksa u realnim aplikacijama jeste postojanje takve klase, koja unutar fajla ili posebnog skladišta podataka beleži sve informacije koje mogu biti značajne za programere koji su aplikaciju kreirali. Tokom izvršavanja aplikacije, potrebno je da postoji samo jedna instanca klase za logovanje. Drugim rečima, postojanje većeg broja instanci klase za logovanje nema smisla, pa je upravo zbog toga klasa <code>Logger</code> idealan kandidat za demonstraciju <strong>Singleton</strong> dizajn šablona. </p>
+<div class="question">
+<p>Ukoliko je potrebno osigurati da određena klasa ima samo jednu instancu, koji šablon za dizajn softverskih komponenti se koristi? </p>
+<div class="answers"><input id="single_instance_correct" name="single_instance_correct" type="hidden" value="notelgnis"/><input id="revresbo" name="single_instance" type="radio" value="Observer"/><label for="revresbo">Observer</label><br/>
+<input id="cvm" name="single_instance" type="radio" value="MVC"/><label for="cvm">MVC</label><br/>
+<input id="yrotcaf" name="single_instance" type="radio" value="Factory"/><label for="yrotcaf">Factory</label><br/>
+<input id="notelgnis" name="single_instance" type="radio" value="Singleton"/><label for="notelgnis">Singleton</label><br/>
+</div>
+<button class="ok" data-correct="single_instance_correct" data-question="single_instance" onclick="checkAnswer(this, 'Bravo!', 'Hmmm... no.')" type="button">OK</button></div>
+<h2 id="observer"><strong>Observer</strong></h2>
+<p><strong>Observer</strong> je jedan od najpoznatijih šablona ponašanja. On omogućava razmenu obaveštenja između većeg broja objekata. Drugim rečima, <strong>Observer</strong> šablon omogućava da se stanje jednog objekta emituje različitim objektima koji taj objekat nadgledaju (slika 6.3). </p>
+<figure>
+<img alt="Slika 6.3. Način funkcionisanja Observer dizajn šablona" src="/images/AdvancedJavaProgramming/1_06_03.png"/>
+<figcaption>Slika 6.3. Način funkcionisanja Observer dizajn šablona</figcaption>
+</figure>
+<p>Na slici 6.3. možete da vidite najznačajnije elemente koji postoje unutar <strong>Observer</strong> šablona. Ovaj šablon poznaje dve vrste objekata: objekte tipa <strong>Observer</strong> i <strong>Observable</strong>. Kako bi se postigla što bolja apstrakcija i univerzalnost, ova dva tipa se predstavljaju intefejsima. <strong>Observer</strong> implementiraju svi konkretni tipovi koji žele da dobijaju obaveštenja, dok interfejs <strong>Observable</strong> implementiraju tipovi koji imaju potrebu da generišu i šalju obaveštenja. Konkretni tipovi koji generišu obaveštanje u <strong>Observer</strong> šablonu se nazivaju <em>Subject</em>. </p>
+<p>Nije teško zaključiti da se na <strong>Observer</strong> šablonu zasniva razmena događaja između objekata, što je pristup koji je obrađen u jednoj od prethodnih lekcija. Stoga smo se mi sa <strong>Observer</strong> šablonom već susretali, pa će u nastavku biti prikazan nešto jednostavniji primer, koji će se fokusirati isključivo na osnovne osobine ovog šablona. </p>
+<p>Kako bismo demonstrirali <strong>Observer</strong> šablon, prvo ćemo kreirati dva interfejsa, koji će predstavljati dva tipa objekata koji učestvuju u komunikaciji. Objekti koji mogu da budu obavešteni o nečemu zasnivaju se na ovakvom interfejsu: </p>
+<details>
+<summary>Observer.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Observer</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">update</span><span style="color: #c7c7c7">(String args);</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Objekti koji će moći da proizvedu obaveštenja zasnivaće se na ovakvom interfejsu: </p>
+<details>
+<summary>Observable.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Observable</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">addObserver</span><span style="color: #c7c7c7">(Observer s);</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">removeObserver</span><span style="color: #c7c7c7">(Observer s);</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">notifyObservers</span><span style="color: #c7c7c7">(String msg);</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Nakon kreiranja interfejsa, oni se mogu iskoristiti za izgradnju konkretnih tipova. Evo prvo klase koja će poslužiti za kreiranje objekata koji će moći da primaju obaveštenja: </p>
+<details>
+<summary>ObserverA.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">ObserverA</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">implements</span><span style="color: #c7c7c7"> Observer {</span>
+<span style="color: #c7c7c7">	String name;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">ObserverA</span><span style="color: #c7c7c7">(String name){</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">name</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> name;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">update</span><span style="color: #c7c7c7">(String msg) {</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Observer "</span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> name </span><span style="color: #5bc4bf">+</span><span style="color: #48b685">". Message from observable: "</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> msg);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Radi jednostavnosti primera, čim stigne poruka od objekta koji se nadzire, takva poruka će biti ispisana na izlazu. Pri tome svaki objekat tipa <strong>Observer</strong> poseduje i sopstveno ime koje se definiše prilikom instanciranja klase. </p>
+<p>Klasa koja će predstavljati objekte koji će moći da šalju obaveštenja nešto je kompleksnija, zato što se unutar nje moraju implementirati tri metode i jedno svojstvo koje će čuvati referencu na niz pretplatnika: </p>
+<details>
+<summary>Subject.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Subject</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">implements</span><span style="color: #c7c7c7"> Observable {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> Observer</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> observers </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> {};</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">addObserver</span><span style="color: #c7c7c7">(Observer observer) {</span>
+<span style="color: #c7c7c7">		Observer</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> newObservers </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Observer</span><span style="color: #5bc4bf">[</span><span style="color: #c7c7c7">observers.</span><span style="color: #06b6ef">length</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">1</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">arraycopy</span><span style="color: #c7c7c7">(observers, </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">, newObservers, </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">, observers.</span><span style="color: #06b6ef">length</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		newObservers</span><span style="color: #5bc4bf">[</span><span style="color: #c7c7c7">observers.</span><span style="color: #06b6ef">length</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> observer;</span>
+<span style="color: #c7c7c7">		observers </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> newObservers;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">removeObserver</span><span style="color: #c7c7c7">(Observer observer) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> indexOfElementToRemove </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">for</span><span style="color: #c7c7c7"> (</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> i </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">; i </span><span style="color: #5bc4bf">&lt;</span><span style="color: #c7c7c7"> observers.</span><span style="color: #06b6ef">length</span><span style="color: #c7c7c7">; i</span><span style="color: #5bc4bf">++</span><span style="color: #c7c7c7">) {</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">if</span><span style="color: #c7c7c7"> (observer.</span><span style="color: #06b6ef">equals</span><span style="color: #c7c7c7">(observers</span><span style="color: #5bc4bf">[</span><span style="color: #c7c7c7">i</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7">)) {</span>
+<span style="color: #c7c7c7">				indexOfElementToRemove </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> i;</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		}</span>
+<span style="color: #c7c7c7">		Observer</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> newObservers </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Observer</span><span style="color: #5bc4bf">[</span><span style="color: #c7c7c7">observers.</span><span style="color: #06b6ef">length</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">-</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">1</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">arraycopy</span><span style="color: #c7c7c7">(observers, </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">, newObservers, </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">, indexOfElementToRemove);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">arraycopy</span><span style="color: #c7c7c7">(observers, indexOfElementToRemove </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">, newObservers, indexOfElementToRemove, observers.</span><span style="color: #06b6ef">length</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">-</span><span style="color: #c7c7c7"> indexOfElementToRemove </span><span style="color: #5bc4bf">-</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		observers </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> newObservers;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">notifyObservers</span><span style="color: #c7c7c7">(String msg) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">for</span><span style="color: #c7c7c7"> (Observer observer : observers) {</span>
+<span style="color: #c7c7c7">			observer.</span><span style="color: #06b6ef">update</span><span style="color: #c7c7c7">(msg);</span>
+<span style="color: #c7c7c7">		}</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Kako bismo se uverili da sve funkcioniše ispravno, unutar <code>main()</code> metode našeg Java programa postavićemo sledeći kod: </p>
+<details>
+<summary>Program2.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Program2</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		Subject subject </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Subject();</span>
+<span style="color: #c7c7c7">		Observer o1 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> ObserverA(</span><span style="color: #48b685">"Observer 1"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		Observer o2 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> ObserverA(</span><span style="color: #48b685">"Observer 2"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		Observer o3 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> ObserverA(</span><span style="color: #48b685">"Observer 3"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		subject.</span><span style="color: #06b6ef">addObserver</span><span style="color: #c7c7c7">(o1);</span>
+<span style="color: #c7c7c7">		subject.</span><span style="color: #06b6ef">addObserver</span><span style="color: #c7c7c7">(o2);</span>
+<span style="color: #c7c7c7">		subject.</span><span style="color: #06b6ef">addObserver</span><span style="color: #c7c7c7">(o3);</span>
+<span style="color: #c7c7c7">		subject.</span><span style="color: #06b6ef">notifyObservers</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"new update"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		subject.</span><span style="color: #06b6ef">removeObserver</span><span style="color: #c7c7c7">(o2);</span>
+<span style="color: #c7c7c7">		subject.</span><span style="color: #06b6ef">removeObserver</span><span style="color: #c7c7c7">(o1);</span>
+<span style="color: #c7c7c7">		subject.</span><span style="color: #06b6ef">notifyObservers</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"new update1"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Primer proizvodi sledeći rezultat: <br/>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code>Observer Observer <span style="color: #f99b15">1</span>. Message from observable: new update
+Observer Observer <span style="color: #f99b15">2</span>. Message from observable: new update
+Observer Observer <span style="color: #f99b15">3</span>. Message from observable: new update
+Observer Observer <span style="color: #f99b15">3</span>. Message from observable: new update1
+</code></pre></div></p>
+<p>S obzirom na to da su prilikom slanja prve poruke sva tri objekta u listi pretplatnika, aktiviraju se <code>update()</code> metode u tri objekta koji predstavljaju pretplatnike. Nakon uklanjanja pretplatnika <code>o2</code> i <code>o1</code> iz liste, sledeće ažuriranje podrazumeva slanje poruke samo jednom pretplatniku - <code>o3</code>. </p>
+<h2 id="factory"><strong>Factory</strong></h2>
+<p><strong>Factory</strong> je šablon kreiranja koji se koristi kada je potrebno kreirati posredničku klasu za kreiranje objekata određenog tipa. Drugim rečima, objekti određenog tipa se ne kreiraju na tradicionalni način, upotrebom konstruktora i ključne reči <code>new</code>, već posredstvom specijalne klase koja se naziva kao i sam šablon - <code>Factory</code>. Sve to izgleda kao na slici 6.4. </p>
+<figure>
+<img alt="Slika 6.4. Factory klasa" src="/images/AdvancedJavaProgramming/1_06_04.png"/>
+<figcaption>Slika 6.4. Factory klasa</figcaption>
+</figure>
+<p><strong>Factory</strong> šablon će u nastavku biti ilustrovan jednim primerom koji će modelovati nekoliko različitih vrsta korisnika. Naime, česta je praksa da se u aplikacijima koje rukuju korisnicima oni dele na nekoliko grupa, u zavisnosti od privilegaija koje imaju prilikom korišćenja aplikacije. Upravo jedan takav primer, u kome će postojati tri različite vrste korisnika, biće prikazan u nastavku. Tipovi korisnika će biti: </p>
+<ul>
+<li><code>Viewer</code> </li>
+<li><code>Admin</code> </li>
+<li><code>Superuser</code> </li>
+</ul>
+<p>Upravo prikazani tipovi korisnika u našem primeru ujedno će biti i konkretne klase koje će se koristiti za modelovanje odgovarajućeg tipa korisnika. S obzirom na to da su srodne, sve one mogu da naslede zajedničku apstraktnu klasu <code>User</code>, koja može poslužiti za definisanje nekih zajedničkih osobina svih korisnika: </p>
+<details>
+<summary>User.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">User</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String username;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">User</span><span style="color: #c7c7c7">(String username) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">username</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> username;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Klasa <code>User</code> je apstraktna i unutar sebe poseduje samo jedno svojstvo, kojim se definiše korisničko ime. Konstruktor prihvata jedan parametar i njime se inicijalizuje svojstvo <code>username</code>. Ovakvu klasu nasleđuju tri konkretne klase. </p>
+<details>
+<summary>Viewer.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Viewer</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> User {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Viewer</span><span style="color: #c7c7c7">(String username) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(username);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Viewer "</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">username</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">" created."</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Admin.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Admin</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> User {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Admin</span><span style="color: #c7c7c7">(String username) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(username);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Admin "</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">username</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">" created."</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Superuser.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Superuser</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> User {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Superuser</span><span style="color: #c7c7c7">(String username) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(username);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Superuser "</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">username</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">" created."</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Radi jednostavnosti, sve prikazane klase poseduju minimalnu logiku, odnosno samo konstruktor unutar koga se prvo poziva konstruktor roditeljske klase, a zatim se ispisuje poruka da je korisnik odgovarajućeg tipa i imena kreiran. </p>
+<p>Svaka od upravo kreiranih klasa može se instancirati na standardni način. Na primer: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #c7c7c7">Viewer viewer </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Viewer(</span><span style="color: #48b685">"John"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">Admin admin </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Admin(</span><span style="color: #48b685">"Jack"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">Superuser boss </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Superuser(</span><span style="color: #48b685">"Josh"</span><span style="color: #c7c7c7">);</span>
+</code></pre></div>
+<p>Na ovaj način se u programu kreira po jedan korisnik svakog tipa. Kreiranje objekata biće propraćeno ispisom sledećih poruka unutar konzole: <br/>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code>Viewer John created.
+Admin Jack created.
+Superuser Josh created.
+</code></pre></div></p>
+<p>Veoma česta situacija u realnim aplikacijama prilikom rukovanja korisnicima jeste to da njihov tip nije unapred poznat, već se utvrđuje dinamički, tokom izvršavanja aplikacije. To praktično znači da većina aplikacija poseduje neku vrstu forme za prijavljivanje u koju je neophodno uneti korisničko ime i lozinku. Na osnovu unetih podataka, aplikacija utvrđuje o kojoj vrsti korisnika je reč, odnosno da li je korisnik tipa <code>Viewer</code>, <code>Admin</code> ili <code>Superuser</code>. Stoga se veoma često može dogoditi da na više mesta unutar svoje aplikacije posedujemo kod koji može da izgleda ovako: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #c7c7c7">User user </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">switch</span><span style="color: #c7c7c7">(userType) {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">case</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"viewer"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">-&gt;</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Viewer(username);</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">case</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"admin"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">-&gt;</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Admin(username);</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">case</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"superuser"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">-&gt;</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Superuser(username);</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">default</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">-&gt;</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">null</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">};</span>
+</code></pre></div>
+<p>Ovo je jedna uslovna konstrukcija u kojoj se u zavisnosti od vrednosti kontrolne promenljive (<code>userType</code>) obavlja instanciranje odgovarajuće klase koja predstavlja korisnika. S obzirom na to da su velike šanse da će ovakva provera biti potrebna na više mesta unutar aplikacije, idealno je nju enkapsulirati unutar jedne <strong>Factory</strong> klase: </p>
+<details>
+<summary>UserFactory.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">UserFactory</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> User </span><span style="color: #06b6ef">newUser</span><span style="color: #c7c7c7">(String userType, String username) {</span>
+<span style="color: #c7c7c7">		User user </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">switch</span><span style="color: #c7c7c7">(userType) {</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">case</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"viewer"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">-&gt;</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Viewer(username);</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">case</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"admin"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">-&gt;</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Admin(username);</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">case</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"superuser"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">-&gt;</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Superuser(username);</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">default</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">-&gt;</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">null</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		};</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> user;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Ovo je klasičan primer <strong>Factory</strong> dizajn šablona na delu. Kreirana je nova <code>UserFactory</code> klasa, kao centralizovano mesto za instanciranje objekata koji predstavljaju korisnike. Sada se objekti korisnika mogu kreirati na sledeći način: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #c7c7c7">User user1 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> UserFactory.</span><span style="color: #06b6ef">newUser</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"admin"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"Ron"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">User user2 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> UserFactory.</span><span style="color: #06b6ef">newUser</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"viewer"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"Ben"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">User user3 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> UserFactory.</span><span style="color: #06b6ef">newUser</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"superuser"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"Tom"</span><span style="color: #c7c7c7">);</span>
+</code></pre></div>
+<p>Na ovaj način su centralizovano kreirana tri objekta korisnika različitog tipa. Kod će na izlazu proizvesti sledeći ispis: <br/>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code>Admin Ron created.
+Viewer Ben created.
+Superuser Tom created.
+</code></pre></div></p>
+<h2 id="decorator"><strong>Decorator</strong></h2>
+<p><strong>Decorator</strong> je strukturni šablon koji omogućava dodavanje, odnosno proširivanje funkcionalnosti postojećih tipova. Implementira se kreiranjem posebne klase koja se naziva <code>Decorator</code>, unutar koje se objekti nekog tipa proširuju dodatnim osobinama ili funkcionalnostima. Tako <strong>Decorator</strong> šablon omogućava da se mogućnosti tipova prošire bez klasičnog nasleđivanja. Drugim rečima, <code>Decorator</code> klasa nije u direktnoj hijerarhijskoj vezi sa klasom koju dekoriše, već predstavlja neku vrstu njenog omotača (slika 6.5). </p>
+<figure>
+<img alt="Slika 6.5. Decorator šablon" src="/images/AdvancedJavaProgramming/1_06_05.png"/>
+<figcaption>Slika 6.5. Decorator šablon</figcaption>
+</figure>
+<p><strong>Decorator</strong> šablon će biti ilustrovan na primeru jednog tipa kojim se u Java programu predstavljaju pravougaonici: </p>
+<details>
+<summary>Rectangle.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Rectangle</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> a;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> b;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Rectangle</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> a, </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> b) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">a</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> a;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">b</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> b;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">area</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">a</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">*</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">b</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Klasa <code>Rectangle</code> koristi se za modelovanje pravougaonika. Svojstva <code>a</code> i <code>b</code> se koriste za predstavljanje dužine stranica, čije vrednosti je moguće postaviti korišćenjem konstruktora koji prihvata dva parametra. Pored toga, klasa <code>Rectangle</code> poseduje i metodu za računanje površine sa nazivom <code>area()</code>. </p>
+<p>Korišćenjem <strong>Decorator</strong> šablona, objekti upravo kreirane klase se mogu proširiti na sledeći način: </p>
+<details>
+<summary>RectangleDecorator.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">RectangleDecorator</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">protected</span><span style="color: #c7c7c7"> Rectangle rectangle;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">RectangleDecorator</span><span style="color: #c7c7c7">(Rectangle rectangle) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">rectangle</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> rectangle;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">perimeter</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">2</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">*</span><span style="color: #c7c7c7"> (</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">rectangle</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">a</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">rectangle</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">b</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p><code>RectangleDecorator</code> je klasičam primer implementacije <strong>Decorator</strong> šablona. Unutar ove klase obavlja se proširivanje funkcionalnosti <code>Rectangle</code> objekata jednom novom metodom koja je namenjena računanju obima. </p>
+<p>Konačno, evo kako može da izgleda upotreba <code>Decorator</code> klase: </p>
+<details>
+<summary>Program3.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Program3</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		RectangleDecorator rd </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> RectangleDecorator(</span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Rectangle(</span><span style="color: #f99b15">2</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">3</span><span style="color: #c7c7c7">));</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(rd.</span><span style="color: #06b6ef">rectangle</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">area</span><span style="color: #c7c7c7">());</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(rd.</span><span style="color: #06b6ef">perimeter</span><span style="color: #c7c7c7">());</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Prikazanim naredbama obavljeno je kreiranje objekta <code>RectangleDecorator</code> klase. Prilikom kreiranja takvog objekta, konstruktoru je prosleđen objekat <code>Rectangle</code> klase koji će <code>Decorator</code> da proširi. Nakon toga se obavlja računanje površine i obima i rezultati se prikazuju na izlazu. </p>
+<h2 id="javabeans-konvencija"><strong>JavaBeans konvencija</strong></h2>
+<p>Kada već govorimo o softverskim dizajn šablonima i različitim dobrim praksama za kreiranje unutrašnje objektne strukture Java programa, dobro je spomenuti još jedan pojam koji je značajan za Java jezik. Naime, u Java jeziku postoji jedna konvencija, odnosno standard koji se naziva <strong>JavaBeans</strong>. </p>
+<p>JavaBeans je konvencija koja definiše osobine tipova koji se nazivaju Java Bean. Java Bean je zapravo svaka klasa koja zadovoljava nekoliko jednostavnih pravila: </p>
+<ul>
+<li>klasa mora imati javni konstruktor bez parametara </li>
+<li>polja klase moraju biti privatna i moraju postojati odgovarajuće javne <code>get</code> i <code>set</code> metode za rukovanje njima izvan matične klase </li>
+<li>klasa mora implementirati interfejs <code>Serializable</code> </li>
+</ul>
+<p>JavaBeans konvencija je primarno namenjena za kreiranje softverskih komponenti grafičkog korisničkog okruženja. O kreiranju grafičkog okruženja još nismo govorili, ali je bitno da znate da se pojedinačne komponente takvog okruženja predstavljaju objektima, odnosno instancama nekih klasa. Takođe, grafička okruženja se najčešće kreiraju pomoću određenih pomagala – grafičkih editora. Kako bi takvi editori mogli da funkcionišu adekvatno, oni se oslanjaju na upravo spomenutu konvenciju JavaBeans. Ipak, JavaBeans konvencija nije ograničena na komponente grafičkog korisničkog okruženja, pa se s njom možemo susresti i prilikom rada sa raznim drugim celinama Java platforme. </p>
+<p>Evo kako može izgledati jedna klasa koja zadovoljava JavaBeans konvenciju: </p>
+<details>
+<summary>CarBean.java</summary>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.io.Serializable</span><span style="color: #c7c7c7">;</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">CarBean</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">implements</span><span style="color: #c7c7c7"> Serializable {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String make;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String model;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">CarBean</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">getMake</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> make;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setMake</span><span style="color: #c7c7c7">(String value) {</span>
+<span style="color: #c7c7c7">		make </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> value;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">getModel</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setModel</span><span style="color: #c7c7c7">(String value) {</span>
+<span style="color: #c7c7c7">		model </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> value;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Kod ilustruje klasu sa nazivom <code>CarBean</code>. Reč je o klasi koja u potpunosti zadovoljava <strong>JavaBeans</strong> konvenciju: </p>
+<ul>
+<li>klasa implementira interfejs <code>Serializable</code> </li>
+<li>klasa poseduje javni konstruktor, bez parametara </li>
+<li>polja unutar klase su privatna i postoje <code>get</code> i <code>set</code> metode kako bi se njima rukovalo izvan klase</li>
+</ul><br/>
+<p id="post-share-links">
+Podeli: 
+<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//localhost%3A8000/articles/ajp-16-dizajn-sabloni" rel="nofollow noopener noreferrer" target="_blank" title="Facebook">Facebook</a>
+ ❄ <a href="https://twitter.com/intent/tweet?text=AJP%201.6.%20Dizajn%20%C5%A1abloni&amp;url=http%3A//localhost%3A8000/articles/ajp-16-dizajn-sabloni&amp;via=DJ_Dani_Serbia&amp;hashtags=java,oop,programiranje,dizajn-sabloni,design-patterns" rel="nofollow noopener noreferrer" target="_blank" title="Twitter">Twitter</a>
+ ❄ <a href="" rel="nofollow noopener noreferrer" target="_blank" title="whatsapp">whatsapp</a>
+ ❄ <a href="mailto:?subject=AJP%201.6.%20Dizajn%20%C5%A1abloni&amp;body=http%3A//localhost%3A8000/articles/ajp-16-dizajn-sabloni" rel="nofollow noopener noreferrer" target="_blank" title="Email">Email</a>
+ ❄ <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A//localhost%3A8000/articles/ajp-16-dizajn-sabloni&amp;title=AJP%201.6.%20Dizajn%20%C5%A1abloni&amp;summary=Primena%20dizajn%20%C5%A1ablona%20u%20programskom%20jeziku%20Java&amp;source=http%3A//localhost%3A8000/articles/ajp-16-dizajn-sabloni" rel="nofollow noopener noreferrer" target="_blank" title="LinkedIn">LinkedIn</a>
+ ❄ <a href="https://www.reddit.com/submit?url=http%3A//localhost%3A8000/articles/ajp-16-dizajn-sabloni&amp;title=AJP%201.6.%20Dizajn%20%C5%A1abloni" rel="nofollow noopener noreferrer" target="_blank" title="Reddit">Reddit</a>
+<hr/>
+<aside>
+<nav>
+<ul class="articles-timeline">
+<li class="previous-article">« <a accesskey="p" href="http://localhost:8000/articles/ajp-15-refleksija" title="Prethodno: AJP 1.5. Refleksija">AJP 1.5. Refleksija</a></li>
+</ul>
+</nav>
+</aside>
+</p></div>
+<section class="span2" id="article-sidebar">
+<h4>Vreme potrebno za čitanje</h4>
+<p>~19 min.</p>
+<h4>Objavljeno</h4>
+<time datetime="2022-05-22T08:44:00+02:00" itemprop="dateCreated">nedelja, 22. maj 2022. u 08:44</time>
+<h4>Advanced Java Programming</h4>
+<ol class="multi-parts-list">
+<li>
+<a href="http://localhost:8000/articles/ajp-11-objektno-orijentisano-programiranje-u-javi" title="AJP 1.1. Objektno orijentisano programiranje u Javi">AJP 1.1. Objektno orijentisano programiranje u Javi</a>
+</li>
+<li>
+<a href="http://localhost:8000/articles/ajp-12-apstraktne-klase-i-interfejsi" title="AJP 1.2. Apstraktne klase i interfejsi">AJP 1.2. Apstraktne klase i interfejsi</a>
+</li>
+<li>
+<a href="http://localhost:8000/articles/ajp-13-klase-unutar-klasa" title="AJP 1.3. Klase unutar klasa">AJP 1.3. Klase unutar klasa</a>
+</li>
+<li>
+<a href="http://localhost:8000/articles/ajp-14-dogadaji" title="AJP 1.4. Događaji">AJP 1.4. Događaji</a>
+</li>
+<li>
+<a href="http://localhost:8000/articles/ajp-15-refleksija" title="AJP 1.5. Refleksija">AJP 1.5. Refleksija</a>
+</li>
+<li class="active-part">
+AJP 1.6. Dizajn šabloni
+</li>
+</ol>
+<h4>Kategorija</h4>
+<a class="category-link" href="http://localhost:8000/categories/it-akademija">IT akademija</a> / 
+<a class="category-link" href="http://localhost:8000/categories/it-akademija/advanced-java-programming">Advanced Java Programming</a> / 
+<a class="category-link" href="http://localhost:8000/categories/it-akademija/advanced-java-programming/ajp-modul-1-napredno-objektno-programiranje">AJP - Modul 1. Napredno objektno programiranje</a>
+<h4>Oznake</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="http://localhost:8000/tags/design-patterns">design patterns 
+<span class="superscript">1</span>
+</a></li>
+<li><a href="http://localhost:8000/tags/dizajn-sabloni">dizajn šabloni 
+<span class="superscript">1</span>
+</a></li>
+<li><a href="http://localhost:8000/tags/java">Java 
+<span class="superscript">6</span>
+</a></li>
+<li><a href="http://localhost:8000/tags/oop">OOP 
+<span class="superscript">6</span>
+</a></li>
+<li><a href="http://localhost:8000/tags/programiranje">programiranje 
+<span class="superscript">8</span>
+</a></li>
+</ul>
+<h4>Društvene mreže</h4>
+<div id="sidebar-social-link">
+<a href="https://fb.me/dani.vlajna" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Facebook" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1877f2" height="512" rx="15%" width="512"></rect><path d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z" fill="#fff"></path></svg>
+</a>
+<a href="https://twitter.com/DJ_Dani_Serbia" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://www.youtube.com/DanijelaPopovic" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="YouTube" fill="#ed1d24" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect height="512" rx="15%" width="512"></rect><path d="m427 169c-4-15-17-27-32-31-34-9-239-10-278 0-15 4-28 16-32 31-9 38-10 135 0 174 4 15 17 27 32 31 36 10 241 10 278 0 15-4 28-16 32-31 9-36 9-137 0-174" fill="#fff"></path><path d="m220 203v106l93-53"></path></svg>
+</a>
+<a href="https://github.com/vlajna95" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+</div>
+</section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="span1"></div>
+</div>
+</div>
+
+<footer>
+<div>
+<span class="site-name">DP Tech</span> - Tvoj omiljeni blog
+</div>
+<div id="fpowered">
+Pokreće: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican početna strana">Pelican</a>. 
+Tema: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Početna strana Elegant teme">Elegant</a>. 
+</div>
+</footer><script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="http://localhost:8000/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script src="http://localhost:8000/theme/js/custom.js"></script>
+<script>
+function validateForm(query) {
+return(query.length>0);
+}
+</script>
+<script>
+function checkAnswer(origin) {
+var question_name = $(origin).attr("data-question");
+var correct_answer_element = $(origin).attr("data-correct");
+var correct_answer_id = $("#"+correct_answer_element).val();
+var correct_answer_label = $("label[for="+correct_answer_id+"]").text();
+var chosen_answer_id = $("input[name="+question_name+"]:checked").attr("id");
+var chosen_answer_label = $("label[for="+chosen_answer_id+"]").text();
+if(correct_answer_id == chosen_answer_id) {
+alert("Bravo!");
+}
+else {
+alert("Hmmm... ne. \n" + correct_answer_label);
+}
+$("input[name="+question_name+"]").attr("disabled", true);
+}
+</script>
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+</body>
+<!--
+Theme: Elegant built for Pelican 
+License: MIT
+-->
+</html>

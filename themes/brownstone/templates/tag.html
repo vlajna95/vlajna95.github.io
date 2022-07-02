@@ -1,7 +1,0 @@
-{% extends "index.html" %}
-{% block title %}{{ SITENAME }} :: {{ gettext("Oznaka") }} :: {{ tag }}{% endblock %}
-
-{% block content %}
-<h1>{{ gettext("Oznaka") }}: {{ tag }} ({{ articles|count }})</h1>
-{{ super() }}
-{% endblock %}

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/theme/css/custom.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/css/elegant.prod.9e9d5ce754.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/css/custom.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/fontawesome/css/all.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&amp;display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<meta content="Danijela Popović" name="author"/>
+<meta content="Uvod u objektno orijentisano programiranje u Javi i najvažniji pojmovi
+" name="description"/>
+<meta content="@DJ_Dani_Serbia" name="twitter:creator"/>
+<meta content="article" property="og:type"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Java, OOP, programiranje, objekti, klase, apstrakcija, enkapsulacija, nasleđivanje, polimorfizam, IT akademija/Advanced Java Programming/AJP - Modul 1. Napredno objektno programiranje, " name="keywords"/>
+<meta content="AJP 1.1. Objektno orijentisano programiranje u Javi" property="og:title"/>
+<meta content="http://localhost:8000/en/drafts/ajp-11-objektno-orijentisano-programiranje-u-javi-sr.html" property="og:url"/>
+<meta content="Uvod u objektno orijentisano programiranje u Javi i najvažniji pojmovi" property="og:description"/>
+<meta content="DP Tech" property="og:site_name"/>
+<meta content="Danijela Popović" property="og:article:author"/>
+<meta content="2022-01-10T15:33:00+01:00" property="og:article:published_time"/>
+<meta content="AJP 1.1. Objektno orijentisano programiranje u Javi" name="twitter:title"/>
+<meta content="Uvod u objektno orijentisano programiranje u Javi i najvažniji pojmovi" name="twitter:description"/>
+<title>AJP 1.1. Objektno orijentisano programiranje u Javi · DP Tech
+</title>
+<link href="http://localhost:8000/feeds/atom/all.xml" rel="alternate" title="DP Tech - Full Atom Feed" type="application/atom+xml">
+<link href="http://localhost:8000/feeds/rss/all.xml" rel="alternate" title="DP Tech - Full RSS Feed" type="application/rss+xml"/>
+</link></link><link href="http://localhost:8000/en\drafts/ajp-11-objektno-orijentisano-programiranje-u-javi-sr.html" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DP Tech", "item": "http://localhost:8000/en"}, {"@type": "ListItem", "position": 2, "name": "Drafts", "item": "http://localhost:8000/en\\drafts"}, {"@type": "ListItem", "position": 3, "name": "Ajp 11 objektno orijentisano programiranje u javi sr", "item": "http://localhost:8000/en\\drafts/ajp-11-objektno-orijentisano-programiranje-u-javi-sr.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Danijela Popović"}, "publisher": {"@type": "Organization", "name": "DP Tech", "logo": {"@type": "ImageObject", "url": "logo_transparent.png"}}, "headline": "AJP 1.1. Objektno orijentisano programiranje u Javi", "about": "IT akademija/Advanced Java Programming/AJP - Modul 1. Napredno objektno programiranje", "datePublished": "2022-01-10 15:33"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" title="Prikaži/sakrij meni">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="http://localhost:8000/en/"><span class="site-name">DP Tech</span> - Your favorite tech blog :smile:</a>
+<nav class="nav-collapse collapse">
+<ul class="nav pull-right top-menu disclosure-nav" id="menubar">
+<li>
+<a href="http://localhost:8000/en">Home</a>
+</li>
+<li><a href="/categories/katalonski-catala">Katalonski - Català</a></li>
+<li><a href="http://localhost:8000/en/categories">Kategorije</a></li>
+<li><a href="http://localhost:8000/en/tags">Oznake</a></li>
+<li><a href="http://localhost:8000/en/archives">Arhiva članaka</a></li>
+<li><form action="http://localhost:8000/en/search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"><input class="search-query" id="tipue_search_input" name="q" placeholder="Pretraži" type="text"/></form></li>
+</ul>
+</nav></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1><a href="http://localhost:8000/en/drafts/ajp-11-objektno-orijentisano-programiranje-u-javi-sr.html">
+AJP 1.1. Objektno orijentisano programiranje u Javi
+</a>
+</h1>
+<p><p>Uvod u objektno orijentisano programiranje u Javi i najvažniji pojmovi</p></p>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span8 offset2 article-content">
+<hr/>
+<p>Kurs pred vama biće posvećen naprednim konceptima programiranja korišćenjem programskog jezika Java. Tako ćete imati prilike da proširite svoje znanje upoznavanjem različitih koncepata koji su neophodni za kreiranje kompleksnijih Java programa. Uvodni modul ovog kursa pomoći će vam da proširite razumevanje objektno orijentisanog programiranja u Javi. Za početak, uvodna lekcija ovog modula biće posvećena osnovnim postulatima OOP u Javi, što će vam pomoći da bolje razumete napredne koncepte koji će biti predstavljeni u lekcijama koje slede. Stoga će u ovoj lekciji biti objašnjeno šta su to objekti i klase, koji su njihovi članovi, ali i šta podrazumevaju pojmovi apstrakcije, enkapsulacije, nasleđivanja i polimorfizma, koji predstavljaju osnovne postulate objektno orijentisanog programiranja. </p>
+<h2 id="pojam-objektno-orijentisanog-programiranja">Pojam objektno orijentisanog programiranja</h2>
+<p>Java je objektno orijentisan programski jezik, što praktično znači da su klase i objekti njegove centralne figure. Objekti su način da se unutar Java programa predstave podaci po uzoru na pojmove iz realnog sveta. U praksi to znači da se objektima mogu vrlo efikasno predstaviti podaci koji su potrebni našim Java programima. Na primer, ukoliko kreiramo program koji rukuje proizvodima koji predstavljaju tehničku robu, svaki takav artikal (proizvod) bio bi jedan objekat (slika 1.1). </p>
+<figure>
+<img alt="Slika 1.1. Objekti" src="/images/AdvancedJavaProgramming/1_01_01.png"/>
+<figcaption>Slika 1.1. Objekti</figcaption>
+</figure>
+<p>Objekti se kreiraju na osnovu određenog šablona, odnosno modela. U objektno orijentisanom programiranju takvi šabloni se drugačije nazivaju klase (slika 1.2). </p>
+<figure>
+<img alt="Slika 1.2. Objekti nastaju na osnovu klasa" src="/images/AdvancedJavaProgramming/1_01_02.png"/>
+<figcaption>Slika 1.2. Objekti nastaju na osnovu klasa</figcaption>
+</figure>
+<h2 id="klase">Klase</h2>
+<p>Preduslov za kreiranje objekata u Java jeziku jeste postojanje klase. Unutar klase definišu se sve one osobine, odnosno svojstva i ponašanja, koja će objekti koji se na osnovu takve klase kreiraju imati. </p>
+<p>Procesom kreiranja klasa obavlja se modelovanje specifičnih tipova podataka koji su potrebni za funkcionisanje programa koje stvaramo. Tako na primer, ukoliko će naš program rukovati nekim proizvodima, klasa za njihovo modelovanje bi mogla da izgleda ovako: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Product</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String brand;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String model;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price;</span>
+
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">getBrand</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> brand;</span>
+<span style="color: #c7c7c7">	}</span>
+
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setBrand</span><span style="color: #c7c7c7">(String brand) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">brand</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> brand;</span>
+<span style="color: #c7c7c7">	}</span>
+
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">getModel</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">	}</span>
+
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setModel</span><span style="color: #c7c7c7">(String model) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">model</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">	}</span>
+
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">getPrice</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setPrice</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Product</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">brand</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> brand;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">model</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"Brand='"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> brand </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> '\'' </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", Model='"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> model </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> '\'' </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", Price="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Prikazani kod ilustruje klasu <code>Product</code>, koja se u Java programu može koristiti za predstavljanje proizvoda. <code>Product</code> klasa poseduje nekoliko veoma važnih elemenata čiju svrhu je neophodno razumeti. </p>
+<h3 id="privatna-svojstva">Privatna svojstva</h3>
+<p>Svojstva definišu karakteristike koje će moći da imaju objekti koji se kreiraju korišćenjem klase. U prikazanoj klasi postoje sledeća svojstva: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String brand;</span>
+<span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String model;</span>
+<span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price;</span>
+</code></pre></div>
+<p>Ovo praktično znači da će svi objekti koji budu kreirani korišćenjem klase <code>Product</code> moći da budu karakterisani korišćenjem informacija o brendu, modelu i ceni. </p>
+<p>Upravo prikazana svojstva su privatna, što znači da im je moguće pristupiti samo iz klase u kojoj su definisana. </p>
+<h3 id="metode-get-i-set">Metode <strong>get</strong> i <strong>set</strong></h3>
+<p>Za pristup privatnim svojstvima izvan klase <code>Product</code> koriste se <strong>get</strong> i <strong>set</strong> metode. Reč je o javnim metodama koje omogućavaju čitanje i izmenu vrednosti privatnih svojstava: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">getBrand</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> brand;</span>
+<span style="color: #c7c7c7">}</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setBrand</span><span style="color: #c7c7c7">(String brand) {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">brand</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> brand;</span>
+<span style="color: #c7c7c7">}</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">getModel</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">}</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setModel</span><span style="color: #c7c7c7">(String model) {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">model</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">}</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">getPrice</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">}</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setPrice</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price) {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Za svako svojstvo definisane su po dve metode. Metode sa prefiksom <strong>set</strong> koriste se za postavljanje vrednosti privatnih svojstava, a metode sa prefiksom <strong>get</strong> za čitanje njihovih vrednosti. </p>
+<h3 id="konstruktor">Konstruktor</h3>
+<p>Unutar klase <code>Product</code> postoji jedan konstruktor, što je zapravo metoda koja se poziva prilikom kreiranja objekata: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Product</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price) {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">brand</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> brand;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">model</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Unutar konstruktora se obavlja inicijalizacija svojstava objekta vrednostima koje su prilikom kreiranja objekta prosleđene konstruktoru. </p>
+<h3 id="metoda-tostring">Metoda <code>toString()</code></h3>
+<p>Klasa <code>Product</code> poseduje i metodu <code>toString()</code>, unutar koje je definisana logika za generisanje tekstualne reprezentacije objekta: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"Brand='"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> brand </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> '\'' </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", Model='"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> model </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> '\'' </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", Price="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Pozivanjem metode <code>toString()</code> obavlja se ispis informacija o objektu, što podrazumeva ispis vrednosti njegovih svojstava. </p>
+<h2 id="objekti">Objekti</h2>
+<p>Na osnovu upravo kreirane klase ćemo prvo obaviti kreiranje nekoliko objekata, a zatim ćemo se detaljnije upoznati sa upravo prikazanim elementima koji čine jednu klasu. Jedan objekat na osnovu klase <code>Product</code> može se kreirati na sledeći način: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #c7c7c7">Product product1 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Product(</span><span style="color: #48b685">"Logitech"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"F710"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">129.99</span><span style="color: #c7c7c7">);</span>
+</code></pre></div>
+<p>Ovo je primer kreiranja objekta na osnovu klase <code>Product</code>. Objekat se kreira upotrebom ključne reči <code>new</code>, nakon koje sledi poziv konstruktora, kome se prosleđuju vrednosti koje će biti dodeljene svojstvima. </p>
+<p>Proces kreiranja objekata se drugačije naziva instanciranje, pa se tako može reći da prikazana naredba oslikava instanciranje klase <code>Product</code>. Instanciranjem je u našem programu predstavljen prvi od tri proizvoda sa uvodnih slika 1.1. i 1.2. Naravno, na osnovu jedne klase može se stvoriti proizvoljan broj objekata, pa je tako korišćenjem klase <code>Product</code> u našem programu sada moguće predstaviti sve proizvode sa slika 1.1 i 1.2. </p>
+<p>Nad kreiranim objektima moguće je pozivati metodu <code>toString()</code>, koja će za rezultat imati generisanje tekstualne reprezentacije objekata: </p>
+<details>
+<summary>Program.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Program.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Main</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		Product product1 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Product(</span><span style="color: #48b685">"Logitech"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"F710"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">129.99</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		Product product2 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Product(</span><span style="color: #48b685">"HP"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"Envy Photo 7155"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">179.99</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		Product product3 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Product(</span><span style="color: #48b685">"Dell"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"U2419H"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">219.99</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(product1);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(product2);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(product3);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Product.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Product.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Product</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String brand;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String model;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">getBrand</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> brand;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setBrand</span><span style="color: #c7c7c7">(String brand) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">brand</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> brand;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">getModel</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setModel</span><span style="color: #c7c7c7">(String model) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">model</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">getPrice</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setPrice</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Product</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">brand</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> brand;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">model</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"Brand='"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> brand </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> '\'' </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", Model='"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> model </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> '\'' </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", Price="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Na ovaj način na izlazu se stvara sledeći ispis: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code>Brand='Logitech', Model='F710', Price=129.99
+Brand='HP', Model='Envy Photo 7155', Price=179.99
+Brand='Dell', Model='U2419H', Price=219.99
+</code></pre></div>
+<hr/>
+<p>Na početku ove lekcije spomenuti su i pojmovi osnovnih postulata objektno orijentisanog programiranja. Reč je o apstrakciji, enkapsulaciji, nasleđivanju i polimorfizmu. O njima će biti reči u nastavku ove lekcije. </p>
+<h2 id="apstrakcija">Apstrakcija</h2>
+<p>Apstrakcija je princip objektno orijentisanog programiranja koji omogućava da se složeni entiteti iz realnog sveta modeluju baš onako kako mi želimo - sa nivoom detalja koji odgovara potrebama našeg programa. To znači da je u ovoj lekciji već ilustrovan primer apstrakcije i to upravo prilikom kreiranja klase <code>Product</code>. Njenim kreiranjem obavljeno je modelovanje proizvoda, odnosno tipa podatka koji je našem programu potreban. </p>
+<h2 id="enkapsulacija">Enkapsulacija</h2>
+<p>Objekat predstavlja zaokruženu celinu, zato što u potpunosti opisuje jedan pojam iz realnog sveta. Unutar objekata objedinjuju se informacije i funkcionalnosti koje se tiču entiteta koji se modeluje. Objedinjavanje takvih informacija i funkcionalnosti drugačije se naziva enkapsulacija. </p>
+<p>I enkapsulacija je princip objektno orijentisanog programiranja koji je već ilustrovan na prikazanom primeru klase <code>Product</code>. Naime, enkapsulacijom se svojstva i metode <code>Product</code> objekata prezentuju kao celina, kojom se rukuje korišćenjem naziva promenljive koja čuva referencu na takav objekat. </p>
+<p>Enkapsulacija je ilustrovana i na primeru privatnih objektnih svojstava, kojima se izvan klase pristupa korišćenjem specijalnih metoda koje se koriste za upis i čitanje vrednosti privatnih svojstava. Postojanje <strong>get</strong> i <strong>set</strong> metoda omogućava kontrolisanu interakciju sa privatnim poljima, pa one predstavljaju još jedan svojevrstan primer enkapsulacije. </p>
+<h2 id="nasleivanje">Nasleđivanje</h2>
+<p>Nasleđivanje je još jedan postulat objektno orijentisanog programiranja koji omogućava kreiranje klasa koje svoje osobine i ponašanja nasleđuju od neke druge klase. U upravo prikazanom primeru smo kreirali samo jednu klasu (<code>Product</code>), tako da samostalno nismo definisali bilo kakvo nasleđivanje. Ipak, to ne znači da u primeru iz ove lekcije ne postoji nasleđivanje. Naime, sve klase u programskom jeziku Java implicitno nasleđuju osnovnu klasu tog jezika - klasu <code>Object</code>. </p>
+<p><code>Object</code> je korena klasa u jeziku Java. To praktično znači da sve druge klase nju indirektno nasleđuju (slika 1.3). </p>
+<figure>
+<img alt="Slika 1.3. Object je osnovna klasa Java jezika" src="/images/AdvancedJavaProgramming/1_01_03.png"/>
+<figcaption>Slika 1.3. Object je osnovna klasa Java jezika</figcaption>
+</figure>
+<p>Na slici 1.3. možete da vidite hijerarhiju nasleđivanja između klasa u Java jeziku. Na vrhu takve hijerarhije nalazi se klasa <code>Object</code>. Sve klase u Javi mogu biti nasleđene. Nasleđena klasa postaje roditeljska klasa za sve klase koje je nasleđuju. Takođe, sve klase u Javi imaju svoju roditeljsku klasu, osim klase <code>Object</code> koja se nalazi na vrhu klasne hijerarhije. </p>
+<p>S obzirom na to da sve klase nasleđuju klasu <code>Object</code>, to znači i da naša klasa <code>Product</code> iz ove lekcije to čini. Ipak, primer modelovanja proizvoda u jednom Java programu idealan je za uvođenje nekoliko dodatnih konkretnijih klasa, koje bi nasledile već kreiranu klasu <code>Product</code>. Naime, različite grupe proizvoda se mogu predstaviti sopstvenim klasama, pa tako u primer možemo da uvedemo i nekoliko dodatnih klasa: </p>
+<ul>
+<li><code>Gamepad</code>, za predstavljanje kontrolera za video-igre </li>
+<li><code>Monitor</code>, za predstavljanje kompjuterskih monitora </li>
+<li><code>Printer</code>, za predstavljanje štampača </li>
+</ul>
+<p>Svaka od upravo navedenih klasa predstavlja specifičnu vrstu proizvoda, koji poseduju osobine koje ih razlikuju od drugih vrsta proizvoda. To znači da će u Java programu svaka od ovih klasa imati neka specifična svojstva. </p>
+<details>
+<summary>Program.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Program.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Main</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		Gamepad product1 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Gamepad(</span><span style="color: #48b685">"Logitech"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"F710"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">129.99</span><span style="color: #c7c7c7">, </span><span style="color: #815ba4">true</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		Printer product2 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Printer(</span><span style="color: #48b685">"HP"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"Envy Photo 7155"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">179.99</span><span style="color: #c7c7c7">, </span><span style="color: #815ba4">true</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		Monitor product3 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Monitor(</span><span style="color: #48b685">"Dell"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"U2419H"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">219.99</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">24</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(product1);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(product2);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(product3);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Product.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Product.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Product</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String brand;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String model;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #848484">// ...</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Product</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">brand</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> brand;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">model</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"Brand='"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> brand </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> '\'' </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", Model='"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> model </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> '\'' </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", Price="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Gamepad.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Gamepad.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Gamepad</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Product {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> wireless;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Gamepad</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price, </span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> wireless) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(brand, model, price);</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">wireless</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> wireless;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", "</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"wireless="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> wireless;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Monitor.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Monitor.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Monitor</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Product {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> diagonal;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Monitor</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> diagonal) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(brand, model, price);</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">diagonal</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> diagonal;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", "</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"diagonal="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> diagonal;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Printer.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Printer.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Printer</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Product {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> color;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Printer</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price, </span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> color) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(brand, model, price);</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">color</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> color;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", "</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"color="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> color;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>U sve tri klase koje nasleđuju klasu <code>Product</code> postoji identična logika. Svaka od klasa definiše po jednu dodatnu osobinu specifične grupe proizvoda. Klasa <code>Gamepad</code> poseduje svojstvo <code>wireless</code>, kojim je moguće definisati da li je reč o bežičnom kontroleru ili ne. Klasa <code>Monitor</code> poseduje svojstvo <code>diagonal</code>, kojim je moguće definisati veličinu dijagonale displeja u inčima. Na kraju, klasa <code>Printer</code> poseduje svojstvo <code>color</code>, koje se može koristiti kako bi se naznačilo da li štampač ima mogućnost štampe u boji. </p>
+<p>Sve tri klase poseduju po jedan konstruktor. Unutar njih, prvo se obavlja pozivanje roditeljskog konstruktora, korišćenjem posebne ključne reči <code>super</code>. Kada se ključna reč <code>super</code> upotrebi u obliku metode, njom se postiže pozivanje konstruktora roditeljske klase. Tako se konstruktor roditeljske klase upošljava kako bi obavio inicijalizaciju svojstava koja su definisana unutar klase <code>Product</code>, dok se unutar konkretnih klasa obavlja inicijalizacija samo onih svojstava koja su karakteristična za konkretne klase. </p>
+<p>Na kraju, svaka od upravo prikazanih konkretnih klasa koje predstavljaju proizvode poseduje i sopstvenu varijantu metode <code>toString()</code>. O tome će više reči biti u narednom poglavlju o polimorfizmu. </p>
+<h3 id="klasni-clanovi-koji-se-nasleuju">Klasni članovi koji se nasleđuju</h3>
+<p>Nasleđivanjem, klasa dobija sve metode i svojstva roditeljske klase koji nisu obeleženi kao privatni. Privatna svojstva i metode se ne nasleđuju, ali se njima može pristupiti indirektno, ukoliko ih roditeljska klasa izlaže korišćenjem nekih metoda koje nisu privatne. Primer takvih metoda su upravo <strong>get</strong> i <strong>set</strong> metode koje postoje unutar <code>Product</code> klase. </p>
+<h3 id="nasleivanje-i-konstruktori">Nasleđivanje i konstruktori</h3>
+<p>Konstruktori su još jedan klasni element koji se ne nasleđuje. Ipak, kada se govori o konstruktorima i nasleđivanju, bitno je znati još jednu vrlo važnu osobinu jezika. Naime, već je poznato da se prilikom kreiranja objekata, odnosno instanciranja neke klase, obavlja pozivanje odgovarajućeg konstruktora. Java garantuje da će se prilikom kreiranja objekata pozvati konstruktor, pa čak i kada on unutar klase nije eksplicitno kreiran. U takvim situacijama u klasi postoji podrazumevani konstruktor koji nema parametara. </p>
+<p>Pored garancije da će konstruktor biti pozvan, Java garantuje da će prilikom instanciranja neke klase biti pozvan i konstruktor koji se nalazi unutar njene roditeljske klase. Takvu garanciju Java postiže tako što na početak svakog konstruktora postavlja naredbu za poziv konstruktora iz roditeljske klase. Na primer, kada unutar <code>Product</code> klase ne bi postojao konstruktor koji smo samostalno kreirali, Java bi za nas obavila kreiranje konstruktora sledećeg oblika: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Product</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Ovako bi izgledao podrazumevani konstruktor klase <code>Product</code> koji bi kompajler samostalno kreirao u slučaju da ga nismo eksplicitno definisali. Bitno je da primetite da se na početku takvog konstruktora nalazi naredba u kojoj se poziva konstruktor roditeljske klase. <br/>
+S obzirom na to da Java garantuje da će se konstruktor roditeljske klase uvek pozvati, kompajler dodaje naredbu za poziv roditeljskog konstruktora i na početak konstruktora koje samostalno kreiramo, ukoliko tako nešto mi ne učinimo. Kako biste ovo bolje razumeli, pogledajte sledeći konstruktor: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Gamepad</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">	System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Hello from Gamepad constructor."</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Ovako može izgledati konstruktor unutar klase <code>Gamepad</code>, koja nasleđuje klasu <code>Product</code>. Ipak, s obzirom na to da uvek garantuje pozivanje roditeljskog konstruktora, Java kompajler će ovakav konstruktor modifikovati na sledeći način: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Gamepad</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Hello from Gamepad constructor."</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Naredba <code>super()</code> je ono što Java kompajler dodaje za nas kako bi osigurao pozivanje roditeljskog konstruktora. Bitno je da razumete da Java kompajler uvek dodaje naredbu za poziv konstruktora bez parametara. Stoga, ukoliko se roditeljski konstruktor poziva eksplicitno, neophodno je da unutar roditeljske klase postoji konstruktor bez parametara, bilo da je reč o podrazumevanom ili o onom koji vi samostalno kreirate. Pošto mi unutar klase <code>Product</code> nemamo konstruktor bez parametara, u nasleđenim klasama se ne možemo osloniti na automatsko dodavanje naredbe <code>super()</code> od strane kompajlera (slika 1.4). </p>
+<figure>
+<img alt="Slika 1.4. Problem koji može nastati kada roditeljska klasa ne poseduje podrazumevani konstruktor" src="/images/AdvancedJavaProgramming/1_01_04.png"/>
+<figcaption>Slika 1.4. Problem koji može nastati kada roditeljska klasa ne poseduje podrazumevani konstruktor</figcaption>
+</figure>
+<p>Ovakav problem se može rešiti na dva načina. Prvi podrazumeva kreiranje konstruktora bez parametara unutar roditeljske <code>Product</code> klase. Drugi način za rešavanje ovakve situacije jeste samostalno pozivanje konstruktora roditeljske klase, pri čemu bismo, naravno, pozvali onaj konstruktor koji unutar roditeljske klase postoji. </p>
+<p>Naredba <code>super()</code> za poziv roditeljskog konstruktora mora biti prva naredba unutar tela konstruktorske metode. </p>
+<h2 id="polimorfizam">Polimorfizam</h2>
+<p>Prilikom realizovanja nasleđivanja u objektno orijentisanom programiranju, veoma često dolazi do potrebe za redefinisanjem nekih nasleđenih ponašanja. Tako roditeljski objekat može definisati neku funkcionalnost koja ne zadovoljava u potpunosti njegove naslednike. Tako naslednici imaju mogućnost da nasleđeno ponašanje prilagode, dopune ili u potpunosti izmene. Na taj način se stvaraju različite verzije jednog istog ponašanja, odnosno verzije koje odgovaraju svakom pojedinačnom tipu objekata. Takva osobina objektno orijentisanog programiranja drugačije se naziva polimorfizam, odnosno višestruko značenje jednog istog pojma. </p>
+<p>Upravo opisana situacija postoji i unutar prikazanog primera. Naime, svaka od klasa poseduje metodu <code>toString()</code>, pri čemu je logika takve metode unutar svake od klasa različita. Metoda <code>toString()</code> potiče iz korene klase Java jezika - klase <code>Object</code>. To je jedna od nekoliko metoda koje postoje unutar ove klase i koje stoga nasleđuju sve ostale Java klase, kako one koje su ugrađene tako i one koje samostalno kreiramo. Upravo zbog toga i sve naše klase poseduju takvu metodu, bez ikakve potrebe da njenu logiku samostalno definišu. Ipak, izvorna logika <code>toString()</code> metode ne odgovara u potpunosti klasama koje smo mi samostalno kreirali. Kako biste ovo bolje razumeli, evo kako metoda <code>toString()</code> izgleda u svom izvornom obliku, unutar klase <code>Object</code>: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> getClass().</span><span style="color: #06b6ef">getName</span><span style="color: #c7c7c7">() </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"@"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> Integer.</span><span style="color: #06b6ef">toHexString</span><span style="color: #c7c7c7">(hashCode());</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Izvorna logika <code>toString()</code> metode je takva da se unutar nje formira tekst koji se sastoji iz naziva klase kome sledi jedinstveni kod koji objekti dobijaju od strane virtualne mašine prilikom njihovog kreiranja. Reč je o kodu koji se dobija korišćenjem još jedne metode koja postoji unutar Object klase - metode <code>hashCode()</code>. Izvorna logika metode <code>toString()</code>, kao što možete da pretpostavite, daje prilično uopštenu tekstualnu reprezentaciju objekata. Na primeru klase <code>Product</code>, tekstualna reprezentacija jednog objekta dobijena od ovakve izvorne logike bi izgledala ovako: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code>Product@378bf509
+</code></pre></div>
+<p>Pored naziva klase, ovakav tekst za krajnjeg korisnika ne poseduje bilo kakve značajne informacije. Upravo zbog toga se u svakoj klasi koju smo samostalno kreirali u ovoj lekciji pribegava redefinisanju metode <code>toString()</code>. Tako sve klase poseduju sopstvenu logiku ove metode, koja odgovara skupu svojstava koja se unutar njih nalaze. Ovo je svojevrstan primer polimorfizma, odnosno višestrukog značenja jednog istog pojma. </p>
+<p>Proces redefinisanja propraćen je i upotrebom jedne posebne oznake (anotacije) koja se postavlja pre potpisa metode koja se redefiniše. Kako bi se naznačilo da je reč o redefinisanoj metodi, odnosno kako bi se naglasilo da metoda sa istim nazivom postoji i unutar roditeljske klase, pre potpisa metode postavlja se anotacija <code>@Override</code>. Bitno je znati da postavljanje anotacije <code>@Override</code> nije obavezno, odnosno da neće stvoriti grešku prilikom kompajliranja ili izvršavanja. Ipak, njeno korišćenje jeste dobra praksa, zato što poboljšava preglednost, jasno signalizirajući da je određena metoda redefinisana. Redefinisanje metoda se drugačije naziva <strong>overriding</strong>. </p>
+<p>Još jedan primer polimorfizma u Java programskom jeziku jeste mogućnost postojanja više metoda sa identičnim nazivima unutar jedne klase. Takvu situaciju je najbolje videti na primeru konstruktora. Naime, unutar jedne Java klase može postojati nekoliko konstruktora. Naravno, svi oni imaju identičan naziv koji odgovara nazivu klase, ali je neophodno da poseduju različite ulazne parametre: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Product</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">}</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Product</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price) {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">brand</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> brand;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">model</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Kod prikazuje dva konstruktora unutar klase <code>Product</code>. Naravno, i regularne metode se mogu upotrebiti u ovom obliku, sve dok poseduju različite ulazne parametre: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">sum</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> a, </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> b) {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> a </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> b;</span>
+<span style="color: #c7c7c7">}</span>
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">sum</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> a, </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> b, </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> c) {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> a </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> b </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> c;</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Ovo su sada dve metode za sabiranje, koje poseduju identične nazive - <code>sum()</code>. Ipak, prva prihvata dva parametra, a druga tri, pa je njihovo postojanje unutar iste klase potpuno legitimno. Ovakva situacija se u Javi naziva <strong>overloading</strong>, odnosno preklapanje metoda i još jedan je od svojevrsnih primera polimorfizma.</p><br/>
+<hr/>
+</div>
+<section class="span2" id="article-sidebar">
+<h4>Reading time estimation</h4>
+<p>~19 min.</p>
+<h4>Published</h4>
+<time datetime="2022-01-10T15:33:00+01:00" itemprop="dateCreated">Monday, January 10, 2022 at 15:33</time>
+<h4><built-in 0x00000287c081d7f0="" at="" index="" method="" object="" of="" str=""></built-in></h4>
+<ol class="multi-parts-list">
+</ol>
+<h4>Category</h4>
+<a class="category-link" href="http://localhost:8000/en/categories/it-akademija">IT akademija</a> / 
+<a class="category-link" href="http://localhost:8000/en/categories/it-akademija/advanced-java-programming">Advanced Java Programming</a> / 
+<a class="category-link" href="http://localhost:8000/en/categories/it-akademija/advanced-java-programming/ajp-modul-1-napredno-objektno-programiranje">AJP - Modul 1. Napredno objektno programiranje</a>
+<h4>Tags</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="http://localhost:8000/en/tags/apstrakcija">apstrakcija 
+</a></li>
+<li><a href="http://localhost:8000/en/tags/enkapsulacija">enkapsulacija 
+</a></li>
+<li><a href="http://localhost:8000/en/tags/java">Java 
+</a></li>
+<li><a href="http://localhost:8000/en/tags/klase">klase 
+</a></li>
+<li><a href="http://localhost:8000/en/tags/nasledivanje">nasleđivanje 
+</a></li>
+<li><a href="http://localhost:8000/en/tags/objekti">objekti 
+</a></li>
+<li><a href="http://localhost:8000/en/tags/oop">OOP 
+</a></li>
+<li><a href="http://localhost:8000/en/tags/polimorfizam">polimorfizam 
+</a></li>
+<li><a href="http://localhost:8000/en/tags/programiranje">programiranje 
+</a></li>
+</ul>
+<h4>Social networks</h4>
+<div id="sidebar-social-link">
+<a href="https://fb.me/dani.vlajna" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Facebook" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1877f2" height="512" rx="15%" width="512"></rect><path d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z" fill="#fff"></path></svg>
+</a>
+<a href="https://twitter.com/DJ_Dani_Serbia" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://www.youtube.com/DanijelaPopovic" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="YouTube" fill="#ed1d24" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect height="512" rx="15%" width="512"></rect><path d="m427 169c-4-15-17-27-32-31-34-9-239-10-278 0-15 4-28 16-32 31-9 38-10 135 0 174 4 15 17 27 32 31 36 10 241 10 278 0 15-4 28-16 32-31 9-36 9-137 0-174" fill="#fff"></path><path d="m220 203v106l93-53"></path></svg>
+</a>
+<a href="https://github.com/vlajna95" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+</div>
+</section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="span1"></div>
+</div>
+</div>
+
+<footer>
+<div>
+<span class="site-name">DP Tech</span> - Your favorite tech blog :smile:
+</div>
+<div id="fpowered">
+Pokreće: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican početna strana">Pelican</a>. 
+Tema: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Početna strana Elegant teme">Elegant</a>. 
+</div>
+</footer><script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="http://localhost:8000/en/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script src="http://localhost:8000/en/theme/js/custom.js"></script>
+<script>
+function validateForm(query) {
+return(query.length>0);
+}
+</script>
+<script>
+function checkAnswer(origin) {
+var question_name = $(origin).attr("data-question");
+var correct_answer_element = $(origin).attr("data-correct");
+var correct_answer_id = $("#"+correct_answer_element).val();
+var correct_answer_label = $("label[for="+correct_answer_id+"]").text();
+var chosen_answer_id = $("input[name="+question_name+"]:checked").attr("id");
+var chosen_answer_label = $("label[for="+chosen_answer_id+"]").text();
+if(correct_answer_id == chosen_answer_id) {
+alert("Bravo!");
+}
+else {
+alert("Hmmm... ne. \n" + correct_answer_label);
+}
+$("input[name="+question_name+"]").attr("disabled", true);
+}
+</script>
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+</body>
+<!--
+Theme: Elegant built for Pelican 
+License: MIT
+-->
+</html>

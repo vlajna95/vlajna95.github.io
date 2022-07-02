@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DP Tech - fakultet</title><link href="http://localhost:8000/" rel="alternate"></link><link href="http://localhost:8000/feeds/atom/tag-fakultet.xml" rel="self"></link><id>http://localhost:8000/</id><updated>2018-07-04T21:14:00+02:00</updated><subtitle>Tvoj omiljeni blog</subtitle><entry><title>O fakultetu</title><link href="http://localhost:8000/articles/o-fakultetu" rel="alternate"></link><published>2018-07-04T21:14:00+02:00</published><updated>2018-07-04T21:14:00+02:00</updated><author><name>Danijela Popović</name></author><id>tag:localhost,2018-07-04:/articles/o-fakultetu</id><summary type="html">&lt;p&gt;O Filološkom fakultetu&lt;/p&gt;</summary><content type="html">&lt;p&gt;Upisala sam Filološki! &lt;img alt="😄" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f604.png" title="smiling face with open mouth and smiling eyes"&gt;&lt;/p&gt;
+&lt;p&gt;Univerzitet u Beogradu &lt;br&gt;
+Filološki fakultet &lt;br&gt;
+Katedra za iberijske studije &lt;br&gt;
+Španski jezik, hispanske književnosti i kulture &lt;/p&gt;
+&lt;p&gt;&lt;img alt="😍" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f60d.png" title="smiling face with heart-shaped eyes"&gt;&lt;/p&gt;</content><category term="Fakultet/Opšte/Informacije"></category><category term="fakultet"></category><category term="upis"></category></entry></feed>

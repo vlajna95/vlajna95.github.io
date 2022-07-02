@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+
+<html lang="ca">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/theme/css/custom.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/css/elegant.prod.9e9d5ce754.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/css/custom.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/fontawesome/css/all.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&amp;display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<meta content="Danijela Popović" name="author"/>
+<meta content="Apstraktne klase i interfejsi u programskom jeziku Java
+" name="description"/>
+<meta content="@DJ_Dani_Serbia" name="twitter:creator"/>
+<meta content="article" property="og:type"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Java, OOP, programiranje, klase, interfejsi, apstrakcija, IT akademija/Advanced Java Programming/AJP - Modul 1. Napredno objektno programiranje, " name="keywords"/>
+<meta content="AJP 1.2. Apstraktne klase i interfejsi" property="og:title"/>
+<meta content="http://localhost:8000/ca/drafts/ajp-12-apstraktne-klase-i-interfejsi-sr.html" property="og:url"/>
+<meta content="Apstraktne klase i interfejsi u programskom jeziku Java" property="og:description"/>
+<meta content="DP Tech" property="og:site_name"/>
+<meta content="Danijela Popović" property="og:article:author"/>
+<meta content="2022-01-10T19:31:00+01:00" property="og:article:published_time"/>
+<meta content="AJP 1.2. Apstraktne klase i interfejsi" name="twitter:title"/>
+<meta content="Apstraktne klase i interfejsi u programskom jeziku Java" name="twitter:description"/>
+<title>AJP 1.2. Apstraktne klase i interfejsi · DP Tech
+</title>
+<link href="http://localhost:8000/feeds/atom/all.xml" rel="alternate" title="DP Tech - Full Atom Feed" type="application/atom+xml">
+<link href="http://localhost:8000/feeds/rss/all.xml" rel="alternate" title="DP Tech - Full RSS Feed" type="application/rss+xml"/>
+</link></link><link href="http://localhost:8000/ca\drafts/ajp-12-apstraktne-klase-i-interfejsi-sr.html" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DP Tech", "item": "http://localhost:8000/ca"}, {"@type": "ListItem", "position": 2, "name": "Drafts", "item": "http://localhost:8000/ca\\drafts"}, {"@type": "ListItem", "position": 3, "name": "Ajp 12 apstraktne klase i interfejsi sr", "item": "http://localhost:8000/ca\\drafts/ajp-12-apstraktne-klase-i-interfejsi-sr.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Danijela Popović"}, "publisher": {"@type": "Organization", "name": "DP Tech", "logo": {"@type": "ImageObject", "url": "logo_transparent.png"}}, "headline": "AJP 1.2. Apstraktne klase i interfejsi", "about": "IT akademija/Advanced Java Programming/AJP - Modul 1. Napredno objektno programiranje", "datePublished": "2022-01-10 19:31"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" title="Prikaži/sakrij meni">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="http://localhost:8000/ca/"><span class="site-name">DP Tech</span> - El teu bloc preferit</a>
+<nav class="nav-collapse collapse">
+<ul class="nav pull-right top-menu disclosure-nav" id="menubar">
+<li>
+<a href="http://localhost:8000/ca">Inici</a>
+</li>
+<li><a href="/categories/katalonski-catala">Katalonski - Català</a></li>
+<li><a href="http://localhost:8000/ca/categories">Kategorije</a></li>
+<li><a href="http://localhost:8000/ca/tags">Oznake</a></li>
+<li><a href="http://localhost:8000/ca/archives">Arhiva članaka</a></li>
+<li><form action="http://localhost:8000/ca/search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"><input class="search-query" id="tipue_search_input" name="q" placeholder="Pretraži" type="text"/></form></li>
+</ul>
+</nav></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1><a href="http://localhost:8000/ca/drafts/ajp-12-apstraktne-klase-i-interfejsi-sr.html">
+AJP 1.2. Apstraktne klase i interfejsi
+</a>
+</h1>
+<p><p>Apstraktne klase i interfejsi u programskom jeziku Java</p></p>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span8 offset2 article-content">
+<hr/>
+<p>Prethodna lekcija donela je kratak osvrt na osnovne postulate objektno orijentisanog programiranja u Javi. Prikazano je kako se obavlja kreiranje klasa i objekata, te kako se postiže nasleđivanje, redefinisanje i preklapanje metoda. Sve su to pojmovi čije je razumevanje neophodno za ono što će biti izneto u nastavku ovog modula. </p>
+<p>Sada je vreme da se posvetimo naprednim osobinama objektno orijentisanog programiranja u Javi. Za početak, pozabavićemo se specifičnim oblicima u kojima mogu postojati Java klase, pa će tako u ovoj lekciji biti reči o apstraktnim klasama. Nakon apstraktnih klasa, u ovoj lekciji biće predstavljen još jedan veoma značajan pojam objektno orijentisanog programiranja - interfejsi. </p>
+<h2 id="apstraktne-klase">Apstraktne klase</h2>
+<p>Apstraktne klase omogućavaju da se kreira klasa koja se ne može instancirati. I sada se verovatno pitate – zbog čega bismo uopšte i kreirali klasu koja se ne može koristiti za kreiranje objekata? Naime, u nekim situacijama može se javiti potreba za kreiranjem klase koja bi se koristila samo kao obrazac za kreiranje nekih drugih klasa. Takva klasa bi služila kao osnova za sve klase koje bi iz nje bile izvedene. Tako su apstraktne klase one koje se ne mogu instancirati, već samo naslediti. <br/>
+Primer iz prethodne lekcije idealan je za razumevanje pojma apstraktnih klasa. Naime, <code>Product</code> klasa se može pretvoriti u apstraktnu klasu: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Product</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">...</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Bitno je da primetite da smo prilikom definisanja klase <code>Product</code> iskoristili ključnu reč <code>abstract</code>. Ključna reč <code>abstract</code> je ono što jednu klasu čini apstraktnom. Ovu ključnu reč je potrebno postaviti nakon ključne reči koja predstavlja modifikator pristupa, a pre ključne reči <code>class</code> kojom se deklariše klasa. </p>
+<p>Nakon pretvaranja klase <code>Product</code> u apstraktnu, nećete moći da primetite nikakvu razliku u funkcionisanju koda iz prethodne lekcije. Naime, instanciranje objekata nasleđenih klasa funkcionisaće bez ikakvih problema. </p>
+<details>
+<summary>Program.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Program.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Program</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		Gamepad product1 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Gamepad(</span><span style="color: #48b685">"Logitech"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"F710"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">129.99</span><span style="color: #c7c7c7">, </span><span style="color: #815ba4">true</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		Printer product2 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Printer(</span><span style="color: #48b685">"HP"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"Envy Photo 7155"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">179.99</span><span style="color: #c7c7c7">, </span><span style="color: #815ba4">true</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		Monitor product3 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Monitor(</span><span style="color: #48b685">"Dell"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"U2419H"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">219.99</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">24</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(product1);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(product2);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(product3);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Product.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Product.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Product</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String brand;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String model;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #848484">// ...</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Product</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">brand</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> brand;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">model</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"Brand='"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> brand </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> '\'' </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", Model='"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> model </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> '\'' </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", Price="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Gamepad.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Gamepad.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Gamepad</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Product {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> wireless;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Gamepad</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price, </span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> wireless) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(brand, model, price);</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">wireless</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> wireless;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", "</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"wireless="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> wireless;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Monitor.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Monitor.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Monitor</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Product {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> diagonal;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Monitor</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> diagonal) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(brand, model, price);</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">diagonal</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> diagonal;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", "</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"diagonal="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> diagonal;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Printer.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Printer.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Printer</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Product {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> color;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Printer</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price, </span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> color) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(brand, model, price);</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">color</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> color;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", "</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"color="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> color;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Ipak, ukoliko pokušate da instancirate klasu <code>Product</code>, koja je sada apstraktna, doći će do pojave greške (slika 2.1). </p>
+<figure>
+<img alt="Slika 2.1. Pokušaj instanciranja apstraktne klase proizvodi grešku" src="/images/AdvancedJavaProgramming/1_02_01.png"/>
+<figcaption>Slika 2.1. Pokušaj instanciranja apstraktne klase proizvodi grešku</figcaption>
+</figure>
+<p>Na slici 2.1. se jasno može videti da razvojno okruženje ukazuje na grešku prilikom pokušaja instanciranja klase <code>Product</code> koja je apstraktna. </p>
+<p>Apstraktne i konkretne klase <br/>
+U prethodnim redovima ste mogli da pročitate da su apstraktne one klase koje se ne mogu instancirati. Sa druge strane, sve one klase koje se mogu instancirati nazivaju se konkretne. Tako se može reći da jedna klasa u Java jeziku može biti apstraktna ili konkretna. </p>
+<h2 id="apstraktne-metode">Apstraktne metode</h2>
+<p>Još jedna osobenost apstraktnih klasa jeste njihova mogućnost da sadrže apstraktne metode. Reč je o metodama koje ne poseduju implementaciju, odnosno logiku, već samo potpis: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Product</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	...</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">checkStock</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Unutar klase <code>Product</code> sada je postavljena i jedna apstraktna metoda sa nazivom <code>checkStock()</code>. Da je reč o apstraktnoj metodi znamo na osnovu upotrebe ključne reči <code>abstract</code> prilikom njenog deklarisanja. Opet važi identično pravilo kao i prilikom kreiranja apstraktnih klasa: ključna reč <code>abstract</code> navodi se odmah nakon modifikatora pristupa, ali pre tipa povratne vrednosti. </p>
+<p>Apstraktne metode ne smeju imati telo, stoga je definisanje apstraktne metode sa telom sintaksna greška (slika 2.2). </p>
+<figure>
+<img alt="Slika 2.2. Apstraktne metode ne mogu imati telo" src="/images/AdvancedJavaProgramming/1_02_02.png"/>
+<figcaption>Slika 2.2. Apstraktne metode ne mogu imati telo</figcaption>
+</figure>
+<p>S obzirom na to da ne mogu imati telo i da se mogu pojaviti samo unutar klasa koje se ne mogu instancirati (čitaj: apstraktnih klasa), kao logično se nameće pitanje svrhe apstraktnih metoda. Apstraktne metode imaju jednu vrlo važnu ulogu u objektno orijentisanom programiranju. One se zapravo koriste da obavežu sve klase koje nasleđuju neku klasu da moraju obezbediti implementaciju svih metode koje su u roditeljskoj klasi označene kao apstraktne. Neispunjenje takve obaveze stvara grešku, pa stoga u ovom trenutku imamo tri greške u našem projektu (slika 2.3). </p>
+<figure>
+<img alt="Slika 2.3. Obaveza klase da implementira apstraktne metode" src="/images/AdvancedJavaProgramming/1_02_03.png"/>
+<figcaption>Slika 2.3. Obaveza klase da implementira apstraktne metode</figcaption>
+</figure>
+<p>Slika 2.3. ilustruje poruku iz jedne od klasa koje nasleđuju klasu <code>Product</code> unutar našeg Java programa. I u ostalim klasama postoji identična greška - apstraktna metoda <code>checkStock()</code> iz roditeljske klase se mora implementirati u nasleđenoj klasi: </p>
+<details>
+<summary>Program.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Program.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Program</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		Monitor product3 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Monitor(</span><span style="color: #48b685">"Dell"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"U2419H"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">219.99</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">24</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(product3.</span><span style="color: #06b6ef">checkStock</span><span style="color: #c7c7c7">());</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Product.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Monitor.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Monitor</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Product {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> diagonal;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Monitor</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> diagonal) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(brand, model, price);</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">diagonal</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> diagonal;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", "</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"diagonal="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> diagonal;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">checkStock</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> (</span><span style="color: #fec418">int</span><span style="color: #c7c7c7">) (Math.</span><span style="color: #06b6ef">random</span><span style="color: #c7c7c7">() </span><span style="color: #5bc4bf">*</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">100</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Na dnu klase <code>Monitor</code> sada možete da vidite metodu <code>checkStock()</code>, koja poseduje implementaciju, odnosno telo sa logikom koja utvrđuje stanje rezervi određenog proizvoda. Logika za utvrđivanje stanja zaliha služi samo radi ilustracije, pa metoda <code>checkStock()</code> kao svoju povratnu vrednost može da emituje broj u rasponu od 0 do 99. U realnim okolnostima, unutar metode <code>checkStock()</code> verovatno bi se nalazila logika koja bi podatke o stanju zaliha čitala iz nekog lokalnog ili udaljenog skladišta podataka. <br/>
+Metoda <code>checkStock()</code> obeležena je oznakom <code>@Override</code>, kako bi se naznačilo da istoimena metoda postoji i unutar roditeljske klase. I zaista, implementacija apstraktnih metoda je jedan od klasičnih primera redefinisanja metoda, odnosno polimorfizma. </p>
+<h4 id="intellij-idea-tip-implementiranje-apstraktnih-metoda">IntelliJ IDEA Tip: Implementiranje apstraktnih metoda</h4>
+<p>Apstraktne metode iz roditeljskih klasa veoma lako se mogu implementirati korišćenjem razvojnog okruženja IntelliJ IDEA. Dovoljno je odabrati opciju <strong>Implement methods_</strong> koja postoji unutar panela koji se dobija kada se kursor miša postavi iznad podvučenog dela koda u situaciji kada postoje apstraktne metode koje nisu implementirane (slika 2.4). </p>
+<figure>
+<img alt="Slika 2.4. Implementiranje apstraktnih metoda korišćenjem IntelliJ IDEA okruženja" src="/images/AdvancedJavaProgramming/1_02_04.png"/>
+<figcaption>Slika 2.4. Implementiranje apstraktnih metoda korišćenjem IntelliJ IDEA okruženja</figcaption>
+</figure>
+<p>Klikom na opciju <strong>Implement methods</strong> otvara se prozor za odabir metoda koje će biti implementirane (slika 2.5). </p>
+<figure>
+<img alt="Slika 2.5. Prozor za odabir metoda koje će biti implementirane" src="/images/AdvancedJavaProgramming/1_02_05.png"/>
+<figcaption>Slika 2.5. Prozor za odabir metoda koje će biti implementirane</figcaption>
+</figure>
+<p>U našem primeru postoji samo jedna metoda za implementiranje (<code>checkStock</code>), a pored odabira metoda za implementaciju, prozor sa slike 2.5. omogućava da odlučimo da li želimo da se JavaDoc komentari prekopiraju iz roditeljske klase i da li želimo da metoda bude obeležena <code>@Override</code> anotacijom, kako bi se lakše moglo uočiti da je reč o metodi koja je redefinisana. <br/>
+Klikom na dugme OK dobija se implementacija metode <code>checkStock()</code>, sa podrazumevanom logikom: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">checkStock</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">	}</span>
+</code></pre></div>
+<p>Jedini scenario u kome implementiranje apstraktnih metoda nije neophodno jeste onda kada i sama klasa koja nasleđuje nije konkretna. To praktično znači da se apstraktna metoda <code>checkStock()</code> ne bi morala implementirati onda kada bi i klasa <code>Monitor</code> bila apstraktna. Ipak, apstraktne metode iz svih roditeljskih klasa moraju se implementirati u prvoj konkretnoj klasi u lancu nasleđivanja. </p>
+<p>Apstraktne klase mogu posedovati i klasične metode <br/>
+Osobenost apstraktnih klasa jeste mogućnost postojanja apstraktnih metoda. Ipak, ništa ne sprečava apstraktne klase da pored apstraktnih metoda poseduju i klasične metode, odnosno metode koje imaju telo. Takođe, apstraktne klase mogu posedovati i sve ostale elemente koji se mogu naći unutar Java klasa - svojstva, konstruktore... </p>
+<h2 id="interfejsi">Interfejsi</h2>
+<p>Esencijalni sastojak gotovo svakog objektno orijentisanog programskog jezika jesu i interfejsi. Odmah je potrebno razumeti da se pod pojmom interfejsa u objektno orijentisanom programiranju ne podrazumeva bilo kakvo korisničko okruženje (User Interface – UI), odnosno grafički interfejs, što je uglavnom prva pomisao koju početnici dobijaju prilikom spominjanja pojma interfejsa. Ovde je reč o pojmu sa potpuno drugačijim značenjem, odnosno o konceptu koji omogućava najviši stepen apstrakcije u objektno orijentisanim jezicima. </p>
+<p>Pre nego što se posvetimo praktičnom kreiranju interfejsa, neophodno je da razumemo odakle potiče takav naziv – interfejs. Naime, do sada ste već imali prilike da vidite da se objekti klasa ponašaju kao zaokružene celine, unutar kojih su procesom enkapsulacije objedinjena svojstva i ponašanja koja su karakteristična za tip konkretnog objekta. Sa spoljašnjim svetom, odnosno sa ostatkom programa, objekti komuniciraju primarno posredstvom metoda. Drugim rečima, nakon instanciranja neke klase i dobijanja objekta, imamo mogućnost da njima rukujemo pozivanjem njegovih metoda i obradom izlaznih podataka. Tako se može reći da su metode koje izlaže jedan objekat interfejs za vršenje interakcije sa takvim objektom. Analogija se može napraviti sa automobilom. Volan, ručica menjača, kontrole pored volana i kontakt-brava objedinjeno se mogu nazvati interfejsom koji nam je proizvođač automobila izložio kako bismo njime mogli da upravljamo. Mi ne moramo da znamo na koji način su sve nabrojane operacije realizovane ispod haube, već samo kako da koristimo interfejs koji nam je stavljen na raspolaganje. Po identičnom principu, i metode koje jedan objekat izlaže na korišćenje spoljnom svetu mogu se nazvati interfejsom za rukovanje takvim objektom. Java programski jezik omogućava da se takav interfejs artikuliše posebnim jezičkim elementom koji se kreira korišćenjem ključne reči <code>interface</code>. </p>
+<p>U svom osnovnom obliku, interfejsi u Javi mogu da poseduju proizvoljan broj apstraktnih metoda: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Storable</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">read</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">write</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">update</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">delete</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Kao što možete da vidite, interfejsi se kreiraju slično klasama. Razlika je upotreba ključne reči <code>interface</code> umesto ključne reči <code>class</code>. Prikazanim kodom kreiran je jedan interfejs sa nazivom <code>Storable</code> i unutar njega se nalaze četiri apstraktne metode: <code>read()</code>, <code>write()</code>, <code>update()</code> i <code>delete()</code>. </p>
+<h4 id="intellij-idea-tip-kreiranje-interfejsa">IntelliJ IDEA Tip: Kreiranje interfejsa</h4>
+<p>Interfejsi se korišćenjem IntelliJ IDEA razvojnog okruženja kreiraju slično klasama. Potrebno je odabrati opciju <strong>New-&gt;Java Class</strong>, koja se nalazi u kontekstnom meniju koji se dobija desnim klikom na folder <code>src</code> (slika 2.6). </p>
+<figure>
+<img alt="Slika 2.6. Opcija za kreiranje nove klase (interfejsa)" src="/images/AdvancedJavaProgramming/1_02_06.png"/>
+<figcaption>Slika 2.6. Opcija za kreiranje nove klase (interfejsa)</figcaption>
+</figure>
+<p>U prozoru koji se zatim dobija, potrebno je uneti naziv interfejsa i odabrati opciju <strong>Interface</strong> (slika 2.7). </p>
+<figure>
+<img alt="Slika 2.7. Prozor za unos naziva novog interfejsa" src="/images/AdvancedJavaProgramming/1_02_07.png"/>
+<figcaption>Slika 2.7. Prozor za unos naziva novog interfejsa</figcaption>
+</figure>
+<p>Nakon potvrđivanja pritiskom na taster Enter ili duplim klikom na opciju <strong>Interface</strong>, IntelliJ IDEA kreira interfejs sa definisanim imenom, čije je telo prazno: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Storable</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>U upravo kreiranom interfejsu sa nazivom <code>Storable</code>, definisane su četiri apstraktne metode. S obzirom na to da je reč o apstraktnim metodama, one ne poseduju telo, već samo potpis. Osnovni razlog za kreiranje interfejsa jeste njihova implementacija od strane klasa. Na primer, ovako može da izgleda implementacija <code>Storable</code> interfejsa od strane klase <code>Gamepad</code>: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Gamepad</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Product </span><span style="color: #815ba4">implements</span><span style="color: #c7c7c7"> Storable {</span>
+<span style="color: #c7c7c7">	...</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Interfejs se implementira korišćenjem ključne reči <code>implements</code>, nakon koje se navodi naziv interfejsa. Kada jedna klasa implementira neki interfejs, ona se obavezuje da će implemetirati sve metode koje se nalaze unutar interfejsa. To praktično znači da se unutar klase <code>Gamepad</code> moraju implemetirati sve metode koje postoje unutar interfejsa <code>Storable</code> (slika 2.8). </p>
+<figure>
+<img alt="Slika 2.8. Prilikom implementiranja interfejsa moraju se implementirati sve njegove apstraktne metode" src="/images/AdvancedJavaProgramming/1_02_08.png"/>
+<figcaption>Slika 2.8. Prilikom implementiranja interfejsa moraju se implementirati sve njegove apstraktne metode</figcaption>
+</figure>
+<p>Kako bi klasa <code>Gamepad</code> ispunila obećanje dato implementiranjem interfejsa, neophodno je da unutar nje budu implementirane sve metode iz interfejsa: </p>
+<details>
+<summary>Program.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Program.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Program</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		Gamepad product1 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Gamepad(</span><span style="color: #48b685">"Logitech"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"F710"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">129.99</span><span style="color: #c7c7c7">, </span><span style="color: #815ba4">true</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		product1.</span><span style="color: #06b6ef">delete</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Product.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Product.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Product</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String brand;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String model;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #848484">//...</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Product</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">brand</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> brand;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">model</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"Brand='"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> brand </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> '\'' </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", Model='"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> model </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> '\'' </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", Price="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Gamepad.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Gamepad.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Gamepad</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Product </span><span style="color: #815ba4">implements</span><span style="color: #c7c7c7"> Storable {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> wireless;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Gamepad</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price, </span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> wireless) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(brand, model, price);</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">wireless</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> wireless;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", "</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"wireless="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> wireless;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">read</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// logic for reading</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">write</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// logic for writing</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">update</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// logic for updating</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">delete</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// logic for deleting</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Storable.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Storable.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Storable</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">read</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">write</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">update</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">delete</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Možemo da zaključimo da se korišćenjem interfejsa <code>Storable</code> klasa <code>Gamepad</code> obavezala da će unutar sebe imati četiri metode koje su definisane unutar takvog interfejsa. </p>
+<p>Interfejs <code>Storable</code> <br/>
+Prilikom demonstracije upotrebe interfejsa, u ovoj lekciji smo se odlučili za jedan realan primer interfejsa. Naime, upravo kreirani interfejs <code>Storable</code> može se koristiti da naznači da neka klasa poseduje metode za obavljanje osnovnih operacija nad skladištem podataka. <br/>
+U realnim aplikacijama, podaci se čuvaju unutar različitih vrsta skladišta podataka. Na primer, podaci se mogu čuvati unutar običnih tekstualnih fajlova, ali i unutar specijalizovanih skladišta koja se nazivaju baze podataka. Podaci iz takvih skladišta se unutar Java programa predstavljaju kao objekti odgovarajućih klasa. U primeru iz ove lekcije, to bi značilo da se podaci o proizvodima nalaze u nekoj bazi podataka. Java program takvim podacima rukuje u objektnom obliku, pri čemu se metode <code>read()</code>, <code>write()</code>, <code>update()</code> i <code>delete()</code> koriste za obavljanje četiri osnovne operacije nad podacima - čitanje, pisanje, ažuriranje i brisanje, respektivno. Implementacija interfejsa <code>Storable</code> u primeru naše aplikacije jeste garancija da objekti neke klase poseduju četiri upravo spomenute metode za obavljanje osnovnih operacija nad skladištem podataka. </p>
+<p>Metode koje se definišu unutar interfejsa su podrazumevano javne apstraktne metode. Upravo zbog toga je ključne reči <code>public</code> i <code>abstract</code> moguće izostaviti i napisati sledeće: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Storable</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">read</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">write</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">update</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">delete</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<h3 id="razlika-izmeu-interfejsa-i-apstraktnih-klasa">Razlika između interfejsa i apstraktnih klasa</h3>
+<p>U ovom trenutku se možete pitati zbog čega su nam potrebni interfejsi, kada smo identično mogli da postignemo i korišćenjem apstraktne klase i apstraktnih metoda unutar nje. Jednostavno smo mogli da apstraktne metode iz interfejsa definišemo unutar roditeljske <code>Product</code> klase i efekat bi bio identičan, odnosno i tada bismo klasu <code>Gamepad</code> obavezali da mora imati implementacije sve četiri metode iz interfejsa. Ipak, postoji nekoliko značajnih razlika između apstraktnih klasa i interfejsa. </p>
+<p>Apstraktne klase se nasleđuju, dok se interfejsi implementiraju <br/>
+Prva razlika je kozmetičke mprirode. Apstraktne klase se nasleđuju, dok se interfejsi implementiraju, a takve operacije su propraćene i upotrebom odgovarajućih ključnih reči - <code>extends</code> i <code>implements</code>, respektivno. </p>
+<p>Jedna klasa može da nasledi samo jednu apstraktnu klasu, ali zato može da implemetira proizvoljan broj interfejsa <br/>
+Prva značajna razlika između apstraktnih klasa i interfejsa odnosi se na mogućnost višestruke implementacije. Naime, jedna klasa može da implementira veći broj interfejsa, što nije slučaj prilikom nasleđivanja klasa. Stoga mi sada možemo napraviti još jedan interfejs, a onda njega implementirati od strane klase <code>Gamepad</code>. Evo kako izgleda novi interfejs: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Searchable</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">search</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Klasa <code>Gamepad</code>, pored već implementiranog interfejsa, sada može da implementira i <code>interfejs</code>Searchable`: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Gamepad</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Product </span><span style="color: #815ba4">implements</span><span style="color: #c7c7c7"> Storable, Searchable {</span>
+<span style="color: #c7c7c7">	...</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Klasa <code>Gamepad</code> sada implementira dva interfejsa. Jednostavno, nakon ključne reči <code>implements</code> moguće je navesti veći broj interfejsa, koji se razdvajaju karakterom zapeta. </p>
+<p>Sada u okviru radnog okruženja možete dodati novi fajl <code>Searchable.java u kome bi se nalazio istoimeni interfejs, i onda klasa</code>Gamepad<code>može da njegovom implementacijom nasledi</code>search()` metodu. </p>
+<p>Jedan interfejs može biti implementiran od strane proizvoljnog broja klasa, pa čak i kada one međusobno nemaju nikakvih dodirnih tačaka <br/>
+Svakako najznačajnija osobenost interfejsa, i ujedno ono što ih razlikuje od apstraktnih klasa, jeste mogućnost implementacije interfejsa od strane klasa koje nemaju nikakvih dodirnih tačaka. Naime, interfejsi nisu vezani za neki konkretan tip ili grupu tipova. Jedan interfejs se može implementirati od strane klasa koje nemaju nikakvih dodirnih tačaka, što je u potpunosti suprotno od onoga što važi za apstraktne klase. Naime, sve klase koje nasleđuju jednu klasu moraju biti srodne, s obzirom na to da dele osobine koje su definisane unutar roditeljske klase. Za razliku od apstraktnih klasa, jedan interfejs mogu implementirati klase potpuno različitih namena. <br/>
+Sve ovo u našem konkretnom primeru znači da interfejse <code>Storable</code> i <code>Searchable</code> mogu da implementiraju sve klase koje treba da imaju metode za čuvanje i pretragu: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Customer</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">implements</span><span style="color: #c7c7c7"> Storable {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String name;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String address;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String gender;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Customer</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Customer</span><span style="color: #c7c7c7">(String name, String address, String gender) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">name</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> name;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">address</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> address;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">gender</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> gender;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">read</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// read logic</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">write</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// write logic</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">update</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// update logic</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">delete</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// delete logic</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Ovo je primer još jedne klase koja može postojati u našem programu. Naime, velike su šanse da program koji rukuje proizvodima ima potrebu i za predstavljanjem kupaca, odnosno klijenata. Upravo to može biti namena prikazane klase <code>Customer</code>. <code>Customer</code> je klasa koja ne deli osobine ni sa jednom od klasa kojima se predstavljaju proizvodi. Ipak, to ne sprečava nijednu od takvih klasa da implementira interfejs <code>Storable</code>. Zbog toga i klasa <code>Customer</code> implementira interfejs <code>Storable</code> i sve metode koje se unutar njega nalaze. To je garancija da objekti ove klase poseduju metode za obavljanje osnovnih operacija nad podacima kupaca. </p>
+<p>Sada u okviru radnog okruženja možete dodati novi fajl <code>Customer.java</code> u kome bi se nalazila istoimena klasa. </p>
+<p>Interfejsi su referentni tipovi <br/>
+Kreiranjem novog interfejsa zapravo se dobija jedan novi referentni tip u programu koji kreiramo. To praktično znači da su <code>Storable</code> i <code>Searchable</code> tipovi podataka. Veoma se lako možemo uveriti da je to stvarno tako: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #c7c7c7">Storable product1 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Gamepad(</span><span style="color: #48b685">"Logitech"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"F710"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">129.99</span><span style="color: #c7c7c7">, </span><span style="color: #815ba4">true</span><span style="color: #c7c7c7">);</span>
+</code></pre></div>
+<p>Naredba ilustruje kod za kreiranje jednog objekta klase <code>Gamepad</code>. Ipak, bitno je da primetite da je referenca na takav objekat smeštena unutar promenljive tipa <code>Storable</code>. To je dokaz da je kreiranjem interfejsa <code>Storable</code> stvoren i jedan novi tip u našem Java programu. To takođe znači i da se objekti klase <code>Gamepad</code> sada mogu predstaviti korišćenjem nekoliko tipova: </p>
+<ul>
+<li>korišćenjem tipa <code>Gamepad</code>, što je osnovni tip matične klase </li>
+<li>korišćenjem tipa <code>Product</code>, zato što klasa <code>Gamepad</code> nasleđuje takvu klasu </li>
+<li>korišćenjem tipa <code>Storable</code>, što je interfejs koji ova klasa implementira </li>
+</ul>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #c7c7c7">Gamepad product1 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Gamepad(</span><span style="color: #48b685">"Logitech"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"F710"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">129.99</span><span style="color: #c7c7c7">, </span><span style="color: #815ba4">true</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">Product product1 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Gamepad(</span><span style="color: #48b685">"Logitech"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"F710"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">129.99</span><span style="color: #c7c7c7">, </span><span style="color: #815ba4">true</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">Storable product1 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Gamepad(</span><span style="color: #48b685">"Logitech"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"F710"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">129.99</span><span style="color: #c7c7c7">, </span><span style="color: #815ba4">true</span><span style="color: #c7c7c7">);</span>
+</code></pre></div>
+<p>Činjenica da su interfejsi tipovi veoma je korisna u situacijama kada je potrebno rukovati objektima čije konkretne tipove ne možemo znati unapred. Na primer, zamislite metodu koja može da prihvati neki objekat koji se može sačuvati u bazi i nad takvim objektom obavlja određene provere i na kraju pokreće operaciju čuvanja: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">saveObject</span><span style="color: #c7c7c7">(Storable object) {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #848484">// do validation, and if valid call write</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	object.</span><span style="color: #06b6ef">write</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Metoda <code>saveObject()</code> je klasičan primer metode koja zavisi od apstrakcije, a ne od konkretne implementacije. Šta to praktično znači? <br/>
+Ulazni parametar metode jeste tipa <code>Storable</code>. To je tip koji predstavlja interfejs, a interfejs ne predstavlja neki konkretan tip podatka, zato što može biti implementiran od strane bilo koje klase. Stoga smo na ovaj način omogućili metodi <code>saveObject()</code> da prihvati objekte koji mogu da budu različitih konkretnih tipova. Njoj možemo da prosledimo objekte tipa <code>Gamepad</code> ili objekte tipa <code>Customer</code>, odnosno objekte svih onih konkretnih tipova koji implementiraju interfejs <code>Storable</code>. Štaviše, metoda <code>saveObject()</code> uopšte ne mora ni znati koji će konkretan tip da dobije. Sve što ona zna jeste da će dobiti tip koji je implemetirao interfejs <code>Storable</code>, a to je garancija da će takav objekat sigurno imati metodu <code>write()</code> koja je definisana unutar interfejsa <code>Storable</code>. </p>
+<h3 id="podrazumevane-metode-unutar-interfejsa">Podrazumevane metode unutar interfejsa</h3>
+<p>Do sada ste imali prilike da vidite interfejse koji su unutar sebe imali apstraktne, javne metode. Javne apstraktne metode dugo su bile jedini sadržaj koji se mogao naći unutar interfejsa. Ipak, u novijim verzijama Jave takva činjenica se promenila, pa su tokom vremena u jezik dodate mogućnosti da interfejsi sadrže i neke druge članove. Za početak, unutar interfejsa se mogu naći podrazumevane metode. </p>
+<p>Podrazumevane metode omogućavaju da se unutar interfejsa definišu konkretne metode, odnosno metode koje poseduju telo. Ali, zbog čega su nam potrebne konkretne metode unutar interfejsa? </p>
+<p>Već ste imali prilike da vidite da se interfejsi mogu implementirati od strane velikog broja različitih klasa. Pri tom, sve klase koje implemetiraju jedan interfejs moraju obezbediti implementaciju svih metoda definisanih unutar tog interfejsa. Sada se postavlja pitanje – šta ukoliko se pojavi potreba za naknadnim dodavanjem još neke metode unutar interfejsa? </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Storable</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">read</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">write</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">update</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">delete</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">exists</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Sada je unutar interfejsa <code>Storable</code> dodata još jedna metoda - <code>exists()</code>. Reč je o metodi koja je namenjena za utvrđivanje postojanja nekog objekta unutar skladišta podataka. Kada učinimo nešto ovako, odnosno kada dodamo novu metodu unutar interfejsa, sve klase koje su implementirale takav interfejs postaju nevalidne. Drugim rečima, u ovakvoj situaciji metoda <code>exists()</code> se mora implementirati u svim klasama koje implementiraju interfejs <code>Storable</code> kako bi kod bio validan. U realnim okolnostima, odnosno unutar realnih Java programa, jedan interfejs može biti implementiran od strane velikog broja klasa. U takvoj situaciji, dodavanje nove metode unutar interfejsa bi podrazumevalo da se svaka od takvih klasa modifikuje, dodavanjem implementacije za metodu koja je dodata. Kako bi se prevazišao takav problem, u Java jezik je uvršćena mogućnost definisanja podrazumevanih (<strong>default</strong>) metoda unutar interfejsa: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Storable</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">read</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">write</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">update</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">delete</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">default</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">exists</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">true</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Do malopre apstraktna metoda <code>exists()</code> sada je pretvorena u podrazumevanu metodu, koja poseduje telo. To sve klase koje implementiraju interfejs <code>Storable</code> oslobađa potrebe za implementacijom takve metode. Naravno, klase koje implementiraju interfejs <code>Storable</code> imaju mogućnost da ovakvu podrazumevanu metodu redefinišu, ukoliko se za takvim nečim javi potreba: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Gamepad</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Product </span><span style="color: #815ba4">implements</span><span style="color: #c7c7c7"> Storable, Searchable {</span>
+<span style="color: #c7c7c7">	...</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">exists</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// Gamepad specific logic for exists() method</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">false</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Sada u okviru radnog okruženja možete interfejsu <code>Storable</code> i klasi <code>Gamepad</code> dodati <strong>default</strong> metodu <code>exists()</code>. </p>
+<h3 id="privatne-metode-unutar-interfejsa">Privatne metode unutar interfejsa</h3>
+<p>S obzirom na to da interfejsi u Javi imaju mogućnost da poseduju konkretne metode, nekada može biti vrlo korisno određenu logiku grupisati unutar metoda koje se mogu koristiti samo unutar interfejsa, a ne i izvan njega. Do takve situacije veoma često može doći kada više podrazumevanih metoda treba da deli određenu istovetnu logiku. Takva istovetna logika se može grupisati unutar privatnih metoda unutar interfejsa: </p>
+<details>
+<summary>Program.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Program.Java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Program</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		Gamepad product1 </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Gamepad(</span><span style="color: #48b685">"Logitech"</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"F710"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">129.99</span><span style="color: #c7c7c7">, </span><span style="color: #815ba4">true</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(product1.</span><span style="color: #06b6ef">exists</span><span style="color: #c7c7c7">());</span>
+
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Product.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Product.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Product</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String brand;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> String model;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #848484">// ...</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Product</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">brand</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> brand;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">model</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> model;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"Brand='"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> brand </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> '\'' </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", Model='"</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> model </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> '\'' </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", Price="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Gamepad.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Gamepad.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Gamepad</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Product </span><span style="color: #815ba4">implements</span><span style="color: #c7c7c7"> Storable, Searchable {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> wireless;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Gamepad</span><span style="color: #c7c7c7">(String brand, String model, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price, </span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> wireless) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(brand, model, price);</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">wireless</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> wireless;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">", "</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #48b685">"wireless="</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> wireless;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">exists</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// Gamepad specific logic for exists() method</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">false</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">search</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// logic for searching</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">read</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// logic for reading</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">write</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// logic for writing</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">update</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// logic for updating</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">delete</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// logic for deleting</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Storable.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Storable.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Storable</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">read</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">write</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">update</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">delete</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">default</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">exists</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		method1();</span>
+<span style="color: #c7c7c7">		method2();</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">true</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">method1</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Hello from private method1"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">method2</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Hello from private method2"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Searchable.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Searchable.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Searchable</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">search</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Unutar interfejsa <code>Storable</code> sada su dodate dve privatne metode - <code>method1()</code> i <code>method2()</code>, koje se koriste od strane podrazumevane metode. Bitno je razumeti nekoliko važnih činjenica o privatnim metodama unutar interfejsa: </p>
+<ul>
+<li>privatne metode unutar interfejsa namenjene su lokalnoj upotrebi, odnosno, one se mogu koristiti samo unutar interfejsa u kome su definisane </li>
+<li>privatne metode unutar interfejsa ne mogu biti apstraktne, te moraju posedovati telo sa logikom </li>
+<li>privatne metode unutar interfejsa nisu namenjene za spoljašnju upotrebu, tako da se ne implementiraju niti ih je moguće redefinisati u konkretnim klasama </li>
+</ul>
+<h3 id="konstante-unutar-interfejsa">Konstante unutar interfejsa</h3>
+<p>Na kraju, još jedan element koji može postojati unutar Java interfejsa jesu i <strong>konstante</strong>. Tako je, pored metoda, unutar interfejsa moguće definisati i javna, statička, finalna polja, koja moraju posedovati vrednost: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Storable</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">final</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> SOME_CONSTANT </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">13</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">	...</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Zapravo, svako polje koje se definiše unutar interfejsa mora biti javno, statičko i finalno, te je stoga upravo prikazani kod ekvivalentan ovom: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Storable</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> SOME_CONSTANT </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">13</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">	...</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Razlog zbog koga su sva polja unutar interfejsa podrazumevano statička vrlo je jednostavan. Interfejsi se ne mogu instancirati, pa se tako polja koja se unutar njih definišu dele između svih klasa koje takav interfejs implementiraju. </p>
+<p>Konstante unutar interfejsa je moguće definisati ukoliko znamo da će za njihovim korišćenjem postojati potreba kod svih klasa koje će interfejs implementirati. U takvoj situaciji, umesto definisanja konstante u svakoj konkretnoj klasi pojedinačno, sve one će imati pristup zajedničkoj konstanti koja postoji unutar interfejsa. Ipak, potrebno je voditi računa da konstanta zaista bude čvrsto vezana za samu namenu interfejsa. U programerskim krugovima dugo se vodi debata o opravdanosti korišćenja konstanti unutar interfejsa, s obzirom na to da se konstante smatraju detaljem koji se bavi implementacijom, dok su interfejsi primarno namenjeni za postizanje apstrakcije. </p>
+<p>Imenovanje interfejsa <br/>
+Veoma česta praksa jeste imenovanje interfejsa korišćenjem engleskih prideva koji poseduju sufiks <strong>-able</strong> ili <strong>-ible</strong>. Reč je o pridevima koji nastaju od glagola: <code>Comparable</code>, <code>Iterable</code>, <code>Storable</code>, <code>Queryable</code>... Ovakvi nazivi koriste se da označe da je neka klasa sposobna za obavljanje određenih operacija, sadržanih u nazivu interfejsa. Na primer, <code>Comparable</code> je naziv koji oslikava da se objekti klasa koje implementiraju takav interfejs mogu porediti. <br/>
+Formiranje naziva interfejsa koji se završavaju sufiksima <strong>-able</strong> i <strong>-ible</strong> nije pravilo, već samo česta praksa. Stoga je interfejse moguće imenovati proizvoljnim nazivom, sve dok se pridržavamo pravila za formiranje identifikatora u Java jeziku. </p>
+<h2 id="vezbe">Vežbe</h2>
+<h3 id="vezba-1">Vežba 1</h3>
+<p>Potrebno je napraviti aplikaciju za restoran brze hrane. Aplikacija će rukovati proizvodima restorana. Restoran brze hrane u ponudi poseduje pice i sendviče. Neophodno je napraviti odgovarajuće klase za modelovanje pica i sendviča i za njihovo predstavljanje u Java programu. Prilikom realizacije je potrebno upotrebiti apstraktne klase i apstraktne metode. <br/>
+Sendviči i pice treba da budu određeni sledećim svojstvima: </p>
+<ul>
+<li>naziv, String podatak </li>
+<li>cena, double podatak </li>
+<li>maksimalno 10 začina (priloga), niz String vrednosti </li>
+</ul>
+<p>Nad proizvodima (picama i sendvičima) potrebno je omogućiti obavljanje nekoliko operacija, kroz sledeće metode: </p>
+<ul>
+<li>metoda <code>addSpice()</code> koja unosi začin </li>
+<li>metoda <code>allSpices()</code> koja vraća sve začine u tekstualnom obliku </li>
+<li>apstraktna metoda <code>countPrice()</code> koja izračunava cenu na osnovu tipa proizvoda; porez na picu je 10%, dok je porez na sendviče 15% </li>
+<li>metoda <code>toString()</code> koja prikazuje podatke o proizvodu u sledećoj formi: <br/>
+    Product: pizza, price: 25.45, spices: tomato, mustard, mayonnaise </li>
+</ul>
+<p>Potrebno je napraviti klase <code>Product</code>, <code>Pizza</code> i <code>Sandwich</code>. Klase <code>Pizza</code> i <code>Sandwich</code> naslediće apstraktnu klasu <code>Product</code>. Na kraju je potrebno kreirati po jednu instancu klasa <code>Pizza</code> i <code>Sandwich</code> u <code>main()</code> metodi. </p>
+<h4 id="resenje">Rešenje</h4>
+<details>
+<summary>Product.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Product.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Product</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> type;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String name;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> spices;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">countPrice</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Product</span><span style="color: #c7c7c7">(String name, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">spices</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> String</span><span style="color: #5bc4bf">[</span><span style="color: #f99b15">10</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">name</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> name;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> price;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		StringBuilder output </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> StringBuilder();</span>
+<span style="color: #c7c7c7">		output.</span><span style="color: #06b6ef">append</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Product: "</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		output.</span><span style="color: #06b6ef">append</span><span style="color: #c7c7c7">(</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">name</span><span style="color: #c7c7c7">).</span><span style="color: #06b6ef">append</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">", "</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		output.</span><span style="color: #06b6ef">append</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"price: "</span><span style="color: #c7c7c7">).</span><span style="color: #06b6ef">append</span><span style="color: #c7c7c7">(countPrice()).</span><span style="color: #06b6ef">append</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">", "</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		output.</span><span style="color: #06b6ef">append</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"spices: "</span><span style="color: #c7c7c7">).</span><span style="color: #06b6ef">append</span><span style="color: #c7c7c7">(allSpices());</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> output.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> String </span><span style="color: #06b6ef">allSpices</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		StringBuilder output </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> StringBuilder();</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">for</span><span style="color: #c7c7c7"> (String addition : </span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">spices</span><span style="color: #c7c7c7">)</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">if</span><span style="color: #c7c7c7"> (addition </span><span style="color: #5bc4bf">!=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">null</span><span style="color: #c7c7c7">) {</span>
+<span style="color: #c7c7c7">				output.</span><span style="color: #06b6ef">append</span><span style="color: #c7c7c7">(addition).</span><span style="color: #06b6ef">append</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">", "</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">if</span><span style="color: #c7c7c7"> (</span><span style="color: #5bc4bf">!</span><span style="color: #c7c7c7">output.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">().</span><span style="color: #06b6ef">equals</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">""</span><span style="color: #c7c7c7">)) {</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">if</span><span style="color: #c7c7c7"> (output.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">().</span><span style="color: #06b6ef">trim</span><span style="color: #c7c7c7">().</span><span style="color: #06b6ef">endsWith</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">","</span><span style="color: #c7c7c7">)) {</span>
+<span style="color: #c7c7c7">				output.</span><span style="color: #06b6ef">replace</span><span style="color: #c7c7c7">(output.</span><span style="color: #06b6ef">length</span><span style="color: #c7c7c7">() </span><span style="color: #5bc4bf">-</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">2</span><span style="color: #c7c7c7">, output.</span><span style="color: #06b6ef">length</span><span style="color: #c7c7c7">(), </span><span style="color: #48b685">""</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">else</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">				output.</span><span style="color: #06b6ef">append</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"no spices"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		}</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> output.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">addSpice</span><span style="color: #c7c7c7">(String spice) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">for</span><span style="color: #c7c7c7"> (</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> i </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">; i </span><span style="color: #5bc4bf">&lt;</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">spices</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">length</span><span style="color: #c7c7c7">; i</span><span style="color: #5bc4bf">++</span><span style="color: #c7c7c7">)</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">if</span><span style="color: #c7c7c7"> (</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">spices</span><span style="color: #5bc4bf">[</span><span style="color: #c7c7c7">i</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">==</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">null</span><span style="color: #c7c7c7">) {</span>
+<span style="color: #c7c7c7">				</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">spices</span><span style="color: #5bc4bf">[</span><span style="color: #c7c7c7">i</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> spice;</span>
+<span style="color: #c7c7c7">				</span><span style="color: #815ba4">break</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Pizza.java:</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Pizza.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Pizza</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Product {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Pizza</span><span style="color: #c7c7c7">(String name, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(name, price);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">countPrice</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">*</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">0.1</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Sandwich.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Sandwich.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Sandwich</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Product {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">Sandwich</span><span style="color: #c7c7c7">(String name, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> price) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(name, price);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">countPrice</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">price</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">*</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">0.15</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Program.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Program.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Program</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		Pizza p </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Pizza(</span><span style="color: #48b685">"Capricciosa"</span><span style="color: #c7c7c7">,</span><span style="color: #f99b15">25</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		p.</span><span style="color: #06b6ef">addSpice</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"tomato"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		p.</span><span style="color: #06b6ef">addSpice</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"sour cream"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		Sandwich s </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Sandwich(</span><span style="color: #48b685">"Sandwich with ham"</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">35</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		s.</span><span style="color: #06b6ef">addSpice</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"cucumber"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		s.</span><span style="color: #06b6ef">addSpice</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"onion"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		s.</span><span style="color: #06b6ef">addSpice</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"tomato"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(p);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(s);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<h3 id="vezba-2">Vežba 2</h3>
+<p>U narednoj vežbi potrebno je obaviti sledeće: </p>
+<ul>
+<li>napraviti apstraktnu klasu <code>Quad</code> koja sadrži tri polja (koordinate <code>x</code> i <code>y</code> i stranicu <code>a</code>) i jednu apstraktnu metodu <code>setValues()</code> za postavljanje svih vrednosti </li>
+<li>napraviti interfejs <code>Geom</code> koji sadrži potpise metoda za izračunavanje površine i obima </li>
+<li>napraviti klasu <code>Square</code> koja nasleđuje klasu <code>Quad</code> i implementira interfejs <code>Geom</code> </li>
+<li>kreirati jednu instancu klase <code>Square</code> u glavnom programu </li>
+</ul>
+<h4 id="resenje_1">Rešenje</h4>
+<details>
+<summary>Quad.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Quad.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Quad</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> x, y, a;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">abstract</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setValues</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> x, </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> y, </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> a);</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Geom.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Geom.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Geom</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">area</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">perimeter</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Square.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Square.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Square</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> Quad </span><span style="color: #815ba4">implements</span><span style="color: #c7c7c7"> Geom {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">area</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> a </span><span style="color: #5bc4bf">*</span><span style="color: #c7c7c7"> a;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">perimeter</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">4</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">*</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">a</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setValues</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> x, </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> y, </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> a) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">x</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> x;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">y</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> y;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">a</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> a;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Program.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Program.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Program</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		Square s </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Square();</span>
+<span style="color: #c7c7c7">		s.</span><span style="color: #06b6ef">setValues</span><span style="color: #c7c7c7">(</span><span style="color: #f99b15">100</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">100</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">5</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(s.</span><span style="color: #06b6ef">area</span><span style="color: #c7c7c7">());</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(s.</span><span style="color: #06b6ef">perimeter</span><span style="color: #c7c7c7">());</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<h3 id="vezba-3">Vežba 3</h3>
+<p>U ovoj vežbi potrebno je kreirati dva interfejsa za aplikaciju kalkulator: </p>
+<ul>
+<li><code>Operations</code> </li>
+<li><code>Operands</code> </li>
+</ul>
+<p><code>Operands</code> treba da sadrži potpis metode <code>setOperands()</code> koji postavlja operande na inicijalne vrednosti. Interfejs <code>Operations</code> treba da sadrži potpise metoda sa operacijama (dovoljne su samo dve). </p>
+<p>Nakon kreiranja interfejsa, potrebno je napraviti klasu <code>Calculator</code> koja će implementirati interfejse <code>Operations</code> i <code>Operands</code>. <br/>
+Na kraju je potrebno instancirati klasu <code>Calculator</code> i pozvati njene metode <code>add()</code> i <code>sub()</code> koje vrše sabiranje i oduzimanje dva realna broja. </p>
+<h4 id="resenje_2">Rešenje</h4>
+<details>
+<summary>Operands.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Operants.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Operands</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setOperands</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> a, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> b);</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Operations.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Operations.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">Operations</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">add</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">sub</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Calculator.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Calculator.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Calculator</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">implements</span><span style="color: #c7c7c7"> Operations, Operands {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> a, b;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">add</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> a </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> b;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">sub</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> a </span><span style="color: #5bc4bf">-</span><span style="color: #c7c7c7"> b;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setOperands</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> a, </span><span style="color: #fec418">double</span><span style="color: #c7c7c7"> b) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">a</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> a;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">b</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> b;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Program.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Program.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Program</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		Calculator c </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Calculator();</span>
+<span style="color: #c7c7c7">		c.</span><span style="color: #06b6ef">setOperands</span><span style="color: #c7c7c7">(</span><span style="color: #f99b15">2</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">3</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(c.</span><span style="color: #06b6ef">add</span><span style="color: #c7c7c7">());</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(c.</span><span style="color: #06b6ef">sub</span><span style="color: #c7c7c7">());</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details><br/>
+<hr/>
+</div>
+<section class="span2" id="article-sidebar">
+<h4>Temps estimat per llegir el text</h4>
+<p>~32 min.</p>
+<h4>Data de publicació</h4>
+<time datetime="2022-01-10T19:31:00+01:00" itemprop="dateCreated">dilluns, 10 de gener de 2022 a les 19:31</time>
+<h4><built-in 0x00000287be209020="" at="" index="" method="" object="" of="" str=""></built-in></h4>
+<ol class="multi-parts-list">
+</ol>
+<h4>Categoria</h4>
+<a class="category-link" href="http://localhost:8000/ca/categories/it-akademija">IT akademija</a> / 
+<a class="category-link" href="http://localhost:8000/ca/categories/it-akademija/advanced-java-programming">Advanced Java Programming</a> / 
+<a class="category-link" href="http://localhost:8000/ca/categories/it-akademija/advanced-java-programming/ajp-modul-1-napredno-objektno-programiranje">AJP - Modul 1. Napredno objektno programiranje</a>
+<h4>Etiquetes</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="http://localhost:8000/ca/tags/apstrakcija">apstrakcija 
+</a></li>
+<li><a href="http://localhost:8000/ca/tags/interfejsi">interfejsi 
+</a></li>
+<li><a href="http://localhost:8000/ca/tags/java">Java 
+</a></li>
+<li><a href="http://localhost:8000/ca/tags/klase">klase 
+</a></li>
+<li><a href="http://localhost:8000/ca/tags/oop">OOP 
+</a></li>
+<li><a href="http://localhost:8000/ca/tags/programiranje">programiranje 
+</a></li>
+</ul>
+<h4>Xarxes socials</h4>
+<div id="sidebar-social-link">
+<a href="https://fb.me/dani.vlajna" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Facebook" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1877f2" height="512" rx="15%" width="512"></rect><path d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z" fill="#fff"></path></svg>
+</a>
+<a href="https://twitter.com/DJ_Dani_Serbia" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://www.youtube.com/DanijelaPopovic" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="YouTube" fill="#ed1d24" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect height="512" rx="15%" width="512"></rect><path d="m427 169c-4-15-17-27-32-31-34-9-239-10-278 0-15 4-28 16-32 31-9 38-10 135 0 174 4 15 17 27 32 31 36 10 241 10 278 0 15-4 28-16 32-31 9-36 9-137 0-174" fill="#fff"></path><path d="m220 203v106l93-53"></path></svg>
+</a>
+<a href="https://github.com/vlajna95" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+</div>
+</section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="span1"></div>
+</div>
+</div>
+
+<footer>
+<div>
+<span class="site-name">DP Tech</span> - El teu bloc preferit
+</div>
+<div id="fpowered">
+Pokreće: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican početna strana">Pelican</a>. 
+Tema: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Početna strana Elegant teme">Elegant</a>. 
+</div>
+</footer><script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="http://localhost:8000/ca/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script src="http://localhost:8000/ca/theme/js/custom.js"></script>
+<script>
+function validateForm(query) {
+return(query.length>0);
+}
+</script>
+<script>
+function checkAnswer(origin) {
+var question_name = $(origin).attr("data-question");
+var correct_answer_element = $(origin).attr("data-correct");
+var correct_answer_id = $("#"+correct_answer_element).val();
+var correct_answer_label = $("label[for="+correct_answer_id+"]").text();
+var chosen_answer_id = $("input[name="+question_name+"]:checked").attr("id");
+var chosen_answer_label = $("label[for="+chosen_answer_id+"]").text();
+if(correct_answer_id == chosen_answer_id) {
+alert("Bravo!");
+}
+else {
+alert("Hmmm... ne. \n" + correct_answer_label);
+}
+$("input[name="+question_name+"]").attr("disabled", true);
+}
+</script>
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+</body>
+<!--
+Theme: Elegant built for Pelican 
+License: MIT
+-->
+</html>

@@ -1,8 +1,0 @@
-{% macro translations_for(article) %}
-{% if article.translations %}
-{{ gettext("Na drugim jezicima") }}: 
-{% for translation in article.translations %}
-<a href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang|lookup_lang_name }}</a>{{ " ○ " if not loop.last }}
-{% endfor %}
-{% endif %}
-{% endmacro %}

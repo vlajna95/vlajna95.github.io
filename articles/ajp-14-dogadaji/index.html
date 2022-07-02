@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+
+<html lang="sr">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/theme/css/custom.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/css/elegant.prod.9e9d5ce754.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/css/custom.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/fontawesome/css/all.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&amp;display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<meta content="Danijela Popović" name="author"/>
+<meta content="Događaji u programskom jeziku Java
+" name="description"/>
+<meta content="@DJ_Dani_Serbia" name="twitter:creator"/>
+<meta content="article" property="og:type"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Java, OOP, programiranje, događaji, IT akademija/Advanced Java Programming/AJP - Modul 1. Napredno objektno programiranje, " name="keywords"/>
+<meta content="AJP 1.4. Događaji" property="og:title"/>
+<meta content="http://localhost:8000/articles/ajp-14-dogadaji" property="og:url"/>
+<meta content="Događaji u programskom jeziku Java" property="og:description"/>
+<meta content="DP Tech" property="og:site_name"/>
+<meta content="Danijela Popović" property="og:article:author"/>
+<meta content="2022-04-22T19:24:00+02:00" property="og:article:published_time"/>
+<meta content="AJP 1.4. Događaji" name="twitter:title"/>
+<meta content="Događaji u programskom jeziku Java" name="twitter:description"/>
+<title>AJP 1.4. Događaji · DP Tech
+</title>
+<link href="http://localhost:8000/feeds/atom/all.xml" rel="alternate" title="DP Tech - Full Atom Feed" type="application/atom+xml">
+<link href="http://localhost:8000/feeds/rss/all.xml" rel="alternate" title="DP Tech - Full RSS Feed" type="application/rss+xml"/>
+</link></link><link href="http://localhost:8000\articles/ajp-14-dogadaji" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DP Tech", "item": "http://localhost:8000"}, {"@type": "ListItem", "position": 2, "name": "Articles", "item": "http://localhost:8000\\articles"}, {"@type": "ListItem", "position": 3, "name": "Ajp 14 dogadaji", "item": "http://localhost:8000\\articles/ajp-14-dogadaji"}, {"@type": "ListItem", "position": 4, "name": "Index", "item": "http://localhost:8000\\articles/ajp-14-dogadaji/index.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Danijela Popović"}, "publisher": {"@type": "Organization", "name": "DP Tech", "logo": {"@type": "ImageObject", "url": "logo_transparent.png"}}, "headline": "AJP 1.4. Događaji", "about": "IT akademija/Advanced Java Programming/AJP - Modul 1. Napredno objektno programiranje", "datePublished": "2022-04-22 19:24"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" title="Prikaži/sakrij meni">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="http://localhost:8000/"><span class="site-name">DP Tech</span> - Tvoj omiljeni blog</a>
+<nav class="nav-collapse collapse">
+<ul class="nav pull-right top-menu disclosure-nav" id="menubar">
+<li>
+<a href="http://localhost:8000">Početna</a>
+</li>
+<li><a href="/categories/katalonski-catala">Katalonski - Català</a></li>
+<li><a href="http://localhost:8000/categories">Kategorije</a></li>
+<li><a href="http://localhost:8000/tags">Oznake</a></li>
+<li><a href="http://localhost:8000/archives">Arhiva članaka</a></li>
+<li><form action="http://localhost:8000/search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"><input class="search-query" id="tipue_search_input" name="q" placeholder="Pretraži" type="text"/></form></li>
+</ul>
+</nav></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1><a href="http://localhost:8000/articles/ajp-14-dogadaji">
+AJP 1.4. Događaji
+</a>
+</h1>
+<p><p>Događaji u programskom jeziku Java</p></p>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span2 table-of-content">
+<nav>
+<h4>Sadržaj</h4>
+<div class="toc">
+<ul>
+<li><a href="#sta-su-dogaaji">Šta su događaji?</a></li>
+<li><a href="#kako-funkcionisu-dogaaji">Kako funkcionišu događaji?</a></li>
+<li><a href="#kreiranje-klase-dogaaja">Kreiranje klase događaja</a></li>
+<li><a href="#kreiranje-interfejsa-za-predstavljanje-slusalaca">Kreiranje interfejsa za predstavljanje slušalaca</a></li>
+<li><a href="#kreiranje-generatora-dogaaja">Kreiranje generatora događaja</a></li>
+<li><a href="#pretplata-na-dogaaje">Pretplata na događaje</a></li>
+</ul>
+</div>
+</nav>
+</div>
+<div class="span8 article-content">
+<hr/>
+<p>Do sada smo se susretali sa objektima koji unutar sebe poseduju svojstva i metode. Svojstva i metode su osnovni mehanizmi pomoću kojih se rukuje objektima. Pri tome, svojstvima se izlažu podaci, a metodama operacije. Ipak, veoma često se može javiti potreba da objekti budu u mogućnosti da spoljašnjem okruženju signaliziraju određena dešavanja do kojih može doći unutar njih. Tako dolazimo do pojma događaja, koji su veoma važan aspekt programiranja. Pojmu događaja biće posvećena lekcija pred vama. </p>
+<h2 id="sta-su-dogaaji">Šta su događaji?</h2>
+<p>Događaji omogućavaju da objekti spoljašnjem svetu pošalju neku vrstu signala, odnosno da obaveste sve zainteresovane subjekte o određenom dešavanju. Analogija se može napraviti sa različitim situacijama iz svakodnevnog života. Jedna takva situacija poznata je svim vozačima. Unutar rezervoara automobila nalazi se senzor koji prati nivo goriva. Onoga trenutka kada se nivo goriva spusti ispod određene vrednosti, na kontrolnoj tabli se aktivira indikator rezerve goriva. To je svojevrstan primer događaja. Kada takvog sistema izveštavanja ne bi bilo, mi bismo morali da samostalno vodimo računa o nivou napunjenosti rezervoara, što je svakako rešenje koje je daleko manje komforno. <br/>
+Događaji u programiranju funkcionišu po identičnom principu. Oni omogućavaju objektima da, baš kao i indikator rezerve goriva, spoljašnjem okruženju signaliziraju neke pojave koje su značajne za njihovo unutrašnje funkcionisanje. </p>
+<p>Programiranje koje podrazumeva praćenje i obradu događaja u toku izvršavanja aplikacije naziva se programiranje zasnovano na događajima (<em>event-based programming</em>). Događaji su posebno važan pojam u aplikacijama koje sadrže grafičko korisničko okruženje i različite kontrole koje korisnik upotrebljava kako bi upravljao programom (tastere, prozore, polja za unos vrednosti...). Ipak, to ne znači da je korišćenje događaja ograničeno na aplikacije sa grafičkim elementima. Događaji nisu striktno vezani za grafička okruženja, pa svoju primenu imaju i prilikom razvoja konzolnih aplikacija, što ćete imati prilike da vidite i u nastavku ove lekcije u kojoj će biti ilustrovan osnovni koncept rada sa događajima. </p>
+<h2 id="kako-funkcionisu-dogaaji">Kako funkcionišu događaji?</h2>
+<p>Rukovanje događajima u programiranju podrazumeva postojanje nekoliko činilaca. Svi oni su ilustrovani slikom 4.1. </p>
+<figure>
+<img alt="Slika 4.1. Različiti elementi koji učestvuju u životu jednog događaja" src="/images/AdvancedJavaProgramming/1_04_01.png"/>
+<figcaption>Slika 4.1. Različiti elementi koji učestvuju u životu jednog događaja</figcaption>
+</figure>
+<p>Na slici 4.1. možete videti da rad sa događajima podrazumeva postojanje sledećih elemenata: <br/>
+    - <strong>izvor događaja</strong> (<em>event source</em>) - objekat ili klasa, odnosno generator koji proizvodi događaj <br/>
+    - <strong>objekat događaja</strong> (<em>event object</em>) - objekat koji reprezentuje događaj, odnosno objekat koji sadrži informacije o događaju do koga je došlo <br/>
+    - <strong>slušalac</strong>, odnosno <strong>slušaoci događaja</strong> (<em>event listener(s)</em>) - objekat, odnosno objekti koji će biti obavešteni kada do nekog događaja dođe; proces kojim neki objekat postaje slušalac često se naziva <strong>pretplata na događaj</strong>, a sami slušaoci <strong>pretplatnici</strong> (<em>subscribers</em>) </p>
+<p>U nastavku ove lekcije biće prikazano kako samostalno kreirati i emitovati jedan događaj. Takav događaj će zatim biti obrađen od strane nekoliko slušalaca događaja, što praktično znači da će oni dobiti dojavu o njegovom nastanku. </p>
+<p>Primer koji će biti prikazan u nastavku simuliraće alarm na budilniku. Stoga ćemo kreirati  klasu <code>Alarm</code>, čiji objekti će imati mogućnost da generišu jedan događaj. Događaj će se aktivirati nakon proticanja proizvoljne količine vremena, što je podatak koji će objekti klase <code>Alarm</code> moći da dobiju kao parametar. Na kraju, klasa <code>Alarm</code> će posedovati i logiku za registrovanje svih objekata koje je potrebno obavestiti o pojavi događaja. </p>
+<h2 id="kreiranje-klase-dogaaja">Kreiranje klase događaja</h2>
+<p>U prethodnim redovima ste mogli da pročitate da se događaji u programu predstavljaju korišćenjem objekata događaja. Objekat događaja je ono što generator događaja prosleđuje svim slušaocima. Kako bismo bili u mogućnosti da kreiramo objekat događaja, potrebna nam je klasa čijim instanciranjem će biti stvoren takav objekat. <br/>
+Osnovna klasa kojom se u Java programskom jeziku predstavljaju događaji jeste klasa <code>EventObject</code>: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.EventObject</span><span style="color: #c7c7c7">;</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">AlarmEvent</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> EventObject {</span>
+<span style="color: #c7c7c7">	...</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Na ovaj način kreirana je klasa <code>AlarmEvent</code> koja će u našem programu da predstavlja događaj aktiviranja alarma na budilniku. Ova klasa nasleđuje upravo spomenutu klasu <code>EventObject</code>. Reč je o konkretnoj klasi koja poseduje samo jedan konstruktor sa jednim parametrom. Parametar se odnosi na referencu na objekat koji je izazvao događaj. Sve to praktično znači da smo nasleđivanjem klase <code>EventObject</code> mi u obavezi da samostalno definišemo konstruktor koji će da pozove konstruktor roditeljske klase i da mu prosledi referencu na objekat koji je generator događaja. Naravno, kao i uvek prilikom nasleđivanja, imamo mogućnost da objekat događaja proširimo, odnosno da definišemo još neke osobine događaja. To ćemo i učiniti, uvođenjem još jednog svojstva, koje će predstavljati poruku događaja: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.EventObject</span><span style="color: #c7c7c7">;</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">AlarmEvent</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> EventObject {</span>
+<span style="color: #c7c7c7">	String message;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">AlarmEvent</span><span style="color: #c7c7c7">(Object source, String message) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(source);</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">message</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> message;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<div class="question">
+<p>Objekat kojim se predstavlja događaj kreira se na osnovu klase: </p>
+<div class="answers"><input id="klasa_objekta_za_event_correct" name="klasa_objekta_za_event_correct" type="hidden" value="tcejbotneve"/><input id="noitcatneve" name="klasa_objekta_za_event" type="radio" value="EventAction"/><label for="noitcatneve">EventAction</label><br/>
+<input id="ssalctneve" name="klasa_objekta_za_event" type="radio" value="EventClass"/><label for="ssalctneve">EventClass</label><br/>
+<input id="tcejbotneve" name="klasa_objekta_za_event" type="radio" value="EventObject"/><label for="tcejbotneve">EventObject</label><br/>
+<input id="tneve" name="klasa_objekta_za_event" type="radio" value="Event"/><label for="tneve">Event</label><br/>
+</div>
+<button class="ok" data-correct="klasa_objekta_za_event_correct" data-question="klasa_objekta_za_event" onclick="checkAnswer(this, 'Bravo!', 'Hmmm... no.')" type="button">OK</button></div>
+<h2 id="kreiranje-interfejsa-za-predstavljanje-slusalaca">Kreiranje interfejsa za predstavljanje slušalaca</h2>
+<p>Sledeći korak u procesu kreiranja primera upotrebe događaja biće kreiranje interfejsa kojim će biti predstavljeni slušaoci. Naime, želimo da obezbedimo da naš događaj aktiviranja alarma može da dobije objekat bilo koje klase, odnosno želimo da omogućimo objektima svih tipova da budu slušaoci našeg događaja. Ipak, kao što ćete uskoro videti, klasa koja će generisati događaj mora na neki način rukovati svim pretplatnicima. Kako se ne bismo ograničavali na neki konkretan tip, za predstavljanje svih slušalaca ćemo iskoristiti apstrakciju, oličenu u jednom interfejsu: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span> <span style="color: #fec418">AlarmListener</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">alarmRang</span><span style="color: #c7c7c7">(AlarmEvent event);</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Ovo je interfejs koji će morati da implementiraju svi konkretni tipovi koji žele da dobijaju dojavu o aktiviranju alarma budilnika. Tako smo na ovaj način efikasno predstavili sve slušaoce korišćenjem apstraktnog tipa koji je predstavljen interfejsom. </p>
+<p>Bitno je da primetite i to da se unutar interfejsa nalazi i jedna metoda. Iz prethodnih lekcija znamo da je ovako definisana metoda javna i apstraktna, stoga će sve konkretne klase morati da je implementiraju. Reč je o metodi koja će se unutar slušalaca aktivirati kada dođe do pojave događaja. </p>
+<h2 id="kreiranje-generatora-dogaaja">Kreiranje generatora događaja</h2>
+<p>Element koji nedostaje jeste klasa unutar koje će doći do emitovanja događaja. Nju smo spomenuli na početku ove lekcije - reč je o klasi sa nazivom <code>Alarm</code>. Klasa <code>Alarm</code> će omogućiti aktiviranje alarma na budilniku nakon isticanja određene količine vremena. </p>
+<p>Pored funkcionalnosti koja će omogućiti aktiviranje alarma, unutar klase <code>Alarm</code> je neophodno da postoji i logika koja će omogućiti rukovanje svim pretplatnicima. Stoga je kreiranje klase koja će generisati događaj korak u kome se objedinjuju svi elementi koje smo do sada kreirali. </p>
+<p>Klasa koja generiše događaj unutar sebe mora imati referencu na sve pretplatnike. Takođe, dobra je praksa da se unutar generatora događaja obezbedi i logika za ukidanje nekih objekata iz liste pretplatnika. Sve to praktično znači da unutar klase Alarm moramo da kreiramo i dve metode koje će se koristiti za dodavanje i uklanjanje slušalaca događaja. S obzirom na to da slušalaca može biti više, njihove reference moramo čuvati unutar niza: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.Timer</span><span style="color: #c7c7c7">;</span>
+<span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.TimerTask</span><span style="color: #c7c7c7">;</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Alarm</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> AlarmListener</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> listeners </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> {};</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">addListener</span><span style="color: #c7c7c7">(AlarmListener alarmListener) {</span>
+<span style="color: #c7c7c7">		AlarmListener</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> newListeners </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> AlarmListener</span><span style="color: #5bc4bf">[</span><span style="color: #c7c7c7">listeners.</span><span style="color: #06b6ef">length</span><span style="color: #5bc4bf">+</span><span style="color: #f99b15">1</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">arraycopy</span><span style="color: #c7c7c7">(listeners, </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">, newListeners, </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">, listeners.</span><span style="color: #06b6ef">length</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		newListeners</span><span style="color: #5bc4bf">[</span><span style="color: #c7c7c7">listeners.</span><span style="color: #06b6ef">length</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> alarmListener;</span>
+<span style="color: #c7c7c7">		listeners </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> newListeners;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">removeListener</span><span style="color: #c7c7c7">(AlarmListener alarmListener) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> indexOfElementToRemove </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">for</span><span style="color: #c7c7c7"> (</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> i </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">; i </span><span style="color: #5bc4bf">&lt;</span><span style="color: #c7c7c7"> listeners.</span><span style="color: #06b6ef">length</span><span style="color: #c7c7c7">; i</span><span style="color: #5bc4bf">++</span><span style="color: #c7c7c7">){</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">if</span><span style="color: #c7c7c7"> (alarmListener.</span><span style="color: #06b6ef">equals</span><span style="color: #c7c7c7">(listeners</span><span style="color: #5bc4bf">[</span><span style="color: #c7c7c7">i</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7">)) {</span>
+<span style="color: #c7c7c7">				indexOfElementToRemove </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> i;</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		}</span>
+<span style="color: #c7c7c7">		AlarmListener</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> newListeners </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> AlarmListener</span><span style="color: #5bc4bf">[</span><span style="color: #c7c7c7">listeners.</span><span style="color: #06b6ef">length</span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">1</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">arraycopy</span><span style="color: #c7c7c7">(listeners, </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">, newListeners, </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">, indexOfElementToRemove);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">arraycopy</span><span style="color: #c7c7c7">(listeners, indexOfElementToRemove</span><span style="color: #5bc4bf">+</span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">, newListeners, indexOfElementToRemove, listeners.</span><span style="color: #06b6ef">length</span><span style="color: #5bc4bf">-</span><span style="color: #c7c7c7">indexOfElementToRemove</span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		listeners </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> newListeners;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setTimeFromNow</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> millis) {</span>
+<span style="color: #c7c7c7">		Timer timer </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Timer(</span><span style="color: #48b685">"Timer"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		timer.</span><span style="color: #06b6ef">schedule</span><span style="color: #c7c7c7">(</span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> TimerTask() {</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">run</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">				System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"AlarmEvent triggered..."</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">				</span><span style="color: #815ba4">for</span><span style="color: #c7c7c7"> (AlarmListener listener : listeners) {</span>
+<span style="color: #c7c7c7">					AlarmEvent eventObj </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> AlarmEvent(</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"Time is up!"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">					listener.</span><span style="color: #06b6ef">alarmRang</span><span style="color: #c7c7c7">(eventObj);</span>
+<span style="color: #c7c7c7">				}</span>
+<span style="color: #c7c7c7">				System.</span><span style="color: #06b6ef">exit</span><span style="color: #c7c7c7">(</span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		}, millis);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Kod predstavlja kompletnu logiku klase <code>Alarm</code>. Ona se zapravo sastoji iz jednog niza i tri metode: <br/>
+    - <code>AlarmListener[] listeners</code> - niz unutar koga će biti smeštani slušaoci <br/>
+    - <code>void addListener(AlarmListener alarmListener)</code> - metoda za registrovanje slušaoca <br/>
+    - <code>void removeListener(AlarmListener alarmListener)</code> - metoda za uklanjanje slušaoca <br/>
+    - <code>void setTimeFromNow(int millis)</code> - metoda za aktiviranje alarma </p>
+<p>S obzirom na to da nizovi u Javi moraju imati fiksnu, unapred utvrđenu dužinu, unutar metoda <code>addListener()</code> i <code>removeListener()</code> postavljena je logika koja prilikom svakog dodavanja ili uklanjanja slušaoca kreira novi niz koji na kraju dodeljuje objektnom svojstvu <code>listeners</code>. Tako ovo svojstvo na kraju uvek poseduje niz čija je dužina tačno onolika koliko ima i registrovanih slušalaca. Kada se dodaje novi slušalac, prvo se kreira novi niz sa jednim elementom više u odnosu na postojeći niz. Postojeći niz se kopira u novi niz, a zatim se na kraj dodaje još jedan, novi slušalac. <br/>
+Uklanjanje slušaoca se obavlja po sličnom principu. Prvo se kreira novi niz, čija je dužina za jedan element manja od dužine postojećeg niza. Zatim se utvrđuje na kom indeksu se nalazi element koji je potrebno ukloniti. Na kraju se u novi niz kopiraju svi elementi iz starog, osim elementa koji se uklanja. Kopiranje se obavlja iz dva dela, tako što se prvo kopiraju svi elementi pre elementa koji se uklanja, a zatim i svi elementi koji se nalaze nakon elementa koji se uklanja. </p>
+<p>Metoda <code>setTimeFromNow()</code> koristi se za aktiviranje logike klase <code>Alarm</code>. To je metoda koja će aktivirati alarm nakon vremena u milisekundama koje se ovoj metodi prosledi kao parametar. Kao pomoć za formiranje takve logike iskorišćene su klase <code>Timer</code> i <code>TimerTask</code>, o kojima je bilo reči u jednoj od prethodnih lekcija. Kada istekne vreme koje je metodi <code>setTimeFromNow()</code> prosleđeno kao ulazni parametar, aktivira se metoda <code>run()</code> i unutar nje logika kojom se obavlja emitovanje događaja. </p>
+<p>Emitovanje događaja se zapravo sastoji iz prolaska kroz niz svih slušalaca i pozivanje metode <code>alarmRang()</code>, čija implementacija se nalazi unutar njih. Metodi <code>alarmRang()</code> se prosleđuje objekat događaja, sa osnovnim informacija o događaju (sa referencom na objekat koji je proizveo događaj i porukom). Tako svi slušaoci bivaju obavešteni o pojavi događaja. </p>
+<h2 id="pretplata-na-dogaaje">Pretplata na događaje</h2>
+<p>U dosadašnjem toku ove lekcije realizovali smo sve elemente koji su neophodni za obradu događaja. Preostaje još da kreiramo slušaoce i da ih pretplatimo na dobijanje dojave o pojavi događaja. </p>
+<p>Događaj koji je predstavljen <code>AlarmEvent</code> klasom mogu da slušaju svi objekti čija klasa implementira interfejs <code>AlarmListener</code>. Možemo da napravimo i neku posebnu klasu, čiji će objekti biti slušaoci, ali isto tako, možemo da iskoristimo i glavnu klasu našeg Java programa kako bi primer ostao što jednostavniji: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Program</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">implements</span><span style="color: #c7c7c7"> AlarmListener {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #848484">// ...</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">alarmRang</span><span style="color: #c7c7c7">(AlarmEvent e) {</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">print</span><span style="color: #c7c7c7">(e.</span><span style="color: #06b6ef">message</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">" Wake up!!!"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Klasa <code>Program</code> je implementirala interfejs <code>AlarmListener</code> i tako je postala legitiman tip slušaoca događaja <code>AlarmEvent</code>. Implementiranje interfejsa <code>AlarmListener</code> obavezuje klasu da poseduje i metodu <code>alarmRang()</code>. To je metoda koja će se aktivirati kada dođe do pojave događaja. </p>
+<p>Preostaje još da unutar <code>main()</code> metode dodamo i finalni kod kojim će biti kreirano nekoliko objekata-slušalaca. Oni će biti pretplaćeni na slušanje <code>AlarmEvent</code> događaja. Na kraju će biti dodat i kod kojim će se aktivirati logika klase <code>Alarm</code>, koja će nakon nekog vremena da proizvede <code>AlarmEvent</code> događaj: </p>
+<details>
+<summary>Alarm.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Alarm.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.Timer</span><span style="color: #c7c7c7">;</span>
+<span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.TimerTask</span><span style="color: #c7c7c7">;</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Alarm</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> AlarmListener</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> listeners </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> {};</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">addListener</span><span style="color: #c7c7c7">(AlarmListener alarmListener) {</span>
+<span style="color: #c7c7c7">		AlarmListener</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> newListeners </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> AlarmListener</span><span style="color: #5bc4bf">[</span><span style="color: #c7c7c7">listeners.</span><span style="color: #06b6ef">length</span><span style="color: #5bc4bf">+</span><span style="color: #f99b15">1</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">arraycopy</span><span style="color: #c7c7c7">(listeners, </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">, newListeners, </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">, listeners.</span><span style="color: #06b6ef">length</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		newListeners</span><span style="color: #5bc4bf">[</span><span style="color: #c7c7c7">listeners.</span><span style="color: #06b6ef">length</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> alarmListener;</span>
+<span style="color: #c7c7c7">		listeners </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> newListeners;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">removeListener</span><span style="color: #c7c7c7">(AlarmListener alarmListener) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> indexOfElementToRemove </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">for</span><span style="color: #c7c7c7"> (</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> i </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">; i </span><span style="color: #5bc4bf">&lt;</span><span style="color: #c7c7c7"> listeners.</span><span style="color: #06b6ef">length</span><span style="color: #c7c7c7">; i</span><span style="color: #5bc4bf">++</span><span style="color: #c7c7c7">){</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">if</span><span style="color: #c7c7c7"> (alarmListener.</span><span style="color: #06b6ef">equals</span><span style="color: #c7c7c7">(listeners</span><span style="color: #5bc4bf">[</span><span style="color: #c7c7c7">i</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7">)) {</span>
+<span style="color: #c7c7c7">				indexOfElementToRemove </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> i;</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		}</span>
+<span style="color: #c7c7c7">		AlarmListener</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> newListeners </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> AlarmListener</span><span style="color: #5bc4bf">[</span><span style="color: #c7c7c7">listeners.</span><span style="color: #06b6ef">length</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">-</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">1</span><span style="color: #5bc4bf">]</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">arraycopy</span><span style="color: #c7c7c7">(listeners, </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">, newListeners, </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">, indexOfElementToRemove);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">arraycopy</span><span style="color: #c7c7c7">(listeners, indexOfElementToRemove </span><span style="color: #5bc4bf">+</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">, newListeners, indexOfElementToRemove, listeners.</span><span style="color: #06b6ef">length</span><span style="color: #5bc4bf">-</span><span style="color: #c7c7c7">indexOfElementToRemove</span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		listeners </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> newListeners;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">setTimeFromNow</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> millis) {</span>
+<span style="color: #c7c7c7">		Timer timer </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Timer(</span><span style="color: #48b685">"Timer"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		timer.</span><span style="color: #06b6ef">schedule</span><span style="color: #c7c7c7">(</span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> TimerTask() {</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">run</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">				System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"AlarmEvent triggered..."</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">				</span><span style="color: #815ba4">for</span><span style="color: #c7c7c7"> (AlarmListener listener : listeners) {</span>
+<span style="color: #c7c7c7">					AlarmEvent eventObj </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> AlarmEvent(</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">, </span><span style="color: #48b685">"Time is up!"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">					listener.</span><span style="color: #06b6ef">alarmRang</span><span style="color: #c7c7c7">(eventObj);</span>
+<span style="color: #c7c7c7">				}</span>
+<span style="color: #c7c7c7">				System.</span><span style="color: #06b6ef">exit</span><span style="color: #c7c7c7">(</span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		}, millis);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>AlarmEvent.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// AlarmEvent.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.EventObject</span><span style="color: #c7c7c7">;</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">AlarmEvent</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> EventObject {</span>
+<span style="color: #c7c7c7">	String message;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">AlarmEvent</span><span style="color: #c7c7c7">(Object source, String message) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">super</span><span style="color: #c7c7c7">(source);</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">this</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">message</span><span style="color: #c7c7c7"> </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> message;</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>AlarmListener.java</summary>
+<p>{.java title="// AlarmListener.java"}<br/>
+public interface AlarmListener {<br/>
+    void alarmRang(AlarmEvent event);<br/>
+}<br/>
+```</p>
+</details>
+<details>
+<summary>Program.java</summary>
+<p>{.java title="// Program.java"}<br/>
+public class Program implements AlarmListener {<br/>
+    public static void main(String[] args) {<br/>
+        Program program = new Program();<br/>
+        Program program1 = new Program();<br/>
+        Program program2 = new Program();<br/>
+        Alarm alarm = new Alarm();<br/>
+        alarm.addListener(program);<br/>
+        alarm.addListener(program1);<br/>
+        alarm.addListener(program2);<br/>
+        alarm.setTimeFromNow(2000);<br/>
+    }</p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code>@Override
+public void alarmRang(AlarmEvent e) {
+    System.out.print(e.message);
+    System.out.println(" Wake up!!!");
+}
+</code></pre></div>
+<p>}<br/>
+```</p>
+</details>
+<p>Unutar <code>main()</code> metode prvo je obavljeno kreiranje tri objekta klase <code>Program</code>. Zatim je kreiran objekat klase <code>Alarm</code>. Njemu su dodati slušaoci, prosleđivanjem kreiranih objekata metodi <code>addListener()</code>. Poslednjom naredbom, unutar <code>main()</code> metode aktiviran je alarm budilnika. S obzirom na to da je prosleđena vrednost 2000, alarm će se aktivirati nakon dve sekunde. Aktiviranje alarma značiće i emitovanje <code>AlarmEvent</code> događaja. Sve će to na kraju, nakon dve sekunde, unutar konzole da proizvede sledeći rezultat: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code>AlarmEvent triggered...
+Time is up! Wake up!!!
+Time is up! Wake up!!!
+Time is up! Wake up!!!
+</code></pre></div>
+<p>Prva poruka potiče iz klase <code>Alarm</code> i metode <code>run()</code> koja se aktivira nakon isteka prosleđene količine vremena. Ona se aktivira jednom, a unutar nje, kao što ste nešto ranije mogli da vidite, obavlja se obaveštavanje svih slušalaca događaja. Njih je u primeru tri i upravo zbog toga se na izlazu dobijaju tri identične poruke <code>Time is up! Wake up!!!</code>. Ovo praktično znači da se metoda <code>alarmRang()</code> aktivirala tri puta, odnosno nad svakim od objekata-slušalaca po jednom. Pri tome je bitno da primetite da je tekst <code>Time is up!</code> došao zajedno sa samim objektom događaja, unutar njegovog svojstva <code>message</code>. Takvom tekstu je zatim unutar metode za obradu događaja dodat nastavak <code>Wake up!!!</code>. </p><br/>
+<p id="post-share-links">
+Podeli: 
+<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//localhost%3A8000/articles/ajp-14-dogadaji" rel="nofollow noopener noreferrer" target="_blank" title="Facebook">Facebook</a>
+ ❄ <a href="https://twitter.com/intent/tweet?text=AJP%201.4.%20Doga%C4%91aji&amp;url=http%3A//localhost%3A8000/articles/ajp-14-dogadaji&amp;via=DJ_Dani_Serbia&amp;hashtags=java,oop,programiranje,dogadaji" rel="nofollow noopener noreferrer" target="_blank" title="Twitter">Twitter</a>
+ ❄ <a href="" rel="nofollow noopener noreferrer" target="_blank" title="whatsapp">whatsapp</a>
+ ❄ <a href="mailto:?subject=AJP%201.4.%20Doga%C4%91aji&amp;body=http%3A//localhost%3A8000/articles/ajp-14-dogadaji" rel="nofollow noopener noreferrer" target="_blank" title="Email">Email</a>
+ ❄ <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A//localhost%3A8000/articles/ajp-14-dogadaji&amp;title=AJP%201.4.%20Doga%C4%91aji&amp;summary=Doga%C4%91aji%20u%20programskom%20jeziku%20Java&amp;source=http%3A//localhost%3A8000/articles/ajp-14-dogadaji" rel="nofollow noopener noreferrer" target="_blank" title="LinkedIn">LinkedIn</a>
+ ❄ <a href="https://www.reddit.com/submit?url=http%3A//localhost%3A8000/articles/ajp-14-dogadaji&amp;title=AJP%201.4.%20Doga%C4%91aji" rel="nofollow noopener noreferrer" target="_blank" title="Reddit">Reddit</a>
+<hr/>
+<aside>
+<nav>
+<ul class="articles-timeline">
+<li class="previous-article">« <a accesskey="p" href="http://localhost:8000/articles/ajp-13-klase-unutar-klasa" title="Prethodno: AJP 1.3. Klase unutar klasa">AJP 1.3. Klase unutar klasa</a></li>
+<li class="next-article"><a accesskey="n" href="http://localhost:8000/articles/ajp-15-refleksija" title="Sledeće: AJP 1.5. Refleksija">AJP 1.5. Refleksija</a> »</li>
+</ul>
+</nav>
+</aside>
+</p></div>
+<section class="span2" id="article-sidebar">
+<h4>Vreme potrebno za čitanje</h4>
+<p>~14 min.</p>
+<h4>Objavljeno</h4>
+<time datetime="2022-04-22T19:24:00+02:00" itemprop="dateCreated">petak, 22. april 2022. u 19:24</time>
+<h4>Advanced Java Programming</h4>
+<ol class="multi-parts-list">
+<li>
+<a href="http://localhost:8000/articles/ajp-11-objektno-orijentisano-programiranje-u-javi" title="AJP 1.1. Objektno orijentisano programiranje u Javi">AJP 1.1. Objektno orijentisano programiranje u Javi</a>
+</li>
+<li>
+<a href="http://localhost:8000/articles/ajp-12-apstraktne-klase-i-interfejsi" title="AJP 1.2. Apstraktne klase i interfejsi">AJP 1.2. Apstraktne klase i interfejsi</a>
+</li>
+<li>
+<a href="http://localhost:8000/articles/ajp-13-klase-unutar-klasa" title="AJP 1.3. Klase unutar klasa">AJP 1.3. Klase unutar klasa</a>
+</li>
+<li class="active-part">
+AJP 1.4. Događaji
+</li>
+<li>
+<a href="http://localhost:8000/articles/ajp-15-refleksija" title="AJP 1.5. Refleksija">AJP 1.5. Refleksija</a>
+</li>
+<li>
+<a href="http://localhost:8000/articles/ajp-16-dizajn-sabloni" title="AJP 1.6. Dizajn šabloni">AJP 1.6. Dizajn šabloni</a>
+</li>
+</ol>
+<h4>Kategorija</h4>
+<a class="category-link" href="http://localhost:8000/categories/it-akademija">IT akademija</a> / 
+<a class="category-link" href="http://localhost:8000/categories/it-akademija/advanced-java-programming">Advanced Java Programming</a> / 
+<a class="category-link" href="http://localhost:8000/categories/it-akademija/advanced-java-programming/ajp-modul-1-napredno-objektno-programiranje">AJP - Modul 1. Napredno objektno programiranje</a>
+<h4>Oznake</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="http://localhost:8000/tags/dogadaji">događaji 
+<span class="superscript">1</span>
+</a></li>
+<li><a href="http://localhost:8000/tags/java">Java 
+<span class="superscript">6</span>
+</a></li>
+<li><a href="http://localhost:8000/tags/oop">OOP 
+<span class="superscript">6</span>
+</a></li>
+<li><a href="http://localhost:8000/tags/programiranje">programiranje 
+<span class="superscript">8</span>
+</a></li>
+</ul>
+<h4>Društvene mreže</h4>
+<div id="sidebar-social-link">
+<a href="https://fb.me/dani.vlajna" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Facebook" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1877f2" height="512" rx="15%" width="512"></rect><path d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z" fill="#fff"></path></svg>
+</a>
+<a href="https://twitter.com/DJ_Dani_Serbia" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://www.youtube.com/DanijelaPopovic" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="YouTube" fill="#ed1d24" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect height="512" rx="15%" width="512"></rect><path d="m427 169c-4-15-17-27-32-31-34-9-239-10-278 0-15 4-28 16-32 31-9 38-10 135 0 174 4 15 17 27 32 31 36 10 241 10 278 0 15-4 28-16 32-31 9-36 9-137 0-174" fill="#fff"></path><path d="m220 203v106l93-53"></path></svg>
+</a>
+<a href="https://github.com/vlajna95" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+</div>
+</section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="span1"></div>
+</div>
+</div>
+
+<footer>
+<div>
+<span class="site-name">DP Tech</span> - Tvoj omiljeni blog
+</div>
+<div id="fpowered">
+Pokreće: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican početna strana">Pelican</a>. 
+Tema: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Početna strana Elegant teme">Elegant</a>. 
+</div>
+</footer><script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="http://localhost:8000/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script src="http://localhost:8000/theme/js/custom.js"></script>
+<script>
+function validateForm(query) {
+return(query.length>0);
+}
+</script>
+<script>
+function checkAnswer(origin) {
+var question_name = $(origin).attr("data-question");
+var correct_answer_element = $(origin).attr("data-correct");
+var correct_answer_id = $("#"+correct_answer_element).val();
+var correct_answer_label = $("label[for="+correct_answer_id+"]").text();
+var chosen_answer_id = $("input[name="+question_name+"]:checked").attr("id");
+var chosen_answer_label = $("label[for="+chosen_answer_id+"]").text();
+if(correct_answer_id == chosen_answer_id) {
+alert("Bravo!");
+}
+else {
+alert("Hmmm... ne. \n" + correct_answer_label);
+}
+$("input[name="+question_name+"]").attr("disabled", true);
+}
+</script>
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+</body>
+<!--
+Theme: Elegant built for Pelican 
+License: MIT
+-->
+</html>

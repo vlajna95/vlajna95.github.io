@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DP Tech - class</title><link href="http://localhost:8000/en/" rel="alternate"></link><link href="http://localhost:8000/feeds/atom/tag-class.xml" rel="self"></link><id>http://localhost:8000/en/</id><updated>2021-05-29T20:34:00+02:00</updated><subtitle>Your favorite tech blog :smile:</subtitle><entry><title>My D&amp;D character class</title><link href="http://localhost:8000/en/articles/my-dd-character-class" rel="alternate"></link><published>2021-05-29T20:34:00+02:00</published><updated>2021-05-29T20:34:00+02:00</updated><author><name>Danijela Popović</name></author><id>tag:localhost,2021-05-29:/en/articles/my-dd-character-class</id><summary type="html">&lt;p&gt;Results of a questionnaire which shows what kind of character am I in the Dungeons and Dragons game.&lt;/p&gt;</summary><content type="html">
+&lt;hr/&gt;
+&lt;h2 id="i-am-a"&gt;I am a...&lt;/h2&gt;
+&lt;p&gt;Neutral Good Human Paladin/Ranger (2nd/2nd Level) &lt;/p&gt;
+&lt;h3 id="ability-scores"&gt;Ability scores&lt;/h3&gt;
+&lt;dl&gt;
+&lt;dt&gt;**Strength**&lt;/dt&gt;
+&lt;dd&gt;12&lt;/dd&gt;
+&lt;dt&gt;Dexterity**&lt;/dt&gt;
+&lt;dd&gt;10
+&lt;dt&gt;**Constitution**&lt;/dt&gt;
+&lt;dd&gt;11&lt;/dd&gt;
+&lt;dt&gt;**Intelligence**&lt;/dt&gt;
+&lt;dd&gt;16&lt;/dd&gt;
+&lt;dt&gt;**Wisdom**&lt;/dt&gt;
+&lt;dd&gt;16&lt;/dd&gt;
+&lt;dt&gt;**Charisma**&lt;/dt&gt;
+&lt;dd&gt;13&lt;/dd&gt;
+&lt;/dd&gt;&lt;/dl&gt;
+&lt;h3 id="alignment"&gt;Alignment&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Neutral Good&lt;/strong&gt; - A neutral good character does the best that a good person can do. He is devoted to helping others. He works with kings and magistrates but does not feel beholden to them. Neutral good is the best alignment you can be because it means doing what is good without bias for or against order. However, neutral good can be a dangerous alignment when it advances mediocrity by limiting the actions of the truly capable. &lt;/p&gt;
+&lt;h3 id="race"&gt;Race&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Humans&lt;/strong&gt; are the most adaptable of the common races. Short generations and a penchant for migration and conquest have made them physically diverse as well. Humans are often unorthodox in their dress, sporting unusual hairstyles, fanciful clothes, tattoos, and the like. &lt;/p&gt;
+&lt;h3 id="primary-class"&gt;Primary Class&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Paladins&lt;/strong&gt; take their adventures seriously, and even a mundane mission is, in the heart of the paladin, a personal test an opportunity to demonstrate bravery, to learn tactics, and to find ways to do good. Divine power protects these warriors of virtue, warding off harm, protecting from disease, healing, and guarding against fear. The paladin can also direct this power to help others, healing wounds or curing diseases, and also use it to destroy evil. Experienced paladins can smite evil foes and turn away undead. A paladin's Wisdom score should be high, as this determines the maximum spell level that they can cast. Many of the paladin's special abilities also benefit from a high Charisma score. &lt;/p&gt;
+&lt;h3 id="secondary-class"&gt;Secondary Class&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Rangers&lt;/strong&gt; are skilled stalkers and hunters who make their home in the woods. Their martial skill is nearly the equal of the fighter, but they lack the latter's dedication to the craft of fighting. Instead, the ranger focuses his skills and training on a specific enemy a type of creature he bears a vengeful grudge against and hunts above all others. Rangers often accept the role of protector, aiding those who live in or travel through the woods. His skills allow him to move quietly and stick to the shadows, especially in natural settings, and he also has special knowledge of certain types of creatures. Finally, an experienced ranger has such a tie to nature that he can actually draw on natural power to cast divine spells, much as a druid does, and like a druid he is often accompanied by animal companions. A ranger's Wisdom score should be high, as this determines the maximum spell level that he can cast. &lt;/p&gt;
+&lt;h2 id="more-info"&gt;More info&lt;/h2&gt;
+&lt;p&gt;Find out &lt;a href="http://www.easydamus.com/character.html"&gt;what kind of Dungeons and Dragons characters would you be&lt;/a&gt; - courtesy of &lt;a href="mailto:zybstrski@excite.com"&gt;Easydamus (e-mail)&lt;/a&gt;. &lt;/p&gt;</content><category term="Games"></category><category term="character"></category><category term="class"></category><category term="questionnaire"></category></entry></feed>

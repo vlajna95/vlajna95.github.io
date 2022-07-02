@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DP Tech - storybooks</title><link href="http://localhost:8000/en/" rel="alternate"></link><link href="http://localhost:8000/feeds/atom/tag-storybooks.xml" rel="self"></link><id>http://localhost:8000/en/</id><updated>2021-02-15T15:32:00+01:00</updated><subtitle>Your favorite tech blog :smile:</subtitle><entry><title>My storybook (WiP)</title><link href="http://localhost:8000/en/articles/my-storybook-wip" rel="alternate"></link><published>2021-02-15T15:32:00+01:00</published><updated>2021-02-15T15:32:00+01:00</updated><author><name>Danijela Popović</name></author><id>tag:localhost,2021-02-15:/en/articles/my-storybook-wip</id><summary type="html">&lt;p&gt;An update about my storybook's progress.&lt;/p&gt;</summary><content type="html">
+&lt;hr/&gt;
+&lt;h2 id="a-little-reminder"&gt;A little reminder&lt;/h2&gt;
+&lt;iframe "="" allowfullscreen="" frameborder="0" height="480" src="https://www.youtube.com/embed/et219QQggzE" width="640"&gt;&lt;/iframe&gt;
+&lt;p&gt;Do you remember this video? &lt;br/&gt;
+That was the first announcement about my storybook. &lt;/p&gt;
+&lt;p&gt;Well, I'm here to make the second announcement. &lt;img alt="😄" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f604.png" title="smiling face with open mouth and smiling eyes"/&gt; &lt;/p&gt;
+&lt;h2 id="an-update"&gt;An update&lt;/h2&gt;
+&lt;p&gt;No, unfortunately it isn't ready for you to read/play it, but it's close to a moment in which you'll be able to taste a good piece of it. &lt;/p&gt;
+&lt;p&gt;Stay tuned! &lt;img alt="😁" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f601.png" title="grinning face with smiling eyes"/&gt;&lt;/p&gt;</content><category term="Books"></category><category term="books"></category><category term="stories"></category><category term="storybooks"></category><category term="writing"></category></entry></feed>

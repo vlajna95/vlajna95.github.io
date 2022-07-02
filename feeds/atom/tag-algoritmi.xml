@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DP Tech - algoritmi</title><link href="http://localhost:8000/" rel="alternate"></link><link href="http://localhost:8000/feeds/atom/tag-algoritmi.xml" rel="self"></link><id>http://localhost:8000/</id><updated>2021-11-12T00:00:00+01:00</updated><subtitle>Tvoj omiljeni blog</subtitle><entry><title>CJP 1.2. Algoritmi</title><link href="http://localhost:8000/articles/cjp-12-algoritmi" rel="alternate"></link><published>2021-11-12T00:00:00+01:00</published><updated>2021-11-12T00:00:00+01:00</updated><author><name>Danijela Popović</name></author><id>tag:localhost,2021-11-12:/articles/cjp-12-algoritmi</id><summary type="html">&lt;p&gt;Upoznavanje sa algoritmima&lt;/p&gt;</summary><content type="html">
+&lt;hr/&gt;
+&lt;p&gt;::: "Rezime"&lt;br/&gt;
+    - Kompjuter je uređaj koji je sposoban da izvrši proizvoljan broj aritmetičkih i logičkih operacija. &lt;br/&gt;
+    - Program je skup instrukcija koje kompjuteru govore šta je potrebno da uradi. &lt;br/&gt;
+    - Proces stvaranja kompjuterskih programa naziva se programiranje. &lt;br/&gt;
+    - Kompjuterske programe kreiraju programeri, ljudi koji poseduju neophodna znanja kako bi bili u mogućnosti da kreiraju instrukcije koje diriguju kompjuteru. &lt;br/&gt;
+    - Prvim kompjuterskim programerom na svetu smatra se Ada Lovelace. &lt;br/&gt;
+    - Mašinski jezik je maternji jezik kompjutera, odnosno jedini jezik koji kompjuter razume. &lt;br/&gt;
+    - Asembler, odnosno asemblerski jezik, predstavlja programski jezik niskog nivoa, kod kojeg se osnovne programske naredbe pišu korišćenjem unapred utvrđenih reči, koje simbolizuju naredbu koju predstavljaju. &lt;br/&gt;
+    - Mašinski i asemblerski jezik u potpunosti su zavisni od fizičkih osobina procesora na kojima se izvršavaju, te od programera u velikoj meri zahtevaju poznavanje same fizičke arhitekture računara. &lt;br/&gt;
+    - Programski jezici višeg nivoa u znatno većoj meri koriste elemente prirodnih jezika, uglavnom reči i skraćenice preuzete iz engleskog jezika, te na taj način unapređuju čitljivost i olakšavaju kreiranje programskog koda.    - Kompajler i interpreter su kompjuterski programi čija je osnovna svrha generisanje drugih kompjuterskih programa. &lt;/p&gt;
+&lt;h2 id="uvod"&gt;Uvod&lt;/h2&gt;
+&lt;p&gt;Tokom obavljanja svakodnevnih aktivnosti, svako od nas suočen je sa procesom rešavanja raznih uobičajenih problema i donošenja odluka. Kojim putem ići do posla, šta doručkovati ili ručati, koji mobilni telefon kupiti, kada obaviti renoviranje stana... To su samo neke od situacija koje od nas zahtevaju određenu analizu i razmišljanje u cilju rešavanja konkretnog problema. Naravno, pojam problema je potrebno shvatiti uslovno, kao situaciju, obavezu, prepreku ili pitanje na koje je potrebno pronaći odgovor. Naša svakodnevica u potpunosti je ispunjena takvim situacijama. &lt;/p&gt;
+&lt;p&gt;Posao pisanja kompjuterskih programa umnogome podseća na opisane svakodnevne situacije. Zbog toga se veoma često kaže da je programiranje posao koji je sastavljen od konstantnog rešavanja problema korišćenjem kompjutera. Drugim rečima, proizvod programerskog rada, odnosno program, nije ništa drugo do uputstvo računaru kako rešiti određeni problem. Ukoliko kompjuterski program posmatrate kroz prizmu iole složenijih aplikacija, programerski posao sastavljen je iz rešavanja niza takvih pojedinačnih, manjih problema, čije prevazilaženje dovodi do finalnog proizvoda – potpuno funkcionalnog kompjuterskog programa. &lt;/p&gt;
+&lt;p&gt;Bez obzira na to da li je reč o situacijama iz svakodnevnog života ili problemima prilikom pisanja kompjuterskih programa, njihovo rešavanje zahteva sprovođenje serije koraka, koji se objedinjeno mogu nazvati algoritam. &lt;/p&gt;
+&lt;h2 id="sta-je-algoritam"&gt;Šta je algoritam?&lt;/h2&gt;
+&lt;p&gt;Postoje velike šanse da ste reč algoritam do sada čuli mnogo puta u različitim situacijama. Algoritam se definiše kao ispravno opisana procedura za rešavanje nekog problema, najčešće problema u matematici ili kompjuterskom programiranju. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Istorija algoritama&lt;/strong&gt; &lt;br/&gt;
+Algoritmi nisu nikakva novost, s obzirom na to da su, 3500 godina pre nove ere, drevni Vavilonci posedovali algoritme za računanje kvadratnog korena. Reč algoritam (engl. algorithm) nastala je kao posledica latinizacije imena persijskog naučnika i matematičara Al-Khwarizmija, koji je 825. godine objavio knjigu koja se bavila računanjem korišćenjem hindu brojeva. &lt;/p&gt;
+&lt;p&gt;Algoritmi nikako nisu ograničeni isključivo na kompjutere, već se mogu primeniti na svaku situaciju koja iziskuje određenu analizu u cilju iznalaženja rešenja. Na primer, sve one uobičajene situacije iz realnog života navedene na početku ove lekcije mogu biti kandidati za kreiranje algoritama. Tako svi mi, potpuno nesvesno, kreiramo različite algoritme koji nam omogućavaju da razrešimo svakodnevne situacije u kojima se nalazimo. Evo samo nekih takvih situacija. &lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;Da li poneti kišobran napolje?&lt;/dt&gt;
+&lt;dd&gt;Pogledati vremensku prognozu; ukoliko je najavljena kiša, poneti kišobran; ukoliko kiša nije prognozirana, ne nositi kišobran. &lt;/dd&gt;
+&lt;dt&gt;Kako napraviti palačinke?&lt;/dt&gt;
+&lt;dd&gt;Pomešati 300 g brašna, 3 jajeta, 100 ml kisele vode i 400 ml mleka; sjediniti smešu; zagrejati tiganj, sipati i ravnomerno rasporediti smešu; peći oko 2-3 minuta sa obe strane; dodati fil po želji. &lt;/dd&gt;
+&lt;dt&gt;Kako skuvati čaj?&lt;/dt&gt;
+&lt;dd&gt;Sipati 2 dl vode u lonče i staviti na ringlu; uključiti i sačekati da provri; skloniti lonče sa ringle i dodati čaj. &lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;Ovo su bile samo neke od situacija čije razrešavanje od nas zahteva kreiranje internih algoritama. Koraci od kojih su sačinjena prikazana uputstva objedinjeni čine proceduru ili, drugim rečima, algoritam, koji opisuje kako konkretnu situaciju razrešiti. Na identičan način funkcionišu i kompjuterski algoritmi. &lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Zbog čega obrađujemo algoritme?&lt;/strong&gt; &lt;br/&gt;
+Do sada ste se verovatno zapitali koji je razlog obrađivanja algoritama unutar ovog uvodnog izlaganja o osnovama programiranja. Razlog je veoma jednostavan. Pisanje kompjuterskog koda samo je jedan od koraka u kreiranju programa. Pre nego što uistinu i započnu pisanje izvornog koda, programeri obavljaju niz pripremnih radnji, čiji je cilj što preciznije utvrđivanje koraka koji će biti sprovedeni kako bi se napisao kvalitetan i funkcionalan program. Proizvod takvih koraka upravo je algoritam ili više algoritama, koji se zatim koriste kao osnova ili, bolje rečeno, uputstvo za pisanje izvornog koda. &lt;/p&gt;
+&lt;p&gt;Svaki dobar programer reći će vam da je posao pisanja algoritama značajniji ili, u najmanju ruku, podjednako značajan kao i posao konkretnog pisanja izvornog koda nekog programa. Upravo zbog toga postoje osobe koje se bave kompjuterskim naukama, čiji je posao isključivo sastavljen od pisanja algoritama. &lt;/p&gt;
+&lt;h2 id="algoritmi-u-kompjuterskom-svetu"&gt;Algoritmi u kompjuterskom svetu&lt;/h2&gt;
+&lt;p&gt;U ovom trenutku verovatno ne možete ni da naslutite u kojoj meri su algoritmi značajni za funkcionisanje kompjutera i digitalnih tehnologija uopšte. Na primer, čitanje ovoga teksta uopšte ne bi bilo moguće bez postojanja nekoliko veoma moćnih algoritama čije implementacije čine osnovu digitalnog sveta. Logika takvih algoritama koristi se za pretvaranje signala vremenskog domena u frekventni i obrnuto, a na takvim algoritmima se zasniva funkcionisanje interneta, WiFi-ja, rutera, satelita, telefona, kompjutera itd. &lt;/p&gt;
+&lt;p&gt;I kada se govori o kompjuterskom programiranju, primarnoj temi ovog programa, može se konstatovati da algoritmi predstavljaju osnovu takvog posla. S obzirom na to da je kompjuter mašina koja obavljanjem velikog broja kalkulacija razrešava probleme, algoritmi bi bili praktični koraci koje bi kompjuter morao izvršiti kako bi proizveo očekivani rezultat. Neke od situacija koje prilikom programiranja zahtevaju kreiranje dobrih algoritama mogle bi biti sledeće: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;na koji način izračunati srednju vrednost skupa brojeva &lt;/li&gt;
+&lt;li&gt;kako obaviti sortiranje niza podataka &lt;/li&gt;
+&lt;li&gt;kako odrediti poziciju na displeju na kojoj će biti nacrtan neki grafički element &lt;/li&gt;
+&lt;li&gt;na koji način odrediti najkraću putanju između dve tačke na mapi &lt;/li&gt;
+&lt;li&gt;kako generisati slučajnu (engl. random) vrednost &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ovo su bili samo neki od problema koji mogu nastati prilikom pisanja kompjuterskih programa. Čak i veoma jednostavne aplikacije visokog nivoa kreirane korišćenjem raznih grafičkih alata, koje na svom aplikativnom nivou možda ne zahtevaju kreiranje nijednog algoritma, oslanjaju se u pozadini na veliki broj već napisanih algoritama. Ukoliko se program kreira bilo kojim jezikom nižeg ili višeg nivoa, u procesu prevođenja izvornog koda takvog jezika u mašinski, kompajler, interpreter ili asembler intenzivno koriste različite algoritme. &lt;/p&gt;
+&lt;p&gt;Algoritmi kompjuterskog programiranja u potpunosti su nezavisni od programskog jezika, odnosno tehnologije koja će biti korišćena za realizaciju takvih algoritama. Zbog toga je odmah na početku potrebno napraviti razliku između algoritma i izvornog koda nekog programa, koji nastaje kao konkretna realizacija takvog algoritma. Kako biste bolje mogli da vizuelizujete opisani odnos, data je slika 2.1. &lt;/p&gt;
+&lt;figure&gt;
+&lt;img alt="Slika 2.1. Algoritam je uputstvo za kreiranje programa ili nekog njegovog dela" src="/images/CoreJavaProgramming/1_02_01.jpg"/&gt;
+&lt;figcaption&gt;Slika 2.1. Algoritam je uputstvo za kreiranje programa ili nekog njegovog dela&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Slika 2.1. pokušava da dočara odnos između algoritma, izvornog koda kojim je napisan program i kompjutera koji takav program izvršava. &lt;/p&gt;
+&lt;h2 id="razliciti-nacini-za-predstavljanje-algoritama"&gt;Različiti načini za predstavljanje algoritama&lt;/h2&gt;
+&lt;p&gt;Algoritam je samo precizno utvrđeno uputstvo za rešavanje nekog problema, koje u svakoj situaciji, odnosno za bilo koji ulaz, proizvodi očekivani izlaz. Tako je algoritam samo zamisao koja se formira u glavi programera. Da bi se algoritam prezentovao, potrebno je iskoristiti neki od načina koji se u te svrhe koriste. Četiri najčešće korišćena načina za predstavljanje algoritama su: &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;predstavljanje rečima, govorom, engleskim ili nekim drugim jezikom &lt;/li&gt;
+&lt;li&gt;predstavljanje crtanjem dijagrama toka (engl. flowchart) &lt;/li&gt;
+&lt;li&gt;predstavljanje pseudokodom &lt;/li&gt;
+&lt;li&gt;predstavljanje kodom nekog programskog jezika &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Na početku ove lekcije već je definisano nekoliko algoritama, i to korišćenjem prve navedene metode, odnosno korišćenjem nekog od prirodnih jezika. Iako je ovakav vid definisanja i prezentovanja algoritama veoma dobar u situacijama koje iziskuju usmenu ili neobaveznu komunikaciju, kada je kompjutersko programiranje u pitanju, za predstavljanje algoritama najčešće se pribegava korišćenju 2, 3. ili 4. načina. S obzirom na to da ste vi u ovom trenutku na početku učenja programiranja i još uvek ne poznajete nijedan programski jezik, nastavak ovog uvodnog izlaganja biće posvećen predstavljanju algoritama korišćenjem dijagrama toka i pseudokoda. Ove dve metode za vizuelizaciju algoritama predstavljaju odličan alat za upoznavanje osnova programiranja, a početnicima omogućavaju da razviju programersku logiku i pre nego što napišu ijednu liniju koda konkretnog programskog jezika. &lt;/p&gt;
+&lt;div class="question"&gt;
+&lt;p&gt;Da li je moguće algoritam predstaviti korišćenjem programskog jezika C? &lt;/p&gt;
+&lt;div class="answers"&gt;&lt;input id="algoritam_u_kodu_correct" name="algoritam_u_kodu_correct" type="hidden" value="ad"/&gt;&lt;input id="ad" name="algoritam_u_kodu" type="radio" value="da"/&gt;&lt;label for="ad"&gt;da&lt;/label&gt;&lt;br/&gt;
+&lt;input id="en" name="algoritam_u_kodu" type="radio" value="ne"/&gt;&lt;label for="en"&gt;ne&lt;/label&gt;&lt;br/&gt;
+&lt;/div&gt;
+&lt;button class="ok" data-correct="algoritam_u_kodu_correct" data-question="algoritam_u_kodu" onclick="checkAnswer(this, 'Bravo!', 'Hmmm... no.')" type="button"&gt;OK&lt;/button&gt;&lt;/div&gt;
+&lt;h2 id="dijagram-toka"&gt;Dijagram toka&lt;/h2&gt;
+&lt;p&gt;Dijagram toka jeste jedan od načina na koji je grafički moguće predstaviti korake nekog procesa. Takva grafička predstava ilustruje kompletno rešenje nekog problema, što pomaže u razumevanju načina na koji je takav problem rešen. Dijagrami tokova nisu striktno vezani za kompjutere i programiranje, već poseduju znatno širu primenu. &lt;/p&gt;
+&lt;p&gt;Prve dijagrame tokova kreirali su 1921. godine supružnici Frank i Lillian Gilbreth, članovi Američkog društva mehaničkih inženjera (engl. American Society of Mechanical Engineers, ASME). Tako su ovi dijagrami inicijalno korišćeni za opisivanje procesa industrijskog inženjeringa. Ipak, ubrzo su dijagrami tokova svoju primenu našli i u drugim granama nauke, pa je 1949. godine zabeležena njihova prva upotreba u svrhu opisivanja funkcionisanja kompjuterskih programa. Danas se dijagrami tokova prevashodno koriste u industrijskom inženjeringu, kontroli kvaliteta, ekonomiji i kompjuterskim naukama. &lt;/p&gt;
+&lt;p&gt;Dijagrami tokova sačinjeni su iz niza grafičkih simbola, koji predstavljaju osnovne gradivne blokove ovakvih dijagrama. Međusobnim povezivanjem takvih simbola na veoma jednostavan način je moguće ilustrovati tok jednog procesa (slika 2.2). &lt;/p&gt;
+&lt;figure&gt;
+&lt;img alt="Slika 2.2. Dijagram toka koji ilustruje proces jedne od svakodnevnih odluka" src="/images/CoreJavaProgramming/1_02_02.jpg"/&gt;
+&lt;figcaption&gt;Slika 2.2. Dijagram toka koji ilustruje proces jedne od svakodnevnih odluka&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Slika 2.2. ilustruje primer jednog veoma jednostavnog dijagrama toka, koji predstavlja proces donošenja jedne uobičajene, svakodnevne odluke, spomenute na početku ove lekcije. Možete primetiti da su prilikom formiranja dijagrama sa slike 2.2. korišćeni simboli različitih oblika, koji su međusobno povezani linijama. Naravno, korišćenje prikazanih simbola nije slučajno. Simbole koji se mogu koristiti prilikom kreiranja dijagrama tokova standardizovali su  Američki nacionalni institut za simbole (engl. American National Symbols Institute, ANSI) i Internacionalna organizacija za standardizaciju (engl. The International Organizations for Standardization, ISO). Najznačajniji simboli dijagrama tokova ilustrovani su tabelom 2.1. &lt;/p&gt;
+&lt;figure&gt;
+&lt;div markdown="1"&gt;
+| Simbol | Naziv | Opis 
+| --- | --- | --- |
+| ![Terminal](/images/CoreJavaProgramming/1_02_a_terminal.jpg) | Terminal | Koristi se za predstavljanje početka ili kraja procesa ili nekog potprocesa; ovaj simbol najčešće sadrži tekst Start ili End u zavisnosti od toga da li predstavlja početak ili kraj nekog procesa. |
+| ![Operacija](/images/CoreJavaProgramming/1_02_b_operacija.jpg) | Operacija | Predstavlja bilo kakvu operaciju koja kreira, menja, prenosi ili briše podatke, te na taj način utiče na unutrašnje stanje procesa. |
+| ![Ulaz/izlaz](/images/CoreJavaProgramming/1_02_c_ulaz-izlaz.jpg) | Ulaz/Izlaz | Simbol kojim se predstavlja unos ili ispis podataka; koristi se u situacijama kada je potrebno modelovati korak koji od korisnika zahteva da unese neke podatke neophodne za funkcionisanje algoritma ili kada je potrebno prikazati izvesne podatke na nekom od izlaznih uređaja (displej, štampač itd.). |
+| ![Grananje](/images/CoreJavaProgramming/1_02_d_grananje.jpg) | Grananje | Simbol koji poseduje jednu ulaznu i dve izlazne linije; prilikom jednog prolaska kroz ovaj element dijagrama uvek će biti korišćena samo jedna izlazna linija; osobine ovog elementa mogu se razumeti i analizom njegovog naziva – grananje; ovo je element koji omogućava da tok dijagrama krene jednom od dve ponuđene linije; na taj način se upravo postiže grananje definisano u nazivu ovog simbola. |
+| ![Predefinisani proces](/images/CoreJavaProgramming/1_02_e_predefinisani_proces.jpg) | Predefinisani proces | Koristi se da označi neki proces, odnosno skup više koraka, koji se smatra jedinstvenom operacijom; takav proces je unapred definisan na nekom drugom mestu, te se zbog toga naziva predefinisanim; unutar ovog simbola navodi se naziv predefinisanog procesa. |
+| ![Linija_toka](/images/CoreJavaProgramming/1_02_f_linija_toka.jpg) | Linija toka | Simbol za povezivanje sukcesivnih koraka dijagrama; podrazumevani tok dijagrama je odozgo nadole i sleva nadesno; ukoliko tok dijagrama odstupa od ovoga standarda, dodaju su strelice na linije toka. |
+| ![Konektor](/images/CoreJavaProgramming/1_02_g_konektor.jpg) | Konektor | Simbol kojim se povezuju dve tačke unutar dijagrama kada tako nešto nije moguće postići linijama ili kada se može dobiti jednostavniji prikaz izbegavanjem zbunjujućih isprepletanih linija; s obzirom na to da povezuje dve tačke na dijagramu, ovaj simbol se uvek koristi u parovima sa identičnim oznakama. |
+| ![Komentar](/images/CoreJavaProgramming/1_02_h_komentar.jpg) | Komentar | Ukoliko je u dijagram potrebno uključiti neke dodatne informacije, odnosno komentare, koristi se ovaj simbol. |
+&lt;/div&gt;
+&lt;figcaption&gt;Tabela 2.1. Simboli koji se koriste prilikom kreiranja dijagrama tokova&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Sada kada poznajemo osnovne simbole dijagrama tokova, stečeno znanje možemo iskoristiti za reprezentovanje nekih osnovnih algoritama. Prvi algoritam koji ćemo predstaviti korišćenjem dijagrama toka biće algoritam za sabiranje dva broja. To je jedan od najjednostavnijih algoritama kompjuterskog programiranja. Prirodnim jezikom, odnosno jednostavnim rečima, takav algoritam bi mogao da se opiše na sledeći način: &lt;br/&gt;
+prikupi vrednosti prvog i drugog broja, obavi sabiranje takvih brojeva, dobijeni zbir prikaži korisniku ili prosledi na dalju obradu. &lt;/p&gt;
+&lt;p&gt;Ovakav algoritam, formulisan prirodnim jezikom, korišćenjem dijagrama toka može se predstaviti kao na slici 2.3. &lt;/p&gt;
+&lt;figure&gt;
+&lt;img alt="Slika 2.3. Algoritam za sabiranje dva broja predstavljen dijagramom toka" src="/images/CoreJavaProgramming/1_02_03.jpg"/&gt;
+&lt;figcaption&gt;Slika 2.3. Algoritam za sabiranje dva broja predstavljen dijagramom toka&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Dijagram toka sa slike 2.3. započinje zaobljenim pravougaonikom ili takozvanim terminal simbolom, koji ilustruje početak dijagrama. Unutar njega postavljen je simboličan tekst (START), koji označava da je reč o početku dijagrama. &lt;br/&gt;
+Nakon terminal simbola naveden je simbol za ulaz/izlaz, koji se u ovoj situaciji koristi za unos vrednosti. Jednostavno, kako bi se sabiranje obavilo, neophodno je obezbediti sabirke. U ovom trenutku je potpuno nebitno odakle takve vrednosti dolaze, s obzirom na to da je algoritam samo apstrahovani pogled na konkretan problem. U stvarnosti, odnosno unutar nekog kompjuterskog programa, takve vrednosti će obično doći od korisnika ili interne logike same aplikacije. Dva broja koja će biti sabrana, odnosno dva sabirka, unutar dijagrama toka označena su slovima x i y. &lt;br/&gt;
+Nakon unosa podataka prelazi se na njihovu obradu, te se zbog toga koristi simbol dijagrama toka koji predstavlja operaciju. Sabiranje je svakako jedan od idealnih kandidata za obeležavanje simbolom operacije. Operacija se sastoji iz sabiranja vrednosti brojeva x i y. Zbir ova dva broja čuva se kao vrednost z. &lt;br/&gt;
+Nakon obavljene operacije sabiranja, još jednom se koristi simbol ulaz/izlaz, ali ovog puta u kontekstu izlaza. Kao izlaz, dijagram toka emituje vrednost z, odnosno zbir brojeva x i y. &lt;br/&gt;
+Dijagram toka se završava terminal simbolom sa tekstom END, čime se simbolizuje kraj dijagrama toka. &lt;/p&gt;
+&lt;h2 id="epilog"&gt;Epilog&lt;/h2&gt;
+&lt;p&gt;Upravo ste po prvi put mogli da vizuelizujete tok jednog jednostavnog algoritma. Za obavljanje takvog posla pomogli su nam dijagrami tokova. Kao što je rečeno, dijagrami tokova su samo jedan od načina na koji je moguće artikulisati algoritme. Stoga je veoma bitno da razumete da dijagrami tokova nisu algoritmi. Oni su samo jedan od načina za njihovo prezentovanje. U narednoj lekciji biće prikazan još jedan način za artikulaciju algoritama, koji predstavlja oblik najsličniji pisanju izvornog koda nekog programskog jezika. Reč je o pseudokodu.&lt;/p&gt;</content><category term="IT akademija/CoreJavaProgramming/CJP - Modul 1. Svet programiranja"></category><category term="programiranje"></category><category term="teorija"></category><category term="algoritmi"></category></entry></feed>

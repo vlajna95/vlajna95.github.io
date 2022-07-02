@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+
+<html lang="ca">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="/theme/css/custom.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/css/elegant.prod.9e9d5ce754.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/css/custom.css" media="all" rel="stylesheet" type="text/css"/>
+<link href="/theme/fontawesome/css/all.css" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&amp;display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery.min.js"></script>
+<meta content="Danijela Popović" name="author"/>
+<meta content="Klase unutar klasa u programskom jeziku Java
+" name="description"/>
+<meta content="@DJ_Dani_Serbia" name="twitter:creator"/>
+<meta content="article" property="og:type"/>
+<meta content="summary" name="twitter:card"/>
+<meta content="Java, OOP, programiranje, klase, anonimne klase, anonimni objekti, lambda, referenciranje, IT akademija/Advanced Java Programming/AJP - Modul 1. Napredno objektno programiranje, " name="keywords"/>
+<meta content="AJP 1.3. Klase unutar klasa" property="og:title"/>
+<meta content="http://localhost:8000/ca/drafts/ajp-13-klase-unutar-klasa-sr.html" property="og:url"/>
+<meta content="Klase unutar klasa u programskom jeziku Java" property="og:description"/>
+<meta content="DP Tech" property="og:site_name"/>
+<meta content="Danijela Popović" property="og:article:author"/>
+<meta content="2022-04-22T18:46:00+02:00" property="og:article:published_time"/>
+<meta content="AJP 1.3. Klase unutar klasa" name="twitter:title"/>
+<meta content="Klase unutar klasa u programskom jeziku Java" name="twitter:description"/>
+<title>AJP 1.3. Klase unutar klasa · DP Tech
+</title>
+<link href="http://localhost:8000/feeds/atom/all.xml" rel="alternate" title="DP Tech - Full Atom Feed" type="application/atom+xml">
+<link href="http://localhost:8000/feeds/rss/all.xml" rel="alternate" title="DP Tech - Full RSS Feed" type="application/rss+xml"/>
+</link></link><link href="http://localhost:8000/ca\drafts/ajp-13-klase-unutar-klasa-sr.html" rel="canonical"/><script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "DP Tech", "item": "http://localhost:8000/ca"}, {"@type": "ListItem", "position": 2, "name": "Drafts", "item": "http://localhost:8000/ca\\drafts"}, {"@type": "ListItem", "position": 3, "name": "Ajp 13 klase unutar klasa sr", "item": "http://localhost:8000/ca\\drafts/ajp-13-klase-unutar-klasa-sr.html"}]}</script><script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "author": {"@type": "Person", "name": "Danijela Popović"}, "publisher": {"@type": "Organization", "name": "DP Tech", "logo": {"@type": "ImageObject", "url": "logo_transparent.png"}}, "headline": "AJP 1.3. Klase unutar klasa", "about": "IT akademija/Advanced Java Programming/AJP - Modul 1. Napredno objektno programiranje", "datePublished": "2022-04-22 18:46"}</script></head>
+<body>
+<div id="content">
+<div class="navbar navbar-static-top">
+<div class="navbar-inner">
+<div class="container-fluid">
+<a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse" title="Prikaži/sakrij meni">
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+<span class="icon-bar"></span>
+</a>
+<a class="brand" href="http://localhost:8000/ca/"><span class="site-name">DP Tech</span> - El teu bloc preferit</a>
+<nav class="nav-collapse collapse">
+<ul class="nav pull-right top-menu disclosure-nav" id="menubar">
+<li>
+<a href="http://localhost:8000/ca">Inici</a>
+</li>
+<li><a href="/categories/katalonski-catala">Katalonski - Català</a></li>
+<li><a href="http://localhost:8000/ca/categories">Kategorije</a></li>
+<li><a href="http://localhost:8000/ca/tags">Oznake</a></li>
+<li><a href="http://localhost:8000/ca/archives">Arhiva članaka</a></li>
+<li><form action="http://localhost:8000/ca/search.html" class="navbar-search" onsubmit="return validateForm(this.elements['q'].value);"><input class="search-query" id="tipue_search_input" name="q" placeholder="Pretraži" type="text"/></form></li>
+</ul>
+</nav></div>
+</div>
+</div>
+</div>
+<div class="container-fluid">
+<div class="row-fluid">
+<div class="span1"></div>
+<div class="span10">
+<article itemscope="">
+<div class="row-fluid">
+<header class="page-header span10 offset2">
+<h1><a href="http://localhost:8000/ca/drafts/ajp-13-klase-unutar-klasa-sr.html">
+AJP 1.3. Klase unutar klasa
+</a>
+</h1>
+<p><p>Klase unutar klasa u programskom jeziku Java</p></p>
+</header>
+</div>
+<div class="row-fluid">
+<div class="span8 offset2 article-content">
+<hr/>
+<p>Klase se u Javi smeštaju unutar zasebnih fajlova čiji naziv mora biti identičan nazivu klase. Tako su sve klase koje smo do sada kreirali bile smeštane unutar zasebnih fajlova. Pored toga, unutar klasa, kao njihovi članovi, mogu se naći svojstva i metode. U ovoj lekciji ćete videti da klase, pored svojstava i metoda, mogu da sadrže i druge klase, što omogućava kreiranje klasa unutar klasa, odnosno postojanje većeg broja klasa unutar jednog fajla. Takođe, u ovoj lekciji ćete imati prilike da vidite da je klase moguće definisati i unutar metoda, a na kraju i to da Java omogućava i kreiranje klasa bez imena. Za početak, biće ilustrovan pojam klasa unutar klasa.</p>
+<h2 id="klase-unutar-klasa">Klase unutar klasa</h2>
+<p>U programskom jeziku Java moguće je napraviti klasu koja se nalazi u okviru neke druge klase. Klase unutar klasa se drugačije nazivaju ugnežđene klase (<em>nested classes</em> ili <em>inner classes</em>). Evo kako može izgledati jedan primer takve klase: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">class</span> <span style="color: #fec418">OuterClass</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	...</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">class</span> <span style="color: #fec418">NestedClass</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">		...</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Prikazani primer ilustruje dve klase. Klasa OuterClass je glavna, odnosno spoljašnja klasa, unutar koje se kao član nalazi još jedna klasa – NestedClass. OuterClass se drugačije naziva klasa najvišeg nivoa (<em>top level class</em>), a NestedClass se drugačije naziva unutrašnja, odnosno ugnežđena klasa. </p>
+<h3 id="zbog-cega-su-nam-potrebne-klase-unutar-klasa">Zbog čega su nam potrebne klase unutar klasa?</h3>
+<p>Postoje brojni scenariji u kojima je korisno koristiti ovakav pristup, koji omogućava smeštanje jedne klase unutar neke druge. Tri najjača aduta postojanja klasa unutar klasa su: </p>
+<dl>
+<dt><strong>Grupisanje</strong></dt>
+<dd>Smeštanje većeg broja klasa unutar jedne top-level klase naročito je korisno kada je potrebno obaviti logičko grupisanje klasa koje će biti korišćene samo na jednom mestu. Drugim rečima, ukoliko znamo da će određena klasa biti korišćena samo u okviru jedne klase, logično je nju ugraditi u takvu klasu, čime spoljašnja i unutrašnja klasa postaju jedna celina.</dd>
+<dt><strong>Enkapsulacija</strong></dt>
+<dd>Definisanje jedne klase kao člana neke druge klase može poboljšati enkapsuliranost koda. Naime, s obzirom na to da je ugnežđena klasa član klase u kojoj se nalazi, nad njom je moguće definisati različite modifikatore pristupa, a sve u zavisnosti od cilja koji je potrebno postići.</dd>
+<dt><strong>Čitljivost</strong></dt>
+<dd>Na kraju, klase unutar klasa mogu pozitivno da utiču na čitljivost koda, pošto se one nalaze blizu mesta u kodu na kome će biti korišćene. </dd>
+</dl>
+<h2 id="vrste-ugnezenih-klasa">Vrste ugnežđenih klasa</h2>
+<p>Za početak će biti reči o dve vrste klasa koje mogu biti direktni klasni ili objektni članovi. U zavisnosti od toga da li je ugnežđena klasa objektni ili klasni član, razlikuju se dve vrste takvih klasa: <br/>
+    - nestatičke ugnežđene klase <br/>
+    - statičke ugnežđene klase </p>
+<p>Pored ove dve vrste ugnežđenih klasa, koje su direktni objektni ili klasni članovi, postoje i klase koje se mogu definisati unutar blokova koda, najčešće unutar metoda. Takve klase će biti predmet drugog dela ove lekcije. </p>
+<h3 id="nestaticke-ugnezene-klase">Nestatičke ugnežđene klase</h3>
+<p>Prva vrsta unutrašnjih klasa sa kojima ćemo se upoznati jesu klase koje su unutar svoje roditeljske klase još jedan objektni član. Reč je o klasama koje nisu statičke (već znamo da statički elementi pripadaju klasama, a oni koji nisu statički isključivo objektima koji se kreiraju korišćenjem takve klase). Takva je bila i unutrašnja klasa iz uvodnog primera u ovoj lekciji. </p>
+<p>Nestatičke ugnežđene klase predstavljaju nestatički član klase u kojoj se nalaze, baš kao bilo koje drugo polje ili metoda koji nisu označeni ključnom rečju <code>static</code>: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">class</span> <span style="color: #fec418">OuterClass</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> i;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">m</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(i);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">class</span> <span style="color: #fec418">InnerClass</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">accessOuterClass</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">			i </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">			m();</span>
+<span style="color: #c7c7c7">		}</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>U prikazanom primeru definisana je jedna top-level klasa sa nazivom <code>OuterClass</code>, koja sadrži dva privatna člana: <br/>
+    - jedno polje sa nazivom <code>i</code> <br/>
+    - jednu metodu sa nazivom <code>m</code> </p>
+<p>Zatim je kreirana nestatička ugnežđena klasa sa nazivom <code>InnerClass</code> i u okviru nje metoda sa nazivom <code>accessOuterClass</code>. Svrha ove metode je demonstracija mogućnosti unutrašnjih klasa da pristupe članovima klase u kojoj se nalaze, pa čak i ako su oni označeni kao privatni. </p>
+<p>Ugnežđene nestatičke klase moguće je instancirati samo pomoću objekata klase u kojoj se nalaze. To praktično znači da se <code>InnerClass</code> može instancirati isključivo ukoliko se prethodno kreira objekat klase <code>OuterClass</code>: </p>
+<details>
+<summary>OuterClass.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// OuterClass.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">class</span> <span style="color: #fec418">OuterClass</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> i;</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">private</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">m</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(i);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">	</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">class</span> <span style="color: #fec418">InnerClass</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">accessOuterClass</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">			i </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">			m();</span>
+<span style="color: #c7c7c7">		}</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Program.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Program.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Program</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		OuterClass outerObject </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> OuterClass();</span>
+<span style="color: #c7c7c7">		OuterClass.</span><span style="color: #06b6ef">InnerClass</span><span style="color: #c7c7c7"> innerObject </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> outerObject.</span><span style="color: #06b6ef">new</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">InnerClass</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">		innerObject.</span><span style="color: #06b6ef">accessOuterClass</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<p>Instanciranje nestatičkih ugnežđenih klasa se vrlo retko obavlja na ovaj način, odnosno izvan matične klase unutar koje su takve klase definisane. Jednostavno, nestatičke ugnežđene klase su gotovo uvek namenjene za korišćenje unutar samih klasa u kojima su i kreirane. </p>
+<h3 id="staticke-ugnezene-klase">Statičke ugnežđene klase</h3>
+<p>Ugnežđene klase mogu biti i klasni članovi, odnosno, one se mogu deklarisati i kao statički elementi matične klase, tj. klase u kojoj se nalaze. U takvoj situaciji govorimo o statičkim ugnežđenim klasama: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">class</span> <span style="color: #fec418">OuterClass</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> outerClassField;</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">StaticNestedClass</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">		...</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Jedina razlika u odnosu na prethodni primer jeste korišćenje ključne reči <code>static</code> prilikom deklarisanja klase. Stoga za ovakvu ugnežđenu klasu važi sve što i za ostale statičke elemente - oni postoje samo u domenu klase i moguće im je pristupiti korišćenjem imena matične klase, bez njenog prethodnog instanciranja: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #c7c7c7">OuterClass.</span><span style="color: #06b6ef">StaticNestedClass</span><span style="color: #c7c7c7"> obj </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> OuterClass.</span><span style="color: #06b6ef">StaticNestedClass</span><span style="color: #c7c7c7">();</span>
+</code></pre></div>
+<p>Sada možete videti da se, za razliku od prethodnog primera, ugnežđene statičke klase mogu instancirati bez prethodnog instanciranja matične klase. </p>
+<p><strong>Iz statičkih ugnežđenih klasa ne može se pristupiti objektnim članovima matične klase.</strong> <br/>
+Statičke ugnežđene klase nemaju pristup članovima objekata svoje matične klase. Upravo zbog toga unutar kreirane klase (<code>OuterClass</code>) i postoji jedno objektno polje. Ukoliko bismo njemu pokušali da pristupimo iz ugnežđene statičke klase, dobili bismo grešku kao na slici 3.1. </p>
+<figure>
+<img alt="Slika 3.1. Primer nemogućnosti pristupa objektnom članu iz statičke ugnežđene klase" src="/images/AdvancedJavaProgramming/1_03_01.png"/>
+<figcaption>Slika 3.1. Primer nemogućnosti pristupa objektnom članu iz statičke ugnežđene klase</figcaption>
+</figure>
+<p>Ponašanje koje vidite na slici 3.1. nije nikakvo iznenađenje. Naime, iz bilo kog statičkog konteksta nije moguće pristupiti nijednom objektnom elementu. Jednostavno, statički elementi se kreiraju prilikom pokretanja aplikacije, a objektni tek prilikom instanciranja određene klase, za svaki objekat zasebno. S obzirom na to da je reč o dva potpuno različita konteksta, statičkim elementima nije omogućen pristup objektnim. Po identičnom principu, ni unutar <code>main()</code> metode, koja je takođe statička, nije moguće pristupiti objektnim poljima i metodama glavne klase Java programa. </p>
+<p><strong>Samo unutrašnje klase mogu biti statičke</strong> <br/>
+Jedina situacija u kojoj jedna klasa može biti statička jeste ukoliko je ona deo neke druge klase, odnosno ukoliko je reč o ugnežđenoj klasi. Drugim rečima, top-level klase ne mogu biti statičke, zato što statički mogu biti samo elementi klasa. </p>
+<p><strong>Kada koristiti statičke, a kada nestatičke unutrašnje klase?</strong> <br/>
+Do sada su prikazane dve vrste ugnežđenih klasa: one koje pripadaju direktno klasi (statičke) i one koje pripadaju instancama klase u kojoj se nalaze. Nestatičke ugnežđene klase je bolje koristiti kada je iz ugnežđene klase potrebno pristupati objektnim poljima i metodama. Kada tako nešto nije neophodno, ugnežđena klasa može biti statička. </p>
+<div class="question">
+<p>Koji tip ugnežđenih klasa ne može pristupiti članovima klasa u okviru koje je ugnežđena klasa definisana? </p>
+<div class="answers"><input id="klase_bez_pristupa_clanovima_correct" name="klase_bez_pristupa_clanovima_correct" type="hidden" value="ekčitats"/><input id="encnatsni" name="klase_bez_pristupa_clanovima" type="radio" value="instancne"/><label for="encnatsni">instancne</label><br/>
+<input id="ekčitats" name="klase_bez_pristupa_clanovima" type="radio" value="statičke"/><label for="ekčitats">statičke</label><br/>
+<input id="ekčitatsen_eneđžengu" name="klase_bez_pristupa_clanovima" type="radio" value="ugnežđene nestatičke"/><label for="ekčitatsen_eneđžengu">ugnežđene nestatičke</label><br/>
+<input id="entavirp" name="klase_bez_pristupa_clanovima" type="radio" value="privatne"/><label for="entavirp">privatne</label><br/>
+</div>
+<button class="ok" data-correct="klase_bez_pristupa_clanovima_correct" data-question="klase_bez_pristupa_clanovima" onclick="checkAnswer(this, 'Bravo!', 'Hmmm... no.')" type="button">OK</button></div>
+<h3 id="lokalne-klase">Lokalne klase</h3>
+<p>Ugnežđene klase mogu se javiti i unutar blokova. Opet je analogiju potrebno napraviti sa klasičnim promenljivama koje se deklarišu unutar blokova. Promenljiva unutar bloka naziva se lokalna promenljiva, pa se onda po identičnom principu i klase unutar bloka nazivaju lokalne klase. <br/>
+Najčešće se lokalne klase mogu sresti unutar metoda: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">class</span> <span style="color: #fec418">OuterClass</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">testMethod</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> x) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> y </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> x </span><span style="color: #5bc4bf">*</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">2</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">class</span> <span style="color: #fec418">LocalClass</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">			</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> a;</span>
+<span style="color: #c7c7c7">			</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> b;</span>
+<span style="color: #c7c7c7">			</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">LocalClass</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">				a </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> x;</span>
+<span style="color: #c7c7c7">				b </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> y;</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		}</span>
+<span style="color: #c7c7c7">		</span>
+<span style="color: #c7c7c7">		LocalClass lc </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> LocalClass();</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(lc.</span><span style="color: #06b6ef">a</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(lc.</span><span style="color: #06b6ef">b</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Prikazani kod ilustruje primer lokalne klase. U okviru klase <code>OuterClass</code> postoji metoda sa nazivom <code>testMethod</code>. Ova metoda prihvata jedan ulazni parametar imenovan nazivom <code>x</code>. Unutar metode se formira vrednost lokalne promenljive <code>y</code>, a zatim se obavlja i kreiranje jedne lokalne klase sa nazivom <code>LocalClass</code>. <br/>
+<code>LocalClass</code> poseduje dva svojstva, a unutar konstruktora se postavljaju njihove vrednosti korišćenjem lokalnih promenljivih <code>x</code> i <code>y</code>. Nakon ovoga, unutar <code>testMethod()</code> metode instancira se lokalna klasa i ispisuju se vrednosti objektnih svojstava <code>a</code> i <code>b</code>. </p>
+<p>Kako bi se primer testirao, dovoljno je instancirati klasu <code>OuterClass</code> i pozvati metodu <code>testMethod()</code>: </p>
+<details>
+<summary>OuterClass.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// OuterClass.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">class</span> <span style="color: #fec418">OuterClass</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">testMethod</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> x) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> y </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> x </span><span style="color: #5bc4bf">*</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">2</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">class</span> <span style="color: #fec418">LocalClass</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">			</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> a;</span>
+<span style="color: #c7c7c7">			</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> b;</span>
+<span style="color: #c7c7c7">			</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">LocalClass</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">				a </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> x;</span>
+<span style="color: #c7c7c7">				b </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> y;</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		}</span>
+<span style="color: #c7c7c7">		</span>
+<span style="color: #c7c7c7">		LocalClass lc </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> LocalClass();</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(lc.</span><span style="color: #06b6ef">a</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(lc.</span><span style="color: #06b6ef">b</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<details>
+<summary>Program.java</summary>
+<div class="highlight" style="background: #000000"><span class="filename">// Program.java</span><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">Main</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		OuterClass obj </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> OuterClass();</span>
+<span style="color: #c7c7c7">		obj.</span><span style="color: #06b6ef">testMethod</span><span style="color: #c7c7c7">(</span><span style="color: #f99b15">10</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+</details>
+<h3 id="anonimne-klase">Anonimne klase</h3>
+<p>Svakako najznačajnija vrsta ugnežđenih klasa o kojima će biti reči u ovoj lekciji jesu klase koje se nazivaju anonimne. Reč je o klasama koje omogućavaju da se klasa deklariše i instancira odjednom i sve to u formi izraza. Tako nešto može zvučati zbunjujuće, stoga ćemo se sa pojmom anonimnih klasa upoznati na jednom realnom primeru: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.Timer</span><span style="color: #c7c7c7">;</span>
+<span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.TimerTask</span><span style="color: #c7c7c7">;</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">JavaProgram</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Program started..."</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">class</span> <span style="color: #fec418">MyTimerTask</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">extends</span><span style="color: #c7c7c7"> TimerTask {</span>
+<span style="color: #c7c7c7">			</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">run</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">				System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Hello World"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">				System.</span><span style="color: #06b6ef">exit</span><span style="color: #c7c7c7">(</span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		}</span>
+<span style="color: #c7c7c7">		</span>
+<span style="color: #c7c7c7">		MyTimerTask myTimerTask </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> MyTimerTask();</span>
+<span style="color: #c7c7c7">		Timer timer </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Timer(</span><span style="color: #48b685">"Timer"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		</span><span style="color: #fec418">long</span><span style="color: #c7c7c7"> delay </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">5000L</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		timer.</span><span style="color: #06b6ef">schedule</span><span style="color: #c7c7c7">(myTimerTask, delay);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Ovo je primer Java programa koji na izlazu odmah nakon pokretanja ispisuje poruku <code>Program started...</code>, a nakon pet sekundi i poruku <code>Hello World</code>. Tako nešto je postignuto korišćenjem jedne ugrađene klase <code>Timer</code> i njene metode <code>schedule()</code>. Ova metoda prihvata dva parametra: <br/>
+    - objekat klase <code>TimerTask</code> <br/>
+    - numeričku vrednost koja diktira nakon koliko milisekundi je potrebno izvršiti određeni kod </p>
+<p>Prvi parametar metode <code>schedule()</code> posebno je interesantan za nas u ovom trenutku. Naime, on treba da bude objekat koji predstavlja instancu klase <code>TimerTask</code>. Ipak, ovu klasu nije moguće direktno instancirati, zato što je reč o apstraktnoj klasi, odnosno klasi koja je predviđena samo kao osnova za kreiranje konkretnih klasa. Pored toga, klasa <code>TimerTask</code> poseduje i jednu apstraktnu metodu koja se zove <code>run()</code>. Pošto je reč o apstraktnoj metodi, ona se mora implementirati prilikom nasleđivanja klase <code>TimerTask</code>. Upravo zbog toga je u prikazanom primeru obavljeno kreiranje konkretne klase <code>MyTimerTask</code>. Ona je nasledila klasu <code>TimerTask</code> i obezbedila implementaciju metode <code>run()</code>. Inače, metoda <code>run()</code> je upravo ona metoda koja će se aktivirati nakon definisanog vremena, posredstvom metode <code>schedule()</code> klase <code>Timer</code>. </p>
+<p>Nije teško uvideti da smo mi u primeru morali da obavimo dosta toga kako bismo uposlili metodu <code>schedule()</code>. Njeno pozivanje nas je nateralo da kreiramo sopstvenu klasu, da je zatim instanciramo i da tako dobijeni objekat na kraju prosledimo metodi <code>schedule()</code>. Sve to smo obavili korišćenjem pojma lokalnih klasa, o kojima je bilo reči u prethodnom segmentu. S obzirom na to da smo klasu <code>MyTimerTask</code> definisali unutar <code>main()</code> metode, reč je o lokalnoj klasi. Ipak, sve ovo se mnogo jednostavnije i elegantnije može obaviti korišćenjem anonimnih klasa: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.Timer</span><span style="color: #c7c7c7">;</span>
+<span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.TimerTask</span><span style="color: #c7c7c7">;</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">JavaProgram</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Program started..."</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		TimerTask myTimerTask </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> TimerTask() {</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">run</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">				System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Hello World"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">				System.</span><span style="color: #06b6ef">exit</span><span style="color: #c7c7c7">(</span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		};</span>
+<span style="color: #c7c7c7">		Timer timer </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Timer(</span><span style="color: #48b685">"Timer"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		</span><span style="color: #fec418">long</span><span style="color: #c7c7c7"> delay </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">5000L</span><span style="color: #c7c7c7">;</span>
+<span style="color: #c7c7c7">		timer.</span><span style="color: #06b6ef">schedule</span><span style="color: #c7c7c7">(myTimerTask, delay);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Sada je bitno da primetite da u primeru više nema klase <code>MyTimerTask</code> koja je postojala u prethodnom primeru. Njena deklaracija je zamenjena jednim izrazom u kome je iskorišćen koncept anonimnih klasa. Reč je o izrazu kojim promenljiva <code>myTimerTask</code> dobija referencu na objekat tipa <code>TimerTask</code>. Možete da vidite da se u takvom izrazu pojavljuje nešto sa čim se do sada nismo susretali. Reč je o instanciranju klase, koje nakon uobičajene logike za instanciranje sadrži i telo unutar vitičastih zagrada. U pitanju je upravo sintaksa za kreiranje anonimnih klasa: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">interface</span><span style="color: #ef6155">-</span><span style="color: #fec418">or</span><span style="color: #5bc4bf">-</span><span style="color: #815ba4">class</span><span style="color: #ef6155">-</span><span style="color: #fec418">name</span><span style="color: #c7c7c7">() { </span><span style="color: #815ba4">class</span><span style="color: #ef6155">-</span><span style="color: #fec418">body</span><span style="color: #c7c7c7"> }</span>
+</code></pre></div>
+<p>Ovakva sintaksa nam omogućava da u jednoj naredbi obavimo nekoliko operacija: <br/>
+    - da kreiramo novu klasu bez imena, zbog čega se ona i zove anonimna klasa <br/>
+    - da takva anonimna klasa nasledi neku drugu klasu ili implementira određeni interfejs <br/>
+    - da se obavi instanciranje upravo kreirane anonimne klase <br/>
+    - da se referenca na dobijeni objekat anonimne klase spakuje unutar promenljive koja se nalazi na levoj strani izraza </p>
+<p>Kao što možete da vidite, procesom kreiranja anonimnih klasa u potpunosti se zaobilazi korak ručnog kreiranja konkretne klase. Pošto je reč o klasama koje nemaju ime, njih je moguće upotrebiti samo jednokratno, odnosno isključivo unutar izraza u kome promenljiva dobija vrednost. Izvan takvog izraza, anonimna klasa iz ovog primera ne postoji. Stoga su anonimne klase odlična jezička mogućnost u situacijama kao u prikazanom primeru, odnosno onda kada nema potrebe da eksplicitno kreiramo klasu samo kako bismo implementirali jednu metodu. </p>
+<p><strong>Anonimni objekti</strong> <br/>
+Upravo prikazani primer je moguće i dodatno optimizovati. Naime, u priču je moguće uključiti i pojam anonimnih objekata, pa kod može postati još kompaktniji: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.Timer</span><span style="color: #c7c7c7">;</span>
+<span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.TimerTask</span><span style="color: #c7c7c7">;</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">JavaProgram</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Program started..."</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		Timer timer </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> Timer(</span><span style="color: #48b685">"Timer"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">		timer.</span><span style="color: #06b6ef">schedule</span><span style="color: #c7c7c7">(</span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> TimerTask() {</span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">run</span><span style="color: #c7c7c7">() {</span>
+<span style="color: #c7c7c7">				System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(</span><span style="color: #48b685">"Hello World"</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">				System.</span><span style="color: #06b6ef">exit</span><span style="color: #c7c7c7">(</span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		}, </span><span style="color: #f99b15">5000L</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Sada je bitno da primetite da više nema naredbe u kojoj je obavljano dodeljivanje vrednosti promenljivoj <code>myTimerTask</code>. Štaviše, takve promenljive u kodu, praktično, više uopšte nema. Ipak, ukoliko želimo da budemo u potpunosti precizni, ona postoji, ali sada nije imenovana, zato što se objekat kreira baš na onom mestu na kome se i koristi - prilikom pozivanja metode <code>schedule()</code>. </p>
+<h2 id="lambda-izrazi">Lambda izrazi</h2>
+<p>Kada govorimo o anonimnim klasama u Java jeziku, nije moguće zaobići ni pojam lambda izraza. Reč je o jednoj lestvici iznad na skali apstraktnih rešenja koja postoje unutar jezika. To praktično znači da je za razumevanje lambda izraza prvo neophodno razumeti pojam anonimnih klasa. Stoga ćemo se i mi u nastavku sa lambda izrazima upoznati na jednom primeru koji će ilustrovati transformiranje jednog izraza sa anonimnom klasom u lambda izraz. Primer će ilustrovati filtriranje jednog niza celobrojnih vrednosti, korišćenjem ugrađenog skupa funkcionalnosti. Početni niz će izgledati ovako: <br/>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #fec418">int</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> numbers </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> {</span><span style="color: #f99b15">13</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">8</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">9</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">15</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">78</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">5</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">69</span><span style="color: #c7c7c7">};</span>
+</code></pre></div></p>
+<p>Želimo da u nastavku obavimo filtriranje ovog niza tako da dobijemo novi niz koji sadrži samo pozitivne vrednosti koje postoje unutar početnog niza. To ćemo obaviti korišćenjem funkcionalnosti koje postoje unutar Java platforme. Reč je o metodi <code>filter()</code> koja poseduje sledeći potpis: <br/>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #c7c7c7">IntStream </span><span style="color: #06b6ef">filter</span><span style="color: #c7c7c7">(IntPredicate predicate);</span>
+</code></pre></div></p>
+<p><code>filter()</code> metoda postoji unutar <code>Stream</code> skupa funkcionalnosti, a kao svoj ulazni parametar prihvata podatak tipa <code>IntPredicate</code>. Reč je zapravo o interfejsu koji klasa mora implementirati kako bi njeni objekti mogli da se proslede metodi <code>filter()</code>. Stoga, osnovni oblik primera filtriranja može da izgleda ovako: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.Arrays</span><span style="color: #c7c7c7">;</span>
+<span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.function.IntPredicate</span><span style="color: #c7c7c7">;</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">JavaProgram</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #fec418">int</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> numbers </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> {</span><span style="color: #f99b15">13</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">8</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">9</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">15</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">78</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">5</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">69</span><span style="color: #c7c7c7">};</span>
+<span style="color: #c7c7c7">		</span>
+<span style="color: #c7c7c7">		</span><span style="color: #815ba4">class</span> <span style="color: #fec418">MyPredicate</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">implements</span><span style="color: #c7c7c7"> IntPredicate {</span>
+<span style="color: #c7c7c7">			</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">test</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> value) {</span>
+<span style="color: #c7c7c7">				</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> (value </span><span style="color: #5bc4bf">&gt;</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		}</span>
+<span style="color: #c7c7c7">		</span>
+<span style="color: #c7c7c7">		MyPredicate myPredicate </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> MyPredicate();</span>
+<span style="color: #c7c7c7">		numbers </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> Arrays.</span><span style="color: #06b6ef">stream</span><span style="color: #c7c7c7">(numbers).</span><span style="color: #06b6ef">filter</span><span style="color: #c7c7c7">(myPredicate).</span><span style="color: #06b6ef">toArray</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(Arrays.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">(numbers));</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Ovo je primer koji je realizovan korišćenjem najbazičnijeg pristupa, koji ne podrazumeva upotrebu ni anonimnih klasa ni lambda izraza. Obavljeno je kreiranje nove lokalne klase sa nazivom <code>MyPredicate</code>. Ona je implementirala interfejs <code>IntPredicate</code>, a zbog toga i metodu <code>test()</code> koja je unutar takvog interfejsa definisana. </p>
+<p><strong>Metoda <code>test()</code> <code>IntPredicate</code> interfejsa</strong> <br/>
+Metoda <code>test()</code> je inače metoda koja se u procesu filtriranja poziva nad svakim članom jednog niza. U zavisnosti od povratne vrednosti utvrđuje se da li će vrednost biti prisutna unutar finalnog niza ili ne. Metoda <code>test()</code> kao ulazni parametar dobija svaku od vrednosti niza pojedinačno. Ukoliko <code>test()</code> metoda kao svoju povratnu vrednosti vrati <code>true</code>, član će biti uvršćen u finalni niz. Ukoliko povratna vrednost bude <code>false</code>, to je signal da vrednost neće biti član finalnog niza. </p>
+<p>U prikazanom primeru logika metode <code>test()</code> je formulisana tako da proverava da li je prosleđena vrednost veća od nule. Ukoliko jeste, povratna vrednost metode će biti <code>true</code> i obrnuto. Na taj način će bilo koja pozitivna ulazna vrednost da proizvede <code>true</code> vrednost na izlazu, čime se postiže filtriranje niza o kojem smo govorili nešto ranije. </p>
+<p><strong>Funkcionalni interfejsi</strong> <br/>
+Svaki interfejs koji u Java jeziku poseduje samo jednu apstraktnu metodu naziva se funkcionalni interfejs. Upravo takav je i interfejs <code>IntPredicate</code> koji je naša klasa implementirala u prikazanom primeru. </p>
+<p>Nakon kreiranja klase <code>MyPredicate</code> koja implementira potrebni interfejs obavljeno je njeno instanciranje. Dobijeni objekat je prosleđen metodi <code>filter()</code>. U primeru je bitno da primetite da se metoda <code>filter()</code> ne poziva direktno nad nizom, već da se on prvo pretvara u tok korišćenjem klase <code>Arrays</code> i njene metode <code>stream()</code>. Tokovi će biti detaljno obrađeni u jednoj od narednih lekcija ovog kursa. </p>
+<p>Na kraju, kada se ovakav primer pokrene, na izlazu se dobija: <br/>
+<code>[13, 8, 15, 5, 69]</code> <br/>
+Na osnovu izlaza možemo da zaključimo da je filtriranje uspešno obavljeno, jer na izlazu dobijamo samo pozitivne članove originalnog niza. </p>
+<p>Kao što je već rečeno, prikazani primer je postignut bez upotrebe anonimnih klasa i lambda izraza. Stoga će naš sledeći korak biti optimizacija prikazanog primera uključivanjem anonimnih klasa o kojima je bilo reči u prethodnom segmentu. Naime, vrlo je nepraktično kreirati potpuno novu klasu samo kako bi se implementirao jedan interfejs. Stoga se sve takve operacije mogu grupisati u izraz kojim se dobija jedan objekat anonimne klase: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.Arrays</span><span style="color: #c7c7c7">;</span>
+<span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.function.IntPredicate</span><span style="color: #c7c7c7">;</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">JavaProgram</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #fec418">int</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> numbers </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> {</span><span style="color: #f99b15">13</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">8</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">9</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">15</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">78</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">5</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">69</span><span style="color: #c7c7c7">};</span>
+<span style="color: #c7c7c7">		IntPredicate myPredicate </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> IntPredicate() {</span>
+<span style="color: #c7c7c7">			</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">boolean</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">test</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> value) {</span>
+<span style="color: #c7c7c7">				</span><span style="color: #815ba4">return</span><span style="color: #c7c7c7"> (value </span><span style="color: #5bc4bf">&gt;</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">);</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		};</span>
+<span style="color: #c7c7c7">		numbers </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> Arrays.</span><span style="color: #06b6ef">stream</span><span style="color: #c7c7c7">(numbers).</span><span style="color: #06b6ef">filter</span><span style="color: #c7c7c7">(myPredicate).</span><span style="color: #06b6ef">toArray</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(Arrays.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">(numbers));</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Tek nakon ove modifikacije, dolazimo i do pojma lambda izraza. Naime, prikazani primer je moguće još jednom optimizovati, upotrebom lambda izraza, koji omogućavaju da se prikazani kod drastično uprosti. Tako nešto signalizira i samo razvojno okruženje (slika 3.2). </p>
+<figure>
+<img alt="Slika 3.2. Savet razvojnog okruženja da se anonimna klasa zameni lambda izrazom" src="/images/AdvancedJavaProgramming/1_03_02.png"/>
+<figcaption>Slika 3.2. Savet razvojnog okruženja da se anonimna klasa zameni lambda izrazom</figcaption>
+</figure>
+<p>Ukoliko poslušamo razvojno okruženje i odaberemo opciju <em>Replace with lambda</em>, koju možete videti unutar prozora sa porukom, dobijamo kod koji izgleda ovako: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.Arrays</span><span style="color: #c7c7c7">;</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">JavaProgram</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #fec418">int</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> numbers </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> {</span><span style="color: #f99b15">13</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">8</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">9</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">15</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">78</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">5</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">69</span><span style="color: #c7c7c7">};</span>
+<span style="color: #c7c7c7">		numbers </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> Arrays.</span><span style="color: #06b6ef">stream</span><span style="color: #c7c7c7">(numbers).</span><span style="color: #06b6ef">filter</span><span style="color: #c7c7c7">(value </span><span style="color: #5bc4bf">-&gt;</span><span style="color: #c7c7c7"> (value </span><span style="color: #5bc4bf">&gt;</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">)).</span><span style="color: #06b6ef">toArray</span><span style="color: #c7c7c7">();</span>
+<span style="color: #c7c7c7">		System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(Arrays.</span><span style="color: #06b6ef">toString</span><span style="color: #c7c7c7">(numbers));</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Možete videti da se kod kompletnog primera sveo na tri osnovne naredbe unutar <code>main()</code> metode. Ona koja nas posebno interesuje jeste ono što se nalazi na mestu parametra metode <code>filter()</code>: <br/>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #c7c7c7">value </span><span style="color: #5bc4bf">-&gt;</span><span style="color: #c7c7c7"> (value </span><span style="color: #5bc4bf">&gt;</span><span style="color: #c7c7c7"> </span><span style="color: #f99b15">0</span><span style="color: #c7c7c7">)</span>
+</code></pre></div></p>
+<p>Isečak naredbe koji upravo vidite jeste lambda izraz. Lambda izrazi predstavljaju najkompaktniju sintaksu za kreiranje i instanciranje anonimnih klasa koje treba da implementiraju funkcionalni interfejs. To praktično znači da je lambda izraze moguće koristiti uvek kada je potrebno dobiti objekat koji nastaje instanciranjem anonimne klase koja implementira interfejs sa jednom apstraktnom metodom. Drugim rečima, lambda izrazom se u pozadini obavlja sledeće: <br/>
+    - kreira se anonimna klasa koja implementira funkcionalni interfejs <br/>
+    - obavlja se instanciranje kreirane anonimne klase <br/>
+Sve ovo se obavlja korišćenjem forme koja podseća na neku vrstu metode. </p>
+<p>Lambda izrazi se sastoje iz tri dela: <br/>
+    - <strong>liste argumenata</strong>, odnosno ulaznih parametara <br/>
+    - <strong>tokena</strong> (<code>-&gt;</code>), odnosno skupa karaktera koji se koriste za razdvajanje parametara i tela <br/>
+    - <strong>tela</strong>, odnosno logike koja predstavlja telo apstraktne metode koja se implementira </p>
+<p>Lako je zaključiti da je prilikom formiranja lambda izraza jedino bitno kako izgleda apstraktna metoda koju anonimna klasa implementira. Stoga je kod maksimalno uprošćen, odnosno, oslobođeni smo potrebe za definisanjem bilo koje propratne sintakse. Nije čak potrebno definisati ni tip interfejsa koji se implementira, pošto će on biti automatski detektovan u zavisnosti od ulaznog parametra metode. </p>
+<p>Sve ovo na kraju znači da lambda izraz koji smo kreirali u ovom primeru ima sledeće značenje: <br/>
+    - <code>value</code> - Naziv ulaznog parametra metode <code>test()</code> koja se implementira <br/>
+    - <code>-&gt;</code> - Token koji govori da je reč o lambda izrazu <br/>
+    - <code>(value &gt; 0)</code> - Logika koja se nalazi unutar tela <code>test()</code> metode koja se implementira </p>
+<h3 id="reference-na-metode">Reference na metode</h3>
+<p>U prethodnim redovima ste mogli da pročitate da se lambda izrazi mogu koristiti uvek kada je potrebno dobiti objekat koji nastaje instanciranjem anonimne klase koja implementira interfejs sa jednom apstraktnom metodom. Drugim rečima, lambda izraze je moguće koristiti u kombinaciji sa funkcionalnim interfejsima, odnosno interfejsima koji poseduju samo jednu apstraktnu metodu. Ipak, ponekad se lambda izrazi koriste samo kako bi se obavio poziv neke druge metode koja treba da obavi neku logiku. Kako biste bolje razumeli na šta se misli, pogledajte sledeći primer: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.Arrays</span><span style="color: #c7c7c7">;</span>
+<span style="color: #5bc4bf">import</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">java.util.function.IntConsumer</span><span style="color: #c7c7c7">;</span>
+
+<span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">class</span> <span style="color: #fec418">JavaProgram</span><span style="color: #c7c7c7"> {</span>
+<span style="color: #c7c7c7">	</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #815ba4">static</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">main</span><span style="color: #c7c7c7">(String</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> args) {</span>
+<span style="color: #c7c7c7">		</span><span style="color: #fec418">int</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> numbers </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> {</span><span style="color: #f99b15">13</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">8</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">9</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">15</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">78</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">5</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">69</span><span style="color: #c7c7c7">};</span>
+<span style="color: #c7c7c7">		Arrays.</span><span style="color: #06b6ef">stream</span><span style="color: #c7c7c7">(numbers).</span><span style="color: #06b6ef">forEach</span><span style="color: #c7c7c7">(</span><span style="color: #815ba4">new</span><span style="color: #c7c7c7"> IntConsumer() {</span>
+<span style="color: #c7c7c7">			</span><span style="color: #5bc4bf">@Override</span><span style="color: #c7c7c7"></span>
+<span style="color: #c7c7c7">			</span><span style="color: #815ba4">public</span><span style="color: #c7c7c7"> </span><span style="color: #fec418">void</span><span style="color: #c7c7c7"> </span><span style="color: #06b6ef">accept</span><span style="color: #c7c7c7">(</span><span style="color: #fec418">int</span><span style="color: #c7c7c7"> value) {</span>
+<span style="color: #c7c7c7">				System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(value);</span>
+<span style="color: #c7c7c7">			}</span>
+<span style="color: #c7c7c7">		});</span>
+<span style="color: #c7c7c7">	}</span>
+<span style="color: #c7c7c7">}</span>
+</code></pre></div>
+<p>Primer podrazumeva korišćenje niza koji je već viđen u prethodnim primerima. Opet se pribegava pretvaranju niza u tok podataka, kako bismo nad takvim podacima mogli da pozovemo metodu <code>forEach()</code>. Reč je o metodi koja omogućava da se određena logika obavi nad svakim elementom toka. Mi smo u primeru ovu metodu iskoristili kako bismo ispisali vrednost svakog elementa, pa je tako primer analogan prolasku kroz niz korišćenjem neke petlje. </p>
+<p>Za realizaciju prikazanog primera iskorišćena je anonimna klasa, kako bi se dobio objekat tipa <code>IntConsumer</code> koji se mora proslediti metodi <code>forEach()</code>. Poznajući pojam lambda izraza, primer sada možemo modifikovati na sledeći način: </p>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #fec418">int</span><span style="color: #5bc4bf">[]</span><span style="color: #c7c7c7"> numbers </span><span style="color: #5bc4bf">=</span><span style="color: #c7c7c7"> {</span><span style="color: #f99b15">13</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">8</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">9</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">15</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">1</span><span style="color: #c7c7c7">, </span><span style="color: #5bc4bf">-</span><span style="color: #f99b15">78</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">5</span><span style="color: #c7c7c7">, </span><span style="color: #f99b15">69</span><span style="color: #c7c7c7">};</span>
+<span style="color: #c7c7c7">Arrays.</span><span style="color: #06b6ef">stream</span><span style="color: #c7c7c7">(numbers).</span><span style="color: #06b6ef">forEach</span><span style="color: #c7c7c7">(value </span><span style="color: #5bc4bf">-&gt;</span><span style="color: #c7c7c7"> System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">.</span><span style="color: #06b6ef">println</span><span style="color: #c7c7c7">(value));</span>
+</code></pre></div>
+<p>Tako može da izgleda identičan primer, ovoga puta realizovan korišćenjem lambda izraza. Anonimna klasa je zamenjena lambda izrazom i kod je postao znatno kompaktniji. </p>
+<p>Bitno je da primetite da se unutar tela lambda izraza nalazi samo poziv jedne metode. Reč je o metodi kojom se na izlazu ispisuje vrednost elementa. U ovakvoj situaciji, kada se telo lambda izraza sastoji samo iz poziva neke druge metode, lambda izraz je moguće pretvoriti u referencu na metodu. </p>
+<p>Referenca na metodu je najkompaktniji način za implementaciju funkcionalnog interfejsa kada se implementacija sastoji iz poziva neke druge metode. Evo kako se već prikazani primer može optimizovati još jednom, ovoga puta upotrebom reference na metodu: <br/>
+<div class="highlight" style="background: #000000"><pre style="line-height: 125%;"><span></span><code><span style="color: #c7c7c7">Arrays.</span><span style="color: #06b6ef">stream</span><span style="color: #c7c7c7">(numbers).</span><span style="color: #06b6ef">forEach</span><span style="color: #c7c7c7">(System.</span><span style="color: #06b6ef">out</span><span style="color: #c7c7c7">::println);</span>
+</code></pre></div></p>
+<p>Metodi <code>forEach()</code> sada se prosleđuje referenca na metodu. Referenca na metodu se dobija navođenjem tipa unutar koga se metoda nalazi, nakon koga se koristi specijalna konstrukcija koja se sastoji iz dva karaktera dve tačke. Nakon dvostruke dve tačke, navodi se naziv metode čija se referenca prilaže. </p>
+<p>Bitno je primetiti još jednu osobinu referenci na metode, a ona se odnosi na odsustvo parametara. Jednostavno, prilikom definisanja reference na metodu ne prilažu se parametri, već prosleđivanje za nas obavlja sam kompajler. On u ovom slučaju ulazni parametar metode <code>accept()</code> automatski prosleđuje metodi <code>println()</code>. </p><br/>
+<hr/>
+</div>
+<section class="span2" id="article-sidebar">
+<h4>Temps estimat per llegir el text</h4>
+<p>~24 min.</p>
+<h4>Data de publicació</h4>
+<time datetime="2022-04-22T18:46:00+02:00" itemprop="dateCreated">divendres, 22 de abril de 2022 a les 18:46</time>
+<h4><built-in 0x00000287bdac6970="" at="" index="" method="" object="" of="" str=""></built-in></h4>
+<ol class="multi-parts-list">
+</ol>
+<h4>Categoria</h4>
+<a class="category-link" href="http://localhost:8000/ca/categories/it-akademija">IT akademija</a> / 
+<a class="category-link" href="http://localhost:8000/ca/categories/it-akademija/advanced-java-programming">Advanced Java Programming</a> / 
+<a class="category-link" href="http://localhost:8000/ca/categories/it-akademija/advanced-java-programming/ajp-modul-1-napredno-objektno-programiranje">AJP - Modul 1. Napredno objektno programiranje</a>
+<h4>Etiquetes</h4>
+<ul class="list-of-tags tags-in-article">
+<li><a href="http://localhost:8000/ca/tags/anonimne-klase">anonimne klase 
+</a></li>
+<li><a href="http://localhost:8000/ca/tags/anonimni-objekti">anonimni objekti 
+</a></li>
+<li><a href="http://localhost:8000/ca/tags/java">Java 
+</a></li>
+<li><a href="http://localhost:8000/ca/tags/klase">klase 
+</a></li>
+<li><a href="http://localhost:8000/ca/tags/lambda">lambda 
+</a></li>
+<li><a href="http://localhost:8000/ca/tags/oop">OOP 
+</a></li>
+<li><a href="http://localhost:8000/ca/tags/programiranje">programiranje 
+</a></li>
+<li><a href="http://localhost:8000/ca/tags/referenciranje">referenciranje 
+</a></li>
+</ul>
+<h4>Xarxes socials</h4>
+<div id="sidebar-social-link">
+<a href="https://fb.me/dani.vlajna" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Facebook" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1877f2" height="512" rx="15%" width="512"></rect><path d="M355.6 330l11.4-74h-71v-48c0-20.2 9.9-40 41.7-40H370v-63s-29.3-5-57.3-5c-58.5 0-96.7 35.4-96.7 99.6V256h-65v74h65v182h80V330h59.6z" fill="#fff"></path></svg>
+</a>
+<a href="https://twitter.com/DJ_Dani_Serbia" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="Twitter" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1da1f3" height="512" rx="15%" width="512"></rect><path d="M437 152a72 72 0 0 1-40 12 72 72 0 0 0 32-40 72 72 0 0 1-45 17 72 72 0 0 0-122 65 200 200 0 0 1-145-74 72 72 0 0 0 22 94 72 72 0 0 1-32-7 72 72 0 0 0 56 69 72 72 0 0 1-32 1 72 72 0 0 0 67 50 200 200 0 0 1-105 29 200 200 0 0 0 309-179 200 200 0 0 0 35-37" fill="#fff"></path></svg>
+</a>
+<a href="https://www.youtube.com/DanijelaPopovic" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="YouTube" fill="#ed1d24" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect height="512" rx="15%" width="512"></rect><path d="m427 169c-4-15-17-27-32-31-34-9-239-10-278 0-15 4-28 16-32 31-9 38-10 135 0 174 4 15 17 27 32 31 36 10 241 10 278 0 15-4 28-16 32-31 9-36 9-137 0-174" fill="#fff"></path><path d="m220 203v106l93-53"></path></svg>
+</a>
+<a href="https://github.com/vlajna95" rel="nofollow noopener noreferrer" target="_blank" title="">
+<svg aria-label="GitHub" role="img" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><rect fill="#1B1817" height="512" rx="15%" width="512"></rect><path d="M335 499c14 0 12 17 12 17H165s-2-17 12-17c13 0 16-6 16-12l-1-50c-71 16-86-28-86-28-12-30-28-37-28-37-24-16 1-16 1-16 26 2 40 26 40 26 22 39 59 28 74 22 2-17 9-28 16-35-57-6-116-28-116-126 0-28 10-51 26-69-3-6-11-32 3-67 0 0 21-7 70 26 42-12 86-12 128 0 49-33 70-26 70-26 14 35 6 61 3 67 16 18 26 41 26 69 0 98-60 120-117 126 10 8 18 24 18 48l-1 70c0 6 3 12 16 12z" fill="#fff"></path></svg>
+</a>
+</div>
+</section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div aria-hidden="true" class="pswp" role="dialog" tabindex="-1">
+<!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+<div class="pswp__bg"></div>
+<!-- Slides wrapper with overflow:hidden. -->
+<div class="pswp__scroll-wrap">
+<!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+<div class="pswp__container">
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+<div class="pswp__item"></div>
+</div>
+<!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+<div class="pswp__ui pswp__ui--hidden">
+<div class="pswp__top-bar">
+<!--  Controls are self-explanatory. Order can be changed. -->
+<div class="pswp__counter"></div>
+<button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+<button class="pswp__button pswp__button--share" title="Share"></button>
+<button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+<button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+<!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+<!-- element will get class pswp__preloader--active when preloader is running -->
+<div class="pswp__preloader">
+<div class="pswp__preloader__icn">
+<div class="pswp__preloader__cut">
+<div class="pswp__preloader__donut"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+<div class="pswp__share-tooltip"></div>
+</div>
+<button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+</button>
+<button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+</button>
+<div class="pswp__caption">
+<div class="pswp__caption__center"></div>
+</div>
+</div>
+</div>
+</div></div>
+<div class="span1"></div>
+</div>
+</div>
+
+<footer>
+<div>
+<span class="site-name">DP Tech</span> - El teu bloc preferit
+</div>
+<div id="fpowered">
+Pokreće: <a href="http://getpelican.com/" rel="nofollow noopener noreferrer" target="_blank" title="Pelican početna strana">Pelican</a>. 
+Tema: <a href="https://elegant.oncrashreboot.com/" rel="nofollow noopener noreferrer" target="_blank" title="Početna strana Elegant teme">Elegant</a>. 
+</div>
+</footer><script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+<script src="http://localhost:8000/ca/theme/js/elegant.prod.9e9d5ce754.js"></script>
+<script src="http://localhost:8000/ca/theme/js/custom.js"></script>
+<script>
+function validateForm(query) {
+return(query.length>0);
+}
+</script>
+<script>
+function checkAnswer(origin) {
+var question_name = $(origin).attr("data-question");
+var correct_answer_element = $(origin).attr("data-correct");
+var correct_answer_id = $("#"+correct_answer_element).val();
+var correct_answer_label = $("label[for="+correct_answer_id+"]").text();
+var chosen_answer_id = $("input[name="+question_name+"]:checked").attr("id");
+var chosen_answer_label = $("label[for="+chosen_answer_id+"]").text();
+if(correct_answer_id == chosen_answer_id) {
+alert("Bravo!");
+}
+else {
+alert("Hmmm... ne. \n" + correct_answer_label);
+}
+$("input[name="+question_name+"]").attr("disabled", true);
+}
+</script>
+<script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+</body>
+<!--
+Theme: Elegant built for Pelican 
+License: MIT
+-->
+</html>
