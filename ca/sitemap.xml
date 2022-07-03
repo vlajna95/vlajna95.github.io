@@ -4,70 +4,70 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>http://dp-tech.tk/ca/</loc>
-<lastmod>2022-07-03T02:06:57-00:00</lastmod>
+<loc>https://vlajna95.github.io/ca/</loc>
+<lastmod>2022-07-03T17:20:32-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://dp-tech.tk/ca/pages/o-sajtu</loc>
-<lastmod>2022-07-03T02:06:57-00:00</lastmod>
+<loc>https://vlajna95.github.io/ca/pages/o-sajtu</loc>
+<lastmod>2022-07-03T17:20:32-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>http://dp-tech.tk/ca/pages/stw-prevod</loc>
-<lastmod>2022-07-03T02:06:57-00:00</lastmod>
+<loc>https://vlajna95.github.io/ca/pages/stw-prevod</loc>
+<lastmod>2022-07-03T17:20:32-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>http://dp-tech.tk/ca/articles/prova-de-nivell-dalemany</loc>
+<loc>https://vlajna95.github.io/ca/articles/prova-de-nivell-dalemany</loc>
 <lastmod>2022-06-27T20:32:00+02:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>http://dp-tech.tk/ca/categories/misc</loc>
+<loc>https://vlajna95.github.io/ca/categories/misc</loc>
 <lastmod>2022-06-27T20:32:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://dp-tech.tk/ca/tags/llengues</loc>
+<loc>https://vlajna95.github.io/ca/tags/llengues</loc>
 <lastmod>2022-06-27T20:32:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://dp-tech.tk/ca/tags/idiomes</loc>
+<loc>https://vlajna95.github.io/ca/tags/idiomes</loc>
 <lastmod>2022-06-27T20:32:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://dp-tech.tk/ca/tags/alemany</loc>
+<loc>https://vlajna95.github.io/ca/tags/alemany</loc>
 <lastmod>2022-06-27T20:32:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://dp-tech.tk/ca/tags/prova</loc>
+<loc>https://vlajna95.github.io/ca/tags/prova</loc>
 <lastmod>2022-06-27T20:32:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://dp-tech.tk/ca/author/danijela-popovic.html</loc>
+<loc>https://vlajna95.github.io/ca/author/danijela-popovic.html</loc>
 <lastmod>2022-06-27T20:32:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
