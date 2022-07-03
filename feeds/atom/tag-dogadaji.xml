@@ -41,10 +41,10 @@ Osnovna klasa kojom se u Java programskom jeziku predstavljaju događaji jeste k
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="question"&gt;
 &lt;p&gt;Objekat kojim se predstavlja događaj kreira se na osnovu klase: &lt;/p&gt;
-&lt;div class="answers"&gt;&lt;input id="klasa_objekta_za_event_correct" name="klasa_objekta_za_event_correct" type="hidden" value="tcejbotneve"/&gt;&lt;input id="tcejbotneve" name="klasa_objekta_za_event" type="radio" value="EventObject"/&gt;&lt;label for="tcejbotneve"&gt;EventObject&lt;/label&gt;&lt;br/&gt;
-&lt;input id="ssalctneve" name="klasa_objekta_za_event" type="radio" value="EventClass"/&gt;&lt;label for="ssalctneve"&gt;EventClass&lt;/label&gt;&lt;br/&gt;
-&lt;input id="noitcatneve" name="klasa_objekta_za_event" type="radio" value="EventAction"/&gt;&lt;label for="noitcatneve"&gt;EventAction&lt;/label&gt;&lt;br/&gt;
+&lt;div class="answers"&gt;&lt;input id="klasa_objekta_za_event_correct" name="klasa_objekta_za_event_correct" type="hidden" value="tcejbotneve"/&gt;&lt;input id="ssalctneve" name="klasa_objekta_za_event" type="radio" value="EventClass"/&gt;&lt;label for="ssalctneve"&gt;EventClass&lt;/label&gt;&lt;br/&gt;
 &lt;input id="tneve" name="klasa_objekta_za_event" type="radio" value="Event"/&gt;&lt;label for="tneve"&gt;Event&lt;/label&gt;&lt;br/&gt;
+&lt;input id="tcejbotneve" name="klasa_objekta_za_event" type="radio" value="EventObject"/&gt;&lt;label for="tcejbotneve"&gt;EventObject&lt;/label&gt;&lt;br/&gt;
+&lt;input id="noitcatneve" name="klasa_objekta_za_event" type="radio" value="EventAction"/&gt;&lt;label for="noitcatneve"&gt;EventAction&lt;/label&gt;&lt;br/&gt;
 &lt;/div&gt;
 &lt;button class="ok" data-correct="klasa_objekta_za_event_correct" data-question="klasa_objekta_za_event" onclick="checkAnswer(this, 'Bravo!', 'Hmmm... no.')" type="button"&gt;OK&lt;/button&gt;&lt;/div&gt;
 &lt;h2 id="kreiranje-interfejsa-za-predstavljanje-slusalaca"&gt;Kreiranje interfejsa za predstavljanje slušalaca&lt;/h2&gt;

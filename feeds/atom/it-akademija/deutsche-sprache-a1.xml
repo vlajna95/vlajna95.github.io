@@ -3,8 +3,8 @@
 &lt;div class="question"&gt;
 &lt;p&gt;Ko je prvi leteo u svemir? &lt;img alt="🚀" class="emojione" src="https://cdnjs.cloudflare.com/ajax/libs/emojione/2.2.7/assets/png/1f680.png" title="rocket"&gt; &lt;/p&gt;
 &lt;div class="answers"&gt;&lt;input id="svemirci_correct" name="svemirci_correct" type="hidden" value="niragag_jiruj"&gt;&lt;input id="niragag_jiruj" name="svemirci" type="radio" value="Jurij Gagarin"&gt;&lt;label for="niragag_jiruj"&gt;Jurij Gagarin&lt;/label&gt;&lt;br&gt;
-&lt;input id="gnortsmra_siul" name="svemirci" type="radio" value="Luis Armstrong"&gt;&lt;label for="gnortsmra_siul"&gt;Luis Armstrong&lt;/label&gt;&lt;br&gt;
 &lt;input id="gnortsmra_lin" name="svemirci" type="radio" value="Nil Armstrong"&gt;&lt;label for="gnortsmra_lin"&gt;Nil Armstrong&lt;/label&gt;&lt;br&gt;
+&lt;input id="gnortsmra_siul" name="svemirci" type="radio" value="Luis Armstrong"&gt;&lt;label for="gnortsmra_siul"&gt;Luis Armstrong&lt;/label&gt;&lt;br&gt;
 &lt;/div&gt;
 &lt;button class="ok" data-correct="svemirci_correct" data-question="svemirci" onclick="checkAnswer(this, 'Bravo!', 'Hmmm... no.')" type="button"&gt;OK&lt;/button&gt;&lt;/div&gt;
 &lt;!-- &lt;button type="button" class="ok" onclick="handleQuestion('#q1');"&gt;OK&lt;/button&gt; --&gt;
