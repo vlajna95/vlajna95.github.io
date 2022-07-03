@@ -4,245 +4,245 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>http://localhost:8000/es/</loc>
-<lastmod>2022-07-03T01:52:02-00:00</lastmod>
+<loc>http://dp-tech.tk/es/</loc>
+<lastmod>2022-07-03T02:07:13-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/pages/o-sajtu</loc>
-<lastmod>2022-07-03T01:52:02-00:00</lastmod>
+<loc>http://dp-tech.tk/es/pages/o-sajtu</loc>
+<lastmod>2022-07-03T02:07:13-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/pages/stw-prevod</loc>
-<lastmod>2022-07-03T01:52:02-00:00</lastmod>
+<loc>http://dp-tech.tk/es/pages/stw-prevod</loc>
+<lastmod>2022-07-03T02:07:13-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/articles/la-lista-de-peliculas-con-sus-datos</loc>
+<loc>http://dp-tech.tk/es/articles/la-lista-de-peliculas-con-sus-datos</loc>
 <lastmod>2022-02-02T20:22:00+01:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/articles/sesion-3</loc>
+<loc>http://dp-tech.tk/es/articles/sesion-3</loc>
 <lastmod>2021-11-02T18:21:00+01:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/articles/oraciones-temporales</loc>
+<loc>http://dp-tech.tk/es/articles/oraciones-temporales</loc>
 <lastmod>2021-02-22T22:22:00+01:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/categories/facultad</loc>
+<loc>http://dp-tech.tk/es/categories/facultad</loc>
 <lastmod>2022-02-02T20:22:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/categories/facultad/culturas-hispanicas-4</loc>
+<loc>http://dp-tech.tk/es/categories/facultad/culturas-hispanicas-4</loc>
 <lastmod>2022-02-02T20:22:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/categories/katalonski-catala</loc>
+<loc>http://dp-tech.tk/es/categories/katalonski-catala</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/categories/katalonski-catala/facultat</loc>
+<loc>http://dp-tech.tk/es/categories/katalonski-catala/facultat</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/categories/katalonski-catala/facultat/p1</loc>
+<loc>http://dp-tech.tk/es/categories/katalonski-catala/facultat/p1</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/categories/lec-g4</loc>
+<loc>http://dp-tech.tk/es/categories/lec-g4</loc>
 <lastmod>2021-02-22T22:22:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/peliculas</loc>
+<loc>http://dp-tech.tk/es/tags/peliculas</loc>
 <lastmod>2022-02-02T20:22:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/sinopsis</loc>
+<loc>http://dp-tech.tk/es/tags/sinopsis</loc>
 <lastmod>2022-02-02T20:22:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/actores</loc>
+<loc>http://dp-tech.tk/es/tags/actores</loc>
 <lastmod>2022-02-02T20:22:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/directores</loc>
+<loc>http://dp-tech.tk/es/tags/directores</loc>
 <lastmod>2022-02-02T20:22:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/guionistas</loc>
+<loc>http://dp-tech.tk/es/tags/guionistas</loc>
 <lastmod>2022-02-02T20:22:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/cine</loc>
+<loc>http://dp-tech.tk/es/tags/cine</loc>
 <lastmod>2022-02-02T20:22:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/vocabulari</loc>
+<loc>http://dp-tech.tk/es/tags/vocabulari</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/paraules</loc>
+<loc>http://dp-tech.tk/es/tags/paraules</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/expressions</loc>
+<loc>http://dp-tech.tk/es/tags/expressions</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/exemples</loc>
+<loc>http://dp-tech.tk/es/tags/exemples</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/verbs</loc>
+<loc>http://dp-tech.tk/es/tags/verbs</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/gramatica</loc>
+<loc>http://dp-tech.tk/es/tags/gramatica</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/activitats</loc>
+<loc>http://dp-tech.tk/es/tags/activitats</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/vocabulario</loc>
+<loc>http://dp-tech.tk/es/tags/vocabulario</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/palabras</loc>
+<loc>http://dp-tech.tk/es/tags/palabras</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/expresiones</loc>
+<loc>http://dp-tech.tk/es/tags/expresiones</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/ejemplos</loc>
+<loc>http://dp-tech.tk/es/tags/ejemplos</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/verbos</loc>
+<loc>http://dp-tech.tk/es/tags/verbos</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/actividades</loc>
+<loc>http://dp-tech.tk/es/tags/actividades</loc>
 <lastmod>2021-11-02T18:21:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/conectores</loc>
+<loc>http://dp-tech.tk/es/tags/conectores</loc>
 <lastmod>2021-02-22T22:22:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/tags/cuando</loc>
+<loc>http://dp-tech.tk/es/tags/cuando</loc>
 <lastmod>2021-02-22T22:22:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/author/danijela-popovic.html</loc>
+<loc>http://dp-tech.tk/es/author/danijela-popovic.html</loc>
 <lastmod>2022-02-02T20:22:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
-<loc>http://localhost:8000/es/author/paco-capilla.html</loc>
+<loc>http://dp-tech.tk/es/author/paco-capilla.html</loc>
 <lastmod>2021-02-22T22:22:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>

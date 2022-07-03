@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>DP Tech - događaji</title><link href="http://localhost:8000/" rel="alternate"></link><link href="http://localhost:8000/feeds/atom/tag-dogadaji.xml" rel="self"></link><id>http://localhost:8000/</id><updated>2022-04-22T19:24:00+02:00</updated><subtitle>Tvoj omiljeni blog</subtitle><entry><title>AJP 1.4. Događaji</title><link href="http://localhost:8000/articles/ajp-14-dogadaji" rel="alternate"></link><published>2022-04-22T19:24:00+02:00</published><updated>2022-04-22T19:24:00+02:00</updated><author><name>Danijela Popović</name></author><id>tag:localhost,2022-04-22:/articles/ajp-14-dogadaji</id><summary type="html">&lt;p&gt;Događaji u programskom jeziku Java&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DP Tech - događaji</title><link href="http://dp-tech.tk/" rel="alternate"></link><link href="http://dp-tech.tk/feeds/atom/tag-dogadaji.xml" rel="self"></link><id>http://dp-tech.tk/</id><updated>2022-04-22T19:24:00+02:00</updated><subtitle>Tvoj omiljeni blog</subtitle><entry><title>AJP 1.4. Događaji</title><link href="http://dp-tech.tk/articles/ajp-14-dogadaji" rel="alternate"></link><published>2022-04-22T19:24:00+02:00</published><updated>2022-04-22T19:24:00+02:00</updated><author><name>Danijela Popović</name></author><id>tag:dp-tech.tk,2022-04-22:/articles/ajp-14-dogadaji</id><summary type="html">&lt;p&gt;Događaji u programskom jeziku Java&lt;/p&gt;</summary><content type="html">
 &lt;hr/&gt;
 &lt;p&gt;Do sada smo se susretali sa objektima koji unutar sebe poseduju svojstva i metode. Svojstva i metode su osnovni mehanizmi pomoću kojih se rukuje objektima. Pri tome, svojstvima se izlažu podaci, a metodama operacije. Ipak, veoma često se može javiti potreba da objekti budu u mogućnosti da spoljašnjem okruženju signaliziraju određena dešavanja do kojih može doći unutar njih. Tako dolazimo do pojma događaja, koji su veoma važan aspekt programiranja. Pojmu događaja biće posvećena lekcija pred vama. &lt;/p&gt;
 &lt;h2 id="sta-su-dogaaji"&gt;Šta su događaji?&lt;/h2&gt;
@@ -41,10 +41,10 @@ Osnovna klasa kojom se u Java programskom jeziku predstavljaju događaji jeste k
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;div class="question"&gt;
 &lt;p&gt;Objekat kojim se predstavlja događaj kreira se na osnovu klase: &lt;/p&gt;
-&lt;div class="answers"&gt;&lt;input id="klasa_objekta_za_event_correct" name="klasa_objekta_za_event_correct" type="hidden" value="tcejbotneve"/&gt;&lt;input id="noitcatneve" name="klasa_objekta_za_event" type="radio" value="EventAction"/&gt;&lt;label for="noitcatneve"&gt;EventAction&lt;/label&gt;&lt;br/&gt;
-&lt;input id="ssalctneve" name="klasa_objekta_za_event" type="radio" value="EventClass"/&gt;&lt;label for="ssalctneve"&gt;EventClass&lt;/label&gt;&lt;br/&gt;
-&lt;input id="tcejbotneve" name="klasa_objekta_za_event" type="radio" value="EventObject"/&gt;&lt;label for="tcejbotneve"&gt;EventObject&lt;/label&gt;&lt;br/&gt;
+&lt;div class="answers"&gt;&lt;input id="klasa_objekta_za_event_correct" name="klasa_objekta_za_event_correct" type="hidden" value="tcejbotneve"/&gt;&lt;input id="tcejbotneve" name="klasa_objekta_za_event" type="radio" value="EventObject"/&gt;&lt;label for="tcejbotneve"&gt;EventObject&lt;/label&gt;&lt;br/&gt;
 &lt;input id="tneve" name="klasa_objekta_za_event" type="radio" value="Event"/&gt;&lt;label for="tneve"&gt;Event&lt;/label&gt;&lt;br/&gt;
+&lt;input id="noitcatneve" name="klasa_objekta_za_event" type="radio" value="EventAction"/&gt;&lt;label for="noitcatneve"&gt;EventAction&lt;/label&gt;&lt;br/&gt;
+&lt;input id="ssalctneve" name="klasa_objekta_za_event" type="radio" value="EventClass"/&gt;&lt;label for="ssalctneve"&gt;EventClass&lt;/label&gt;&lt;br/&gt;
 &lt;/div&gt;
 &lt;button class="ok" data-correct="klasa_objekta_za_event_correct" data-question="klasa_objekta_za_event" onclick="checkAnswer(this, 'Bravo!', 'Hmmm... no.')" type="button"&gt;OK&lt;/button&gt;&lt;/div&gt;
 &lt;h2 id="kreiranje-interfejsa-za-predstavljanje-slusalaca"&gt;Kreiranje interfejsa za predstavljanje slušalaca&lt;/h2&gt;

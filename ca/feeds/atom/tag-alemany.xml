@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>DP Tech - alemany</title><link href="http://localhost:8000/ca/" rel="alternate"></link><link href="http://localhost:8000/feeds/atom/tag-alemany.xml" rel="self"></link><id>http://localhost:8000/ca/</id><updated>2022-06-27T20:32:00+02:00</updated><subtitle>El teu bloc preferit</subtitle><entry><title>Prova de nivell d'alemany</title><link href="http://localhost:8000/ca/articles/prova-de-nivell-dalemany" rel="alternate"></link><published>2022-06-27T20:32:00+02:00</published><updated>2022-06-27T20:32:00+02:00</updated><author><name>Danijela Popović</name></author><id>tag:localhost,2022-06-27:/ca/articles/prova-de-nivell-dalemany</id><summary type="html">&lt;p&gt;Prova de nivell de l'alemany (juny de 2022)&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DP Tech - alemany</title><link href="http://dp-tech.tk/ca/" rel="alternate"></link><link href="http://dp-tech.tk/feeds/atom/tag-alemany.xml" rel="self"></link><id>http://dp-tech.tk/ca/</id><updated>2022-06-27T20:32:00+02:00</updated><subtitle>El teu bloc preferit</subtitle><entry><title>Prova de nivell d'alemany</title><link href="http://dp-tech.tk/ca/articles/prova-de-nivell-dalemany" rel="alternate"></link><published>2022-06-27T20:32:00+02:00</published><updated>2022-06-27T20:32:00+02:00</updated><author><name>Danijela Popović</name></author><id>tag:dp-tech.tk,2022-06-27:/ca/articles/prova-de-nivell-dalemany</id><summary type="html">&lt;p&gt;Prova de nivell de l'alemany (juny de 2022)&lt;/p&gt;</summary><content type="html">
 &lt;hr/&gt;
 &lt;p&gt;Ara pots contrastar les teves respostes amb les solucions correctes (1 punt per item). &lt;/p&gt;
 &lt;h2 id="seccio-1"&gt;Secció 1&lt;/h2&gt;
@@ -214,4 +214,4 @@ K: Ja, gerne. Ich glaube, dass&lt;sup id="fnref:47"&gt;&lt;a class="footnote-ref
 &lt;p&gt;dass → könnte &lt;a class="footnote-backref" href="#fnref:47" title="Jump back to footnote 44 in the text"&gt;↩&lt;/a&gt;&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;/div&gt;</content><category term="Llengües i aprenentatge"></category><category term="llengües"></category><category term="idiomes"></category><category term="alemany"></category><category term="prova"></category></entry></feed>
+&lt;/div&gt;</content><category term="misc"></category><category term="llengües"></category><category term="idiomes"></category><category term="alemany"></category><category term="prova"></category></entry></feed>
