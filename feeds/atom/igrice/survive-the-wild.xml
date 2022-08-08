@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>DP Tech - Igrice/Survive the Wild</title><link href="https://vlajna95.github.io/" rel="alternate"></link><link href="https://vlajna95.github.io/feeds/atom/igrice/survive-the-wild.xml" rel="self"></link><id>https://vlajna95.github.io/</id><updated>2021-07-10T22:22:00+02:00</updated><subtitle>Tvoj omiljeni blog</subtitle><entry><title>STW - Uputstva za izradu raznih predmeta</title><link href="https://vlajna95.github.io/articles/stw-uputstva-za-izradu-raznih-predmeta" rel="alternate"></link><published>2021-07-10T22:22:00+02:00</published><updated>2021-07-10T22:22:00+02:00</updated><author><name>Danijela Popović</name></author><id>tag:vlajna95.github.io,2021-07-10:/articles/stw-uputstva-za-izradu-raznih-predmeta</id><summary type="html">&lt;p&gt;Uputstva za izradu raznih predmeta i alata u igri Survive the Wild.&lt;/p&gt;</summary><content type="html">
+<feed xmlns="http://www.w3.org/2005/Atom"><title>DP Tech - Igrice/Survive the Wild</title><link href="https://vlajna95.github.io/" rel="alternate"></link><link href="https://vlajna95.github.io/feeds/atom/igrice/survive-the-wild.xml" rel="self"></link><id>https://vlajna95.github.io/</id><updated>2022-07-25T20:45:00+02:00</updated><subtitle>Tvoj omiljeni blog</subtitle><entry><title>STW - Šta se čime leči</title><link href="https://vlajna95.github.io/articles/stw-sta-se-cime-leci" rel="alternate"></link><published>2022-07-25T20:45:00+02:00</published><updated>2022-07-25T20:45:00+02:00</updated><author><name>Danijela Popović</name></author><id>tag:vlajna95.github.io,2022-07-25:/articles/stw-sta-se-cime-leci</id><summary type="html">&lt;p&gt;Koji se element koristi za lečenje koje povrede?&lt;/p&gt;</summary><content type="html">
+&lt;hr/&gt;
+&lt;p&gt;Evo kratkog, ali neophodnog teksta. Tačnije, to je spisak povreda u STW i koja se čime leči. &lt;/p&gt;
+&lt;h2 id="dobijeni-objekti"&gt;Dobijeni objekti&lt;/h2&gt;
+&lt;p&gt;Neke od osnovnih medicinskih objekata tj. elemenata dobijamo u paketu za preživljavanje na početku igre. Evo koji su, čemu služe, kako se zovu na engleskom i kako se njihov naziv prevodi. &lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;Velika udlaga&lt;/dt&gt;
+&lt;dd&gt;Originalni naziv: large brace &lt;br/&gt;
+Koristi se kad se povrede rebra &lt;/dd&gt;
+&lt;dt&gt;Mala udlaga&lt;/dt&gt;
+&lt;dd&gt;Originalni naziv: small brace &lt;br/&gt;
+Koristi se za povrede vilice &lt;/dd&gt;
+&lt;dt&gt;Elastični zavoj&lt;/dt&gt;
+&lt;dd&gt;Originalni naziv: elastic sling &lt;br/&gt;
+Za povrede ruke tj. šake i lakta &lt;/dd&gt;
+&lt;/dl&gt;
+&lt;h2 id="objekti-koje-treba-napraviti"&gt;Objekti koje treba napraviti&lt;/h2&gt;
+&lt;p&gt;Papirni gips za prst &lt;/p&gt;
+&lt;p&gt;Mali gips&lt;/p&gt;</content><category term="Igrice/Survive the Wild"></category><category term="preživljavanje"></category><category term="uputstva"></category><category term="lečenje"></category><category term="povrede"></category></entry><entry><title>STW - Uputstva za izradu raznih predmeta</title><link href="https://vlajna95.github.io/articles/stw-uputstva-za-izradu-raznih-predmeta" rel="alternate"></link><published>2021-07-10T22:22:00+02:00</published><updated>2021-07-10T22:22:00+02:00</updated><author><name>Danijela Popović</name></author><id>tag:vlajna95.github.io,2021-07-10:/articles/stw-uputstva-za-izradu-raznih-predmeta</id><summary type="html">&lt;p&gt;Uputstva za izradu raznih predmeta i alata u igri Survive the Wild.&lt;/p&gt;</summary><content type="html">
 &lt;hr/&gt;
 &lt;h2 id="kompas"&gt;Kompas&lt;/h2&gt;
 &lt;h3 id="potrebni-resursi"&gt;Potrebni resursi&lt;/h3&gt;
