@@ -5,21 +5,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://vlajna95.github.io/es/</loc>
-<lastmod>2022-08-08T14:39:59-00:00</lastmod>
+<lastmod>2022-08-13T17:54:03-00:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>https://vlajna95.github.io/es/categories.html</loc>
+<lastmod>2022-08-13T17:54:03-00:00</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>
 
 <url>
 <loc>https://vlajna95.github.io/es/pages/o-sajtu</loc>
-<lastmod>2022-08-08T14:39:59-00:00</lastmod>
+<lastmod>2022-08-13T17:54:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>
 
 <url>
 <loc>https://vlajna95.github.io/es/pages/stw-prevod</loc>
-<lastmod>2022-08-08T14:39:59-00:00</lastmod>
+<lastmod>2022-08-13T17:54:03-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.8</priority>
 </url>
@@ -81,6 +88,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://vlajna95.github.io/es//es</loc>
+<lastmod>1995-11-30T11:15:00+01:00</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.8</priority>
+</url>
+
+<url>
 <loc>https://vlajna95.github.io/es/categories/facultad</loc>
 <lastmod>2022-02-02T20:22:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
@@ -132,6 +146,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://vlajna95.github.io/es/categories/lec-g4</loc>
 <lastmod>2021-02-22T22:22:00-00:15</lastmod>
+<changefreq>hourly</changefreq>
+<priority>0.6</priority>
+</url>
+
+<url>
+<loc>https://vlajna95.github.io/es/categories/misc</loc>
+<lastmod>1995-11-30T11:15:00-00:15</lastmod>
 <changefreq>hourly</changefreq>
 <priority>0.6</priority>
 </url>

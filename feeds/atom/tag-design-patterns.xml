@@ -118,10 +118,10 @@
 Naziv upravo kreirane &lt;strong&gt;Singleton&lt;/strong&gt; klase nije izabran slučajno. Naime, jedna od realnih situacija za upotrebu &lt;strong&gt;Singleton&lt;/strong&gt; šablona jesu situacije u kojima je potrebno napraviti klasu za logovanje informacija o unutrašnjem funkcionisanju programa. Veoma česta praksa u realnim aplikacijama jeste postojanje takve klase, koja unutar fajla ili posebnog skladišta podataka beleži sve informacije koje mogu biti značajne za programere koji su aplikaciju kreirali. Tokom izvršavanja aplikacije, potrebno je da postoji samo jedna instanca klase za logovanje. Drugim rečima, postojanje većeg broja instanci klase za logovanje nema smisla, pa je upravo zbog toga klasa &lt;code&gt;Logger&lt;/code&gt; idealan kandidat za demonstraciju &lt;strong&gt;Singleton&lt;/strong&gt; dizajn šablona. &lt;/p&gt;
 &lt;div class="question"&gt;
 &lt;p&gt;Ukoliko je potrebno osigurati da određena klasa ima samo jednu instancu, koji šablon za dizajn softverskih komponenti se koristi? &lt;/p&gt;
-&lt;div class="answers"&gt;&lt;input id="single_instance_correct" name="single_instance_correct" type="hidden" value="notelgnis"/&gt;&lt;input id="revresbo" name="single_instance" type="radio" value="Observer"/&gt;&lt;label for="revresbo"&gt;Observer&lt;/label&gt;&lt;br/&gt;
-&lt;input id="yrotcaf" name="single_instance" type="radio" value="Factory"/&gt;&lt;label for="yrotcaf"&gt;Factory&lt;/label&gt;&lt;br/&gt;
-&lt;input id="cvm" name="single_instance" type="radio" value="MVC"/&gt;&lt;label for="cvm"&gt;MVC&lt;/label&gt;&lt;br/&gt;
+&lt;div class="answers"&gt;&lt;input id="single_instance_correct" name="single_instance_correct" type="hidden" value="notelgnis"/&gt;&lt;input id="cvm" name="single_instance" type="radio" value="MVC"/&gt;&lt;label for="cvm"&gt;MVC&lt;/label&gt;&lt;br/&gt;
+&lt;input id="revresbo" name="single_instance" type="radio" value="Observer"/&gt;&lt;label for="revresbo"&gt;Observer&lt;/label&gt;&lt;br/&gt;
 &lt;input id="notelgnis" name="single_instance" type="radio" value="Singleton"/&gt;&lt;label for="notelgnis"&gt;Singleton&lt;/label&gt;&lt;br/&gt;
+&lt;input id="yrotcaf" name="single_instance" type="radio" value="Factory"/&gt;&lt;label for="yrotcaf"&gt;Factory&lt;/label&gt;&lt;br/&gt;
 &lt;/div&gt;
 &lt;button class="ok" data-correct="single_instance_correct" data-question="single_instance" onclick="checkAnswer(this, 'Bravo!', 'Hmmm... no.')" type="button"&gt;OK&lt;/button&gt;&lt;/div&gt;
 &lt;h2 id="observer"&gt;&lt;strong&gt;Observer&lt;/strong&gt;&lt;/h2&gt;
